@@ -150,3 +150,13 @@ html {
 body {
   @apply bg-white text-black dark:bg-slate-950 dark:text-slate-100;
 }
+
+button, a {
+  cursor: pointer;
+}
+
+.inputClass {
+  @apply w-full px-4 py-2 rounded-md border border-gray-300 
+  text-sm text-gray-300 bg-white 
+  focus:outline-none focus:ring-1 focus:ring-blue-500;
+}
