@@ -8,7 +8,7 @@ import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import { useRouter } from "next/navigation";
 
-export default function HomePage() {
+export default function BookADemo() {
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);

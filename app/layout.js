@@ -4,7 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 // Fonts
 const sora = Sora({ subsets: ["latin"], weight: ["300", "400", "500", "700"] })
-const outfit = Outfit({ subsets: ["latin"], weight: ["400", "700"] })
+const outfit = Outfit({ subsets: ["latin"], weight: ["300", "400", "500", "700"] })
 
 export const metadata = {
   title: "AccuraCore",
