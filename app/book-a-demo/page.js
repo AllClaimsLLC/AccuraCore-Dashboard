@@ -7,6 +7,7 @@ import ModeToggle from "@/components/mode-toggle";
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import { useRouter } from "next/navigation";
+import CustomDropdown from "@/components/CustomDropdown";
 
 export default function BookADemo() {
   const router = useRouter();
@@ -302,84 +303,61 @@ export default function BookADemo() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       <div>
-                        <label className="block text-sm text-black mb-1">
-                          What type of contractor are you?
-                        </label>
                         <div className="relative">
-                          <select
+                          <CustomDropdown
+                            label="What type of contractor are you?"
                             name="contractorType"
                             required
-                            className="inputClass appearance-none pr-8 md:pr-10 text-sm md:text-base"
-                          >
-                            <option value="">Select Contractor Type</option>
-                            <option value="Roofing">Roofing</option>
-                            <option value="Siding">Siding</option>
-                            <option value="Gutters">Gutters</option>
-                            <option value="Exteriors">Exteriors</option>
-                            <option value="Construction">Construction</option>
-                            <option value="Commercial">Commercial</option>
-                            <option value="Restoration">Restoration</option>
-                            <option value="Solar">Solar</option>
-                            <option value="General Contractor">
-                              General Contractor
-                            </option>
-                            <option value="Remodeling">Remodeling</option>
-                            <option value="Other">Other: _______</option>
-                          </select>
-
-                          {/* Right Arrow */}
-                          <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
-                            <MdKeyboardArrowDown />
-                          </div>
+                            multiSelect={false}
+                            options={[
+                              "Roofing",
+                              "Siding",
+                              "Gutters",
+                              "Exteriors",
+                              "Construction",
+                              "Commercial",
+                              "Restoration",
+                              "Solar",
+                              "General Contractor",
+                              "Remodeling",
+                              "Other",
+                            ]}
+                          />
                         </div>
                       </div>
 
                       <div>
-                        <label className="block text-sm text-black mb-1">
-                          Company Size
-                        </label>
                         <div className="relative">
-                          <select
+                          <CustomDropdown
+                            label="Company Size"
                             name="companySize"
-                            className="inputClass appearance-none pr-10"
-                          >
-                            <option value="">Select Company Size</option>
-                            <option value="Just me">Just me</option>
-                            <option value="2–5 employees">2–5 employees</option>
-                            <option value="6–20 employees">
-                              6–20 employees
-                            </option>
-                            <option value="21–50 employees">
-                              21–50 employees
-                            </option>
-                            <option value="50+ employees">50+ employees</option>
-                          </select>
-
-                          <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
-                            <MdKeyboardArrowDown />
-                          </div>
+                            required={false}
+                            multiSelect={false}
+                            options={[
+                              "Just me",
+                              "2–5 employees",
+                              "6–20 employees",
+                              "21–50 employees",
+                              "50+ employees",
+                            ]}
+                          />
                         </div>
                       </div>
 
                       <div>
-                        <label className="block text-sm text-black mb-1">
-                          Annual Revenue (optional)
-                        </label>
                         <div className="relative">
-                          <select
+                          <CustomDropdown
+                            label="Annual Revenue (optional)"
                             name="revenue"
-                            className="inputClass appearance-none pr-10"
-                          >
-                            <option value="">Select Revenue</option>
-                            <option value="<$500K">&lt;$500K</option>
-                            <option value="$500K–$2M">$500K–$2M</option>
-                            <option value="$2M–$10M">$2M–$10M</option>
-                            <option value="$10M+">$10M+</option>
-                          </select>
-
-                          <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
-                            <MdKeyboardArrowDown />
-                          </div>
+                            required={false}
+                            multiSelect={false}
+                            options={[
+                              "<$500K",
+                              "$500K–$2M",
+                              "$2M–$10M",
+                              "$10M+",
+                            ]}
+                          />
                         </div>
                       </div>
                     </div>
@@ -394,177 +372,100 @@ export default function BookADemo() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm text-black mb-1">
+                        {/* <label className="block text-sm text-black mb-1">
                           What tools are you currently using? (select all that
                           apply)
-                        </label>
+                        </label> */}
                         <div className="relative">
-                          <select
+                          <CustomDropdown
+                            label="What tools are you currently using? (select all that apply)"
                             name="tools"
-                            className="inputClass appearance-none pr-10"
-                          >
-                            <option value="">Select Tools</option>
-                            <option value="Spreadsheets">Spreadsheets</option>
-                            <option value="CRM (which one?): _______">
-                              CRM (which one?): _______
-                            </option>
-                            <option value="Estimating software">
-                              Estimating software
-                            </option>
-                            <option value="Project management tools">
-                              Project management tools
-                            </option>
-                            <option value="CompanyCam">CompanyCam</option>
-                            <option value="Hover">Hover</option>
-                            <option value="Eagleview">Eagleview</option>
-                            <option value="Other: _________________">
-                              Other: _________________
-                            </option>
-                            <option value="None">None</option>
-                          </select>
+                            required
+                            multiSelect
+                            options={[
+                              "Spreadsheets",
+                              "CRM (which one?)",
+                              "Estimating software",
+                              "Project management tools",
+                              "CompanyCam",
+                              "Hover",
+                              "Eagleview",
+                              "Other: ",
+                              "None",
+                            ]}
+                          />
 
-                          <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                          {/* <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
                             <MdKeyboardArrowDown />
-                          </div>
+                          </div> */}
                         </div>
                       </div>
 
                       <div>
-                        <label className="block text-sm text-black mb-1">
-                          Biggest challenges right now
-                        </label>
+                       <div>
                         <div className="relative">
-                          <select
+                          <CustomDropdown
+                            label="Select Challenges"
                             name="challenges"
-                            className="inputClass appearance-none pr-10"
-                          >
-                            <option value="">Select Challenges</option>
-                            <option value="Using too many apps/software that don’t work well together">
-                              Using too many apps/software that don’t work well
-                              together
-                            </option>
-                            <option value="Outgrowing your current system or tools">
-                              Outgrowing your current system or tools
-                            </option>
-                            <option value="Paying for software that doesn’t deliver what you need">
-                              Paying for software that doesn’t deliver what you
-                              need
-                            </option>
-                            <option value="Losing time switching between systems or duplicate data entry">
-                              Losing time switching between systems or duplicate
-                              data entry
-                            </option>
-                            <option value="Difficulty scaling operations with your current setup">
-                              Difficulty scaling operations with your current
-                              setup
-                            </option>
-                            <option value="Limited visibility into jobs, leads, or performance">
-                              Limited visibility into jobs, leads, or
-                              performance
-                            </option>
-                            <option value="Other: ______">Other: ______</option>
-                          </select>
-
-                          <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
-                            <MdKeyboardArrowDown />
-                          </div>
+                            required={false}
+                            multiSelect={false}
+                            options={[
+                              "Using too many apps/software that don’t work well together",
+                              "Outgrowing your current system or tools",
+                              "Paying for software that doesn’t deliver what you need",
+                              "Losing time switching between systems or duplicate data entry",
+                              "Difficulty scaling operations with your current setup",
+                              "Limited visibility into jobs, leads, or performance",
+                              "Other: ______",
+                            ]}
+                          />
                         </div>
+                      </div>
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                       <div>
-                        <label className="block text-sm text-black mb-1">
-                          Biggest challenges right now
-                        </label>
                         <div className="relative">
-                          <select
+                          <CustomDropdown
+                            label="Select Challenges"
                             name="challenges"
-                            className="inputClass appearance-none pr-10"
-                          >
-                            <option value="">Select Challenges</option>
-                            <option value="Using too many apps/software that don’t work well together">
-                              Using too many apps/software that don’t work well
-                              together
-                            </option>
-                            <option value="Outgrowing your current system or tools">
-                              Outgrowing your current system or tools
-                            </option>
-                            <option value="Paying for software that doesn’t deliver what you need">
-                              Paying for software that doesn’t deliver what you
-                              need
-                            </option>
-                            <option value="Losing time switching between systems or duplicate data entry">
-                              Losing time switching between systems or duplicate
-                              data entry
-                            </option>
-                            <option value="Difficulty scaling operations with your current setup">
-                              Difficulty scaling operations with your current
-                              setup
-                            </option>
-                            <option value="Limited visibility into jobs, leads, or performance">
-                              Limited visibility into jobs, leads, or
-                              performance
-                            </option>
-                            <option value="Other: ______">Other: ______</option>
-                          </select>
-
-                          <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
-                            <MdKeyboardArrowDown />
-                          </div>
+                            required={false}
+                            multiSelect={false}
+                            options={[
+                              "Using too many apps/software that don’t work well together",
+                              "Outgrowing your current system or tools",
+                              "Paying for software that doesn’t deliver what you need",
+                              "Losing time switching between systems or duplicate data entry",
+                              "Difficulty scaling operations with your current setup",
+                              "Limited visibility into jobs, leads, or performance",
+                              "Other: ______",
+                            ]}
+                          />
                         </div>
                       </div>
 
                       <div>
-                        <label className="block text-sm text-black mb-1">
-                          What are you most interested in improving? (select top
-                          3)
-                        </label>
                         <div className="relative">
-                          <select
+                          <CustomDropdown
+                            label="What are you most interested in improving? (select top 3)"
                             name="improvements"
-                            className="inputClass appearance-none pr-10"
-                          >
-                            <option value="">Select improvements</option>
-                            <option value="Saving time & reducing day-to-day busywork">
-                              Saving time & reducing day-to-day busywork
-                            </option>
-                            <option value="Improving overall efficiency & team management">
-                              Improving overall efficiency & team management
-                            </option>
-                            <option value="Reducing wasted time from manual processes or duplicate entry">
-                              Reducing wasted time from manual processes or
-                              duplicate entry
-                            </option>
-                            <option value="Lead management & pipeline visibility">
-                              Lead management & pipeline visibility
-                            </option>
-                            <option value="Job scheduling & calendar coordination">
-                              Job scheduling & calendar coordination
-                            </option>
-                            <option value="Estimates & proposals">
-                              Estimates & proposals
-                            </option>
-                            <option value="Document & photo organization">
-                              Document & photo organization
-                            </option>
-                            <option value="Automation & workflows">
-                              Automation & workflows
-                            </option>
-                            <option value="Customer communication (email/SMS)">
-                              Customer communication (email/SMS)
-                            </option>
-                            <option value="Payments, financing & cash flow">
-                              Payments, financing & cash flow
-                            </option>
-                            <option value="Reporting & business insights">
-                              Reporting & business insights
-                            </option>
-                          </select>
-
-                          <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
-                            <MdKeyboardArrowDown />
-                          </div>
+                            required={false}
+                            multiSelect={true}
+                            options={[
+                              "Saving time & reducing day-to-day busywork",
+                              "Improving overall efficiency & team management",
+                              "Reducing wasted time from manual processes or duplicate entry",
+                              "Lead management & pipeline visibility",
+                              "Job scheduling & calendar coordination",
+                              "Estimates & proposals",
+                              "Document & photo organization",
+                              "Automation & workflows",
+                              "Customer communication (email/SMS)",
+                              "Payments, financing & cash flow",
+                              "Reporting & business insights",
+                            ]}
+                          />
                         </div>
                       </div>
                     </div>
