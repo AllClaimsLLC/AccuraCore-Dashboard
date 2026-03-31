@@ -309,16 +309,22 @@ export default function BookADemo() {
                           <select
                             name="contractorType"
                             required
-                           className="inputClass appearance-none pr-8 md:pr-10 text-sm md:text-base"
+                            className="inputClass appearance-none pr-8 md:pr-10 text-sm md:text-base"
                           >
                             <option value="">Select Contractor Type</option>
+                            <option value="Roofing">Roofing</option>
+                            <option value="Siding">Siding</option>
+                            <option value="Gutters">Gutters</option>
+                            <option value="Exteriors">Exteriors</option>
+                            <option value="Construction">Construction</option>
+                            <option value="Commercial">Commercial</option>
+                            <option value="Restoration">Restoration</option>
+                            <option value="Solar">Solar</option>
                             <option value="General Contractor">
                               General Contractor
                             </option>
-                            <option value="Sub Contractor">
-                              Sub Contractor
-                            </option>
-                            <option value="Builder">Builder</option>
+                            <option value="Remodeling">Remodeling</option>
+                            <option value="Other">Other: _______</option>
                           </select>
 
                           {/* Right Arrow */}
@@ -338,10 +344,15 @@ export default function BookADemo() {
                             className="inputClass appearance-none pr-10"
                           >
                             <option value="">Select Company Size</option>
-                            <option value="1-10">1-10</option>
-                            <option value="11-50">11-50</option>
-                            <option value="51-200">51-200</option>
-                            <option value="200+">200+</option>
+                            <option value="Just me">Just me</option>
+                            <option value="2–5 employees">2–5 employees</option>
+                            <option value="6–20 employees">
+                              6–20 employees
+                            </option>
+                            <option value="21–50 employees">
+                              21–50 employees
+                            </option>
+                            <option value="50+ employees">50+ employees</option>
                           </select>
 
                           <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
@@ -360,9 +371,10 @@ export default function BookADemo() {
                             className="inputClass appearance-none pr-10"
                           >
                             <option value="">Select Revenue</option>
-                            <option value="0-100k">$0 - $100k</option>
-                            <option value="100k-1M">$100k - $1M</option>
-                            <option value="1M-10M">$1M - $10M</option>
+                            <option value="<$500K">&lt;$500K</option>
+                            <option value="$500K–$2M">$500K–$2M</option>
+                            <option value="$2M–$10M">$2M–$10M</option>
+                            <option value="$10M+">$10M+</option>
                           </select>
 
                           <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
@@ -392,8 +404,23 @@ export default function BookADemo() {
                             className="inputClass appearance-none pr-10"
                           >
                             <option value="">Select Tools</option>
-                            <option value="Excel">Excel</option>
-                            <option value="QuickBooks">QuickBooks</option>
+                            <option value="Spreadsheets">Spreadsheets</option>
+                            <option value="CRM (which one?): _______">
+                              CRM (which one?): _______
+                            </option>
+                            <option value="Estimating software">
+                              Estimating software
+                            </option>
+                            <option value="Project management tools">
+                              Project management tools
+                            </option>
+                            <option value="CompanyCam">CompanyCam</option>
+                            <option value="Hover">Hover</option>
+                            <option value="Eagleview">Eagleview</option>
+                            <option value="Other: _________________">
+                              Other: _________________
+                            </option>
+                            <option value="None">None</option>
                           </select>
 
                           <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
@@ -409,15 +436,33 @@ export default function BookADemo() {
                         <div className="relative">
                           <select
                             name="challenges"
-                            className={`inputClass appearance-none pr-10 text-sm ${
-                              !toolsValue
-                                ? "bg-gray-200 text-gray-300 cursor-not-allowed"
-                                : "text-gray-700"
-                            }`}
+                            className="inputClass appearance-none pr-10"
                           >
                             <option value="">Select Challenges</option>
-                            <option value="a">a</option>
-                            <option value="b">b</option>
+                            <option value="Using too many apps/software that don’t work well together">
+                              Using too many apps/software that don’t work well
+                              together
+                            </option>
+                            <option value="Outgrowing your current system or tools">
+                              Outgrowing your current system or tools
+                            </option>
+                            <option value="Paying for software that doesn’t deliver what you need">
+                              Paying for software that doesn’t deliver what you
+                              need
+                            </option>
+                            <option value="Losing time switching between systems or duplicate data entry">
+                              Losing time switching between systems or duplicate
+                              data entry
+                            </option>
+                            <option value="Difficulty scaling operations with your current setup">
+                              Difficulty scaling operations with your current
+                              setup
+                            </option>
+                            <option value="Limited visibility into jobs, leads, or performance">
+                              Limited visibility into jobs, leads, or
+                              performance
+                            </option>
+                            <option value="Other: ______">Other: ______</option>
                           </select>
 
                           <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
@@ -434,12 +479,34 @@ export default function BookADemo() {
                         </label>
                         <div className="relative">
                           <select
-                            name="challenges2"
+                            name="challenges"
                             className="inputClass appearance-none pr-10"
                           >
                             <option value="">Select Challenges</option>
-                            <option value="a">a</option>
-                            <option value="b">b</option>
+                            <option value="Using too many apps/software that don’t work well together">
+                              Using too many apps/software that don’t work well
+                              together
+                            </option>
+                            <option value="Outgrowing your current system or tools">
+                              Outgrowing your current system or tools
+                            </option>
+                            <option value="Paying for software that doesn’t deliver what you need">
+                              Paying for software that doesn’t deliver what you
+                              need
+                            </option>
+                            <option value="Losing time switching between systems or duplicate data entry">
+                              Losing time switching between systems or duplicate
+                              data entry
+                            </option>
+                            <option value="Difficulty scaling operations with your current setup">
+                              Difficulty scaling operations with your current
+                              setup
+                            </option>
+                            <option value="Limited visibility into jobs, leads, or performance">
+                              Limited visibility into jobs, leads, or
+                              performance
+                            </option>
+                            <option value="Other: ______">Other: ______</option>
                           </select>
 
                           <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
@@ -459,8 +526,40 @@ export default function BookADemo() {
                             className="inputClass appearance-none pr-10"
                           >
                             <option value="">Select improvements</option>
-                            <option value="a">a</option>
-                            <option value="b">b</option>
+                            <option value="Saving time & reducing day-to-day busywork">
+                              Saving time & reducing day-to-day busywork
+                            </option>
+                            <option value="Improving overall efficiency & team management">
+                              Improving overall efficiency & team management
+                            </option>
+                            <option value="Reducing wasted time from manual processes or duplicate entry">
+                              Reducing wasted time from manual processes or
+                              duplicate entry
+                            </option>
+                            <option value="Lead management & pipeline visibility">
+                              Lead management & pipeline visibility
+                            </option>
+                            <option value="Job scheduling & calendar coordination">
+                              Job scheduling & calendar coordination
+                            </option>
+                            <option value="Estimates & proposals">
+                              Estimates & proposals
+                            </option>
+                            <option value="Document & photo organization">
+                              Document & photo organization
+                            </option>
+                            <option value="Automation & workflows">
+                              Automation & workflows
+                            </option>
+                            <option value="Customer communication (email/SMS)">
+                              Customer communication (email/SMS)
+                            </option>
+                            <option value="Payments, financing & cash flow">
+                              Payments, financing & cash flow
+                            </option>
+                            <option value="Reporting & business insights">
+                              Reporting & business insights
+                            </option>
                           </select>
 
                           <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
@@ -479,7 +578,7 @@ export default function BookADemo() {
                       style={{ backgroundColor: "#136AF3" }}
                     >
                       Submit
-                     <MdKeyboardArrowRight size={25} />
+                      <MdKeyboardArrowRight size={25} />
                     </button>
                   </div>
                 </form>
