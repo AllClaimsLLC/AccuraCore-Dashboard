@@ -309,7 +309,7 @@ export default function BookADemo() {
                           <select
                             name="contractorType"
                             required
-                            className="inputClass appearance-none pr-10"
+                           className="inputClass appearance-none pr-8 md:pr-10 text-sm md:text-base"
                           >
                             <option value="">Select Contractor Type</option>
                             <option value="General Contractor">

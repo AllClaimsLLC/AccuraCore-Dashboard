@@ -163,7 +163,21 @@ export default function TechMessCostChecker({ onBookDemo }) {
               className="flex flex-col md:flex-row justify-between items-center gap-4 bg-[#f6f7fb] p-4 rounded-[15px]"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 flex items-center justify-center bg-[#0061A4] text-white font-semibold rounded-[10px]">
+                <div
+                  className="
+  flex items-center justify-center
+  bg-[#0061A4] text-white font-semibold 
+  rounded-[10px]
+
+  min-w-[42px] min-h-[42px]
+  sm:min-w-[48px] sm:min-h-[48px]
+
+  px-3 sm:px-4
+  py-2 sm:py-3
+
+  text-sm sm:text-base
+"
+                >
                   Q{idx + 1}
                 </div>
                 <span className="text-gray-900 font-medium">{q.q}</span>

@@ -59,7 +59,7 @@ export default function SoundFamiliar() {
             />
           </div>
 
-          {/* RIGHT COLUMN - Features with original hover & animation */}
+          {/* RIGHT COLUMN */}
           <div className="space-y-6">
             {features.map((feature, idx) => (
               <div
@@ -74,13 +74,24 @@ export default function SoundFamiliar() {
                   }
                 `}
               >
-                <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-[#0061a5]">
-                  <img
-                    src={feature.icon}
-                    alt={feature.title}
-                    className="w-6 h-6"
-                  />
-                </div>
+<div
+        className="
+          flex items-center justify-center
+          bg-[#0061a5] rounded-lg
+
+          min-w-[42px] min-h-[42px]
+          sm:min-w-[48px] sm:min-h-[48px]
+
+          p-2 sm:p-3
+          flex-shrink-0
+        "
+      >
+        <img
+          src={feature.icon}
+          alt={feature.title}
+          className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
+        />
+      </div>
 
                 <div>
                   <h3 className="text-md font-semibold text-gray-800 dark:text-white">
