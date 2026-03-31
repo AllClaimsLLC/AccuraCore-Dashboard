@@ -245,41 +245,42 @@ export default function Calculator() {
             </div>
 
             {/* STATS CONTAINER */}
-            <div className="relative mt-36 bg-white rounded-2xl shadow-xl px-6 py-8">
-              <div className="grid grid-cols-2 md:grid-cols-4 text-center divide-y md:divide-y-0 md:divide-x divide-gray-200">
-                {/* Stat 1 */}
-                <div className="py-4">
-                  <h3 className="text-xl font-semibold text-black">$257K+</h3>
-                  <p className="text-sm text-gray-500 mt-1">
-                    Avg. Monthly Revenue Lost
-                  </p>
-                </div>
+<div className="relative mt-36 bg-white rounded-2xl shadow-xl px-6 py-8">
+  <div className="grid grid-cols-2 md:grid-cols-4 text-center">
+    {/* Stat 1 */}
+    <div className="py-4 md:border-r md:border-gray-200 md:border-b-0 border-b border-gray-200 col-span-1">
+      <h3 className="text-xl font-semibold text-black">$257K+</h3>
+      <p className="text-sm text-gray-500 mt-1">
+        Avg. Monthly Revenue Lost
+      </p>
+    </div>
 
-                {/* Stat 2 */}
-                <div className="py-4">
-                  <h3 className="text-xl font-semibold text-black">82 hrs</h3>
-                  <p className="text-sm text-gray-500 mt-1">
-                    Avg. Time Lost Per Month
-                  </p>
-                </div>
+    {/* Stat 2 */}
+    <div className="py-4 md:border-r md:border-gray-200 md:border-b-0 border-b border-gray-200 col-span-1">
+      <h3 className="text-xl font-semibold text-black">82 hrs</h3>
+      <p className="text-sm text-gray-500 mt-1">
+        Avg. Time Lost Per Month
+      </p>
+    </div>
 
-                {/* Stat 3 */}
-                <div className="py-4">
-                  <h3 className="text-xl font-semibold text-black">82 hrs</h3>
-                  <p className="text-sm text-gray-500 mt-1">
-                    Avg. Disconnected Apps
-                  </p>
-                </div>
+    {/* Stat 3 */}
+    <div className="py-4 md:border-r md:border-gray-200 col-span-1">
+      <h3 className="text-xl font-semibold text-black">82 hrs</h3>
+      <p className="text-sm text-gray-500 mt-1">
+        Avg. Disconnected Apps
+      </p>
+    </div>
 
-                {/* Stat 4 */}
-                <div className="py-4">
-                  <h3 className="text-xl font-semibold text-black">60s</h3>
-                  <p className="text-sm text-gray-500 mt-1">
-                    To Get Your Number
-                  </p>
-                </div>
-              </div>
-            </div>
+    {/* Stat 4 */}
+    <div className="py-4 col-span-1">
+      <h3 className="text-xl font-semibold text-black">60s</h3>
+      <p className="text-sm text-gray-500 mt-1">
+        To Get Your Number
+      </p>
+    </div>
+  </div>
+</div>
+
           </div>
         </main>
       </div>
