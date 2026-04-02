@@ -61,36 +61,51 @@ export default function TechMessCostChecker({ onBookDemo }) {
   const [activeStep, setActiveStep] = useState(0);
 
   // Calculation logic
-  useEffect(() => {
-    const {
-      hourlyRate,
-      jobsPerMonth,
-      appsPerJob,
-      hoursPerCustomer,
-      extraJobsPer3Hrs,
-      avgJobValue,
-    } = answers;
-    const totalTimeLost =
-      Number(jobsPerMonth) * Number(appsPerJob) * Number(hoursPerCustomer);
-    const timeCost = totalTimeLost * Number(hourlyRate);
-    const totalMonthlyCost = timeCost + 3750;
-    const potentialJobsMissed = Math.floor(
-      (totalTimeLost / 3) * Number(extraJobsPer3Hrs),
-    );
-    const monthlyRevenueLost = potentialJobsMissed * Number(avgJobValue);
-    setResults({
-      totalTimeLost,
-      timeCost,
-      totalMonthlyCost,
-      potentialJobsMissed,
-      monthlyRevenueLost,
-    });
-  }, [answers]);
+useEffect(() => {
+  const {
+    hourlyRate,
+    jobsPerMonth,
+    appsPerJob,
+    hoursPerCustomer,
+    extraJobsPer3Hrs,
+    avgJobValue,
+  } = answers;
 
-  const handleChange = (key, value, index) => {
-    setAnswers({ ...answers, [key]: Number(value) });
-    setActiveStep(index);
-  };
+  const totalTimeLost =
+    (Number(jobsPerMonth) || 0) *
+    (Number(appsPerJob) || 0) *
+    (Number(hoursPerCustomer) || 0);
+
+  const timeCost = totalTimeLost * (Number(hourlyRate) || 0);
+
+  const totalMonthlyCost = timeCost + 3750;
+
+  const potentialJobsMissed = Math.floor(
+    (totalTimeLost / 3) * (Number(extraJobsPer3Hrs) || 0),
+  );
+
+  const monthlyRevenueLost =
+    potentialJobsMissed * (Number(avgJobValue) || 0);
+
+  setResults({
+    totalTimeLost,
+    timeCost,
+    totalMonthlyCost,
+    potentialJobsMissed,
+    monthlyRevenueLost,
+  });
+}, [answers]);
+
+const handleChange = (key, value, index) => {
+  const numericValue = value === "" ? "" : Number(value);
+
+  setAnswers((prev) => ({
+    ...prev,
+    [key]: numericValue,
+  }));
+
+  setActiveStep(index);
+};
 
   return (
     <div
@@ -157,50 +172,52 @@ export default function TechMessCostChecker({ onBookDemo }) {
 
         {/* Questions */}
         <div className="space-y-4 px-6">
-          {questions.map((q, idx) => (
-            <div
-              key={idx}
-              className="flex flex-col md:flex-row justify-between items-center gap-4 bg-[#f6f7fb] p-4 rounded-[15px]"
-            >
-              <div className="flex items-center gap-3">
-                <div
-                  className="
-  flex items-center justify-center
-  bg-[#0061A4] text-white font-semibold 
-  rounded-[10px]
+{questions.map((q, idx) => (
+  <div
+    key={idx}
+    className="flex flex-col md:flex-row justify-between items-center gap-4 bg-[#f6f7fb] p-4 rounded-[15px]"
+  >
+    <div className="flex items-center gap-3">
+      <div className="bg-[#0061A4] text-white font-semibold rounded-[10px] min-w-[42px] min-h-[42px] flex items-center justify-center">
+        Q{idx + 1}
+      </div>
+      <span className="text-gray-900 font-medium">{q.q}</span>
+    </div>
 
-  min-w-[42px] min-h-[42px]
-  sm:min-w-[48px] sm:min-h-[48px]
-
-  px-3 sm:px-4
-  py-2 sm:py-3
-
-  text-sm sm:text-base
-"
-                >
-                  Q{idx + 1}
-                </div>
-                <span className="text-gray-900 font-medium">{q.q}</span>
-              </div>
-              <div className="relative w-full md:w-48">
-                <select
-                  value={answers[q.key]}
-                  onChange={(e) => handleChange(q.key, e.target.value, idx)}
-                  className="w-full py-2 px-3 rounded-[10px] border border-gray-300 bg-white text-gray-900 appearance-none pr-8"
-                >
-                  {q.options.map((opt, oidx) => (
-                    <option key={oidx} value={opt}>
-                      {opt} {q.suffix}
-                    </option>
-                  ))}
-                </select>
-                <MdKeyboardArrowDown
-                  className="absolute right-2 top-2.5 text-gray-500 pointer-events-none"
-                  size={24}
-                />
-              </div>
-            </div>
-          ))}
+    <div className="relative w-full md:w-48">
+      {q.key === "hourlyRate" ? (
+        // NUMBER INPUT
+       <input
+  type="number"
+  min="0"
+  step="1"
+  value={answers[q.key] ?? ""}
+  onChange={(e) => handleChange(q.key, e.target.value, idx)}
+  className="w-full py-2 px-3 rounded-[10px] bg-white border border-gray-300 text-gray-900"
+/>
+      ) : (
+        // existing dropdown
+        <>
+          <select
+            value={answers[q.key]}
+            onChange={(e) => handleChange(q.key, e.target.value, idx)}
+            className="w-full py-2 px-3 rounded-[10px] border border-gray-300 bg-white text-gray-900 appearance-none pr-8"
+          >
+            {q.options.map((opt, oidx) => (
+              <option key={oidx} value={opt}>
+                {opt} {q.suffix}
+              </option>
+            ))}
+          </select>
+          <MdKeyboardArrowDown
+            className="absolute right-2 top-2.5 text-gray-500 pointer-events-none"
+            size={24}
+          />
+        </>
+      )}
+    </div>
+  </div>
+))}
         </div>
 
         {/* Separator with text */}
@@ -286,7 +303,7 @@ export default function TechMessCostChecker({ onBookDemo }) {
 
         {/* CTA */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 px-6 mb-6">
-          <p className="text-sm md:text-base max-w-lg">
+          <p className="text-sm md:text-base max-w-lg text-black">
             <span className="text-[#FA8C3D] font-[400]">
               Ready to stop losing this money?
             </span>{" "}

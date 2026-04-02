@@ -211,7 +211,7 @@ export default function BookADemo() {
                   {/* Inner Container 1 */}
                   <div className="border-[15px] border-[#f4f4f4] rounded-[20px] p-5 md:p-8">
                     <h3 className="text-lg font-medium text-gray-800">
-                      Job And Description
+                      Contact Info
                     </h3>
                     <div className="w-full h-[1px] bg-gray-200 mt-2 mb-6"></div>
 
@@ -320,7 +320,7 @@ export default function BookADemo() {
                               "Solar",
                               "General Contractor",
                               "Remodeling",
-                              "Other",
+                              "Other: ",
                             ]}
                           />
                         </div>
@@ -408,7 +408,7 @@ export default function BookADemo() {
                             label="Select Challenges"
                             name="challenges"
                             required={false}
-                            multiSelect={false}
+                            multiSelect={true}
                             options={[
                               "Using too many apps/software that don’t work well together",
                               "Outgrowing your current system or tools",
@@ -416,7 +416,7 @@ export default function BookADemo() {
                               "Losing time switching between systems or duplicate data entry",
                               "Difficulty scaling operations with your current setup",
                               "Limited visibility into jobs, leads, or performance",
-                              "Other: ______",
+                              "Other: ",
                             ]}
                           />
                         </div>
@@ -425,7 +425,7 @@ export default function BookADemo() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                      <div>
+                      {/* <div>
                         <div className="relative">
                           <CustomDropdown
                             label="Select Challenges"
@@ -443,7 +443,7 @@ export default function BookADemo() {
                             ]}
                           />
                         </div>
-                      </div>
+                      </div> */}
 
                       <div>
                         <div className="relative">
