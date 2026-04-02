@@ -112,7 +112,7 @@ export default function CustomDropdown({
               <li
                 key={option}
                 onClick={() => handleSelect(option)}
-                className={`px-2 py-2 hover:bg-blue-100 cursor-pointer text-sm ${
+                className={`px-2 py-2 hover:bg-blue-100 cursor-pointer text-[12px] ${
                   isSelected ? "bg-blue-100 font-medium" : ""
                 }`}
               >
