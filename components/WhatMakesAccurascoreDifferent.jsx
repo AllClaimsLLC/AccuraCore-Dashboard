@@ -86,7 +86,7 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
               style={{
                 padding: "25px 15px",
               }}
-              onClick={onBookDemo} 
+              onClick={() => window.location.href = "/book-a-demo"}
             >
               Book Demo
               <img

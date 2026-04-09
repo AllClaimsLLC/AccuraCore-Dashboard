@@ -92,7 +92,7 @@ export default function HomePage() {
                   backgroundColor: "#0061A4",
                   padding: "25px 15px",
                 }}
-                onClick={() => setIsOpen(true)}
+                onClick={() => window.location.href = "/book-a-demo"}
               >
                 Book Demo
                 <img
@@ -162,7 +162,7 @@ export default function HomePage() {
                     backgroundColor: "#0061A4",
                     padding: "25px 15px",
                   }}
-                  onClick={() => setIsOpen(true)}
+                  onClick={() => window.location.href = "/book-a-demo"}
                 >
                   Book Demo
                   <img
@@ -198,7 +198,7 @@ export default function HomePage() {
                     border: "2px solid #4485b2",
                     padding: "25px 15px",
                   }}
-                  onClick={() => setIsOpen(true)}
+                  onClick={() => window.location.href = "/book-a-demo"}
                 >
                   Book Demo
                   <img

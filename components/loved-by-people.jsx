@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { BookDemoForm } from "./BookDemoForm";
+
 
 const testimonials = [
   {
@@ -183,6 +185,8 @@ export default function LovedByPeople({ id }) {
           </div>
         </div>
       </div>
+
+      <BookDemoForm />
     </section>
   );
 }

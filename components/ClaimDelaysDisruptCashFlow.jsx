@@ -85,7 +85,7 @@ export default function ClaimDelaysDisruptCashFlow() {
           </div>
 
           {/* INFO BOX */}
-          <div className="bg-white dark:bg-slate-900 p-6 rounded-[15px] shadow-lg flex flex-col gap-4 hover:scale-105 transition-transform">
+          <div className="bg-white dark:bg-slate-800 p-6 rounded-[15px] shadow-lg flex flex-col gap-4 hover:scale-105 transition-transform">
             {/* Icon */}
             <div className="w-20 h-20 flex items-center justify-center">
               <Image
@@ -97,15 +97,15 @@ export default function ClaimDelaysDisruptCashFlow() {
             </div>
 
             {/* Text */}
-            <p className="text-gray-600 dark:text-gray-400 text-sm">
+            <p className="text-gray-600 dark:text-white text-sm">
               AccuraCore Claims reduces submission friction at the source.
             </p>
 
             <div className="flex justify-between items-center flex-wrap gap-2">
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
+              <p className="text-gray-600 dark:text-white text-sm">
                 That’s cash flow protection.
               </p>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
+              <p className="text-gray-600 dark:text-white text-sm">
                 That’s operational leverage.
               </p>
             </div>

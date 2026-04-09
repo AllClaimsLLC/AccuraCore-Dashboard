@@ -6,14 +6,16 @@ import { RxCross2 } from "react-icons/rx";
 import { HiCheck } from "react-icons/hi";
 
 export default function CustomDropdown({
-  label,
+ label,
   options,
   name,
   required = false,
   multiSelect = false,
+  value = [],
+  onChange,
 }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [selected, setSelected] = useState([]);
+  const [selected, setSelected] = useState(value || []);
   const [editingCustom, setEditingCustom] = useState("");
   const [tempValue, setTempValue] = useState("");
 
@@ -85,6 +87,16 @@ export default function CustomDropdown({
   const renderSelected = () => {
     return selected.length === 0 ? "Select..." : selected.join(", ");
   };
+
+  useEffect(() => {
+  if (onChange) {
+    if (multiSelect) {
+      onChange(selected);
+    } else {
+      onChange(selected[0] || "");
+    }
+  }
+}, [selected]);
 
   return (
     <div className="relative w-full" ref={dropdownRef}>

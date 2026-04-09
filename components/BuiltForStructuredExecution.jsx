@@ -41,7 +41,7 @@ export default function BuiltForStructuredExecution() {
       <div className="max-w-[95%] md:max-w-[90%] mx-auto space-y-4 mt-24 md:mt-72">
         {/* Top Heading & Text */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
-          <h1 className="text-3xl text-black">
+          <h1 className="text-3xl text-black dark:text-white">
             Built for Structured Execution
           </h1>
         </div>

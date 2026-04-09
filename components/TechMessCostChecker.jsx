@@ -313,7 +313,7 @@ const handleChange = (key, value, index) => {
           <Button
             className="text-white rounded-full text-sm flex items-center"
             style={{ backgroundColor: "#0061A4", padding: "25px 15px" }}
-            onClick={onBookDemo}
+            onClick={() => window.location.href = "/book-a-demo"}
           >
             Book a Demo
             <img
@@ -372,7 +372,7 @@ const handleChange = (key, value, index) => {
             <Button
               className="text-white rounded-full text-sm flex items-center justify-center"
               style={{ backgroundColor: "#0061A4", padding: "25px 15px" }}
-              onClick={onBookDemo}
+              onClick={() => window.location.href = "/book-a-demo"}
             >
               Book Demo
               <img

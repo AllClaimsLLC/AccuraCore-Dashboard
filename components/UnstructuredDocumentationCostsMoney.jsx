@@ -85,7 +85,7 @@ export default function UnstructuredDocumentationCostsMoney() {
 </div>
 
           {/* INFO BOX */}
-          <div className="bg-white dark:bg-slate-900 p-6 rounded-[15px] shadow-lg flex flex-col gap-4 hover:scale-105 transition-transform">
+          <div className="bg-white dark:bg-slate-800 p-6 rounded-[15px] shadow-lg flex flex-col gap-4 hover:scale-105 transition-transform">
             
             {/* Icon */}
             <div className="w-20 h-20 flex items-center justify-center">
@@ -98,11 +98,11 @@ export default function UnstructuredDocumentationCostsMoney() {
             </div>
 
             {/* Text */}
-            <p className="text-gray-600 dark:text-gray-400 text-sm">
+            <p className="text-gray-600 dark:text-white text-sm">
               AccuraCam fixes the problem at the source. Most teams capture fast and fix later.
             </p>
 
-            <p className="text-gray-600 dark:text-gray-400 text-sm">
+            <p className="text-gray-600 dark:text-white text-sm">
               AccuraCam captures once and structures instantly.
             </p>
           </div>

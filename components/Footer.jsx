@@ -44,7 +44,7 @@ export default function Footer({ id, onBookDemo }) {
                 padding: "25px 15px",
                 cursor: "pointer",
               }}
-              onClick={onBookDemo}
+              onClick={() => window.location.href = "/book-a-demo"}
             >
               Book Demo
               <img
