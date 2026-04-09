@@ -5,6 +5,7 @@ import CustomDropdown from "@/components/CustomDropdown";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
+import { Button } from "./ui/button";
 
 export const BookDemoForm = () => {
   const router = useRouter();
@@ -39,52 +40,51 @@ export const BookDemoForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { data, error } = await supabase.from("book_demo_submissions").insert([
-      {
-        fullName: formData.fullName,
-        companyName: formData.companyName,
-        role: formData.role,
-        email: formData.email,
-        phone: formData.phone,
-        timezone: formData.timezone,
-        contractorType: formData.contractorType,
-        companySize: formData.companySize,
-        revenue: formData.revenue,
-        tools: formData.tools,
-        challenges: formData.challenges,
-        improvements: formData.improvements,
-      },
-    ]);
-
-    if (error) {
-      console.error("❌ Error:", error);
-      setStatusMessage({ text: "Error submitting form. Please try again.", type: "error" });
-    } else {
-      console.log("✅ Success:", data);
-      setStatusMessage({ text: "Thank you for your submission", type: "success" });
-
-      setFormData({
-        fullName: "",
-        companyName: "",
-        role: "",
-        email: "",
-        phone: "",
-        timezone: "",
-        contractorType: "",
-        companySize: "",
-        revenue: "",
-        tools: [],
-        challenges: [],
-        improvements: [],
+    try {
+      const response = await fetch("https://formspree.io/f/mdapvjqv", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
 
-      setCurrentStep(1);
+      if (response.ok) {
+        setStatusMessage({
+          text: "Thank you for your submission",
+          type: "success",
+        });
+
+        // Reset form
+        setFormData({
+          fullName: "",
+          companyName: "",
+          role: "",
+          email: "",
+          phone: "",
+          timezone: "",
+          contractorType: "",
+          companySize: "",
+          revenue: "",
+          tools: [],
+          challenges: [],
+          improvements: [],
+        });
+        setCurrentStep(1);
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      console.error("❌ Error:", error);
+      setStatusMessage({
+        text: "Error submitting form. Please try again.",
+        type: "error",
+      });
     }
 
     // Hide message after 5 seconds
     setTimeout(() => setStatusMessage({ text: "", type: "" }), 5000);
   };
-
 
   return (
     <main className="px-6 py-16">
@@ -95,7 +95,7 @@ export const BookDemoForm = () => {
             {/* Heading */}
             <div className="flex items-center justify-between">
               <h2 className="text-xl md:text-2xl font-[500] text-gray-900">
-                AccuraCore Demo Form
+                Demo Form
               </h2>
 
               <button onClick={() => router.push("/")} className="text-black">
@@ -106,11 +106,7 @@ export const BookDemoForm = () => {
             {/* Separator */}
             <div className="w-full h-[1px] bg-gray-200 mt-3 mb-6"></div>
 
-            
-
-            <form onSubmit={handleSubmit}
-              className="space-y-6"
-            >
+            <form onSubmit={handleSubmit} className="space-y-6">
               {/* Inner Container 1 */}
               {currentStep === 1 && (
                 <div className="border-[15px] border-[#f4f4f4] rounded-[20px] p-5 md:p-8">
@@ -154,8 +150,8 @@ export const BookDemoForm = () => {
                       </label>
                       <input
                         name="role"
-  value={formData.role}
-  onChange={handleChange}
+                        value={formData.role}
+                        onChange={handleChange}
                         required
                         placeholder="Company Title/Role"
                         className="inputClass"
@@ -170,8 +166,8 @@ export const BookDemoForm = () => {
                       </label>
                       <input
                         name="email"
-  value={formData.email}
-  onChange={handleChange}
+                        value={formData.email}
+                        onChange={handleChange}
                         type="email"
                         required
                         placeholder="Email Address"
@@ -185,8 +181,8 @@ export const BookDemoForm = () => {
                       </label>
                       <input
                         name="phone"
-  value={formData.phone}
-  onChange={handleChange}
+                        value={formData.phone}
+                        onChange={handleChange}
                         type="tel"
                         required
                         placeholder="Phone Number"
@@ -200,8 +196,8 @@ export const BookDemoForm = () => {
                       </label>
                       <input
                         name="timezone"
-  value={formData.timezone}
-  onChange={handleChange}
+                        value={formData.timezone}
+                        onChange={handleChange}
                         required
                         placeholder="Timezone"
                         className="inputClass"
@@ -249,8 +245,10 @@ export const BookDemoForm = () => {
                             "Remodeling",
                             "Other: ",
                           ]}
-                          value={formData.contractorType}  
-  onChange={(val) => setFormData({...formData, contractorType: val})}
+                          value={formData.contractorType}
+                          onChange={(val) =>
+                            setFormData({ ...formData, contractorType: val })
+                          }
                         />
                       </div>
                     </div>
@@ -270,7 +268,9 @@ export const BookDemoForm = () => {
                             "50+ employees",
                           ]}
                           value={formData.companySize}
-  onChange={(val) => setFormData({...formData, companySize: val})}
+                          onChange={(val) =>
+                            setFormData({ ...formData, companySize: val })
+                          }
                         />
                       </div>
                     </div>
@@ -284,7 +284,9 @@ export const BookDemoForm = () => {
                           multiSelect={false}
                           options={["<$500K", "$500K–$2M", "$2M–$10M", "$10M+"]}
                           value={formData.revenue}
-  onChange={(val) => setFormData({...formData, revenue: val})}
+                          onChange={(val) =>
+                            setFormData({ ...formData, revenue: val })
+                          }
                         />
                       </div>
                     </div>
@@ -336,8 +338,10 @@ export const BookDemoForm = () => {
                             "Other: ",
                             "None",
                           ]}
-                           value={formData.tools} // array
-  onChange={(selected) => setFormData({...formData, tools: selected})}
+                          value={formData.tools} // array
+                          onChange={(selected) =>
+                            setFormData({ ...formData, tools: selected })
+                          }
                         />
                       </div>
                     </div>
@@ -360,7 +364,9 @@ export const BookDemoForm = () => {
                               "Other: ",
                             ]}
                             value={formData.challenges}
-  onChange={(selected) => setFormData({...formData, challenges: selected})}
+                            onChange={(selected) =>
+                              setFormData({ ...formData, challenges: selected })
+                            }
                           />
                         </div>
                       </div>
@@ -389,7 +395,9 @@ export const BookDemoForm = () => {
                             "Reporting & business insights",
                           ]}
                           value={formData.improvements}
-  onChange={(selected) => setFormData({...formData, improvements: selected})}
+                          onChange={(selected) =>
+                            setFormData({ ...formData, improvements: selected })
+                          }
                         />
                       </div>
                     </div>
@@ -403,32 +411,71 @@ export const BookDemoForm = () => {
                     >
                       Back
                     </button>
-<button
-  type="submit"
-  className="flex items-center gap-1 text-white px-6 py-2 rounded-[5px]"
-  style={{ backgroundColor: "#136AF3" }}
->
-  Submit <MdKeyboardArrowRight size={25} />
-</button>
+                    <Button
+                      className="flex items-center gap-1 text-white px-6 py-2 border border-blue-600 rounded-[5px]"
+                      style={{
+                        backgroundColor: "#ffffff",
+                        color: "#0061A4",
+                        padding: "25px 18px",
+                      }}
+                    >
+                      Check My Tech-Mess Cost
+                      <img
+                        src="/Icons/Vector2.png"
+                        alt="Arrow Icon"
+                        className="w-2 h-3 ml-2"
+                      />
+                    </Button>
+                    <button
+                      type="submit"
+                      className="flex items-center gap-1 text-white px-6 py-2 rounded-[5px]"
+                      style={{ backgroundColor: "#136AF3" }}
+                    >
+                      Submit <MdKeyboardArrowRight size={25} />
+                    </button>
                   </div>
                 </div>
               )}
-              {/* Submit */}
-              {/* <div className="flex justify-start mt-4">
-                <button
-                  type="submit"
-                  className="flex items-center gap-1 text-white px-6 py-2 rounded-[5px]"
-                  style={{ backgroundColor: "#136AF3" }}
-                >
-                  Submit
-                  <MdKeyboardArrowRight size={25} />
-                </button>
-              </div> */}
+
+              <input type="hidden" name="fullName" value={formData.fullName} />
+              <input
+                type="hidden"
+                name="companyName"
+                value={formData.companyName}
+              />
+              <input type="hidden" name="role" value={formData.role} />
+              <input type="hidden" name="email" value={formData.email} />
+              <input type="hidden" name="phone" value={formData.phone} />
+              <input type="hidden" name="timezone" value={formData.timezone} />
+              <input
+                type="hidden"
+                name="contractorType"
+                value={formData.contractorType}
+              />
+              <input
+                type="hidden"
+                name="companySize"
+                value={formData.companySize}
+              />
+              <input type="hidden" name="revenue" value={formData.revenue} />
+
+              {/* Arrays */}
+              {formData.tools.map((item, i) => (
+                <input key={i} type="hidden" name="tools" value={item} />
+              ))}
+              {formData.challenges.map((item, i) => (
+                <input key={i} type="hidden" name="challenges" value={item} />
+              ))}
+              {formData.improvements.map((item, i) => (
+                <input key={i} type="hidden" name="improvements" value={item} />
+              ))}
             </form>
             {statusMessage.text && (
               <div
                 className={`mt-4 mb-4 p-3 rounded ${
-                  statusMessage.type === "success" ? "bg-green-100 text-green-800 text-center" : "bg-red-100 text-red-800"
+                  statusMessage.type === "success"
+                    ? "bg-green-100 text-green-800 text-center"
+                    : "bg-red-100 text-red-800"
                 }`}
               >
                 {statusMessage.text}

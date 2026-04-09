@@ -34,7 +34,7 @@ export default function HomePage() {
         <header className="px-6 py-4">
           <nav
             className="flex items-center justify-between max-w-6xl mx-auto rounded-full px-8 py-4 border border-white/20 bg-[#51607d] dark:bg-slate-900"
-            style={{padding: "5px 30px" }}
+            style={{ padding: "5px 30px" }}
           >
             {/* Logo */}
             <div className="flex items-center space-x-2">
@@ -65,14 +65,16 @@ export default function HomePage() {
 
             {/* Desktop Action Buttons */}
             <div className="hidden md:flex items-center space-x-3">
-             <div className="
+              <div
+                className="
   p-2 rounded-full 
   bg-slate-900 dark:bg-white 
   text-white dark:text-slate-900
   flex items-center justify-center
-">
-  <ModeToggle />
-</div>
+"
+              >
+                <ModeToggle />
+              </div>
 
               <Button
                 className="bg-white hover:bg-gray-100 px-4 py-2 rounded-full text-sm flex items-center"
@@ -92,7 +94,7 @@ export default function HomePage() {
                   backgroundColor: "#0061A4",
                   padding: "25px 15px",
                 }}
-                onClick={() => window.location.href = "/book-a-demo"}
+                onClick={() => (window.location.href = "/book-a-demo")}
               >
                 Book Demo
                 <img
@@ -104,28 +106,28 @@ export default function HomePage() {
             </div>
 
             {/* Mobile Hamburger */}
-<div className="md:hidden flex items-center gap-3">
-  {/* Dark Mode Toggle */}
- <div className="
+            <div className="md:hidden flex items-center gap-3">
+              {/* Dark Mode Toggle */}
+              <div
+                className="
   p-2 rounded-full 
   bg-slate-900 dark:bg-white 
   text-white dark:text-slate-900
   flex items-center justify-center
-">
-  <ModeToggle />
-</div>
+"
+              >
+                <ModeToggle />
+              </div>
 
-
-  {/* Hamburger */}
-  <button onClick={() => setMenuOpen(!menuOpen)}>
-    {menuOpen ? (
-      <X className="text-white w-8 h-8" />
-    ) : (
-      <Menu className="text-white w-8 h-8" />
-    )}
-  </button>
-</div>
-
+              {/* Hamburger */}
+              <button onClick={() => setMenuOpen(!menuOpen)}>
+                {menuOpen ? (
+                  <X className="text-white w-8 h-8" />
+                ) : (
+                  <Menu className="text-white w-8 h-8" />
+                )}
+              </button>
+            </div>
           </nav>
 
           {/* Mobile Menu */}
@@ -162,7 +164,7 @@ export default function HomePage() {
                     backgroundColor: "#0061A4",
                     padding: "25px 15px",
                   }}
-                  onClick={() => window.location.href = "/book-a-demo"}
+                  onClick={() => (window.location.href = "/book-a-demo")}
                 >
                   Book Demo
                   <img
@@ -192,13 +194,28 @@ export default function HomePage() {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button
+                  className="rounded-full text-sm flex items-center justify-center"
+                  style={{
+                    backgroundColor: "#ffffff",
+                    color: "#0061A4",
+                    padding: "25px 18px",
+                  }}
+                >
+                  Check My Tech-Mess Cost
+                  <img
+                    src="/Icons/Vector2.png"
+                    alt="Arrow Icon"
+                    className="w-2 h-3 ml-2"
+                  />
+                </Button>
+                <Button
                   className="text-white rounded-full text-sm flex items-center"
                   style={{
                     backgroundColor: "#0061A4",
                     border: "2px solid #4485b2",
                     padding: "25px 15px",
                   }}
-                  onClick={() => window.location.href = "/book-a-demo"}
+                  onClick={() => (window.location.href = "/book-a-demo")}
                 >
                   Book Demo
                   <img
@@ -345,7 +362,7 @@ export default function HomePage() {
 
               {/* Software of Interest */}
               <div>
-              <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Software of Interest
                 </p>
                 <div className="space-y-2">
@@ -357,7 +374,7 @@ export default function HomePage() {
                       className="h-4 w-4 text-blue-500 border-gray-300 rounded"
                     />
                     <span
-                     className="ml-2 text-gray-700 dark:text-gray-300"
+                      className="ml-2 text-gray-700 dark:text-gray-300"
                       style={{ fontSize: "13px" }}
                     >
                       AccuraCore

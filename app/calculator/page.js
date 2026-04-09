@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 
@@ -12,6 +12,33 @@ import TechMessCostChecker from "@/components/TechMessCostChecker";
 export default function Calculator() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+
+  const [popupOpen, setPopupOpen] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    setPopupOpen(true);
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // page reload prevent
+    const formData = new FormData(e.target);
+
+    // Formspree POST
+    await fetch("https://formspree.io/f/xkobwzne", {
+      method: "POST",
+      headers: { Accept: "application/json" },
+      body: formData,
+    });
+
+    // Show thank you message
+    setSubmitted(true);
+
+    // Auto close popup after 2 seconds
+    setTimeout(() => {
+      setPopupOpen(false);
+    }, 2000);
+  };
 
   const handleScroll = (id) => {
     const el = document.getElementById(id);
@@ -93,7 +120,7 @@ export default function Calculator() {
                   backgroundColor: "#0061A4",
                   padding: "25px 15px",
                 }}
-                onClick={() => window.location.href = "/book-a-demo"}
+                onClick={() => (window.location.href = "/book-a-demo")}
               >
                 Book Demo
                 <img
@@ -163,7 +190,7 @@ export default function Calculator() {
                     backgroundColor: "#0061A4",
                     padding: "25px 15px",
                   }}
-                  onClick={() => window.location.href = "/book-a-demo"}
+                  onClick={() => (window.location.href = "/book-a-demo")}
                 >
                   Book Demo
                   <img
@@ -201,22 +228,22 @@ export default function Calculator() {
 
                 {/* Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
-<Button
-  className="rounded-full text-sm flex items-center justify-center"
-  style={{
-    backgroundColor: "#ffffff",
-    color: "#0061A4",
-    padding: "25px 18px",
-  }}
-  onClick={() => handleScroll("tech-mess-section")} 
->
-  Check My Tech-Mess Cost
-  <img
-    src="/Icons/Vector2.png"
-    alt="Arrow Icon"
-    className="w-2 h-3 ml-2"
-  />
-</Button>
+                  <Button
+                    className="rounded-full text-sm flex items-center justify-center"
+                    style={{
+                      backgroundColor: "#ffffff",
+                      color: "#0061A4",
+                      padding: "25px 18px",
+                    }}
+                    onClick={() => handleScroll("tech-mess-section")}
+                  >
+                    Check My Tech-Mess Cost
+                    <img
+                      src="/Icons/Vector2.png"
+                      alt="Arrow Icon"
+                      className="w-2 h-3 ml-2"
+                    />
+                  </Button>
                   <Button
                     className="text-white rounded-full text-sm flex items-center justify-center"
                     style={{
@@ -246,42 +273,41 @@ export default function Calculator() {
             </div>
 
             {/* STATS CONTAINER */}
-<div className="relative mt-36 bg-white rounded-2xl shadow-xl px-6 py-8">
-  <div className="grid grid-cols-2 md:grid-cols-4 text-center">
-    {/* Stat 1 */}
-    <div className="py-4 md:border-r md:border-gray-200 md:border-b-0 border-b border-gray-200 col-span-1">
-      <h3 className="text-xl font-semibold text-black">$257K+</h3>
-      <p className="text-sm text-gray-500 mt-1">
-        Avg. Monthly Revenue Lost
-      </p>
-    </div>
+            <div className="relative mt-36 bg-white rounded-2xl shadow-xl px-6 py-8">
+              <div className="grid grid-cols-2 md:grid-cols-4 text-center">
+                {/* Stat 1 */}
+                <div className="py-4 md:border-r md:border-gray-200 md:border-b-0 border-b border-gray-200 col-span-1">
+                  <h3 className="text-xl font-semibold text-black">$257K+</h3>
+                  <p className="text-sm text-gray-500 mt-1">
+                    Avg. Monthly Revenue Lost
+                  </p>
+                </div>
 
-    {/* Stat 2 */}
-    <div className="py-4 md:border-r md:border-gray-200 md:border-b-0 border-b border-gray-200 col-span-1">
-      <h3 className="text-xl font-semibold text-black">82 hrs</h3>
-      <p className="text-sm text-gray-500 mt-1">
-        Avg. Time Lost Per Month
-      </p>
-    </div>
+                {/* Stat 2 */}
+                <div className="py-4 md:border-r md:border-gray-200 md:border-b-0 border-b border-gray-200 col-span-1">
+                  <h3 className="text-xl font-semibold text-black">82 hrs</h3>
+                  <p className="text-sm text-gray-500 mt-1">
+                    Avg. Time Lost Per Month
+                  </p>
+                </div>
 
-    {/* Stat 3 */}
-    <div className="py-4 md:border-r md:border-gray-200 col-span-1">
-      <h3 className="text-xl font-semibold text-black">82 hrs</h3>
-      <p className="text-sm text-gray-500 mt-1">
-        Avg. Disconnected Apps
-      </p>
-    </div>
+                {/* Stat 3 */}
+                <div className="py-4 md:border-r md:border-gray-200 col-span-1">
+                  <h3 className="text-xl font-semibold text-black">82 hrs</h3>
+                  <p className="text-sm text-gray-500 mt-1">
+                    Avg. Disconnected Apps
+                  </p>
+                </div>
 
-    {/* Stat 4 */}
-    <div className="py-4 col-span-1">
-      <h3 className="text-xl font-semibold text-black">60s</h3>
-      <p className="text-sm text-gray-500 mt-1">
-        To Get Your Number
-      </p>
-    </div>
-  </div>
-</div>
-
+                {/* Stat 4 */}
+                <div className="py-4 col-span-1">
+                  <h3 className="text-xl font-semibold text-black">60s</h3>
+                  <p className="text-sm text-gray-500 mt-1">
+                    To Get Your Number
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </main>
       </div>
@@ -289,165 +315,78 @@ export default function Calculator() {
       <SoundFamiliar />
       <WhatYouWillDiscover />
       <div id="tech-mess-section">
-  <TechMessCostChecker />
-</div>
+        <TechMessCostChecker />
+      </div>
 
       <Footer id="contact-section" onBookDemo={() => setIsOpen(true)} />
       {/* Popup Modal */}
-      {isOpen && (
+      {popupOpen && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
-          <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 lg:p-8 shadow-xl w-[90%] max-w-[600px] max-h-[90vh] overflow-y-auto relative">
+          <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 lg:p-8 shadow-xl w-[90%] max-w-[500px] relative">
             {/* Close Button */}
             <button
-              onClick={() => setIsOpen(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white"
+              onClick={() => setPopupOpen(false)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white text-sm font-bold"
             >
               ✕
             </button>
 
-            <h3 className="text-md lg:text-md text-center text-gray-900 mb-2 dark:text-white">
-              Registration Form
-            </h3>
-            <p className="text-gray-500 text-sm mb-6 text-center dark:text-gray-400">
-              Please fill out this form with the required information
-            </p>
-
-            <form
-              action="https://formspree.io/f/xkobwzne"
-              method="POST"
-              className="space-y-5"
-            >
-              {/* Name */}
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-                >
-                  Name
-                </label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
-
-              {/* Email */}
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-                >
-                  Email
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
-
-              {/* Phone */}
-              <div>
-                <label
-                  htmlFor="phone"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-                >
-                  Phone
-                </label>
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
-
-              {/* Company */}
-              <div>
-                <label
-                  htmlFor="company"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-                >
-                  Company
-                </label>
-                <input
-                  id="company"
-                  name="company"
-                  type="text"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
-
-              {/* Software of Interest */}
-              <div>
-                <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Software of Interest
-                </p>
-                <div className="space-y-2">
-                  <label className="flex items-center">
+            {!submitted ? (
+              <>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  {/* Name */}
+                  <div>
+                    <label className="block text-sm font-medium mb-1 dark:text-gray-300">
+                      Name
+                    </label>
                     <input
-                      type="checkbox"
-                      name="software"
-                      value="AccuraCore"
-                      className="h-4 w-4 text-blue-500 border-gray-300 rounded"
+                      name="name"
+                      type="text"
+                      required
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
-                    <span
-                      className="ml-2 text-gray-700 dark:text-gray-300"
-                      style={{ fontSize: "13px" }}
-                    >
-                      AccuraCore
-                    </span>
-                  </label>
-                  <label className="flex items-center">
-                    <input
-                      type="checkbox"
-                      name="software"
-                      value="ClaimCore"
-                      className="h-4 w-4 text-blue-500 border-gray-300 rounded"
-                    />
-                    <span
-                      className="ml-2 text-gray-700 dark:text-gray-300"
-                      style={{ fontSize: "13px" }}
-                    >
-                      ClaimCore
-                    </span>
-                  </label>
-                  <label className="flex items-center">
-                    <input
-                      type="checkbox"
-                      name="software"
-                      value="AccuraCam"
-                      className="h-4 w-4 text-blue-500 border-gray-300 rounded"
-                    />
-                    <span
-                      className="ml-2 text-gray-700 dark:text-gray-300"
-                      style={{ fontSize: "13px" }}
-                    >
-                      AccuraCam
-                    </span>
-                  </label>
-                </div>
-              </div>
+                  </div>
 
-              {/* Submit */}
-              <button
-                type="submit"
-                className="w-full text-white font-bold py-3 rounded-full transition-colors duration-300 shadow-md"
-                style={{
-                  backgroundColor: "#0061A4",
-                  padding: "10px 15px",
-                  cursor: "pointer",
-                  fontSize: "15px",
-                }}
-              >
-                Submit
-              </button>
-            </form>
+                  {/* Email */}
+                  <div>
+                    <label className="block text-sm font-medium mb-1 dark:text-gray-300">
+                      Email
+                    </label>
+                    <input
+                      name="email"
+                      type="email"
+                      required
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+
+                  {/* Company */}
+                  <div>
+                    <label className="block text-sm font-medium mb-1 dark:text-gray-300">
+                      Company
+                    </label>
+                    <input
+                      name="company"
+                      type="text"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-full transition-colors duration-300"
+                  >
+                    Submit
+                  </button>
+                </form>
+              </>
+            ) : (
+              <div className="text-center py-10">
+                <h3 className="text-xl font- text-gray-900 dark:text-white">
+                  Thank you for submitting!
+                </h3>
+              </div>
+            )}
           </div>
         </div>
       )}
