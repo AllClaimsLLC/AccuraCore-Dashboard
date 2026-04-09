@@ -1,13 +1,12 @@
 "use client";
 import { useRef, useState } from "react";
-import EverythingYouNeedSection from "@/components/everything-you-need-section";
 import Footer from "@/components/Footer";
-import LovedByPeople from "@/components/loved-by-people.jsx";
-import TheToolsSection from "@/components/the-tools-section";
 import { Button } from "@/components/ui/button";
-import WhatMakesAccurascoreDifferent from "@/components/WhatMakesAccurascoreDifferent";
 import { Menu, X } from "lucide-react";
 import ModeToggle from "@/components/mode-toggle";
+import BuiltForStructuredExecution from "@/components/BuiltForStructuredExecution";
+import UnstructuredDocumentationCostsMoney from "@/components/UnstructuredDocumentationCostsMoney";
+import WeStructureProof from "@/components/WeStructureProof";
 
 export default function AccuraCamPage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -275,13 +274,10 @@ export default function AccuraCamPage() {
         </main>
       </div>
 
-      <WhatMakesAccurascoreDifferent
-        id="why-section"
-        onBookDemo={() => setIsOpen(true)}
-      />
-      <EverythingYouNeedSection />
-      <TheToolsSection />
-      <LovedByPeople id="faq-section" />
+      <BuiltForStructuredExecution />
+      <UnstructuredDocumentationCostsMoney />
+      <WeStructureProof />
+
       <Footer id="contact-section" onBookDemo={() => setIsOpen(true)} />
       {/* Popup Modal */}
       {isOpen && (

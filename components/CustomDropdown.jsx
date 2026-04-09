@@ -102,7 +102,7 @@ export default function CustomDropdown({
 
       {/* Dropdown */}
       {isOpen && (
-        <ul className="absolute z-10 w-full mt-1 max-h-60 overflow-auto bg-white border rounded-md shadow-lg">
+        <ul className="absolute z-10 w-full mt-1 max-h-60 overflow-auto bg-white border rounded-md shadow-lg text-gray-700">
           {options.map((option) => {
             const isSelected = selected.some((item) =>
               item.startsWith(option)
@@ -131,7 +131,7 @@ export default function CustomDropdown({
             placeholder={`Enter ${editingCustom}`}
             value={tempValue}
             onChange={(e) => setTempValue(e.target.value)}
-            className="w-full px-4 py-2 rounded-md border border-gray-300 text-sm"
+            className="w-full px-4 py-2 rounded-md border border-gray-300 text-sm text-gray-700"
           />
 
           <button

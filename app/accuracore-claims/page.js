@@ -1,17 +1,21 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-
 import { Menu, X } from "lucide-react";
 import ModeToggle from "@/components/mode-toggle";
-import SoundFamiliar from "@/components/SoundFamiliar";
-import WhatYouWillDiscover from "@/components/WhatYouWillDiscover";
-import TechMessCostChecker from "@/components/TechMessCostChecker";
+import BuiltForStructuredExecution from "@/components/BuiltForStructuredExecution";
+import UnstructuredDocumentationCostsMoney from "@/components/UnstructuredDocumentationCostsMoney";
+import WeStructureProof from "@/components/WeStructureProof";
+import StructuredBeforeItLeavesTheField from "@/components/StructuredBeforeItLeavesTheField";
+import ClaimDelaysDisruptCashFlow from "@/components/ClaimDelaysDisruptCashFlow";
+import WeStructureTheWorkflow from "@/components/WeStructureTheWorkflow";
 
-export default function Calculator() {
+export default function AccuraCoreClaimsPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const videoRefElement = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const handleScroll = (id) => {
     const el = document.getElementById(id);
@@ -24,9 +28,10 @@ export default function Calculator() {
   return (
     <>
       <div
-        className="bg-cover bg-center bg-no-repeat h-[85rem] lg:h-[50rem]"
+        className="bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('/Images/Hero-bg.png')",
+          height: "45rem",
         }}
       >
         {/* Header */}
@@ -180,117 +185,101 @@ export default function Calculator() {
         {/* Hero Section */}
         <main className="px-6 py-16">
           <div className="max-w-7xl mx-auto">
-            {/* 2 Column Layout */}
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              {/* LEFT COLUMN */}
-              <div>
-                <h1 className="text-4xl md:text-[40px] text-white mb-6 leading-tight font-[400]">
-                  Your Disconnected <br />
-                  Apps Are <span className="text-[#FA8C3D]">
-                    Costing You
-                  </span>{" "}
-                  <br />
-                  More Than You Know
-                </h1>
+            <div className="text-center mb-16">
+              <h1 className="text-4xl md:text-4xl text-white mb-6 leading-tight">
+                AccuraCore Claims
+              </h1>
+              <p className="text-md text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+                AccuraCore Claims standardizes documentation from field to
+                submission eliminating guesswork, incomplete files, and review
+                delays.
+              </p>
 
-                <p className="text-md text-blue-100 mb-8 leading-relaxed max-w-xl">
-                  Most field service companies lose $20,000–$300,000+ per month
-                  to app-switching chaos and communication breakdowns. Find your
-                  exact number in 60 seconds.
-                </p>
-
-                {/* Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4">
-<Button
-  className="rounded-full text-sm flex items-center justify-center"
-  style={{
-    backgroundColor: "#ffffff",
-    color: "#0061A4",
-    padding: "25px 18px",
-  }}
-  onClick={() => handleScroll("tech-mess-section")} 
->
-  Check My Tech-Mess Cost
-  <img
-    src="/Icons/Vector2.png"
-    alt="Arrow Icon"
-    className="w-2 h-3 ml-2"
-  />
-</Button>
-                  <Button
-                    className="text-white rounded-full text-sm flex items-center justify-center"
-                    style={{
-                      backgroundColor: "#0061A4",
-                      border: "2px solid #4485b2",
-                      padding: "25px 18px",
-                    }}
-                  >
-                    See how it works
-                    <img
-                      src="/Icons/Vector.png"
-                      alt="Arrow Icon"
-                      className="w-2 h-3 ml-2"
-                    />
-                  </Button>
-                </div>
-              </div>
-
-              {/* RIGHT COLUMN (IMAGE) */}
-              <div className="flex justify-center md:justify-end">
-                <img
-                  src="/Images/calculator-hero-right.png"
-                  alt="Calculator hero right"
-                  className="w-full max-w-md object-contain"
-                />
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Button
+                  className="rounded-full text-sm flex items-center"
+                  style={{
+                    backgroundColor: "#ffffff",
+                    color: "#0061A4",
+                    padding: "27px 15px",
+                    border: "none",
+                  }}
+                >
+                  Get Started
+                  <img
+                    src="/Icons/Vector2.png"
+                    alt="Arrow Icon"
+                    className="w-2 h-3 ml-2"
+                  />
+                </Button>
+                <Button
+                  className="text-white rounded-full text-sm flex items-center"
+                  style={{
+                    backgroundColor: "#0061A4",
+                    border: "2px solid #4485b2",
+                    padding: "25px 15px",
+                  }}
+                  onClick={() => setIsOpen(true)}
+                >
+                  Book Demo
+                  <img
+                    src="/Icons/Vector.png"
+                    alt="Arrow Icon"
+                    className="w-2 h-3 ml-2"
+                  />
+                </Button>
               </div>
             </div>
 
-            {/* STATS CONTAINER */}
-<div className="relative mt-36 bg-white rounded-2xl shadow-xl px-6 py-8">
-  <div className="grid grid-cols-2 md:grid-cols-4 text-center">
-    {/* Stat 1 */}
-    <div className="py-4 md:border-r md:border-gray-200 md:border-b-0 border-b border-gray-200 col-span-1">
-      <h3 className="text-xl font-semibold text-black">$257K+</h3>
-      <p className="text-sm text-gray-500 mt-1">
-        Avg. Monthly Revenue Lost
-      </p>
-    </div>
+            {/* Video Player */}
+            <div className="relative w-[90%] mx-auto">
+              <div className="relative overflow-hidden rounded-[30px] shadow-2xl">
+                <video
+                  ref={(videoRef) => (videoRefElement.current = videoRef)}
+                  className="w-full max-h-[500px] rounded-[30px] object-cover"
+                  poster="/Images/Hero-image2.png" // thumbnail
+                  controls={isPlaying} // show controls only when playing
+                >
+                  <source src="/Videos/DashboardDemo.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
 
-    {/* Stat 2 */}
-    <div className="py-4 md:border-r md:border-gray-200 md:border-b-0 border-b border-gray-200 col-span-1">
-      <h3 className="text-xl font-semibold text-black">82 hrs</h3>
-      <p className="text-sm text-gray-500 mt-1">
-        Avg. Time Lost Per Month
-      </p>
-    </div>
-
-    {/* Stat 3 */}
-    <div className="py-4 md:border-r md:border-gray-200 col-span-1">
-      <h3 className="text-xl font-semibold text-black">82 hrs</h3>
-      <p className="text-sm text-gray-500 mt-1">
-        Avg. Disconnected Apps
-      </p>
-    </div>
-
-    {/* Stat 4 */}
-    <div className="py-4 col-span-1">
-      <h3 className="text-xl font-semibold text-black">60s</h3>
-      <p className="text-sm text-gray-500 mt-1">
-        To Get Your Number
-      </p>
-    </div>
-  </div>
-</div>
-
+                {!isPlaying && (
+                  <button
+                    onClick={() => {
+                      videoRefElement.current.play();
+                      setIsPlaying(true);
+                    }}
+                    className="absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer transition duration-300 hover:bg-black/40"
+                  >
+                    <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-8 w-8 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M14.752 11.168l-6.518-3.758A1 1 0 007 8.304v7.392a1 1 0 001.234.97l6.518-1.9a1 1 0 00.748-.97v-1.864a1 1 0 00-.748-.97z"
+                        />
+                      </svg>
+                    </div>
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
         </main>
       </div>
 
-      <SoundFamiliar />
-      <WhatYouWillDiscover />
-      <div id="tech-mess-section">
-  <TechMessCostChecker />
-</div>
+      <StructuredBeforeItLeavesTheField />
+      <ClaimDelaysDisruptCashFlow />
+      <WeStructureTheWorkflow />
 
       <Footer id="contact-section" onBookDemo={() => setIsOpen(true)} />
       {/* Popup Modal */}
