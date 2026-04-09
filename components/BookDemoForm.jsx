@@ -296,7 +296,7 @@ export const BookDemoForm = () => {
                     <button
                       type="button"
                       onClick={prevStep}
-                      className="px-6 py-2 rounded-[5px] border"
+                      className="px-6 py-2 rounded-[5px] border border-gray-400 bg-white text-black"
                     >
                       Back
                     </button>
@@ -407,7 +407,7 @@ export const BookDemoForm = () => {
                     <button
                       type="button"
                       onClick={prevStep}
-                      className="px-6 py-2 rounded-[5px] border"
+                      className="px-6 py-2 rounded-[5px] border border-gray-400 bg-white text-black"
                     >
                       Back
                     </button>
