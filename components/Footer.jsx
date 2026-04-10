@@ -44,7 +44,7 @@ export default function Footer({ id, onBookDemo }) {
                 padding: "25px 15px",
                 cursor: "pointer",
               }}
-              onClick={() => window.location.href = "/book-a-demo"}
+              onClick={() => (window.location.href = "/book-a-demo")}
             >
               Book Demo
               <img
@@ -85,7 +85,7 @@ export default function Footer({ id, onBookDemo }) {
                       className="text-white text-sm hover:underline"
                     >
                       admin@accuracore.com
-                     </a>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -115,38 +115,61 @@ export default function Footer({ id, onBookDemo }) {
               <img
                 src="/Icons/Spiral.png"
                 alt="Spiral Background"
-                className="absolute w-[350px] h-[295px] top-[-120px] right-[24%] z-20 pointer-events-none select-none"
+                className="absolute w-[350px] h-[295px] top-[-120px] right-[34%] z-20 pointer-events-none select-none"
               />
+
               <h3 className="text-white font-semibold text-sm uppercase tracking-wider">
                 FOLLOW US
               </h3>
+
               <div className="flex space-x-4">
                 {/* Instagram */}
-                <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
+                <a
+                  href="https://www.instagram.com/accura_core/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+                >
                   <img
                     src="/Icons/Instagram.svg"
                     alt="Instagram"
                     className="w-5 h-5"
                   />
-                </div>
+                </a>
 
-                {/* WhatsApp */}
-                <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
+                {/* Facebook */}
+                <a
+                  href="https://www.facebook.com/p/AccuraCore-61579000254667/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+                >
                   <img
-                    src="/Icons/whatsapp.svg"
-                    alt="WhatsApp"
+                    src="/Icons/facebook.svg"
+                    alt="Facebook"
                     className="w-5 h-5"
                   />
-                </div>
+                </a>
+
+                {/* WhatsApp (commented for now) */}
+                {/*
+    <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
+      <img
+        src="/Icons/whatsapp.svg"
+        alt="WhatsApp"
+        className="w-5 h-5"
+      />
+    </div>
+    */}
 
                 {/* Telegram */}
-                <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
-                  <img
-                    src="/Icons/telegram.svg"
-                    alt="Telegram"
-                    className="w-5 h-5"
-                  />
-                </div>
+                {/* <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
+      <img
+        src="/Icons/telegram.svg"
+        alt="Telegram"
+        className="w-5 h-5"
+      />
+    </div> */}
               </div>
             </div>
           </div>

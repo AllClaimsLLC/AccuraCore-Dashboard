@@ -260,6 +260,46 @@ export default function Calculator() {
                     />
                   </Button>
                 </div>
+                <div className="flex items-center gap-4 mt-6 flex-wrap">
+                  {/* <span className="text-sm text-blue-200 w-full sm:w-auto">
+                    Follow us:
+                  </span> */}
+
+                  {/* Instagram */}
+                  <a
+                    href="https://www.instagram.com/accura_core/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+                  >
+                    <img
+                      src="/Icons/Instagram.svg"
+                      alt="Instagram"
+                      className="w-5 h-5"
+                    />
+                  </a>
+
+                  {/* Facebook */}
+                  <a
+                    href="https://www.facebook.com/p/AccuraCore-61579000254667/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+                  >
+                    <img
+                      src="/Icons/facebook.svg"
+                      alt="Facebook"
+                      className="w-5 h-5"
+                    />
+                  </a>
+
+                  {/* WhatsApp (commented) */}
+                  {/*
+  <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
+    <img src="/Icons/whatsapp.svg" alt="WhatsApp" className="w-5 h-5" />
+  </div>
+  */}
+                </div>
               </div>
 
               {/* RIGHT COLUMN (IMAGE) */}
@@ -333,16 +373,21 @@ export default function Calculator() {
 
             {!submitted ? (
               <>
+                <h2 className="text-xl mb-6 text-gray-900 dark:text-white text-center">
+                  See What Your Tech Mess Is Costing You
+                </h2>
+
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  {/* Name */}
+                  {/* Full Name */}
                   <div>
                     <label className="block text-sm font-medium mb-1 dark:text-gray-300">
-                      Name
+                      Your Full Name
                     </label>
                     <input
                       name="name"
                       type="text"
                       required
+                      placeholder="Enter your full name"
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
@@ -350,24 +395,26 @@ export default function Calculator() {
                   {/* Email */}
                   <div>
                     <label className="block text-sm font-medium mb-1 dark:text-gray-300">
-                      Email
+                      Your Email
                     </label>
                     <input
                       name="email"
                       type="email"
                       required
+                      placeholder="Enter your email address"
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
 
-                  {/* Company */}
+                  {/* Company Name */}
                   <div>
                     <label className="block text-sm font-medium mb-1 dark:text-gray-300">
-                      Company
+                      Company Name
                     </label>
                     <input
                       name="company"
                       type="text"
+                      placeholder="Enter your company name"
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
@@ -382,7 +429,7 @@ export default function Calculator() {
               </>
             ) : (
               <div className="text-center py-10">
-                <h3 className="text-xl font- text-gray-900 dark:text-white">
+                <h3 className="text-xl text-gray-900 dark:text-white">
                   Thank you for submitting!
                 </h3>
               </div>
