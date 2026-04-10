@@ -62,7 +62,7 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
                     }
                   `}
                 >
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-slate-100 dark:bg-slate-800 group-hover:bg-[#0061a5] transition-all">
+                  <div className="w-12 h-12 rounded-lg flex items-center p-2 lg:p-0 justify-center bg-slate-100 dark:bg-slate-800 group-hover:bg-[#0061a5] transition-all">
                     <feature.Icon className="
                       w-6 h-6 text-gray-800 dark:text-slate-200
                       group-hover:text-white

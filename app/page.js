@@ -181,7 +181,7 @@ export default function HomePage() {
         {/* Hero Section */}
         <main className="px-6 py-16">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
+            <div className="text-center mb-8 lg:mb-16">
               <h1 className="text-4xl md:text-4xl text-white mb-6 leading-tight">
                 Simplify Your Business with Precision
               </h1>
@@ -247,7 +247,7 @@ export default function HomePage() {
             {/* Dashboard Preview */}
             <div className="relative max-w-3xl mx-auto">
               <div
-                className="bg-white/10 backdrop-blur-sm rounded-3xl p-4 shadow-2xl"
+                className="bg-white/10 backdrop-blur-sm rounded-3xl p-2 lg:p-4 shadow-2xl"
                 style={{ border: "2px solid white" }}
               >
                 <img
