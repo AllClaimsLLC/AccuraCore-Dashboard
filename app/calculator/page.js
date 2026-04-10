@@ -281,17 +281,17 @@ export default function Calculator() {
 
                   {/* Facebook */}
                   <a
-                    href="https://www.facebook.com/p/AccuraCore-61579000254667/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
-                  >
-                    <img
-                      src="/Icons/facebook.svg"
-                      alt="Facebook"
-                      className="w-5 h-5"
-                    />
-                  </a>
+                  href="https://www.facebook.com/p/AccuraCore-61579000254667/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+                >
+                  <img
+                    src="/Icons/Facebook.svg"
+                    alt="Facebook"
+                    className="w-5 h-5"
+                  />
+                </a>
 
                   {/* WhatsApp (commented) */}
                   {/*

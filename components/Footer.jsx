@@ -145,7 +145,7 @@ export default function Footer({ id, onBookDemo }) {
                   className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
                 >
                   <img
-                    src="/Icons/facebook.svg"
+                    src="/Icons/Facebook.svg"
                     alt="Facebook"
                     className="w-5 h-5"
                   />
