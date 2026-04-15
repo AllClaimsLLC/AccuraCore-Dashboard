@@ -218,8 +218,8 @@ export default function Calculator() {
                   Your Disconnected <br />
                   Apps Are <span className="text-[#FA8C3D]">
                     Costing You
-                  </span>{" "}
-                  <br />
+                  </span>
+                  <br className="hidden lg:block" />{" "}
                   More Than You Know
                 </h1>
 
