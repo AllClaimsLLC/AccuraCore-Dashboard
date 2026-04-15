@@ -10,6 +10,7 @@ import WeStructureProof from "@/components/WeStructureProof";
 import StructuredBeforeItLeavesTheField from "@/components/StructuredBeforeItLeavesTheField";
 import ClaimDelaysDisruptCashFlow from "@/components/ClaimDelaysDisruptCashFlow";
 import WeStructureTheWorkflow from "@/components/WeStructureTheWorkflow";
+import Link from "next/link";
 
 export default function AccuraCoreClaimsPage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -42,11 +43,13 @@ export default function AccuraCoreClaimsPage() {
           >
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <img
-                src="/Logos/Accuracore/accuraCore-logo.png"
-                alt="AccuraCore Logo"
-                className="w-20 h-20 object-contain"
-              />
+             <Link href="/">
+  <img
+    src="/Logos/Accuracore/accuraCore-logo.png"
+    alt="AccuraCore Logo"
+    className="w-20 h-20 object-contain cursor-pointer"
+  />
+</Link>
             </div>
 
             {/* Desktop Navigation */}

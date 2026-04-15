@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Footer({ id, onBookDemo }) {
   return (
@@ -22,12 +23,14 @@ export default function Footer({ id, onBookDemo }) {
           >
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <img
+             <Link href="/">
+ <img
                 src="/Logos/Accuracore/accuraCore-logo.png"
                 alt="AccuraCore Logo"
                 className="object-contain"
                 style={{ width: "100px" }}
               />
+</Link>
             </div>
 
             {/* Description */}

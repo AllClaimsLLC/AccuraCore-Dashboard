@@ -7,6 +7,7 @@ import ModeToggle from "@/components/mode-toggle";
 import BuiltForStructuredExecution from "@/components/BuiltForStructuredExecution";
 import UnstructuredDocumentationCostsMoney from "@/components/UnstructuredDocumentationCostsMoney";
 import WeStructureProof from "@/components/WeStructureProof";
+import Link from "next/link";
 
 export default function AccuraCamPage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -39,11 +40,13 @@ export default function AccuraCamPage() {
           >
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <img
-                src="/Logos/Accuracore/accuraCore-logo.png"
-                alt="AccuraCore Logo"
-                className="w-20 h-20 object-contain"
-              />
+             <Link href="/">
+  <img
+    src="/Logos/Accuracore/accuraCore-logo.png"
+    alt="AccuraCore Logo"
+    className="w-20 h-20 object-contain cursor-pointer"
+  />
+</Link>
             </div>
 
             {/* Desktop Navigation */}

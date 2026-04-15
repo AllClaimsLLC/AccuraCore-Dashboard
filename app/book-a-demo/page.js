@@ -9,6 +9,7 @@ import { RxCross2 } from "react-icons/rx";
 import { useRouter } from "next/navigation";
 import CustomDropdown from "@/components/CustomDropdown";
 import { BookDemoForm } from "@/components/BookDemoForm";
+import Link from "next/link";
 
 export default function BookADemo() {
   const router = useRouter();
@@ -41,11 +42,13 @@ export default function BookADemo() {
           >
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <img
-                src="/Logos/Accuracore/accuraCore-logo.png"
-                alt="AccuraCore Logo"
-                className="w-20 h-20 object-contain"
-              />
+              <Link href="/">
+  <img
+    src="/Logos/Accuracore/accuraCore-logo.png"
+    alt="AccuraCore Logo"
+    className="w-20 h-20 object-contain cursor-pointer"
+  />
+</Link>
             </div>
 
             {/* Desktop Navigation */}

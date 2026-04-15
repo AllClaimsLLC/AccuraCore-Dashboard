@@ -10,7 +10,7 @@ import { Menu, X } from "lucide-react";
 import ModeToggle from "@/components/mode-toggle";
 import Link from "next/link";
 
-export default function HomePage() {
+export default function ThankYouPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -24,15 +24,10 @@ export default function HomePage() {
 
   return (
     <>
-      <div
-        className="bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/Images/Hero-bg.png')",
-          height: "50rem",
-        }}
-      >
+       <section className="px-6 bg-[#f4f0ed] dark:bg-slate-950">
+      
         {/* Header */}
-        <header className="px-6 py-4">
+        <header className="py-4">
           <nav
             className="flex items-center justify-between max-w-6xl mx-auto rounded-full px-8 py-4 border border-white/20 bg-[#51607d] dark:bg-slate-900"
             style={{ padding: "5px 30px" }}
@@ -182,98 +177,34 @@ export default function HomePage() {
         </header>
 
         {/* Hero Section */}
-        <main className="px-6 py-16">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-8 lg:mb-16">
-              <h1 className="text-4xl md:text-4xl text-white mb-6 leading-tight">
-                Simplify Your Business with Precision
-              </h1>
-              <p className="text-md text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-                AccuraCore is a powerful platform that brings everything you
-                need into one dashboard — manage your team, track work orders,
-                handle finances, and stay in control of every detail.
-              </p>
+<div className="flex items-center justify-center py-20">
+  <div className="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-lg text-center max-w-xl w-full">
+    <h1 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-white">
+      Thank You
+    </h1>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-               <Link href="/calculator">
-  <Button
-    className="rounded-full text-sm flex items-center justify-center"
-    style={{
-      backgroundColor: "#ffffff",
-      color: "#0061A4",
-      padding: "25px 18px",
-    }}
-  >
-    Check My Tech-Mess Cost
-    <img
-      src="/Icons/Vector2.png"
-      alt="Arrow Icon"
-      className="w-2 h-3 ml-2"
-    />
-  </Button>
-</Link>
-                <Button
-                  className="text-white rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#0061A4",
-                    border: "2px solid #4485b2",
-                    padding: "25px 15px",
-                  }}
-                  onClick={() => (window.location.href = "/book-a-demo")}
-                >
-                  Book Demo
-                  <img
-                    src="/Icons/Vector.png"
-                    alt="Arrow Icon"
-                    className="w-3 h-4 ml-2"
-                  />
-                </Button>
+    <p className="text-gray-600 dark:text-gray-300 mb-6">
+      Your form has been successfully submitted. You’ll receive a meeting
+      scheduling link in your email shortly.
+    </p>
 
-                <Button
-                  className="rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#ffffff",
-                    color: "#0061A4",
-                    padding: "27px 15px",
-                    border: "none",
-                  }}
-                >
-                  Get Started Free
-                  <img
-                    src="/Icons/Vector2.png"
-                    alt="Arrow Icon"
-                    className="w-3 h-4 ml-2"
-                  />
-                </Button>
-              </div>
-            </div>
+    <Link href="/">
+      <Button
+        className="rounded-full text-sm"
+        style={{
+          backgroundColor: "#0061A4",
+          color: "#ffffff",
+          padding: "12px 20px",
+        }}
+      >
+        Go Back Home
+      </Button>
+    </Link>
+  </div>
+</div>
+      </section>
 
-            {/* Dashboard Preview */}
-            <div className="relative max-w-3xl mx-auto">
-              <div
-                className="bg-white/10 backdrop-blur-sm rounded-3xl p-2 lg:p-4 shadow-2xl"
-                style={{ border: "2px solid white" }}
-              >
-                <img
-                  src="/Images/Hero-image2.png"
-                  alt="Hero"
-                  className="h-auto rounded-3xl"
-                  style={{ maxHeight: "500px" }}
-                />
-              </div>
-            </div>
-          </div>
-        </main>
-      </div>
-
-      <WhatMakesAccurascoreDifferent
-        id="why-section"
-        onBookDemo={() => setIsOpen(true)}
-      />
-      <EverythingYouNeedSection />
-      <TheToolsSection />
-      <LovedByPeople id="faq-section" />
+     
       <Footer id="contact-section" onBookDemo={() => setIsOpen(true)} />
       {/* Popup Modal */}
       {isOpen && (

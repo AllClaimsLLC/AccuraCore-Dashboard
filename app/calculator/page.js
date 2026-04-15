@@ -8,6 +8,7 @@ import ModeToggle from "@/components/mode-toggle";
 import SoundFamiliar from "@/components/SoundFamiliar";
 import WhatYouWillDiscover from "@/components/WhatYouWillDiscover";
 import TechMessCostChecker from "@/components/TechMessCostChecker";
+import Link from "next/link";
 
 export default function Calculator() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -64,11 +65,13 @@ export default function Calculator() {
           >
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <img
-                src="/Logos/Accuracore/accuraCore-logo.png"
-                alt="AccuraCore Logo"
-                className="w-20 h-20 object-contain"
-              />
+              <Link href="/">
+  <img
+    src="/Logos/Accuracore/accuraCore-logo.png"
+    alt="AccuraCore Logo"
+    className="w-20 h-20 object-contain cursor-pointer"
+  />
+</Link>
             </div>
 
             {/* Desktop Navigation */}
@@ -313,7 +316,7 @@ export default function Calculator() {
             </div>
 
             {/* STATS CONTAINER */}
-            <div className="relative mt-36 bg-white rounded-2xl shadow-xl px-6 py-8">
+            <div className="relative mt-25 lg:mt-36 bg-white rounded-2xl shadow-xl px-6 py-8">
               <div className="grid grid-cols-2 md:grid-cols-4 text-center">
                 {/* Stat 1 */}
                 <div className="py-4 md:border-r md:border-gray-200 md:border-b-0 border-b border-gray-200 col-span-1">

@@ -6,6 +6,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 export const BookDemoForm = () => {
   const router = useRouter();
@@ -50,10 +51,7 @@ export const BookDemoForm = () => {
       });
 
       if (response.ok) {
-        setStatusMessage({
-          text: "Thank you for your submission",
-          type: "success",
-        });
+        router.push("/thank-you");
 
         // Reset form
         setFormData({
@@ -109,7 +107,7 @@ export const BookDemoForm = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Inner Container 1 */}
               {currentStep === 1 && (
-                <div className="border-[15px] border-[#f4f4f4] rounded-[20px] p-5 md:p-8">
+                <div className="border-[15px] border-[#f4f4f4] rounded-[20px] p-4 lg:p-5 md:p-8">
                   <h3 className="text-lg font-medium text-gray-800">
                     Contact Info
                   </h3>
@@ -218,7 +216,7 @@ export const BookDemoForm = () => {
               )}
               {/* Inner Container 2 */}
               {currentStep === 2 && (
-                <div className="border-[15px] border-[#f4f4f4] rounded-[20px] p-5 md:p-8">
+                <div className="border-[15px] border-[#f4f4f4] rounded-[20px] p-4 lg:p-5 md:p-8">
                   <h3 className="text-lg font-medium text-gray-800">
                     Business Profile
                   </h3>
@@ -313,7 +311,7 @@ export const BookDemoForm = () => {
               )}
               {/* Inner Container 3 */}
               {currentStep === 3 && (
-                <div className="border-[15px] border-[#f4f4f4] rounded-[20px] p-5 md:p-8">
+                <div className="border-[15px] border-[#f4f4f4] rounded-[20px] p-4 lg:p-5 md:p-8">
                   <h3 className="text-lg font-medium text-gray-800">
                     Current Workflow
                   </h3>
@@ -403,37 +401,41 @@ export const BookDemoForm = () => {
                     </div>
                   </div>
 
-                  <div className="flex justify-between mt-4">
-                    <button
-                      type="button"
-                      onClick={prevStep}
-                      className="px-6 py-2 rounded-[5px] border border-gray-400 bg-white text-black"
-                    >
-                      Back
-                    </button>
-                    <Button
-                      className="flex items-center gap-1 text-white px-6 py-2 border border-blue-600 rounded-[5px]"
-                      style={{
-                        backgroundColor: "#ffffff",
-                        color: "#0061A4",
-                        padding: "25px 18px",
-                      }}
-                    >
-                      Check My Tech-Mess Cost
-                      <img
-                        src="/Icons/Vector2.png"
-                        alt="Arrow Icon"
-                        className="w-2 h-3 ml-2"
-                      />
-                    </Button>
-                    <button
-                      type="submit"
-                      className="flex items-center gap-1 text-white px-6 py-2 rounded-[5px]"
-                      style={{ backgroundColor: "#136AF3" }}
-                    >
-                      Submit <MdKeyboardArrowRight size={25} />
-                    </button>
-                  </div>
+                 <div className="flex flex-col gap-3 mt-4 sm:flex-row sm:justify-between">
+  <button
+    type="button"
+    onClick={prevStep}
+    className="px-6 py-2 rounded-[5px] border border-gray-400 bg-white text-black w-full sm:w-auto"
+  >
+    Back
+  </button>
+
+<Link href="/calculator">
+  <Button
+    className="flex items-center justify-center gap-1 text-white px-6 py-2 border border-blue-600 rounded-[5px] w-full sm:w-auto"
+    style={{
+      backgroundColor: "#ffffff",
+      color: "#0061A4",
+      padding: "25px 18px",
+    }}
+  >
+    Check My Tech-Mess Cost
+    <img
+      src="/Icons/Vector2.png"
+      alt="Arrow Icon"
+      className="w-2 h-3 ml-2"
+    />
+  </Button>
+</Link>
+
+  <button
+    type="submit"
+    className="flex items-center justify-center gap-1 text-white px-6 py-2 rounded-[5px] w-full sm:w-auto"
+    style={{ backgroundColor: "#136AF3" }}
+  >
+    Submit <MdKeyboardArrowRight size={25} />
+  </button>
+</div>
                 </div>
               )}
 

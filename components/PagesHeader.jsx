@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Sun, Moon } from "lucide-react";
 import ModeToggle from "./mode-toggle";
+import Link from "next/link";
 
 export default function PagesHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,11 +26,13 @@ export default function PagesHeader() {
       >
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <img
-            src="/Logos/Accuracore/AC2025.png"
-            alt="AccuraCore Logo"
-            className="w-20 h-20 object-contain"
-          />
+         <Link href="/">
+  <img
+    src="/Logos/Accuracore/accuraCore-logo.png"
+    alt="AccuraCore Logo"
+    className="w-20 h-20 object-contain cursor-pointer"
+  />
+</Link>
         </div>
 
         {/* Desktop Navigation */}
