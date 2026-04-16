@@ -89,7 +89,7 @@ export const BookDemoForm = () => {
       <div className="max-w-7xl mx-auto">
         {/* Book A Demo Form */}
         <div className="relative flex justify-center">
-          <div className="bg-white w-full md:w-[80%] rounded-[20px] p-6 md:p-10 shadow-lg">
+          <div className="bg-white w-full md:w-[80%] rounded-[20px] p-4 md:p-10 shadow-lg">
             {/* Heading */}
             <div className="flex items-center justify-between">
               <h2 className="text-xl md:text-2xl font-[500] text-gray-900">
@@ -241,7 +241,7 @@ export const BookDemoForm = () => {
                             "Solar",
                             "General Contractor",
                             "Remodeling",
-                            "Other: ",
+                            "Other ",
                           ]}
                           value={formData.contractorType}
                           onChange={(val) =>
@@ -290,7 +290,7 @@ export const BookDemoForm = () => {
                     </div>
                   </div>
 
-                  <div className="flex justify-between mt-4">
+                  <div className="flex flex-col items-center gap-3 mt-4 sm:flex-row sm:justify-between sm:items-center">
                     <button
                       type="button"
                       onClick={prevStep}
@@ -333,10 +333,10 @@ export const BookDemoForm = () => {
                             "CompanyCam",
                             "Hover",
                             "Eagleview",
-                            "Other: ",
+                            "Other ",
                             "None",
                           ]}
-                          value={formData.tools} // array
+                          value={formData.tools} 
                           onChange={(selected) =>
                             setFormData({ ...formData, tools: selected })
                           }
@@ -359,7 +359,7 @@ export const BookDemoForm = () => {
                               "Losing time switching between systems or duplicate data entry",
                               "Difficulty scaling operations with your current setup",
                               "Limited visibility into jobs, leads, or performance",
-                              "Other: ",
+                              "Other ",
                             ]}
                             value={formData.challenges}
                             onChange={(selected) =>
@@ -401,7 +401,7 @@ export const BookDemoForm = () => {
                     </div>
                   </div>
 
-                 <div className="flex flex-col gap-3 mt-4 sm:flex-row sm:justify-between">
+                 <div className="flex flex-col items-center gap-3 mt-4 sm:flex-row sm:justify-between sm:items-center">
   <button
     type="button"
     onClick={prevStep}

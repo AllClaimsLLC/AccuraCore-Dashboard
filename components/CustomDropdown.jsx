@@ -42,8 +42,9 @@ export default function CustomDropdown({
     const alreadySelected = selected.some((item) => item.startsWith(option));
     if (alreadySelected) {
       setSelected(selected.filter((item) => !item.startsWith(option)));
-      setEditingCustom(""); // close any custom input
+      setEditingCustom(""); 
       setTempValue("");
+      setIsOpen(false);
       return;
     }
 
@@ -57,6 +58,7 @@ export default function CustomDropdown({
 
     if (multiSelect) {
       setSelected([...selected, option]);
+      setIsOpen(false);
     } else {
       setSelected([option]);
       setIsOpen(false);
@@ -82,6 +84,7 @@ export default function CustomDropdown({
 
     setEditingCustom("");
     setTempValue("");
+    setIsOpen(false);
   };
 
   const renderSelected = () => {
