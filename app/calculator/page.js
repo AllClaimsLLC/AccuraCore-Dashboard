@@ -58,7 +58,7 @@ export default function Calculator() {
         }}
       >
         {/* Header */}
-        <header className="px-6 py-4">
+        <header className="px-6 py-4 relative">
           <nav
             className="flex items-center justify-between max-w-6xl mx-auto rounded-full px-8 py-4 border border-white/20 bg-[#51607d] dark:bg-slate-900"
             style={{ padding: "5px 30px" }}
@@ -66,31 +66,31 @@ export default function Calculator() {
             {/* Logo */}
             <div className="flex items-center space-x-2">
               <Link href="/">
-  <img
-    src="/Logos/Accuracore/accuraCore-logo.png"
-    alt="AccuraCore Logo"
-    className="w-20 h-20 object-contain cursor-pointer"
-  />
-</Link>
+                <img
+                  src="/Logos/Accuracore/accuraCore-logo.png"
+                  alt="AccuraCore Logo"
+                  className="w-20 h-20 object-contain cursor-pointer"
+                />
+              </Link>
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              {[
-                { label: "Why", id: "why-section" },
-                { label: "How It Works", id: "how-section" },
-                { label: "FAQs", id: "faq-section" },
-                { label: "Contact Us", id: "contact-section" },
-              ].map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => handleScroll(item.id)}
-                  className="text-white hover:text-blue-200 text-sm"
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
+           <div className="hidden md:flex items-center space-x-8">
+  <Link href="#sound-familiar">
+    <span className="text-white hover:text-blue-200 text-sm">
+      Why
+    </span>
+  </Link>
+  <Link href="#what-you-will-discover">
+  <span className="text-white hover:text-blue-200 text-sm">How It Works</span>
+  </Link>
+    <Link href="/#faq-section">
+  <span className="text-white hover:text-blue-200 text-sm">FAQs</span>
+    </Link>
+      <Link href="/book-a-demo">
+  <span className="text-white hover:text-blue-200 text-sm">Contact Us</span>
+      </Link>
+</div>
 
             {/* Desktop Action Buttons */}
             <div className="hidden md:flex items-center space-x-3">
@@ -161,20 +161,25 @@ export default function Calculator() {
 
           {/* Mobile Menu */}
           {menuOpen && (
-            <div className="md:hidden bg-[#51607d] px-6 py-4 space-y-4 rounded-lg mt-2">
+            <div className="md:hidden absolute left-0 right-0 top-full bg-[#51607d] px-6 py-4 space-y-4 rounded-lg mt-2 z-50 shadow-lg w-[95%] m-auto">
               <div className="flex flex-col space-y-4 text-white text-sm text-center">
-                <span onClick={() => handleScroll("why-section")}>Why</span>
-                <span onClick={() => handleScroll("how-section")}>
+                <span onClick={() => handleScroll("sound-familiar")}>Why</span>
+                <span onClick={() => handleScroll("what-you-will-discover")}>
                   How It Works
                 </span>
+
+ <Link href="/#faq-section">
                 <span onClick={() => handleScroll("faq-section")}>FAQs</span>
-                <span onClick={() => handleScroll("contact-section")}>
+                </Link>
+ <Link href="/book-a-demo">
+                <span>
                   Contact Us
                 </span>
+                </Link>
               </div>
 
               {/* Mobile Action Buttons */}
-              <div className="flex flex-col space-y-3 mt-4">
+              {/* <div className="flex flex-col space-y-3 mt-4">
                 <Button
                   className="bg-white hover:bg-gray-100 px-4 py-2 rounded-full text-sm flex items-center"
                   style={{ color: "#0061A4", padding: "25px 15px" }}
@@ -202,7 +207,7 @@ export default function Calculator() {
                     className="w-3 h-4 ml-2"
                   />
                 </Button>
-              </div>
+              </div> */}
             </div>
           )}
         </header>
@@ -216,11 +221,8 @@ export default function Calculator() {
               <div>
                 <h1 className="text-4xl md:text-[40px] text-white mb-6 leading-tight font-[400]">
                   Your Disconnected <br />
-                  Apps Are <span className="text-[#FA8C3D]">
-                    Costing You
-                  </span>
-                  <br className="hidden lg:block" />{" "}
-                  More Than You Know
+                  Apps Are <span className="text-[#FA8C3D]">Costing You</span>
+                  <br className="hidden lg:block" /> More Than You Know
                 </h1>
 
                 <p className="text-md text-blue-100 mb-8 leading-relaxed max-w-xl">
@@ -254,6 +256,7 @@ export default function Calculator() {
                       border: "2px solid #4485b2",
                       padding: "25px 18px",
                     }}
+                    onClick={() => handleScroll("what-you-will-discover")}
                   >
                     See how it works
                     <img
@@ -284,17 +287,17 @@ export default function Calculator() {
 
                   {/* Facebook */}
                   <a
-                  href="https://www.facebook.com/p/AccuraCore-61579000254667/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
-                >
-                  <img
-                    src="/Icons/Facebook.svg"
-                    alt="Facebook"
-                    className="w-5 h-5"
-                  />
-                </a>
+                    href="https://www.facebook.com/p/AccuraCore-61579000254667/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+                  >
+                    <img
+                      src="/Icons/Facebook.svg"
+                      alt="Facebook"
+                      className="w-5 h-5"
+                    />
+                  </a>
 
                   {/* WhatsApp (commented) */}
                   {/*
@@ -355,8 +358,12 @@ export default function Calculator() {
         </main>
       </div>
 
-      <SoundFamiliar />
-      <WhatYouWillDiscover />
+      <div id="sound-familiar">
+        <SoundFamiliar />
+      </div>
+      <div id="what-you-will-discover">
+        <WhatYouWillDiscover />
+      </div>
       <div id="tech-mess-section">
         <TechMessCostChecker />
       </div>
