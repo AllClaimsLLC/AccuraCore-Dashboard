@@ -18,8 +18,8 @@ export default function Footer({ id, onBookDemo }) {
         >
           {/* Left Column */}
           <div
-            className="space-y-6"
-            style={{ paddingBottom: "76px", paddingLeft: "70px" }}
+            className="space-y-6 w-[90%] lg:w-[80%] m-auto"
+            style={{ paddingBottom: "76px"}}
           >
             {/* Logo */}
             <div className="flex items-center space-x-2">
