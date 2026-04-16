@@ -239,40 +239,39 @@ export default function WeStructureProof() {
           </h2>
 
           {/* Buttons */}
-         <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
-                <Button
-                  className="rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#ffffff",
-                    color: "#0061A4",
-                    padding: "27px 15px",
-                    border: "none",
-                  }}
-                >
-                  Get Started
-                  <img
-                    src="/Icons/Vector2.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
-                <Button
-                  className="text-white rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#0061A4",
-                    border: "2px solid #4485b2",
-                    padding: "25px 15px",
-                  }}
-                  onClick={() => setIsOpen(true)}
-                >
-                  Book Demo
-                  <img
-                    src="/Icons/Vector.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
-              </div>
+          <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
+            <Button
+              className="rounded-full text-sm flex items-center border-2 border-gray-300"
+              style={{
+                backgroundColor: "#ffffff",
+                color: "#0061A4",
+                padding: "27px 15px",
+              }}
+            >
+              Get Started
+              <img
+                src="/Icons/Vector2.png"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
+            </Button>
+            <Button
+              className="text-white rounded-full text-sm flex items-center"
+              style={{
+                backgroundColor: "#0061A4",
+                border: "2px solid #4485b2",
+                padding: "25px 15px",
+              }}
+              onClick={() => setIsOpen(true)}
+            >
+              Book Demo
+              <img
+                src="/Icons/Vector.png"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
+            </Button>
+          </div>
         </div>
 
         {/* RIGHT IMAGE */}

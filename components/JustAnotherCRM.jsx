@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Button } from "./ui/button";
 
-export default function WeStructureTheWorkflow() {
+export default function JustAnotherCRM() {
   return (
     <section
       className="px-6 py-16"
@@ -13,95 +13,84 @@ export default function WeStructureTheWorkflow() {
       }}
     >
       {/* Section 1 */}
-      <div className="max-w-[90%] mt-20 mb-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div className="max-w-[90%] mt-20 mb-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap:10 lg:gap-30 items-center">
         {/* LEFT COL */}
-        <div className="flex justify-center">
-          <div className="rounded-[30px] border-2 border-white bg-white/10 backdrop-blur-md p-12 w-full shadow-[0_3px_3px_rgba(0,0,0,0.25)]">
-            <Image
-              src="/Images/WeStructureTheWorkflow-left.png"
-              alt="Structure Proof"
-              width={500}
-              height={500}
-              className="rounded-[16px] object-contain w-full"
-            />
+        <div className="bg-[#ede8e5] rounded-[20px] p-6">
+          {/* White Box */}
+          <div className="bg-white rounded-[20px] p-4">
+            {/* Inner Gray Box */}
+            <div className="bg-[#f7f7f7] rounded-[20px] p-2 grid grid-cols-1 md:grid-cols-2 gap-2">
+              {/* LEFT SIDE */}
+              <div className="flex flex-col gap-2">
+                {/* Main Box */}
+                <div className="bg-white rounded-[12px] overflow-hidden text-center">
+                  <div className="bg-[#FA8C3D] text-white py-2 text-sm">
+                    Most Contractor CRMs
+                  </div>
+                  <div className="px-3 py-3 text-black text-sm text-left">
+                    Track contacts
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-[12px] px-3 py-3 text-left text-sm">
+                  Store notes
+                </div>
+
+                <div className="bg-white rounded-[12px] px-3 py-3 text-left text-sm">
+                  Manage pipeline
+                </div>
+
+                <div className="bg-white rounded-[12px] px-3 py-3 text-left text-sm">
+                  Display status
+                </div>
+              </div>
+
+              {/* RIGHT SIDE */}
+              <div className="flex flex-col gap-2">
+                {/* Main Box */}
+                <div className="bg-white rounded-[12px] overflow-hidden text-center">
+                  <div className="bg-[#0061A4] text-white py-2 text-sm">
+                    MyAccuraCore
+                  </div>
+                  <div className="px-3 py-3 text-black text-sm text-left">
+                    Control job workflows
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-[12px] px-3 py-3 text-left text-sm">
+                  Enforce operational structure
+                </div>
+
+                <div className="bg-white rounded-[12px] px-3 py-3 text-left text-sm">
+                  Align field, office & claims
+                </div>
+
+                <div className="bg-white rounded-[12px] px-3 py-3 text-left text-sm">
+                  Standardize execution
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* RIGHT COL */}
+        {/* RIGHT COL (UPDATED CONTENT) */}
         <div className="flex flex-col gap-6">
           {/* Heading */}
-          <h1 className="text-3xl text-[#FA8C3D]">
-            Most Claims Apps File Paperwork.
-            <br /> We Structure the Workflow.
+          <h1 className="text-3xl text-black">
+            Why This Isn’t <br /> Just Another CRM.
           </h1>
 
-          {/* BOX 1 */}
-          <div className="bg-[#f2f1ef] rounded-[20px] p-6 flex flex-col gap-4">
-            <h3 className="text-black font-semibold">Other tools:</h3>
+          {/* Paragraph */}
+          <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+            Most systems simply organize information.
+            <br /> <span className="text-[#FA8C3D]">MyAccuraCore</span> goes
+            further by structuring operations
+            <br /> themselves—defining how work moves, how decisions are
+            <br /> made, and how accountability is enforced at every step.
+            <br /> That is the category difference.
+          </p>
 
-            {/* Inline bullets */}
-            <div className="flex flex-wrap items-center gap-6 text-sm md:text-base text-gray-700">
-              <div className="flex items-center gap-2">
-                <div className="w-1 h-1 bg-gray-700 rounded-full" />
-                <span>Track claim status</span>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <div className="w-1 h-1 bg-gray-700 rounded-full" />
-                <span>Store documents</span>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <div className="w-1 h-1 bg-gray-700 rounded-full" />
-                <span>Organize folders</span>
-              </div>
-            </div>
-          </div>
-
-          {/* BOX 2 */}
-          <div className="bg-[#F6BE71] rounded-[20px] p-6 flex flex-col gap-4">
-            <h3 className="text-black font-semibold">AccuraCam:</h3>
-
-            {/* Vertical points */}
-            <div className="flex flex-col gap-3">
-              <div className="flex items-start gap-3">
-                <Image
-                  src="/Icons/checkmark-icon.png"
-                  alt="check"
-                  width={18}
-                  height={18}
-                />
-                <span className="text-gray-700 text-sm md:text-base">
-                  Enforces structure at capture
-                </span>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <Image
-                  src="/Icons/checkmark-icon.png"
-                  alt="check"
-                  width={18}
-                  height={18}
-                />
-                <span className="text-gray-700 text-sm md:text-base">
-                  Align scope with supporting evidence
-                </span>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <Image
-                  src="/Icons/checkmark-icon.png"
-                  alt="check"
-                  width={18}
-                  height={18}
-                />
-                <span className="text-gray-700 text-sm md:text-base">
-                  Create review-ready claim files automatically
-                </span>
-              </div>
-            </div>
-          </div>
-
+          {/* BUTTONS */}
           <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
             <Button
               className="rounded-full text-sm flex items-center"
@@ -119,6 +108,7 @@ export default function WeStructureTheWorkflow() {
                 className="w-2 h-3 ml-2"
               />
             </Button>
+
             <Button
               className="text-white rounded-full text-sm flex items-center"
               style={{
@@ -165,7 +155,7 @@ export default function WeStructureTheWorkflow() {
             <div className="flex flex-col gap-6">
               {/* Heading */}
               <h3 className="text-black text-lg leading-snug">
-                Prevents Incomplete Submissions <br /> Which Results In:
+                Eliminates Status Confusion <br /> Which Results In:
               </h3>
 
               {/* Separator */}
@@ -174,9 +164,9 @@ export default function WeStructureTheWorkflow() {
               {/* Box */}
               <div className="bg-[#FEEACF] rounded-[20px] p-6 flex flex-col gap-3">
                 {[
-                  "Fewer clarification requests",
-                  "Faster approval cycles",
-                  "Less back-and-forth",
+                  " Field progress",
+                  "Documentation readiness",
+                  "Claim status &  Pending actions",
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2">
                     <div className="w-1 h-1 bg-gray-700 rounded-full mt-1" />
@@ -188,7 +178,7 @@ export default function WeStructureTheWorkflow() {
               {/* Image Box */}
               <div className="bg-[#ebf0ec]">
                 <Image
-                  src="/Images/PISWRI.png"
+                  src="/Images/ESCWRI.png"
                   alt="Column 1 Image"
                   width={400}
                   height={250}
@@ -200,16 +190,16 @@ export default function WeStructureTheWorkflow() {
             {/* Column 2 */}
             <div className="flex flex-col gap-6">
               <h3 className="text-black text-lg leading-snug">
-                Eliminates scope-to-photo <br /> confusion Which Results In:
+                Prevents Workflow Breakdowns <br /> Which Results In:
               </h3>
 
               <div className="w-full h-[2px] bg-white" />
 
               <div className="bg-[#FEEACF] rounded-[20px] p-6 flex flex-col gap-3">
                 {[
-                  "Cleaner review experience",
-                  "Stronger defensibility",
-                  "Reduced ambiguity",
+                  "No skipped steps",
+                  "No undocumented transitions",
+                  "Cleaner job progression",
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2">
                     <div className="w-1 h-1 bg-gray-700 rounded-full mt-1" />
@@ -220,7 +210,7 @@ export default function WeStructureTheWorkflow() {
 
               <div className="bg-[#ebf0ec] rounded-[20px] ">
                 <Image
-                  src="/Images/ESTPCWRI.png"
+                  src="/Images/PWBWRI.png"
                   alt="Column 2 Image"
                   width={400}
                   height={250}
@@ -232,16 +222,17 @@ export default function WeStructureTheWorkflow() {
             {/* Column 3 */}
             <div className="flex flex-col gap-6">
               <h3 className="text-black text-lg leading-snug">
-                Produces submission-ready <br /> claim packs Which Results In:
+                Connects Documentation
+                <br /> To Operations Which Results In:
               </h3>
 
               <div className="w-full h-[2px] bg-white" />
 
               <div className="bg-[#FEEACF] rounded-[20px] p-6 flex flex-col gap-3">
                 {[
-                  "Faster carrier review",
-                  "Fewer supplement loops",
-                  "Stronger documentation credibility",
+                  "No data silos",
+                  "No reconstruction",
+                  "Clean operational continuity",
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2">
                     <div className="w-1 h-1 bg-gray-700 rounded-full mt-1" />
@@ -252,7 +243,7 @@ export default function WeStructureTheWorkflow() {
 
               <div className="bg-[#ebf0ec] rounded-[20px] ">
                 <Image
-                  src="/Images/PSRCPWRI.png"
+                  src="/Images/CDTOWRI.png"
                   alt="Column 3 Image"
                   width={400}
                   height={250}
@@ -302,48 +293,117 @@ export default function WeStructureTheWorkflow() {
       {/* Section 3 */}
       <div className="max-w-[90%] mx-auto mb-30 flex flex-col gap-10">
         {/* Top 2 Cols */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          {/* LEFT */}
-          <div>
-            <h1 className="text-3xl text-black">
-              Stop Chasing Missing
-              <br />
-              Documentation.
-            </h1>
-            <p className="text-gray-700 text-sm md:text-base mt-3">
-              Most teams discover gaps after submission when
-              <br /> it’s already expensive
-            </p>
-          </div>
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+  
+  {/* LEFT */}
+  <div>
+    <h1 className="text-3xl text-black">
+      Stop Managing Jobs Across<br/>Disconnected Tools.
+    </h1>
 
-          {/* RIGHT */}
-          <div className="flex flex-col gap-4">
-            <p className="text-gray-700 font-semibold text-sm md:text-base">
-              AccuraCore Claims reverses that model.
-            </p>
+    <p className="text-gray-500 font-semibold text-sm md:text-base mt-3">
+      Most contractors operate across:
+    </p>
 
-            {/* Vertical Points */}
-            <div className="flex flex-col gap-3">
-              {[
-                "Define required documentation upfront",
-                "Validate completeness before submission",
-                "Review cleanly in-office",
-              ].map((item, i) => (
-                <div key={i} className="flex items-start gap-2">
-                  <Image
-                    src="/Icons/checkmark-icon-green.png"
-                    alt="check"
-                    width={18}
-                    height={18}
-                  />
-                  <span className="text-sm md:text-base text-gray-700">
-                    {item}
-                  </span>
-                </div>
-              ))}
-            </div>
+    {/* BULLETS GRID */}
+    <div className="mt-5 flex flex-col gap-4">
+      
+      {/* Row 1 (3 items) */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        {["Text messages", "Spreadsheets", "Shared drives"].map((item, i) => (
+          <div key={i} className="flex items-center gap-2">
+            <div className="w-[5px] h-[5px] bg-gray-700 rounded-full" />
+            <span className="text-sm md:text-base text-gray-700">
+              {item}
+            </span>
           </div>
+        ))}
+      </div>
+
+      {/* Row 2 (2 items) */}
+      <div className="grid grid-cols-2 gap-9 max-w-[400px]">
+        {["Field apps", "Claim portals"].map((item, i) => (
+          <div key={i} className="flex items-center gap-2">
+            <div className="w-[5px] h-[5px] bg-gray-700 rounded-full" />
+            <span className="text-sm md:text-base text-gray-700">
+              {item}
+            </span>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+
+  {/* RIGHT */}
+  <div className="flex flex-col gap-5">
+    
+    {/* Heading */}
+    <p className="text-gray-500 font-semibold text-[20px]">
+      MyAccuraCore replaces that fragmentation.
+    </p>
+
+    {/* 2-COL BULLETS */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {[
+        "Centralize jobs",
+        "Standardize workflow",
+        "Align teams",
+        "Track readiness",
+      ].map((item, i) => (
+        <div key={i} className="flex items-start gap-2">
+          <Image
+            src="/Icons/checkmark-icon-green.png"
+            alt="check"
+            width={18}
+            height={18}
+          />
+          <span className="text-sm md:text-base text-gray-700">
+            {item}
+          </span>
         </div>
+      ))}
+    </div>
+
+    {/* BUTTONS */}
+    <div className="flex flex-col sm:flex-row items-center justify-start gap-4 mt-4">
+      <Button
+        className="rounded-full text-sm flex items-center"
+        style={{
+          backgroundColor: "#ffffff",
+          color: "#0061A4",
+          padding: "27px 15px",
+          border: "none",
+        }}
+      >
+        Get Started
+        <img
+          src="/Icons/Vector2.png"
+          alt="Arrow Icon"
+          className="w-2 h-3 ml-2"
+        />
+      </Button>
+
+      <Button
+        className="text-white rounded-full text-sm flex items-center"
+        style={{
+          backgroundColor: "#0061A4",
+          border: "2px solid #4485b2",
+          padding: "25px 15px",
+        }}
+        onClick={() => setIsOpen(true)}
+      >
+        Book Demo
+        <img
+          src="/Icons/Vector.png"
+          alt="Arrow Icon"
+          className="w-2 h-3 ml-2"
+        />
+      </Button>
+    </div>
+
+  </div>
+</div>
 
         {/* Separator */}
         <div className="w-full h-[2px] bg-white" />
@@ -353,7 +413,7 @@ export default function WeStructureTheWorkflow() {
           {/* Icon Box */}
           <div className="bg-white p-2 rounded-[5px]">
             <Image
-              src="/Icons/accuracore-claims.png"
+              src="/Icons/my-accuracore.png"
               alt="AccuraCam"
               width={40}
               height={40}
@@ -362,23 +422,23 @@ export default function WeStructureTheWorkflow() {
 
           {/* Heading */}
           <h1 className="text-2xl font-semibold text-[#0061A4]">
-            AccuraCore Claims reduces:
+            My AccuraCore Reduces:
           </h1>
         </div>
 
         {/* 4 Boxes */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { icon: "/Icons/RC2.png", title: "Resubmission cycles" },
+            { icon: "/Icons/InC.png", title: "Internal confusion" },
             {
-              icon: "/Icons/siri.png",
-              title: "Internal follow-ups with field crews",
+              icon: "/Icons/SG.png",
+              title: "Status guessing",
             },
             {
-              icon: "/Icons/IC.png",
-              title: "Confusion between scope and proof",
+              icon: "/Icons/MD.png",
+              title: "Missed documentation",
             },
-            { icon: "/Icons/DI.png", title: "Documentation inconsistencies" },
+            { icon: "/Icons/CC.png", title: "Workflow breakdowns" },
           ].map((item, idx) => (
             <div
               key={idx}
@@ -408,10 +468,10 @@ export default function WeStructureTheWorkflow() {
         {/* LEFT CONTENT */}
         <div className="space-y-6 text-center md:text-left">
           <h2 className="text-2xl md:text-4xl font-[400] leading-tight text-black">
-            When Submission is
+            When Operations Are
             <br /> Structured,
-            <span className="text-[#FA8C3D]"> Approvals</span>
-            <br /> <span className="text-[#FA8C3D]">Move Faster.</span>
+            <span className="text-[#FA8C3D]"> Growth</span>
+            <br /> <span className="text-[#FA8C3D]">Becomes Predictable.</span>
           </h2>
 
           {/* Buttons */}
@@ -455,10 +515,10 @@ export default function WeStructureTheWorkflow() {
           {/* Bullet Points */}
           <div className="flex flex-col gap-4">
             {[
-              "Claims stop stalling.",
-              "Documentation stays consistent.",
-              "Office overhead decreases.",
-              "Cash flow stabilizes.",
+              "Jobs move cleanly.",
+              "Teams stay aligned.",
+              "Documentation stays connected.",
+              "Revenue flows consistently.",
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-3">
                 <div className="w-[5px] h-[5px] bg-white rounded-full mt-2"></div>
@@ -469,9 +529,9 @@ export default function WeStructureTheWorkflow() {
 
           {/* Bottom Text */}
           <p className="text-sm md:text-base">
-            AccuraCore Claims transforms
-            <br /> documentation from a liability into an
-            <br /> advantage.
+            MyAccuraCore turns contractor 
+            <br /> operations into a system — not a 
+            <br /> scramble.
           </p>
         </div>
       </div>
