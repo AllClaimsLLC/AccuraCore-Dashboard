@@ -15,12 +15,23 @@ export default function CustomDropdown({
   onChange,
 }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [selected, setSelected] = useState(value || []);
+  const normalize = (v) => {
+  if (Array.isArray(v)) return v;
+  if (v) return [v];
+  return [];
+};
+
+const [selected, setSelected] = useState(() => normalize(value));
+  // const [selected, setSelected] = useState(value || []);
   const [editingCustom, setEditingCustom] = useState("");
   const [tempValue, setTempValue] = useState("");
 
   const dropdownRef = useRef(null);
   const customOptions = ["Other", "CRM (which one?)"];
+
+useEffect(() => {
+  setSelected(normalize(value));
+}, [value]);
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -87,9 +98,10 @@ export default function CustomDropdown({
     setIsOpen(false);
   };
 
-  const renderSelected = () => {
-    return selected.length === 0 ? "Select..." : selected.join(", ");
-  };
+const renderSelected = () => {
+  if (!selected || selected.length === 0) return "Select...";
+  return Array.isArray(selected) ? selected.join(", ") : String(selected);
+};
 
   useEffect(() => {
   if (onChange) {

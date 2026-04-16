@@ -30,7 +30,38 @@ export const BookDemoForm = () => {
   // New state for status message
   const [statusMessage, setStatusMessage] = useState({ text: "", type: "" });
 
-  const nextStep = () => setCurrentStep((prev) => Math.min(prev + 1, 3));
+  const validateStep = () => {
+  if (currentStep === 1) {
+    return (
+      formData.fullName &&
+      formData.companyName &&
+      formData.role &&
+      formData.email &&
+      formData.phone &&
+      formData.timezone
+    );
+  }
+
+  if (currentStep === 2) {
+    return formData.contractorType && formData.companySize;
+  }
+
+  return true;
+};
+
+const nextStep = () => {
+  if (!validateStep()) {
+    setStatusMessage({
+      text: "Please fill all the required fields",
+      type: "error",
+    });
+
+    setTimeout(() => setStatusMessage({ text: "", type: "" }), 3000);
+    return;
+  }
+
+  setCurrentStep((prev) => Math.min(prev + 1, 3));
+};
   const prevStep = () => setCurrentStep((prev) => Math.max(prev - 1, 1));
 
   const handleChange = (e) => {
@@ -38,11 +69,40 @@ export const BookDemoForm = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+const validateForm = () => {
+  if (
+    !formData.fullName ||
+    !formData.companyName ||
+    !formData.role ||
+    !formData.email ||
+    !formData.phone ||
+    !formData.timezone ||
+    !formData.contractorType ||
+    !formData.companySize ||
+    formData.tools.length === 0
+  ) {
+    return false;
+  }
+
+  return true;
+};
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!validateForm()) {
+    setStatusMessage({
+      text: "Please fill all the required fields",
+      type: "error",
+    });
+
+    // auto hide
+    setTimeout(() => setStatusMessage({ text: "", type: "" }), 3000);
+    return;
+  }
+
     try {
-      const response = await fetch("https://formspree.io/f/mdapvjqv", {
+      const response = await fetch("https://formspree.io/f/mzdklqoz", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -116,7 +176,7 @@ export const BookDemoForm = () => {
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
                       <label className="block text-sm text-black mb-1">
-                        First Name / Last Name
+                        First Name / Last Name *
                       </label>
                       <input
                         name="fullName"
@@ -130,7 +190,7 @@ export const BookDemoForm = () => {
 
                     <div>
                       <label className="block text-sm text-black mb-1">
-                        Company Name
+                        Company Name *
                       </label>
                       <input
                         name="companyName"
@@ -144,7 +204,7 @@ export const BookDemoForm = () => {
 
                     <div>
                       <label className="block text-sm text-black mb-1">
-                        Company Title/Role
+                        Company Title/Role *
                       </label>
                       <input
                         name="role"
@@ -160,7 +220,7 @@ export const BookDemoForm = () => {
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
                     <div>
                       <label className="block text-sm text-black mb-1">
-                        Email Address
+                        Email Address *
                       </label>
                       <input
                         name="email"
@@ -175,7 +235,7 @@ export const BookDemoForm = () => {
 
                     <div>
                       <label className="block text-sm text-black mb-1">
-                        Phone Number
+                        Phone Number *
                       </label>
                       <input
                         name="phone"
@@ -190,7 +250,7 @@ export const BookDemoForm = () => {
 
                     <div>
                       <label className="block text-sm text-black mb-1">
-                        Timezone
+                        Timezone *
                       </label>
                       <input
                         name="timezone"
@@ -226,7 +286,7 @@ export const BookDemoForm = () => {
                     <div>
                       <div className="relative">
                         <CustomDropdown
-                          label="What type of contractor are you?"
+                          label="What type of contractor are you? *"
                           name="contractorType"
                           required
                           multiSelect={false}
@@ -254,7 +314,7 @@ export const BookDemoForm = () => {
                     <div>
                       <div className="relative">
                         <CustomDropdown
-                          label="Company Size"
+                          label="Company Size *"
                           name="companySize"
                           required={false}
                           multiSelect={false}
@@ -321,7 +381,7 @@ export const BookDemoForm = () => {
                     <div>
                       <div className="relative">
                         <CustomDropdown
-                          label="What tools are you currently using? (select all that apply)"
+                          label="What tools are you currently using? (select all that apply) *"
                           name="tools"
                           required
                           multiSelect
@@ -348,7 +408,7 @@ export const BookDemoForm = () => {
                       <div>
                         <div className="relative">
                           <CustomDropdown
-                            label="Select Challenges"
+                            label="Select Challenges *"
                             name="challenges"
                             required={false}
                             multiSelect={true}
@@ -375,7 +435,7 @@ export const BookDemoForm = () => {
                     <div>
                       <div className="relative">
                         <CustomDropdown
-                          label="What are you most interested in improving? (select top 3)"
+                          label="What are you most interested in improving? (select top 3) *"
                           name="improvements"
                           required={false}
                           multiSelect={true}
