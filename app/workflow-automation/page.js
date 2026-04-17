@@ -28,11 +28,10 @@ export default function WorkflowAutomationPage() {
 
   return (
     <>
-      <div
-        className="bg-cover bg-center bg-no-repeat"
+     <div
+        className="bg-cover bg-center bg-no-repeat h-[52rem] lg:h-[50rem]"
         style={{
           backgroundImage: "url('/Images/Hero-bg.png')",
-          height: "50rem",
         }}
       >
         {/* Header */}

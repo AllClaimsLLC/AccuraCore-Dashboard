@@ -36,10 +36,9 @@ export default function RoofCalculationsPage() {
   return (
     <>
       <div
-        className="bg-cover bg-center bg-no-repeat"
+        className="bg-cover bg-center bg-no-repeat h-[47rem] lg:h-[45rem]"
         style={{
           backgroundImage: "url('/Images/Hero-bg.png')",
-          height: "45rem",
         }}
       >
         {/* Header */}
