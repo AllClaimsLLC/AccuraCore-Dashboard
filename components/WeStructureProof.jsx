@@ -142,7 +142,7 @@ export default function WeStructureProof({ isOpen, setIsOpen }) {
       {/* Section 2 */}
       <div className="max-w-[90%] mx-auto mb-30 flex flex-col gap-10">
         {/* CENTER HEADING */}
-        <h1 className="text-3xl text-black text-center">
+        <h1 className="text-3xl text-black lg:text-center">
           Every Screen <br />
           Has a Business Outcome
         </h1>
