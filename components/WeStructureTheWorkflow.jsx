@@ -316,7 +316,7 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
             </h1>
             <p className="text-gray-700 text-sm md:text-base mt-3">
               Most teams discover gaps after submission when
-              <br /> it’s already expensive
+              <br className="hidden lg:block" /> it’s already expensive
             </p>
           </div>
 
