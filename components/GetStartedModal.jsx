@@ -112,11 +112,11 @@ if (Object.keys(newErrors).length > 0) return;
         {/* SUCCESS SCREEN */}
         {success ? (
           <div className="text-center p-6">
-            <h2 className="text-xl font-bold">Thank you 🎉</h2>
+            <h2 className="text-xl font-bold">Thank you</h2>
             <p className="mt-2">We will contact you within 30 minutes.</p>
 
             <button
-              className="mt-6 text-blue-600 underline"
+              className="mt-6 text-black border-2 border-blue-500 rounded-[50px] p-2"
               onClick={() => {
                 setIsOpen(false);
                 setSuccess(false);
