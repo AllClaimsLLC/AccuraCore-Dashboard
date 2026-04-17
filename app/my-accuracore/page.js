@@ -231,7 +231,7 @@ export default function MyAccuraCorePage() {
                 <video
                   ref={(videoRef) => (videoRefElement.current = videoRef)}
                   className="w-full max-h-[500px] rounded-[30px] object-cover"
-                  poster="/Images/Hero-image2.png" // thumbnail
+                  poster="/Images/video.png" // thumbnail
                   controls={isPlaying} // show controls only when playing
                 >
                   <source src="/Videos/DashboardDemo.mp4" type="video/mp4" />
