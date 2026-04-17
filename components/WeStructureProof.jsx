@@ -3,14 +3,16 @@
 import Image from "next/image";
 import { Button } from "./ui/button";
 
-export default function WeStructureProof() {
+export default function WeStructureProof({ isOpen, setIsOpen }) {
   return (
     <section
       className="px-6 py-16"
       style={{
-        background:
-          "linear-gradient(120deg, rgb(250, 237, 231) 20%, rgb(227, 245, 247) 56%)",
-      }}
+  backgroundImage: "url('/Images/bgforlastsection.jpg')",
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+}}
     >
       {/* Section 1 */}
       <div className="max-w-[90%] mt-20 mb-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -100,46 +102,166 @@ export default function WeStructureProof() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
-            <Button
-              className="rounded-full text-sm flex items-center"
-              style={{
-                backgroundColor: "#ffffff",
-                color: "#0061A4",
-                padding: "27px 15px",
-                border: "none",
-              }}
-            >
-              Get Started
-              <img
-                src="/Icons/Vector2.png"
-                alt="Arrow Icon"
-                className="w-2 h-3 ml-2"
-              />
-            </Button>
-            <Button
-              className="text-white rounded-full text-sm flex items-center"
-              style={{
-                backgroundColor: "#0061A4",
-                border: "2px solid #4485b2",
-                padding: "25px 15px",
-              }}
-              onClick={() => setIsOpen(true)}
-            >
-              Book Demo
-              <img
-                src="/Icons/Vector.png"
-                alt="Arrow Icon"
-                className="w-2 h-3 ml-2"
-              />
-            </Button>
+           <Button
+                  className="rounded-full text-sm flex items-center"
+                  style={{
+                    backgroundColor: "#ffffff",
+                    color: "#0061A4",
+                    padding: "27px 15px",
+                    border: "none",
+                  }}
+                  onClick={() => setIsOpen(true)}
+                >
+                  Get Started
+                  <img
+                    src="/Icons/Vector2.png"
+                    alt="Arrow Icon"
+                    className="w-2 h-3 ml-2"
+                  />
+                </Button>
+                <Button
+                  className="text-white rounded-full text-sm flex items-center"
+                  style={{
+                    backgroundColor: "#0061A4",
+                    border: "2px solid #4485b2",
+                    padding: "25px 15px",
+                  }}
+                  onClick={() => (window.location.href = "/book-a-demo")}
+                >
+                  Book Demo
+                  <img
+                    src="/Icons/Vector.png"
+                    alt="Arrow Icon"
+                    className="w-2 h-3 ml-2"
+                  />
+                </Button>
           </div>
         </div>
       </div>
 
-      {/* Section 3 */}
+      {/* Section 2 */}
       <div className="max-w-[90%] mx-auto mb-30 flex flex-col gap-10">
+        {/* CENTER HEADING */}
+        <h1 className="text-3xl text-black text-center">
+          Every Screen <br />
+          Has a Business Outcome
+        </h1>
+
+        {/* IMAGE WRAPPER DESKTOP */}
+        <div className="hidden lg:flex w-full overflow-hidden justify-center">
+          {/* FIXED CANVAS */}
+          <div className="relative w-[1000px] scale-[0.9] sm:scale-[1] origin-top">
+            {/* LEFT OVERLAY CONTENT */}
+            <div className="absolute left-5 top-41 z-10 max-w-[250px] flex flex-col gap-3">
+              <div className="flex items-start gap-2">
+                <img
+                  src="/Icons/checkmark-icon-green.png"
+                  className="w-5 h-5 mt-1"
+                />
+                <h3 className="text-black text-sm">
+                  Establishes Ownership & Accountability
+                </h3>
+              </div>
+              <p className="text-gray-600 text-[11px] pl-7">
+                Clear identity mapping ensures every project, upload, and action
+                is traceable eliminating responsibility gaps.
+              </p>
+            </div>
+
+            <div className="absolute left-5 top-88 z-10 max-w-[250px] flex flex-col gap-3">
+              <div className="flex items-start gap-2">
+                <img
+                  src="/Icons/checkmark-icon-green.png"
+                  className="w-5 h-5 mt-1"
+                />
+                <h3 className="text-black text-sm">
+                  Centralizes Asset Control
+                </h3>
+              </div>
+              <p className="text-gray-600 text-[11px] pl-7">
+                All project-related files, images, and resources are accessible
+                from one controlled location
+              </p>
+            </div>
+
+            {/* RIGHT OVERLAY CONTENT */}
+            <div className="absolute right-5 top-41 z-10 max-w-[250px] flex flex-col gap-3">
+              <div className="flex items-start gap-2">
+                <img
+                  src="/Icons/checkmark-icon-green.png"
+                  className="w-5 h-5 mt-1"
+                />
+                <h3 className="text-black text-sm">
+                  Provides Instant Project Visibility
+                </h3>
+              </div>
+              <p className="text-gray-600 text-[11px] pl-7">
+                Each card surfaces location, media, and current state at a
+                glance.
+              </p>
+            </div>
+
+            <div className="absolute right-5 top-88 z-10 max-w-[250px] flex flex-col gap-3">
+              <div className="flex items-start gap-2">
+                <img
+                  src="/Icons/checkmark-icon-green.png"
+                  className="w-5 h-5 mt-1"
+                />
+                <h3 className="text-black text-sm">
+                  Enables Real-Time Field Documentation
+                </h3>
+              </div>
+              <p className="text-gray-600 text-[11px] pl-7">
+                Capture and attach evidence directly to the project context.
+              </p>
+            </div>
+
+            {/* MAIN IMAGE */}
+            <img
+              src="/Images/EveryScreenHasBusinessOutcome.png"
+              className="w-full max-w-[600px] mx-auto object-contain"
+            />
+          </div>
+        </div>
+
+        {/* WRAPPER MOBILE */}
+        <div className="flex lg:hidden flex-col gap-6">
+          {[
+            {
+              title: "Establishes Ownership & Accountability",
+              desc: "Clear identity mapping ensures every project, upload, and action is traceable eliminating responsibility gaps.",
+            },
+            {
+              title: "Centralizes Asset Control",
+              desc: "All project-related files, images, and resources are accessible from one controlled location",
+            },
+            {
+              title: "Provides Instant Project Visibility",
+              desc: "Each card surfaces location, media, and current state at a glance.",
+            },
+            {
+              title: "Enables Real-Time Field Documentation",
+              desc: "Capture and attach evidence directly to the project context.",
+            },
+          ].map((item, i) => (
+            <div key={i} className="flex flex-col gap-2">
+              <div className="flex items-start gap-2">
+                <img
+                  src="/Icons/checkmark-icon-green.png"
+                  className="w-5 h-5 mt-1"
+                />
+                <h3 className="text-black text-sm font-medium">{item.title}</h3>
+              </div>
+
+              <p className="text-gray-600 text-sm pl-7 leading-relaxed">
+                {item.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+
         {/* Top 2 Cols */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* LEFT */}
           <h1 className="text-3xl text-black">
             Stop rebuilding <br />
@@ -180,7 +302,6 @@ export default function WeStructureProof() {
 
         {/* AccuraCam Reduces */}
         <div className="flex items-center gap-3">
-          {/* Icon Box */}
           <div className="bg-white p-2 rounded-[5px]">
             <Image
               src="/Icons/accuracam.png"
@@ -190,7 +311,6 @@ export default function WeStructureProof() {
             />
           </div>
 
-          {/* Heading */}
           <h1 className="text-2xl font-semibold text-[#0061A4]">
             Accuracam reduces:
           </h1>
@@ -208,7 +328,6 @@ export default function WeStructureProof() {
               key={idx}
               className="bg-[#fdfcf7] rounded-[20px] p-6 flex flex-col gap-4 shadow-sm hover:scale-105 transition-transform"
             >
-              {/* Icon Box */}
               <div className="bg-[#0061A4] p-2 rounded-[10px] w-fit">
                 <Image
                   src={item.icon}
@@ -218,7 +337,6 @@ export default function WeStructureProof() {
                 />
               </div>
 
-              {/* Title */}
               <p className="text-black font-semibold text-sm md:text-base">
                 {item.title}
               </p>
@@ -240,37 +358,39 @@ export default function WeStructureProof() {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
-            <Button
-              className="rounded-full text-sm flex items-center border-2 border-gray-300"
-              style={{
-                backgroundColor: "#ffffff",
-                color: "#0061A4",
-                padding: "27px 15px",
-              }}
-            >
-              Get Started
-              <img
-                src="/Icons/Vector2.png"
-                alt="Arrow Icon"
-                className="w-2 h-3 ml-2"
-              />
-            </Button>
-            <Button
-              className="text-white rounded-full text-sm flex items-center"
-              style={{
-                backgroundColor: "#0061A4",
-                border: "2px solid #4485b2",
-                padding: "25px 15px",
-              }}
-              onClick={() => setIsOpen(true)}
-            >
-              Book Demo
-              <img
-                src="/Icons/Vector.png"
-                alt="Arrow Icon"
-                className="w-2 h-3 ml-2"
-              />
-            </Button>
+           <Button
+                  className="rounded-full text-sm flex items-center"
+                  style={{
+                    backgroundColor: "#ffffff",
+                    color: "#0061A4",
+                    padding: "27px 15px",
+                    border: "none",
+                  }}
+                  onClick={() => setIsOpen(true)}
+                >
+                  Get Started
+                  <img
+                    src="/Icons/Vector2.png"
+                    alt="Arrow Icon"
+                    className="w-2 h-3 ml-2"
+                  />
+                </Button>
+                <Button
+                  className="text-white rounded-full text-sm flex items-center"
+                  style={{
+                    backgroundColor: "#0061A4",
+                    border: "2px solid #4485b2",
+                    padding: "25px 15px",
+                  }}
+                  onClick={() => (window.location.href = "/book-a-demo")}
+                >
+                  Book Demo
+                  <img
+                    src="/Icons/Vector.png"
+                    alt="Arrow Icon"
+                    className="w-2 h-3 ml-2"
+                  />
+                </Button>
           </div>
         </div>
 

@@ -4,45 +4,45 @@ import { Button } from "@/components/ui/button";
 
 const steps = [
   {
-    icon: "/Icons/CO.png",
-    title: "Capture Once",
-    desc: "Photos attach to job, location, and scope item instantly.",
+    icon: "/Icons/SBJR.png",
+    title: "Stage-Based Job Progression",
+    desc: "Jobs move through predefined phases automatically with structured control and clarity.",
   },
   {
-    icon: "/Icons/OFDO.png",
-    title: "Organized From Day One",
-    desc: "Every image enters the system already structured and in place.",
+    icon: "/Icons/TE.png",
+    title: "Task Enforcement",
+    desc: "Critical steps cannot be skipped, ensuring proper process control at every stage.",
   },
   {
-    icon: "/Icons/IJS.png",
-    title: "Instant Job Sync",
-    desc: "Field photos flow straight into the project. No re-uploading. No file chasing.",
+    icon: "/Icons/AN.png",
+    title: "Automated Notifications",
+    desc: "Teams are alerted when action is required, ensuring timely response and accountability.",
   },
   {
-    icon: "/Icons/BIP.png",
-    title: "Built-In Proof",
-    desc: "Time, location, and job details are recorded automatically.",
+    icon: "/Icons/SE.png",
+    title: "Status Visibility",
+    desc: "See bottlenecks instantly to identify and resolve workflow delays quickly.",
   },
   {
-    icon: "/Icons/NRL.png",
-    title: "No Reconstruction Later",
-    desc: "The office doesn’t sort, rename, or rebuild documentation.",
+    icon: "/Icons/DG.png",
+    title: "Documentation Gates",
+    desc: "Prevent jobs from advancing without required items.",
   },
   {
-    icon: "/Icons/SMBD.png",
-    title: "Structured Media by Default",
-    desc: "Every job stays clean, complete, and ready for review.",
+    icon: "/Icons/OC.png",
+    title: "Operational Consistency",
+    desc: "Every job follows the same clear and structured path from start to finish.",
   },
 ];
 
-export default function BuiltForStructuredExecution({ isOpen, setIsOpen }) {
+export default function StageBasedControlforReliableJobExecution({ isOpen, setIsOpen }) {
   return (
     <section className="px-6 py-16 bg-[#fbf0ec] dark:bg-slate-950">
-      <div className="max-w-[95%] md:max-w-[90%] mx-auto space-y-4 mt-24 md:mt-72">
+      <div className="max-w-[95%] md:max-w-[90%] mx-auto space-y-4 mt-24 md:mt-50">
         {/* Top Heading & Text */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
           <h1 className="text-3xl text-black dark:text-white">
-            Built for Structured Execution
+            Stage-Based Control for Reliable Job Execution
           </h1>
         </div>
 

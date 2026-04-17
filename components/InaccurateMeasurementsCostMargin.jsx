@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
-export default function InaccurateMeasurementsCostMargin({ setIsOpen }) {
+export default function InaccurateMeasurementsCostMargin({ isOpen, setIsOpen }) {
   return (
     <section className="relative w-full py-16 px-6">
       {/* Background Image */}
@@ -67,39 +67,39 @@ export default function InaccurateMeasurementsCostMargin({ setIsOpen }) {
 
           {/* BUTTONS */}
           <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
-            <Button
-              className="rounded-full text-sm flex items-center"
-              style={{
-                backgroundColor: "#ffffff",
-                color: "#0061A4",
-                padding: "27px 15px",
-                border: "none",
-              }}
-            >
-              Get Started
-              <img
-                src="/Icons/Vector2.png"
-                alt="Arrow Icon"
-                className="w-2 h-3 ml-2"
-              />
-            </Button>
-
-            <Button
-              className="text-white rounded-full text-sm flex items-center"
-              style={{
-                backgroundColor: "#0061A4",
-                border: "2px solid #4485b2",
-                padding: "25px 15px",
-              }}
-              onClick={() => setIsOpen(true)}
-            >
-              Book Demo
-              <img
-                src="/Icons/Vector.png"
-                alt="Arrow Icon"
-                className="w-2 h-3 ml-2"
-              />
-            </Button>
+           <Button
+                  className="rounded-full text-sm flex items-center"
+                  style={{
+                    backgroundColor: "#ffffff",
+                    color: "#0061A4",
+                    padding: "27px 15px",
+                    border: "none",
+                  }}
+                  onClick={() => setIsOpen(true)}
+                >
+                  Get Started
+                  <img
+                    src="/Icons/Vector2.png"
+                    alt="Arrow Icon"
+                    className="w-2 h-3 ml-2"
+                  />
+                </Button>
+                <Button
+                  className="text-white rounded-full text-sm flex items-center"
+                  style={{
+                    backgroundColor: "#0061A4",
+                    border: "2px solid #4485b2",
+                    padding: "25px 15px",
+                  }}
+                  onClick={() => (window.location.href = "/book-a-demo")}
+                >
+                  Book Demo
+                  <img
+                    src="/Icons/Vector.png"
+                    alt="Arrow Icon"
+                    className="w-2 h-3 ml-2"
+                  />
+                </Button>
           </div>
         </div>
 

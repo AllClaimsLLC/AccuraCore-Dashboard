@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
-export default function OperationalChaosCostsMargin({ isOpen, setIsOpen }) {
+export default function DelaysSlowRevenue({ isOpen, setIsOpen }) {
   return (
     <section className="relative w-full py-16 px-6">
       {/* Background Image */}
@@ -20,18 +20,15 @@ export default function OperationalChaosCostsMargin({ isOpen, setIsOpen }) {
         {/* LEFT CONTENT */}
         <div className="flex flex-col gap-6">
           {/* Heading */}
-          <h1 className="text-3xl text-white">
-            Operational Chaos Costs<br className="hidden lg:block" /> Margin.
-          </h1>
+          <h1 className="text-3xl text-white">Delays Slow Revenue.</h1>
 
           {/* FIRST BULLET POINTS */}
           <div className="flex flex-col gap-2">
             {[
-              "Lost time coordinating between teams",
-              "Missed follow-ups and stalled approvals",
-              "Incomplete job files at submission",
-              "Rework caused by workflow gaps",
-              "Revenue delayed by operational friction",
+              "Invoices delayed",
+              "Claims delayed",
+              "Payments delayed",
+              "Revenue stalled",
             ].map((item, idx) => (
               <div key={idx} className="flex items-start gap-3">
                 <div className="w-[5px] h-[5px] bg-gray-400 rounded-full mt-2" />
@@ -42,17 +39,15 @@ export default function OperationalChaosCostsMargin({ isOpen, setIsOpen }) {
 
           {/* SECOND SECTION HEADING */}
           <h2 className="text-lg md:text-xl text-[#F6BE71] mt-2">
-            My AccuraCore reduces
+            Workflow Automation Accelerates Revenue.
           </h2>
 
           {/* SECOND BULLET POINTS */}
           <div className="flex flex-col gap-2">
             {[
-              "Structured workflows from start to submission",
-              "Clear job ownership and accountability",
-              "Real-time status visibility",
-              "Built-in documentation controls",
-              "Consistent execution across every job",
+              "Shorter Job Cycles",
+              "Faster Invoicing",
+              "Predictable Cash Flow",
             ].map((item, idx) => (
               <div key={idx} className="flex items-start gap-3">
                 <div className="w-[5px] h-[5px] bg-[#F6BE71] rounded-full mt-2" />
@@ -63,7 +58,7 @@ export default function OperationalChaosCostsMargin({ isOpen, setIsOpen }) {
 
           {/* BUTTONS */}
           <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
-            <Button
+           <Button
                   className="rounded-full text-sm flex items-center"
                   style={{
                     backgroundColor: "#ffffff",
@@ -102,7 +97,7 @@ export default function OperationalChaosCostsMargin({ isOpen, setIsOpen }) {
         {/* RIGHT IMAGE */}
         <div className="w-full h-full flex justify-center">
           <Image
-            src="/Images/OperationalChaosCostsMargin.png"
+            src="/Images/DelaysSlowRevenue.png"
             alt="preview"
             width={600}
             height={500}

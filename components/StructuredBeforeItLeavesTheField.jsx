@@ -35,7 +35,7 @@ const steps = [
   },
 ];
 
-export default function StructuredBeforeItLeavesTheField() {
+export default function StructuredBeforeItLeavesTheField({ isOpen, setIsOpen }) {
   return (
     <section className="px-6 py-16 bg-[#fbf0ec] dark:bg-slate-950">
       <div className="max-w-[95%] md:max-w-[90%] mx-auto space-y-4 mt-24 md:mt-72">
@@ -79,37 +79,38 @@ export default function StructuredBeforeItLeavesTheField() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
           <Button
-            className="rounded-full text-sm flex items-center"
-            style={{
-              backgroundColor: "#ffffff",
-              color: "#0061A4",
-              padding: "27px 15px",
-              border: "none",
-            }}
-          >
-            Get Started
-            <img
-              src="/Icons/Vector2.png"
-              alt="Arrow Icon"
-              className="w-2 h-3 ml-2"
-            />
-          </Button>
-          <Button
-            className="text-white rounded-full text-sm flex items-center"
-            style={{
-              backgroundColor: "#0061A4",
-              border: "2px solid #4485b2",
-              padding: "25px 15px",
-            }}
-            onClick={() => setIsOpen(true)}
-          >
-            Book Demo
-            <img
-              src="/Icons/Vector.png"
-              alt="Arrow Icon"
-              className="w-2 h-3 ml-2"
-            />
-          </Button>
+                  className="rounded-full text-sm flex items-center"
+                  style={{
+                    backgroundColor: "#ffffff",
+                    color: "#0061A4",
+                    padding: "27px 15px",
+                    border: "none",
+                  }}
+                  onClick={() => setIsOpen(true)}
+                >
+                  Get Started
+                  <img
+                    src="/Icons/Vector2.png"
+                    alt="Arrow Icon"
+                    className="w-2 h-3 ml-2"
+                  />
+                </Button>
+                <Button
+                  className="text-white rounded-full text-sm flex items-center"
+                  style={{
+                    backgroundColor: "#0061A4",
+                    border: "2px solid #4485b2",
+                    padding: "25px 15px",
+                  }}
+                  onClick={() => (window.location.href = "/book-a-demo")}
+                >
+                  Book Demo
+                  <img
+                    src="/Icons/Vector.png"
+                    alt="Arrow Icon"
+                    className="w-2 h-3 ml-2"
+                  />
+                </Button>
         </div>
       </div>
     </section>

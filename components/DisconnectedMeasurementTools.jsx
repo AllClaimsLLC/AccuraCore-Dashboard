@@ -3,14 +3,16 @@
 import Image from "next/image";
 import { Button } from "./ui/button";
 
-export default function DisconnectedMeasurementTools() {
+export default function DisconnectedMeasurementTools({ isOpen, setIsOpen }) {
   return (
-    <section
+        <section
       className="px-6 py-16"
       style={{
-        background:
-          "linear-gradient(120deg, rgb(250, 237, 231) 20%, rgb(227, 245, 247) 56%)",
-      }}
+  backgroundImage: "url('/Images/bgforlastsection.jpg')",
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+}}
     >
       {/* Section 1 */}
       <div className="max-w-[90%] mt-20 mb-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -92,6 +94,7 @@ export default function DisconnectedMeasurementTools() {
                 padding: "27px 15px",
                 border: "none",
               }}
+              onClick={() => setIsOpen(true)}
             >
               Get Started
               <img
@@ -100,7 +103,6 @@ export default function DisconnectedMeasurementTools() {
                 className="w-2 h-3 ml-2"
               />
             </Button>
-
             <Button
               className="text-white rounded-full text-sm flex items-center"
               style={{
@@ -108,7 +110,7 @@ export default function DisconnectedMeasurementTools() {
                 border: "2px solid #4485b2",
                 padding: "25px 15px",
               }}
-              onClick={() => setIsOpen(true)}
+              onClick={() => (window.location.href = "/book-a-demo")}
             >
               Book Demo
               <img
@@ -254,6 +256,7 @@ export default function DisconnectedMeasurementTools() {
               padding: "27px 15px",
               border: "none",
             }}
+            onClick={() => setIsOpen(true)}
           >
             Get Started
             <img
@@ -269,7 +272,7 @@ export default function DisconnectedMeasurementTools() {
               border: "2px solid #4485b2",
               padding: "25px 15px",
             }}
-            onClick={() => setIsOpen(true)}
+            onClick={() => (window.location.href = "/book-a-demo")}
           >
             Book Demo
             <img
@@ -280,7 +283,6 @@ export default function DisconnectedMeasurementTools() {
           </Button>
         </div>
       </div>
-
 
       {/* Section 3 */}
       <div className="max-w-[90%] mx-auto bg-white rounded-[20px] mt-20 mb-20 px-6 md:px-12 py-10 md:py-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -302,6 +304,7 @@ export default function DisconnectedMeasurementTools() {
                 color: "#0061A4",
                 padding: "27px 15px",
               }}
+              onClick={() => setIsOpen(true)}
             >
               Get Started
               <img
@@ -317,7 +320,7 @@ export default function DisconnectedMeasurementTools() {
                 border: "2px solid #4485b2",
                 padding: "25px 15px",
               }}
-              onClick={() => setIsOpen(true)}
+              onClick={() => (window.location.href = "/book-a-demo")}
             >
               Book Demo
               <img
@@ -330,7 +333,7 @@ export default function DisconnectedMeasurementTools() {
         </div>
 
         {/* RIGHT IMAGE */}
-       <div className="flex justify-center">
+        <div className="flex justify-center">
           <img
             src="/Images/calculator-one-platform.png"
             alt="One Platform"

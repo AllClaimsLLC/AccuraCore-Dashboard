@@ -4,13 +4,18 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import ModeToggle from "@/components/mode-toggle";
-import BuiltForStructuredExecution from "@/components/BuiltForStructuredExecution";
-import UnstructuredDocumentationCostsMoney from "@/components/UnstructuredDocumentationCostsMoney";
-import WeStructureProof from "@/components/WeStructureProof";
 import Link from "next/link";
+import InaccurateMeasurementsCostMargin from "@/components/InaccurateMeasurementsCostMargin";
+import DisconnectedMeasurementTools from "@/components/DisconnectedMeasurementTools";
+import StageBasedControlforReliableJobExecution from "@/components/StageBasedControlforReliableJobExecution";
+import DelaysSlowRevenue from "@/components/DelaysSlowRevenue";
+import JustTaskManagement from "@/components/JustTaskManagement";
+import WeatherIntelligenceClaimValidation from "@/components/WeatherIntelligenceClaimValidation";
+import UnverifiedWeatherDataGetsClaimsQuestioned from "@/components/UnverifiedWeatherDataGetsClaimsQuestioned";
+import WeatherLookupTool from "@/components/WeatherLookupTool";
 import GetStartedModal from "@/components/GetStartedModal";
 
-export default function AccuraCamPage() {
+export default function WeatherReportsPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const videoRefElement = useRef(null);
@@ -158,6 +163,37 @@ export default function AccuraCamPage() {
                   <span>Contact Us</span>
                 </Link>
               </div>
+
+              {/* Mobile Action Buttons */}
+              {/* <div className="flex flex-col space-y-3 mt-4">
+                <Button
+                  className="bg-white hover:bg-gray-100 px-4 py-2 rounded-full text-sm flex items-center"
+                  style={{ color: "#0061A4", padding: "25px 15px" }}
+                >
+                  <img
+                    src="/Icons/Vector.svg"
+                    alt="Login Icon"
+                    className="w-4 h-4 mr-2"
+                  />
+                  Login
+                </Button>
+
+                <Button
+                  className="text-white rounded-full text-sm flex items-center"
+                  style={{
+                    backgroundColor: "#0061A4",
+                    padding: "25px 15px",
+                  }}
+                  onClick={() => (window.location.href = "/book-a-demo")}
+                >
+                  Book Demo
+                  <img
+                    src="/Icons/Vector.png"
+                    alt="Arrow Icon"
+                    className="w-3 h-4 ml-2"
+                  />
+                </Button>
+              </div> */}
             </div>
           )}
         </header>
@@ -167,12 +203,10 @@ export default function AccuraCamPage() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h1 className="text-4xl md:text-4xl text-white mb-6 leading-tight">
-                Accuracam
+                Weather Reports
               </h1>
               <p className="text-md text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-                AccuraCore is a powerful platform that brings everything you
-                need into one dashboard — manage your team, track work orders,
-                handle finances, and stay in control of every detail.
+                Weather Reports inside AccuraCore attach verified storm and weather data directly to job records, strengthening claims, reducing disputes, and improving documentation integrity with job-linked, submission-ready evidence.
               </p>
 
               {/* CTA Buttons */}
@@ -258,13 +292,13 @@ export default function AccuraCamPage() {
         </main>
       </div>
 
-      <BuiltForStructuredExecution isOpen={isOpen} setIsOpen={setIsOpen} />
-      <UnstructuredDocumentationCostsMoney />
-      <WeStructureProof isOpen={isOpen} setIsOpen={setIsOpen} />
+      <WeatherIntelligenceClaimValidation isOpen={isOpen} setIsOpen={setIsOpen} />
+      <UnverifiedWeatherDataGetsClaimsQuestioned isOpen={isOpen} setIsOpen={setIsOpen} />
+      <WeatherLookupTool isOpen={isOpen} setIsOpen={setIsOpen} />
 
       <Footer id="contact-section" onBookDemo={() => setIsOpen(true)} />
       {/* Popup Modal */}
-      {isOpen && <GetStartedModal isOpen={isOpen} setIsOpen={setIsOpen} />}
+{isOpen && <GetStartedModal isOpen={isOpen} setIsOpen={setIsOpen} />}
     </>
   );
 }

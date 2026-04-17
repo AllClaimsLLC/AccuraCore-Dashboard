@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Button } from "./ui/button";
 
-export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
+export default function WeatherLookupTool({ isOpen, setIsOpen }) {
   return (
         <section
       className="px-6 py-16"
@@ -15,95 +15,23 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
 }}
     >
       {/* Section 1 */}
-      <div className="max-w-[90%] mt-20 mb-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        {/* LEFT COL */}
-        <div className="flex justify-center">
-          <div className="rounded-[30px] border-2 border-white bg-white/10 backdrop-blur-md p-12 w-full shadow-[0_3px_3px_rgba(0,0,0,0.25)]">
-            <Image
-              src="/Images/WeStructureTheWorkflow-left.png"
-              alt="Structure Proof"
-              width={500}
-              height={500}
-              className="rounded-[16px] object-contain w-full"
-            />
-          </div>
-        </div>
-
-        {/* RIGHT COL */}
-        <div className="flex flex-col gap-6">
+      <div className="max-w-[90%] mt-20 mb-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-5 items-center">
+        {/* LEFT COL*/}
+        <div className="flex flex-col gap-6 lg:w-[72%]">
           {/* Heading */}
-          <h1 className="text-3xl text-[#FA8C3D]">
-            Most Claims Apps File Paperwork.
-            <br /> We Structure the Workflow.
+          <h1 className="text-3xl text-black">
+            Why this isn’t just a weather lookup tool.
           </h1>
 
-          {/* BOX 1 */}
-          <div className="bg-[#f2f1ef] rounded-[20px] p-6 flex flex-col gap-4">
-            <h3 className="text-black font-semibold">Other tools:</h3>
+          {/* Paragraph */}
+          <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+            Most weather tools rely on manual effort and disconnected workflows,
+            while <span className="text-[#FA8C3D]">AccuraCore</span> provides
+            automated, job-linked, and claim-aligned weather intelligence for
+            faster, more reliable documentation and stronger claim support.
+          </p>
 
-            {/* Inline bullets */}
-            <div className="flex flex-wrap items-center gap-6 text-sm md:text-base text-gray-700">
-              <div className="flex items-center gap-2">
-                <div className="w-1 h-1 bg-gray-700 rounded-full" />
-                <span>Track claim status</span>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <div className="w-1 h-1 bg-gray-700 rounded-full" />
-                <span>Store documents</span>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <div className="w-1 h-1 bg-gray-700 rounded-full" />
-                <span>Organize folders</span>
-              </div>
-            </div>
-          </div>
-
-          {/* BOX 2 */}
-          <div className="bg-[#F6BE71] rounded-[20px] p-6 flex flex-col gap-4">
-            <h3 className="text-black font-semibold">AccuraCam:</h3>
-
-            {/* Vertical points */}
-            <div className="flex flex-col gap-3">
-              <div className="flex items-start gap-3">
-                <Image
-                  src="/Icons/checkmark-icon.png"
-                  alt="check"
-                  width={18}
-                  height={18}
-                />
-                <span className="text-gray-700 text-sm md:text-base">
-                  Enforces structure at capture
-                </span>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <Image
-                  src="/Icons/checkmark-icon.png"
-                  alt="check"
-                  width={18}
-                  height={18}
-                />
-                <span className="text-gray-700 text-sm md:text-base">
-                  Align scope with supporting evidence
-                </span>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <Image
-                  src="/Icons/checkmark-icon.png"
-                  alt="check"
-                  width={18}
-                  height={18}
-                />
-                <span className="text-gray-700 text-sm md:text-base">
-                  Create review-ready claim files automatically
-                </span>
-              </div>
-            </div>
-          </div>
-
+          {/* BUTTONS */}
           <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
             <Button
                   className="rounded-full text-sm flex items-center"
@@ -140,6 +68,66 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
                 </Button>
           </div>
         </div>
+
+        {/* RIGHT COL */}
+        <div className="bg-[#ede8e5] rounded-[20px] p-6">
+          {/* White Box */}
+          <div className="bg-white rounded-[20px] p-4">
+            {/* Inner Gray Box */}
+            <div className="bg-[#f7f7f7] rounded-[20px] p-2 grid grid-cols-1 md:grid-cols-2 gap-2">
+              {/* LEFT SIDE - MOST WEATHER TOOLS */}
+              <div className="flex flex-col gap-2">
+                <div className="bg-white rounded-[12px] overflow-hidden text-center">
+                  <div className="bg-[#FA8C3D] text-white py-2 text-sm">
+                    Most Weather Tools
+                  </div>
+                  <div className="px-3 py-3 text-black text-sm text-left">
+                    Provide general storm maps
+                  </div>
+                </div>
+
+                {[
+                  "Require manual downloads",
+                  "Work separately from job/claim systems",
+                  "Require manual documentation updates",
+                  "Increase research and admin effort",
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className="bg-white rounded-[12px] px-3 py-3 text-left text-sm"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+
+              {/* RIGHT SIDE - MY ACCURACORE */}
+              <div className="flex flex-col gap-2">
+                <div className="bg-white rounded-[12px] overflow-hidden text-center">
+                  <div className="bg-[#0061A4] text-white py-2 text-sm">
+                    MyAccuraCore
+                  </div>
+                  <div className="px-3 py-3 text-black text-sm text-left">
+                    Link directly to job records
+                  </div>
+                </div>
+                {[
+                  "Pull verified weather data automatically",
+                  "Sync with claims, scope, and photos",
+                  "Instant report generation",
+                  "Improve claim defensibility",
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className="bg-white rounded-[12px] px-3 py-3 text-left text-sm"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Section 2 */}
@@ -168,7 +156,7 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
             <div className="flex flex-col gap-6">
               {/* Heading */}
               <h3 className="text-black text-lg leading-snug">
-                Prevents Incomplete Submissions <br /> Which Results In:
+                Strengthens Claim Defensibility <br /> Which Results In:
               </h3>
 
               {/* Separator */}
@@ -177,9 +165,9 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
               {/* Box */}
               <div className="bg-[#FEEACF] rounded-[20px] p-6 flex flex-col gap-3">
                 {[
-                  "Fewer clarification requests",
-                  "Faster approval cycles",
-                  "Less back-and-forth",
+                  "Stronger damage validation",
+                  "Reduced carrier pushback",
+                  "Cleaner review experience",
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2">
                     <div className="w-1 h-1 bg-gray-700 rounded-full mt-1" />
@@ -191,7 +179,7 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
               {/* Image Box */}
               <div className="bg-[#ebf0ec]">
                 <Image
-                  src="/Images/PISWRI.png"
+                  src="/Images/SCD.png"
                   alt="Column 1 Image"
                   width={400}
                   height={250}
@@ -203,16 +191,17 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
             {/* Column 2 */}
             <div className="flex flex-col gap-6">
               <h3 className="text-black text-lg leading-snug">
-                Eliminates scope-to-photo <br /> confusion Which Results In:
+                Eliminates Manual Documentation <br /> confusion Which Results
+                In:
               </h3>
 
               <div className="w-full h-[2px] bg-white" />
 
               <div className="bg-[#FEEACF] rounded-[20px] p-6 flex flex-col gap-3">
                 {[
-                  "Cleaner review experience",
-                  "Stronger defensibility",
-                  "Reduced ambiguity",
+                  "No external downloads",
+                  "No file mismatches",
+                  "Faster submission preparation",
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2">
                     <div className="w-1 h-1 bg-gray-700 rounded-full mt-1" />
@@ -223,7 +212,7 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
 
               <div className="bg-[#ebf0ec] rounded-[20px] ">
                 <Image
-                  src="/Images/ESTPCWRI.png"
+                  src="/Images/EMD.png"
                   alt="Column 2 Image"
                   width={400}
                   height={250}
@@ -235,16 +224,16 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
             {/* Column 3 */}
             <div className="flex flex-col gap-6">
               <h3 className="text-black text-lg leading-snug">
-                Produces submission-ready <br /> claim packs Which Results In:
+                Supports Timeline Accuracy <br /> Which Results In:
               </h3>
 
               <div className="w-full h-[2px] bg-white" />
 
               <div className="bg-[#FEEACF] rounded-[20px] p-6 flex flex-col gap-3">
                 {[
-                  "Faster carrier review",
-                  "Fewer supplement loops",
-                  "Stronger documentation credibility",
+                  "Clear cause correlation",
+                  "Reduced ambiguity",
+                  "Stronger submission credibility",
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2">
                     <div className="w-1 h-1 bg-gray-700 rounded-full mt-1" />
@@ -255,7 +244,7 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
 
               <div className="bg-[#ebf0ec] rounded-[20px] ">
                 <Image
-                  src="/Images/PSRCPWRI.png"
+                  src="/Images/STA.png"
                   alt="Column 3 Image"
                   width={400}
                   height={250}
@@ -304,118 +293,79 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
       </div>
 
       {/* Section 3 */}
-      <div className="max-w-[90%] mx-auto mb-30 flex flex-col gap-10">
-        {/* Top 2 Cols */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          {/* LEFT */}
-          <div>
-            <h1 className="text-[27px] lg:text-3xl text-black">
-              Stop Chasing Missing
-              <br className="hidden lg:block" /> {" "}
-               Documentation.
-            </h1>
-            <p className="text-gray-700 text-sm md:text-base mt-3">
-              Most teams discover gaps after submission when
-              <br /> it’s already expensive
-            </p>
-          </div>
+      <div className="max-w-[90%] mt-20 mb-20 mx-auto flex flex-col gap-10">
+        {/* TOP HEADING */}
+        <h1 className="text-3xl text-black">
+          Stop searching for <br />
+          storm data outside your workflow.
+        </h1>
 
-          {/* RIGHT */}
-          <div className="flex flex-col gap-4">
-            <p className="text-gray-700 font-semibold text-sm md:text-base">
-              AccuraCore Claims reverses that model.
-            </p>
+        {/* 2 COLUMNS */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          {/* LEFT COL */}
+          <div className="bg-[#f2f1ef] rounded-[20px] p-6 flex flex-col gap-4">
+            <h3 className="text-black font-semibold">
+              The Problem With Disconnected Tools
+            </h3>
 
-            {/* Vertical Points */}
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 text-sm md:text-base text-gray-700">
               {[
-                "Define required documentation upfront",
-                "Validate completeness before submission",
-                "Review cleanly in-office",
+                "Measurements live outside your workflow",
+                "Manual re-entry into claim systems",
+                "Scope and measurements fall out of sync",
+                "Errors discovered too late",
+                "Delays caused by avoidable mismatches",
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2">
-                  <Image
-                    src="/Icons/checkmark-icon-green.png"
-                    alt="check"
-                    width={18}
-                    height={18}
-                  />
-                  <span className="text-sm md:text-base text-gray-700">
-                    {item}
-                  </span>
+                  <div className="w-1.5 h-1.5 bg-gray-700 rounded-full mt-2" />
+                  <span>{item}</span>
                 </div>
               ))}
             </div>
           </div>
-        </div>
 
-        {/* Separator */}
-        <div className="w-full h-[2px] bg-white" />
+          {/* RIGHT COL */}
+          <div className="flex flex-col gap-6">
+            <div className="bg-[#F6BE71] rounded-[20px] p-6 flex flex-col gap-4">
+              <h3 className="text-black font-semibold">
+                What AccuraCore Changes
+              </h3>
 
-        {/* AccuraCam Reduces */}
-        <div className="flex items-center gap-3">
-          {/* Icon Box */}
-          <div className="bg-white p-2 rounded-[5px]">
-            <Image
-              src="/Icons/accuracore-claims.png"
-              alt="AccuraCam"
-              width={40}
-              height={40}
-            />
-          </div>
-
-          {/* Heading */}
-          <h1 className="text-2xl font-semibold text-[#0061A4]">
-            AccuraCore Claims reduces:
-          </h1>
-        </div>
-
-        {/* 4 Boxes */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            { icon: "/Icons/RC2.png", title: "Resubmission cycles" },
-            {
-              icon: "/Icons/siri.png",
-              title: "Internal follow-ups with field crews",
-            },
-            {
-              icon: "/Icons/IC.png",
-              title: "Confusion between scope and proof",
-            },
-            { icon: "/Icons/DI.png", title: "Documentation inconsistencies" },
-          ].map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-[#fdfcf7] rounded-[20px] p-4 flex flex-col gap-4 shadow-sm hover:scale-105 transition-transform"
-            >
-              {/* Icon Box */}
-              <div className="bg-[#0061A4] p-2 rounded-[10px] w-fit">
-                <Image
-                  src={item.icon}
-                  alt={item.title}
-                  width={20}
-                  height={20}
-                />
+              <div className="flex flex-col gap-3">
+                {[
+                  "Measurements connect directly to job records",
+                  "Scope and calculations stay aligned",
+                  "No manual duplication",
+                  "No cross-tool confusion",
+                  "One structured system from capture to submission",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <Image
+                      src="/Icons/checkmark-icon.png"
+                      alt="check"
+                      width={18}
+                      height={18}
+                    />
+                    <span className="text-gray-700 text-sm md:text-base">
+                      {item}
+                    </span>
+                  </div>
+                ))}
               </div>
-
-              {/* Title */}
-              <p className="text-black font-semibold text-sm md:text-base">
-                {item.title}
-              </p>
             </div>
-          ))}
+          </div>
         </div>
       </div>
 
       {/* Section 4 */}
-      <div className="max-w-[90%] mx-auto bg-white rounded-[20px] mt-20 mb-20 px-6 md:px-12 py-10 md:py-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div className="max-w-[90%] mx-auto bg-white rounded-[20px] mt-30 mb-20 px-6 md:px-12 py-10 md:py-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* LEFT CONTENT */}
         <div className="space-y-6 text-center md:text-left">
-          <h2 className="text-2xl md:text-4xl font-[400] leading-tight text-black">
-            When Submission is
-            <br  className="hidden lg:block" /> Structured,
-            <span className="text-[#FA8C3D]"> Approvals</span>
-            <br  className="hidden lg:block" /> <span className="text-[#FA8C3D]">Move Faster.</span>
+          <h2 className="text-2xl md:text-4xl font-[400] leading-tight text-[#FA8C3D]">
+            Get Accurate Roof &
+            <br /> Weather
+            <span className="text-black"> Intelligence </span>
+            <br /> <span className="text-black">Power Your Claims</span>
           </h2>
 
           {/* Buttons */}
@@ -426,6 +376,7 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
                     backgroundColor: "#ffffff",
                     color: "#0061A4",
                     padding: "27px 15px",
+                   
                   }}
                   onClick={() => setIsOpen(true)}
                 >
@@ -456,28 +407,12 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="bg-[#0061A4] rounded-[20px] p-6 md:p-14 text-white flex flex-col justify-center gap-6">
-          {/* Bullet Points */}
-          <div className="flex flex-col gap-4">
-            {[
-              "Claims stop stalling.",
-              "Documentation stays consistent.",
-              "Office overhead decreases.",
-              "Cash flow stabilizes.",
-            ].map((item, i) => (
-              <div key={i} className="flex items-start gap-3">
-                <div className="w-[5px] h-[5px] bg-white rounded-full mt-2"></div>
-                <p className="text-sm md:text-base">{item}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Bottom Text */}
-          <p className="text-sm md:text-base">
-            AccuraCore Claims transforms
-            <br /> documentation from a liability into an
-            <br /> advantage.
-          </p>
+        <div className="flex justify-center">
+          <img
+            src="/Images/calculator-one-platform.png"
+            alt="One Platform"
+            className="w-full max-w-md md:max-w-full object-contain"
+          />
         </div>
       </div>
     </section>

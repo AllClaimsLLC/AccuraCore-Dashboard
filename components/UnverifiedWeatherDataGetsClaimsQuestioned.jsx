@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
-export default function OperationalChaosCostsMargin({ isOpen, setIsOpen }) {
+export default function UnverifiedWeatherDataGetsClaimsQuestioned({ isOpen, setIsOpen }) {
   return (
     <section className="relative w-full py-16 px-6">
       {/* Background Image */}
@@ -21,17 +21,16 @@ export default function OperationalChaosCostsMargin({ isOpen, setIsOpen }) {
         <div className="flex flex-col gap-6">
           {/* Heading */}
           <h1 className="text-3xl text-white">
-            Operational Chaos Costs<br className="hidden lg:block" /> Margin.
+            Unverified Weather Data Gets<br/> Claims Questioned.
           </h1>
 
           {/* FIRST BULLET POINTS */}
           <div className="flex flex-col gap-2">
             {[
-              "Lost time coordinating between teams",
-              "Missed follow-ups and stalled approvals",
-              "Incomplete job files at submission",
-              "Rework caused by workflow gaps",
-              "Revenue delayed by operational friction",
+              "Carriers question damage causes",
+              "Supplement cycles increase",
+              "Approval timelines extend",
+              "Revenue realization slows",
             ].map((item, idx) => (
               <div key={idx} className="flex items-start gap-3">
                 <div className="w-[5px] h-[5px] bg-gray-400 rounded-full mt-2" />
@@ -42,17 +41,16 @@ export default function OperationalChaosCostsMargin({ isOpen, setIsOpen }) {
 
           {/* SECOND SECTION HEADING */}
           <h2 className="text-lg md:text-xl text-[#F6BE71] mt-2">
-            My AccuraCore reduces
+            Structured Weather Reporting Changes the Outcome.
           </h2>
 
           {/* SECOND BULLET POINTS */}
           <div className="flex flex-col gap-2">
             {[
-              "Structured workflows from start to submission",
-              "Clear job ownership and accountability",
-              "Real-time status visibility",
-              "Built-in documentation controls",
-              "Consistent execution across every job",
+              "Third-party verified storm data",
+              "Faster approval timelines",
+              "Stronger claim defensibility",
+              "Reduced dispute cycles",
             ].map((item, idx) => (
               <div key={idx} className="flex items-start gap-3">
                 <div className="w-[5px] h-[5px] bg-[#F6BE71] rounded-full mt-2" />
@@ -102,7 +100,7 @@ export default function OperationalChaosCostsMargin({ isOpen, setIsOpen }) {
         {/* RIGHT IMAGE */}
         <div className="w-full h-full flex justify-center">
           <Image
-            src="/Images/OperationalChaosCostsMargin.png"
+            src="/Images/UnverifiedWeatherDataGetsClaimsQuestioned.png"
             alt="preview"
             width={600}
             height={500}
