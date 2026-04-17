@@ -21,7 +21,7 @@ export default function UnverifiedWeatherDataGetsClaimsQuestioned({ isOpen, setI
         <div className="flex flex-col gap-6">
           {/* Heading */}
           <h1 className="text-3xl text-white">
-            Unverified Weather Data Gets<br/> Claims Questioned.
+            Unverified Weather Data Gets<br className="hidden lg:block" /> Claims Questioned.
           </h1>
 
           {/* FIRST BULLET POINTS */}

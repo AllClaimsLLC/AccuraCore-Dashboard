@@ -32,7 +32,7 @@ export default function JustTaskManagement({ isOpen, setIsOpen }) {
           {/* Heading */}
           <h1 className="text-3xl text-[black]">
             Why This Isn’t
-            <br />
+            <br className="hidden lg:block" />{" "}
             Just Task Management.
           </h1>
 

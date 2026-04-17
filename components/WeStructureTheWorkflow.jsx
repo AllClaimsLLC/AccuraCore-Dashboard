@@ -475,8 +475,8 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
           {/* Bottom Text */}
           <p className="text-sm md:text-base">
             AccuraCore Claims transforms
-            <br /> documentation from a liability into an
-            <br /> advantage.
+            <br className="hidden lg:block" /> documentation from a liability into an
+            <br className="hidden lg:block" /> advantage.
           </p>
         </div>
       </div>
