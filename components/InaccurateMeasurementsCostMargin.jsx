@@ -22,7 +22,7 @@ export default function InaccurateMeasurementsCostMargin({ isOpen, setIsOpen }) 
           {/* Heading */}
           <h1 className="text-3xl text-white">
             Inaccurate
-            <br />
+            <br className="hidden lg:block" />{" "}
             measurements cost margin.
           </h1>
            <h2 className="text-lg md:text-xl  text-white mt-2">

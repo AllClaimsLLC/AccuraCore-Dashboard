@@ -9,6 +9,43 @@ import UnstructuredDocumentationCostsMoney from "@/components/UnstructuredDocume
 import WeStructureProof from "@/components/WeStructureProof";
 import Link from "next/link";
 import GetStartedModal from "@/components/GetStartedModal";
+import HeroLayout from "@/components/HeroLayout";
+
+const content = (
+  <p className="text-blue-100">
+    AccuraCore is a powerful platform that brings everything you need into one
+    dashboard — manage your team, track work orders, handle finances, and stay
+    in control of every detail.
+  </p>
+);
+
+const buttons = (onGetStarted) => (
+  <>
+    <Button
+      className="rounded-full text-sm flex items-center"
+      style={{
+        backgroundColor: "#fff",
+        color: "#0061A4",
+        padding: "27px 15px",
+      }}
+      onClick={onGetStarted}
+    >
+      Get Started
+    </Button>
+
+    <Button
+      className="text-white rounded-full text-sm flex items-center"
+      style={{
+        backgroundColor: "#0061A4",
+        border: "2px solid #4485b2",
+        padding: "25px 15px",
+      }}
+      onClick={() => (window.location.href = "/book-a-demo")}
+    >
+      Book Demo
+    </Button>
+  </>
+);
 
 export default function AccuraCamPage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,8 +63,9 @@ export default function AccuraCamPage() {
 
   return (
     <>
+      {/* DESKTOP HERO AND HEADER */}
       <div
-        className="bg-cover bg-center bg-no-repeat"
+        className="hidden md:block lg:block bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('/Images/Hero-bg.png')",
           height: "45rem",
@@ -257,6 +295,8 @@ export default function AccuraCamPage() {
           </div>
         </main>
       </div>
+
+      <HeroLayout title="Accuracam" content={content} buttons={buttons(() => setIsOpen(true))} />
 
       <BuiltForStructuredExecution isOpen={isOpen} setIsOpen={setIsOpen} />
       <UnstructuredDocumentationCostsMoney />

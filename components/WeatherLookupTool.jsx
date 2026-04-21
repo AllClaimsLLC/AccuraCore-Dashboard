@@ -156,7 +156,7 @@ export default function WeatherLookupTool({ isOpen, setIsOpen }) {
             <div className="flex flex-col gap-6">
               {/* Heading */}
               <h3 className="text-black text-lg leading-snug">
-                Strengthens Claim Defensibility <br /> Which Results In:
+                Strengthens Claim Defensibility <br className="hidden lg:block" /> Which Results In:
               </h3>
 
               {/* Separator */}
@@ -191,7 +191,7 @@ export default function WeatherLookupTool({ isOpen, setIsOpen }) {
             {/* Column 2 */}
             <div className="flex flex-col gap-6">
               <h3 className="text-black text-lg leading-snug">
-                Eliminates Manual Documentation <br /> confusion Which Results
+                Eliminates Manual Documentation <br className="hidden lg:block" /> confusion Which Results
                 In:
               </h3>
 
@@ -224,7 +224,7 @@ export default function WeatherLookupTool({ isOpen, setIsOpen }) {
             {/* Column 3 */}
             <div className="flex flex-col gap-6">
               <h3 className="text-black text-lg leading-snug">
-                Supports Timeline Accuracy <br /> Which Results In:
+                Supports Timeline Accuracy <br className="hidden lg:block" /> Which Results In:
               </h3>
 
               <div className="w-full h-[2px] bg-white" />
@@ -296,7 +296,7 @@ export default function WeatherLookupTool({ isOpen, setIsOpen }) {
       <div className="max-w-[90%] mt-20 mb-20 mx-auto flex flex-col gap-10">
         {/* TOP HEADING */}
         <h1 className="text-3xl text-black">
-          Stop searching for <br />
+          Stop searching for <br className="hidden lg:block" />
           storm data outside your workflow.
         </h1>
 
@@ -363,9 +363,9 @@ export default function WeatherLookupTool({ isOpen, setIsOpen }) {
         <div className="space-y-6 text-center md:text-left">
           <h2 className="text-2xl md:text-4xl font-[400] leading-tight text-[#FA8C3D]">
             Get Accurate Roof &
-            <br /> Weather
+            <br className="hidden lg:block" /> Weather
             <span className="text-black"> Intelligence </span>
-            <br /> <span className="text-black">Power Your Claims</span>
+            <br className="hidden lg:block" /> <span className="text-black">Power Your Claims</span>
           </h2>
 
           {/* Buttons */}

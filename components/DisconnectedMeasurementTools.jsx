@@ -31,7 +31,7 @@ export default function DisconnectedMeasurementTools({ isOpen, setIsOpen }) {
         <div className="flex flex-col gap-6">
           {/* Heading */}
           <h1 className="text-3xl text-[black]">
-            Stop relying on <br />
+            Stop relying on <br className="hidden lg:block" />
             disconnected measurement tools
           </h1>
 
@@ -149,7 +149,7 @@ export default function DisconnectedMeasurementTools({ isOpen, setIsOpen }) {
             <div className="flex flex-col gap-6">
               {/* Heading */}
               <h3 className="text-black text-lg leading-snug">
-                Eliminates Manual Data Re-entry <br /> Which Results In:
+                Eliminates Manual Data Re-entry <br className="hidden lg:block" /> Which Results In:
               </h3>
 
               {/* Separator */}
@@ -184,7 +184,7 @@ export default function DisconnectedMeasurementTools({ isOpen, setIsOpen }) {
             {/* Column 2 */}
             <div className="flex flex-col gap-6">
               <h3 className="text-black text-lg leading-snug">
-                Prevents Scope Mismatches <br /> confusion Which Results In:
+                Prevents Scope Mismatches <br className="hidden lg:block" /> Confusion Which Results In:
               </h3>
 
               <div className="w-full h-[2px] bg-white" />
@@ -216,7 +216,7 @@ export default function DisconnectedMeasurementTools({ isOpen, setIsOpen }) {
             {/* Column 3 */}
             <div className="flex flex-col gap-6">
               <h3 className="text-black text-lg leading-snug">
-                Supports Approval Confidence <br /> Which Results In:
+                Supports Approval Confidence <br className="hidden lg:block" /> Which Results In:
               </h3>
 
               <div className="w-full h-[2px] bg-white" />
@@ -290,9 +290,9 @@ export default function DisconnectedMeasurementTools({ isOpen, setIsOpen }) {
         <div className="space-y-6 text-center md:text-left">
           <h2 className="text-2xl md:text-4xl font-[400] leading-tight text-black">
             Structured Roof
-            <br /> Calculations.
+            <br className="hidden lg:block" /> Calculations.
             <span className="text-[#FA8C3D]"> Seamless</span>
-            <br /> <span className="text-[#FA8C3D]">Downstream Workflow.</span>
+            <br className="hidden lg:block" /> <span className="text-[#FA8C3D]">Downstream Workflow.</span>
           </h2>
 
           {/* Buttons */}

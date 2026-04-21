@@ -41,7 +41,7 @@ export default function UnstructuredDocumentationCostsMoney() {
           
           {/* Heading */}
           <h1 className="text-3xl text-white">
-            Unstructured <br />
+            Unstructured <br className="hidden lg:block" />
             Documentation Costs Money.
           </h1>
 

@@ -11,6 +11,44 @@ import StageBasedControlforReliableJobExecution from "@/components/StageBasedCon
 import DelaysSlowRevenue from "@/components/DelaysSlowRevenue";
 import JustTaskManagement from "@/components/JustTaskManagement";
 import GetStartedModal from "@/components/GetStartedModal";
+import HeroLayout from "@/components/HeroLayout";
+
+const content = (
+  <p className="text-blue-100">
+    Workflow Automation inside AccuraCore eliminates manual handoffs, missed
+    steps, and operational delays by ensuring every job progresses automatically
+    in the correct sequence. Tasks are triggered systematically, so nothing is
+    forgotten and no stage is skipped.
+  </p>
+);
+
+const buttons = (onGetStarted) => (
+  <>
+    <Button
+      className="rounded-full text-sm flex items-center"
+      style={{
+        backgroundColor: "#fff",
+        color: "#0061A4",
+        padding: "27px 15px",
+      }}
+      onClick={onGetStarted}
+    >
+      Get Started
+    </Button>
+
+    <Button
+      className="text-white rounded-full text-sm flex items-center"
+      style={{
+        backgroundColor: "#0061A4",
+        border: "2px solid #4485b2",
+        padding: "25px 15px",
+      }}
+      onClick={() => (window.location.href = "/book-a-demo")}
+    >
+      Book Demo
+    </Button>
+  </>
+);
 
 export default function WorkflowAutomationPage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -28,8 +66,8 @@ export default function WorkflowAutomationPage() {
 
   return (
     <>
-     <div
-        className="bg-cover bg-center bg-no-repeat h-[52rem] lg:h-[50rem]"
+      <div
+        className="hidden md:block lg:block bg-cover bg-center bg-no-repeat h-[52rem] lg:h-[50rem]"
         style={{
           backgroundImage: "url('/Images/Hero-bg.png')",
         }}
@@ -292,7 +330,16 @@ export default function WorkflowAutomationPage() {
         </main>
       </div>
 
-      <StageBasedControlforReliableJobExecution isOpen={isOpen} setIsOpen={setIsOpen} />
+      <HeroLayout
+      title="Workflow Automation"
+      content={content}
+      buttons={buttons(() => setIsOpen(true))}
+    />
+
+      <StageBasedControlforReliableJobExecution
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+      />
       <DelaysSlowRevenue isOpen={isOpen} setIsOpen={setIsOpen} />
       <JustTaskManagement isOpen={isOpen} setIsOpen={setIsOpen} />
 

@@ -34,7 +34,7 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
           {/* Heading */}
           <h1 className="text-3xl text-[#FA8C3D]">
             Most Claims Apps File Paperwork.
-            <br /> We Structure the Workflow.
+            <br className="hidden lg:block" /> We Structure the Workflow.
           </h1>
 
           {/* BOX 1 */}
@@ -168,7 +168,7 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
             <div className="flex flex-col gap-6">
               {/* Heading */}
               <h3 className="text-black text-lg leading-snug">
-                Prevents Incomplete Submissions <br /> Which Results In:
+                Prevents Incomplete Submissions <br className="hidden lg:block" /> Which Results In:
               </h3>
 
               {/* Separator */}
@@ -203,7 +203,7 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
             {/* Column 2 */}
             <div className="flex flex-col gap-6">
               <h3 className="text-black text-lg leading-snug">
-                Eliminates scope-to-photo <br /> confusion Which Results In:
+                Eliminates Scope-To-Photo <br className="hidden lg:block" /> Confusion Which Results In:
               </h3>
 
               <div className="w-full h-[2px] bg-white" />
@@ -235,7 +235,7 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
             {/* Column 3 */}
             <div className="flex flex-col gap-6">
               <h3 className="text-black text-lg leading-snug">
-                Produces submission-ready <br /> claim packs Which Results In:
+                Produces Submission-Ready <br className="hidden lg:block" /> Claim Packs Which Results In:
               </h3>
 
               <div className="w-full h-[2px] bg-white" />

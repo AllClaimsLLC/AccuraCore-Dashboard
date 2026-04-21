@@ -157,7 +157,7 @@ export default function JustAnotherCRM({ isOpen, setIsOpen }) {
             <div className="flex flex-col gap-6">
               {/* Heading */}
               <h3 className="text-black text-lg leading-snug">
-                Eliminates Status Confusion <br /> Which Results In:
+                Eliminates Status Confusion <br className="hidden lg:block" /> Which Results In:
               </h3>
 
               {/* Separator */}
@@ -192,7 +192,7 @@ export default function JustAnotherCRM({ isOpen, setIsOpen }) {
             {/* Column 2 */}
             <div className="flex flex-col gap-6">
               <h3 className="text-black text-lg leading-snug">
-                Prevents Workflow Breakdowns <br /> Which Results In:
+                Prevents Workflow Breakdowns <br className="hidden lg:block" /> Which Results In:
               </h3>
 
               <div className="w-full h-[2px] bg-white" />
@@ -225,7 +225,7 @@ export default function JustAnotherCRM({ isOpen, setIsOpen }) {
             <div className="flex flex-col gap-6">
               <h3 className="text-black text-lg leading-snug">
                 Connects Documentation
-                <br /> To Operations Which Results In:
+                <br className="hidden lg:block" /> To Operations Which Results In:
               </h3>
 
               <div className="w-full h-[2px] bg-white" />
@@ -472,9 +472,9 @@ export default function JustAnotherCRM({ isOpen, setIsOpen }) {
         <div className="space-y-6 text-center md:text-left">
           <h2 className="text-2xl md:text-4xl font-[400] leading-tight text-black">
             When Operations Are
-            <br /> Structured,
+            <br className="hidden lg:block" /> Structured,
             <span className="text-[#FA8C3D]"> Growth</span>
-            <br /> <span className="text-[#FA8C3D]">Becomes Predictable.</span>
+            <br className="hidden lg:block" /> <span className="text-[#FA8C3D]">Becomes Predictable.</span>
           </h2>
 
           {/* Buttons */}

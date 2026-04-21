@@ -30,14 +30,14 @@ export default function GetStartedModal({ isOpen, setIsOpen }) {
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-if (name === "email" && value.length > 0 && !emailRegex.test(value)) {
-  msg = "Enter a valid email";
-}
+    if (name === "email" && value.length > 0 && !emailRegex.test(value)) {
+      msg = "Enter a valid email";
+    }
     const phoneRegex = /^\+?[0-9]{8,15}$/;
 
-if (name === "phone" && value.length > 0 && !phoneRegex.test(value)) {
-  msg = "Enter valid international phone";
-}
+    if (name === "phone" && value.length > 0 && !phoneRegex.test(value)) {
+      msg = "Enter valid international phone";
+    }
 
     return msg;
   };
@@ -56,22 +56,34 @@ if (name === "phone" && value.length > 0 && !phoneRegex.test(value)) {
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    let newErrors = {};
+  let newErrors = {};
 
-    if (form.name.length < 2) newErrors.name = "Name is required (min 2 chars)";
-    if (!form.phone) newErrors.phone = "Phone is required";
-    if (form.company.length < 2) newErrors.company = "Company is required";
-    if (!form.email) newErrors.email = "Email is required";
+  if (form.name.trim().length < 2)
+    newErrors.name = "Name must be at least 2 characters";
 
-    setErrors(newErrors);
+  if (!form.email)
+    newErrors.email = "Email is required";
 
-if (Object.keys(newErrors).length > 0) return;
+  if (!form.phone)
+    newErrors.phone = "Phone is required";
+
+  if (form.company.trim().length < 2)
+    newErrors.company = "Company must be at least 2 characters";
+
+  setErrors(newErrors);
+
+  if (Object.keys(newErrors).length > 0) {
+    setLoading(false);
+    return;
+  }
 
   setLoading(true);
 
+  try {
+    // DB
     const { error } = await supabase.from("leads").insert([
       {
         full_name: form.name,
@@ -81,23 +93,63 @@ if (Object.keys(newErrors).length > 0) return;
       },
     ]);
 
-    setLoading(false);
-
     if (error) {
-      console.log(error);
-      alert("Error submitting form");
+      alert("Error saving data");
+      setLoading(false);
       return;
     }
 
+    // Email
+    const emailRes = await fetch("/api/send-lead-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
+
+    const emailData = await emailRes.json();
+
+    // WhatsApp
+    const waRes = await fetch("/api/send-whatsapp", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
+
+    const waData = await waRes.json();
+
+    if (!emailData.success || !waData.success) {
+      console.error("Email:", emailData);
+      console.error("WhatsApp:", waData);
+      alert("Lead saved but notification failed");
+    }
+
     setSuccess(true);
-  };
+
+    setForm({
+      name: "",
+      email: "",
+      phone: "",
+      company: "",
+    });
+
+    setErrors({});
+  } catch (err) {
+    console.error(err);
+    alert("Something went wrong");
+  }
+
+  setLoading(false);
+};
 
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
       <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 w-[90%] max-w-[600px] relative">
-
         {/* Close */}
         <button
           onClick={() => {
@@ -116,7 +168,7 @@ if (Object.keys(newErrors).length > 0) return;
             <p className="mt-2">We will contact you within 30 minutes.</p>
 
             <button
-              className="mt-6 text-black border-2 border-blue-500 rounded-[50px] p-2"
+              className="bg-blue-600 text-white p-3 rounded-full mt-6"
               onClick={() => {
                 setIsOpen(false);
                 setSuccess(false);
@@ -132,12 +184,12 @@ if (Object.keys(newErrors).length > 0) return;
               Get Started with AccuraCore
             </h2>
 
-    <p className="text-gray-500 text-sm mb-6 text-center dark:text-gray-400">
-      Share your details and a representative will reach out as soon as possible.
-    </p>
+            <p className="text-gray-500 text-sm mb-6 text-center dark:text-gray-400">
+              Share your details and a representative will reach out as soon as
+              possible.
+            </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
-
               {/* NAME */}
               <div>
                 <input

@@ -18,6 +18,43 @@ import ControlledBeforeItLeavesTheField from "@/components/ControlledBeforeItLea
 import InaccurateMeasurementsCostMargin from "@/components/InaccurateMeasurementsCostMargin";
 import DisconnectedMeasurementTools from "@/components/DisconnectedMeasurementTools";
 import GetStartedModal from "@/components/GetStartedModal";
+import HeroLayout from "@/components/HeroLayout";
+
+const content = (
+  <p className="text-blue-100">
+    Roof Calculations inside AccuraCore generate precise, job-linked
+    measurements — eliminating manual estimating errors, supplement disputes,
+    and costly miscalculations.
+  </p>
+);
+
+const buttons = (onGetStarted) => (
+  <>
+    <Button
+      className="rounded-full text-sm flex items-center"
+      style={{
+        backgroundColor: "#fff",
+        color: "#0061A4",
+        padding: "27px 15px",
+      }}
+      onClick={onGetStarted}
+    >
+      Get Started
+    </Button>
+
+    <Button
+      className="text-white rounded-full text-sm flex items-center"
+      style={{
+        backgroundColor: "#0061A4",
+        border: "2px solid #4485b2",
+        padding: "25px 15px",
+      }}
+      onClick={() => (window.location.href = "/book-a-demo")}
+    >
+      Book Demo
+    </Button>
+  </>
+);
 
 export default function RoofCalculationsPage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -36,7 +73,7 @@ export default function RoofCalculationsPage() {
   return (
     <>
       <div
-        className="bg-cover bg-center bg-no-repeat h-[47rem] lg:h-[45rem]"
+        className="hidden md:block lg:block bg-cover bg-center bg-no-repeat h-[47rem] lg:h-[45rem]"
         style={{
           backgroundImage: "url('/Images/Hero-bg.png')",
         }}
@@ -209,9 +246,10 @@ export default function RoofCalculationsPage() {
                 Roof Calculations
               </h1>
               <p className="text-md text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Roof Calculations inside AccuraCore generate precise, job-linked measurements — eliminating manual estimating errors, supplement disputes, and costly miscalculations.
+                Roof Calculations inside AccuraCore generate precise, job-linked
+                measurements — eliminating manual estimating errors, supplement
+                disputes, and costly miscalculations.
               </p>
-              
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -295,6 +333,12 @@ export default function RoofCalculationsPage() {
           </div>
         </main>
       </div>
+
+      <HeroLayout
+        title="Roof Calculations"
+        content={content}
+        buttons={buttons(() => setIsOpen(true))}
+      />
 
       <ControlledBeforeItLeavesTheField isOpen={isOpen} setIsOpen={setIsOpen} />
       <InaccurateMeasurementsCostMargin isOpen={isOpen} setIsOpen={setIsOpen} />

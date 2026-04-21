@@ -15,6 +15,49 @@ import ControlTheEntireWorkflow from "@/components/ControlTheEntireWorkflow";
 import OperationalChaosCostsMargin from "@/components/OperationalChaosCostsMargin";
 import JustAnotherCRM from "@/components/JustAnotherCRM";
 import GetStartedModal from "@/components/GetStartedModal";
+import HeroLayout from "@/components/HeroLayout";
+
+const content = (
+  <>
+    <p className="text-blue-100">
+      MyAccuraCore centralizes jobs, documentation, teams, and claims in one
+      structured system. This is where field capture, office review, and claim
+      workflows connect.{" "}
+      <span className="text-[#FA8C3D]">
+        One system, Full visibility, Controlled execution.
+      </span>
+    </p>
+  </>
+);
+
+
+const buttons = (onGetStarted) => (
+  <>
+    <Button
+      className="rounded-full text-sm flex items-center"
+      style={{
+        backgroundColor: "#fff",
+        color: "#0061A4",
+        padding: "27px 15px",
+      }}
+      onClick={onGetStarted}
+    >
+      Get Started
+    </Button>
+
+    <Button
+      className="text-white rounded-full text-sm flex items-center"
+      style={{
+        backgroundColor: "#0061A4",
+        border: "2px solid #4485b2",
+        padding: "25px 15px",
+      }}
+      onClick={() => (window.location.href = "/book-a-demo")}
+    >
+      Book Demo
+    </Button>
+  </>
+);
 
 export default function MyAccuraCorePage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -33,7 +76,7 @@ export default function MyAccuraCorePage() {
   return (
     <>
       <div
-        className="bg-cover bg-center bg-no-repeat"
+        className="hidden md:block lg:block bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('/Images/Hero-bg.png')",
           height: "50rem",
@@ -189,7 +232,7 @@ export default function MyAccuraCorePage() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-               <Button
+                <Button
                   className="rounded-full text-sm flex items-center"
                   style={{
                     backgroundColor: "#ffffff",
@@ -269,6 +312,8 @@ export default function MyAccuraCorePage() {
           </div>
         </main>
       </div>
+
+      <HeroLayout title="My AccuraCore" content={content} buttons={buttons(() => setIsOpen(true))} />
 
       <ControlTheEntireWorkflow isOpen={isOpen} setIsOpen={setIsOpen} />
       <OperationalChaosCostsMargin isOpen={isOpen} setIsOpen={setIsOpen} />

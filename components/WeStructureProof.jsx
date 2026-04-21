@@ -143,7 +143,7 @@ export default function WeStructureProof({ isOpen, setIsOpen }) {
       <div className="max-w-[90%] mx-auto mb-30 flex flex-col gap-10">
         {/* CENTER HEADING */}
         <h1 className="text-3xl text-black lg:text-center">
-          Every Screen <br />
+          Every Screen <br className="hidden lg:block" />
           Has a Business Outcome
         </h1>
 
@@ -264,8 +264,8 @@ export default function WeStructureProof({ isOpen, setIsOpen }) {
         <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* LEFT */}
           <h1 className="text-3xl text-black">
-            Stop rebuilding <br />
-            documentation in <br />
+            Stop rebuilding <br className="hidden lg:block" />
+            documentation in <br className="hidden lg:block" />
             the office.
           </h1>
 
@@ -351,9 +351,9 @@ export default function WeStructureProof({ isOpen, setIsOpen }) {
         <div className="space-y-6 text-center md:text-left">
           <h2 className="text-2xl md:text-4xl font-[400] leading-tight text-black">
             When capture is
-            <br /> structured,
+            <br className="hidden lg:block" /> structured,
             <span className="text-[#FA8C3D]"> everything</span>
-            <br /> <span className="text-[#FA8C3D]">downstream works.</span>
+            <br className="hidden lg:block" /> <span className="text-[#FA8C3D]">downstream works.</span>
           </h2>
 
           {/* Buttons */}

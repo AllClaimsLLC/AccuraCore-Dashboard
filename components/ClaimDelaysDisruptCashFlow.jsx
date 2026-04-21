@@ -39,7 +39,7 @@ export default function ClaimDelaysDisruptCashFlow() {
         <div className="flex flex-col gap-6">
           {/* Heading */}
           <h1 className="text-3xl text-white">
-            Unstructured <br />
+            Unstructured <br className="hidden lg:block" />
             Documentation Costs Money.
           </h1>
 

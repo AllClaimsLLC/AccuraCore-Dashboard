@@ -14,6 +14,44 @@ import WeatherIntelligenceClaimValidation from "@/components/WeatherIntelligence
 import UnverifiedWeatherDataGetsClaimsQuestioned from "@/components/UnverifiedWeatherDataGetsClaimsQuestioned";
 import WeatherLookupTool from "@/components/WeatherLookupTool";
 import GetStartedModal from "@/components/GetStartedModal";
+import HeroLayout from "@/components/HeroLayout";
+
+const content = (
+  <p className="text-blue-100">
+    Weather Reports inside AccuraCore attach verified storm and weather data
+    directly to job records, strengthening claims, reducing disputes, and
+    improving documentation integrity with job-linked, submission-ready
+    evidence.
+  </p>
+);
+
+const buttons = (onGetStarted) => (
+  <>
+    <Button
+      className="rounded-full text-sm flex items-center"
+      style={{
+        backgroundColor: "#fff",
+        color: "#0061A4",
+        padding: "27px 15px",
+      }}
+      onClick={onGetStarted}
+    >
+      Get Started
+    </Button>
+
+    <Button
+      className="text-white rounded-full text-sm flex items-center"
+      style={{
+        backgroundColor: "#0061A4",
+        border: "2px solid #4485b2",
+        padding: "25px 15px",
+      }}
+      onClick={() => (window.location.href = "/book-a-demo")}
+    >
+      Book Demo
+    </Button>
+  </>
+);
 
 export default function WeatherReportsPage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -31,8 +69,8 @@ export default function WeatherReportsPage() {
 
   return (
     <>
-<div
-        className="bg-cover bg-center bg-no-repeat h-[47rem] lg:h-[45rem]"
+      <div
+        className="hidden md:block lg:block bg-cover bg-center bg-no-repeat h-[47rem] lg:h-[45rem]"
         style={{
           backgroundImage: "url('/Images/Hero-bg.png')",
         }}
@@ -205,7 +243,10 @@ export default function WeatherReportsPage() {
                 Weather Reports
               </h1>
               <p className="text-md text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Weather Reports inside AccuraCore attach verified storm and weather data directly to job records, strengthening claims, reducing disputes, and improving documentation integrity with job-linked, submission-ready evidence.
+                Weather Reports inside AccuraCore attach verified storm and
+                weather data directly to job records, strengthening claims,
+                reducing disputes, and improving documentation integrity with
+                job-linked, submission-ready evidence.
               </p>
 
               {/* CTA Buttons */}
@@ -291,13 +332,25 @@ export default function WeatherReportsPage() {
         </main>
       </div>
 
-      <WeatherIntelligenceClaimValidation isOpen={isOpen} setIsOpen={setIsOpen} />
-      <UnverifiedWeatherDataGetsClaimsQuestioned isOpen={isOpen} setIsOpen={setIsOpen} />
+      <HeroLayout
+        title="Weather Reports"
+        content={content}
+        buttons={buttons(() => setIsOpen(true))}
+      />
+
+      <WeatherIntelligenceClaimValidation
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+      />
+      <UnverifiedWeatherDataGetsClaimsQuestioned
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+      />
       <WeatherLookupTool isOpen={isOpen} setIsOpen={setIsOpen} />
 
       <Footer id="contact-section" onBookDemo={() => setIsOpen(true)} />
       {/* Popup Modal */}
-{isOpen && <GetStartedModal isOpen={isOpen} setIsOpen={setIsOpen} />}
+      {isOpen && <GetStartedModal isOpen={isOpen} setIsOpen={setIsOpen} />}
     </>
   );
 }

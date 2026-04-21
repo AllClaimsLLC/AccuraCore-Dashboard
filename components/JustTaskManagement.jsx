@@ -149,7 +149,7 @@ export default function JustTaskManagement({ isOpen, setIsOpen }) {
             <div className="flex flex-col gap-6">
               {/* Heading */}
               <h3 className="text-black text-lg leading-snug">
-                Eliminates Stalled Jobs <br /> Which Results In:
+                Eliminates Stalled Jobs <br className="hidden lg:block" /> Which Results In:
               </h3>
 
               {/* Separator */}
@@ -184,7 +184,7 @@ export default function JustTaskManagement({ isOpen, setIsOpen }) {
             {/* Column 2 */}
             <div className="flex flex-col gap-6">
               <h3 className="text-black text-lg leading-snug">
-                Prevents Skipped Steps Prevents <br /> confusion Which Results
+                Prevents Skipped Steps Prevents <br className="hidden lg:block" /> confusion Which Results
                 In:
               </h3>
 
@@ -217,7 +217,7 @@ export default function JustTaskManagement({ isOpen, setIsOpen }) {
             {/* Column 3 */}
             <div className="flex flex-col gap-6">
               <h3 className="text-black text-lg leading-snug">
-                Reduces Internal Coordination <br /> Which Results In:
+                Reduces Internal Coordination <br className="hidden lg:block" /> Which Results In:
               </h3>
 
               <div className="w-full h-[2px] bg-white" />
@@ -289,7 +289,7 @@ export default function JustTaskManagement({ isOpen, setIsOpen }) {
       <div className="max-w-[90%] mt-20 mb-20 mx-auto flex flex-col gap-10">
         {/* TOP HEADING */}
         <h1 className="text-3xl text-black">
-          Stop relying <br />
+          Stop relying <br className="hidden lg:block" />
           on manual follow-ups
         </h1>
 
@@ -356,9 +356,9 @@ export default function JustTaskManagement({ isOpen, setIsOpen }) {
         <div className="space-y-6 text-center md:text-left">
           <h2 className="text-2xl md:text-4xl font-[400] leading-tight text-black">
             Structured Roof
-            <br /> Calculations.
+            <br className="hidden lg:block" /> Calculations.
             <span className="text-[#FA8C3D]"> Seamless</span>
-            <br /> <span className="text-[#FA8C3D]">Downstream Workflow.</span>
+            <br className="hidden lg:block" /> <span className="text-[#FA8C3D]">Downstream Workflow.</span>
           </h2>
 
           {/* Buttons */}

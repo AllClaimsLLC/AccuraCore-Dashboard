@@ -12,6 +12,41 @@ import ClaimDelaysDisruptCashFlow from "@/components/ClaimDelaysDisruptCashFlow"
 import WeStructureTheWorkflow from "@/components/WeStructureTheWorkflow";
 import Link from "next/link";
 import GetStartedModal from "@/components/GetStartedModal";
+import HeroLayout from "@/components/HeroLayout";
+
+const content = (
+  <p className="text-blue-100">
+    AccuraCore Claims standardizes documentation from field to submission eliminating guesswork, incomplete files, and review delays.
+  </p>
+);
+
+const buttons = (onGetStarted) => (
+  <>
+    <Button
+      className="rounded-full text-sm flex items-center"
+      style={{
+        backgroundColor: "#fff",
+        color: "#0061A4",
+        padding: "27px 15px",
+      }}
+      onClick={onGetStarted}
+    >
+      Get Started
+    </Button>
+
+    <Button
+      className="text-white rounded-full text-sm flex items-center"
+      style={{
+        backgroundColor: "#0061A4",
+        border: "2px solid #4485b2",
+        padding: "25px 15px",
+      }}
+      onClick={() => (window.location.href = "/book-a-demo")}
+    >
+      Book Demo
+    </Button>
+  </>
+);
 
 export default function AccuraCoreClaimsPage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -30,7 +65,7 @@ export default function AccuraCoreClaimsPage() {
   return (
     <>
       <div
-        className="bg-cover bg-center bg-no-repeat"
+        className="hidden md:block lg:block bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('/Images/Hero-bg.png')",
           height: "45rem",
@@ -292,7 +327,13 @@ export default function AccuraCoreClaimsPage() {
         </main>
       </div>
 
-      <StructuredBeforeItLeavesTheField isOpen={isOpen} setIsOpen={setIsOpen} />
+      <HeroLayout
+      title="AccuraCore Claims"
+      content={content}
+      buttons={buttons}
+    />
+
+      <StructuredBeforeItLeavesTheField isOpen={isOpen} setIsOpen={setIsOpen} buttons={buttons(() => setIsOpen(true))} />
       <ClaimDelaysDisruptCashFlow />
       <WeStructureTheWorkflow isOpen={isOpen} setIsOpen={setIsOpen} />
 
