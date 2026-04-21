@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export default function InaccurateMeasurementsCostMargin({ isOpen, setIsOpen }) {
   return (
-    <section className="relative w-full py-16 px-6">
+    <section className="relative w-full py-16 lg:px-6">
       {/* Background Image */}
       <div className="absolute inset-0 -z-10">
         <Image

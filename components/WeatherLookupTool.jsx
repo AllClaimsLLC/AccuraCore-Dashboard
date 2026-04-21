@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 export default function WeatherLookupTool({ isOpen, setIsOpen }) {
   return (
         <section
-      className="px-6 py-16"
+      className="lg:px-6 py-16"
       style={{
   backgroundImage: "url('/Images/bgforlastsection.jpg')",
   backgroundSize: "cover",
