@@ -111,7 +111,7 @@ export default function HomePage() {
                 <img
                   src="/Icons/Vector.png"
                   alt="Arrow Icon"
-                  className="w-3 h-4 ml-2"
+                  className="w-2 h-3 ml-2"
                 />
               </Button>
             </div>
@@ -183,7 +183,7 @@ export default function HomePage() {
                   <img
                     src="/Icons/Vector.png"
                     alt="Arrow Icon"
-                    className="w-3 h-4 ml-2"
+                    className="w-2 h-3 ml-2"
                   />
                 </Button>
               </div> */}
@@ -206,9 +206,9 @@ export default function HomePage() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/calculator">
+                <Link href="/calculator" className="w-full sm:w-auto md:w-auto lg:w-auto ">
                   <Button
-                    className="rounded-full text-sm flex items-center justify-center"
+                    className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center justify-center"
                     style={{
                       backgroundColor: "#ffffff",
                       color: "#0061A4",
@@ -224,7 +224,7 @@ export default function HomePage() {
                   </Button>
                 </Link>
                 <Button
-                  className="text-white rounded-full text-sm flex items-center"
+                  className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
                   style={{
                     backgroundColor: "#0061A4",
                     border: "2px solid #4485b2",
@@ -236,12 +236,12 @@ export default function HomePage() {
                   <img
                     src="/Icons/Vector.png"
                     alt="Arrow Icon"
-                    className="w-3 h-4 ml-2"
+                    className="w-2 h-3 ml-2"
                   />
                 </Button>
 
                 <Button
-                  className="rounded-full text-sm flex items-center"
+                  className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
                   style={{
                     backgroundColor: "#ffffff",
                     color: "#0061A4",
@@ -254,7 +254,7 @@ export default function HomePage() {
                   <img
                     src="/Icons/Vector2.png"
                     alt="Arrow Icon"
-                    className="w-3 h-4 ml-2"
+                    className="w-2 h-3 ml-2"
                   />
                 </Button>
               </div>

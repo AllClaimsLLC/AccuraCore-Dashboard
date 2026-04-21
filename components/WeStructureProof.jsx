@@ -15,7 +15,7 @@ export default function WeStructureProof({ isOpen, setIsOpen }) {
 }}
     >
       {/* Section 1 */}
-      <div className="max-w-[90%] mt-20 mb-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div className="max-w-[90%] mt-0 sm:mt-20 md:mt-20 lg:mt-20 mb-0 sm:mb-20 md:mb-20 lg:mb-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* LEFT COL */}
         <div className="flex justify-center">
           <div className="rounded-[30px] border-2 border-white bg-white/10 backdrop-blur-md p-12 w-full">
@@ -142,7 +142,7 @@ export default function WeStructureProof({ isOpen, setIsOpen }) {
       {/* Section 2 */}
       <div className="max-w-[90%] mx-auto mb-30 flex flex-col gap-10">
         {/* CENTER HEADING */}
-        <h1 className="text-3xl text-black lg:text-center">
+        <h1 className="hidden lg:block text-3xl text-black lg:text-center">
           Every Screen <br className="hidden lg:block" />
           Has a Business Outcome
         </h1>
@@ -225,7 +225,7 @@ export default function WeStructureProof({ isOpen, setIsOpen }) {
         </div>
 
         {/* WRAPPER MOBILE */}
-        <div className="flex lg:hidden flex-col gap-6">
+        <div className="hidden flex-col gap-6">
           {[
             {
               title: "Establishes Ownership & Accountability",
@@ -317,7 +317,7 @@ export default function WeStructureProof({ isOpen, setIsOpen }) {
         </div>
 
         {/* 4 Boxes */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {[
             { icon: "/Icons/OLH.png", title: "Office labor hours" },
             { icon: "/Icons/SL.png", title: "Supplement loops" },
@@ -326,7 +326,7 @@ export default function WeStructureProof({ isOpen, setIsOpen }) {
           ].map((item, idx) => (
             <div
               key={idx}
-              className="bg-[#fdfcf7] rounded-[20px] p-6 flex flex-col gap-4 shadow-sm hover:scale-105 transition-transform"
+              className="bg-[#fdfcf7] rounded-[14px] sm:rounded-[20px] md:rounded-[20px] lg:rounded-[20px] p-3 sm:p-6 md:p-6 lg:p-6 flex flex-col items-center sm:items-start md:items-start lg:items-start text-center gap-2 sm:gap-4 shadow-sm hover:scale-105 transition-transform"
             >
               <div className="bg-[#0061A4] p-2 rounded-[10px] w-fit">
                 <Image

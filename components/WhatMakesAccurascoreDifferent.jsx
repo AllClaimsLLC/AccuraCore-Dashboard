@@ -82,7 +82,7 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
             </div>
 
             <Button
-              className="rounded-full text-sm flex items-center text-white bg-[#0061A4] hover:bg-[#00548f]"
+              className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center text-white bg-[#0061A4] hover:bg-[#00548f]"
               style={{
                 padding: "25px 15px",
               }}

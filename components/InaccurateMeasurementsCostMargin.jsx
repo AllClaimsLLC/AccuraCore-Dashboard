@@ -68,7 +68,7 @@ export default function InaccurateMeasurementsCostMargin({ isOpen, setIsOpen }) 
           {/* BUTTONS */}
           <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
            <Button
-                  className="rounded-full text-sm flex items-center"
+                  className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
                   style={{
                     backgroundColor: "#ffffff",
                     color: "#0061A4",
@@ -85,7 +85,7 @@ export default function InaccurateMeasurementsCostMargin({ isOpen, setIsOpen }) 
                   />
                 </Button>
                 <Button
-                  className="text-white rounded-full text-sm flex items-center"
+                  className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
                   style={{
                     backgroundColor: "#0061A4",
                     border: "2px solid #4485b2",

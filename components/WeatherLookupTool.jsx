@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Button } from "./ui/button";
+import AccuraCard from "./AccuraCard";
 
 export default function WeatherLookupTool({ isOpen, setIsOpen }) {
   return (
@@ -15,7 +16,7 @@ export default function WeatherLookupTool({ isOpen, setIsOpen }) {
 }}
     >
       {/* Section 1 */}
-      <div className="max-w-[90%] mt-20 mb-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-5 items-center">
+      <div className="max-w-[90%] mt-0 sm:mt-20 md:mt-20 lg:mt-20 mb-0 sm:mb-20 md:mb-20 lg:mb-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-5 items-center">
         {/* LEFT COL*/}
         <div className="flex flex-col gap-6 lg:w-[72%]">
           {/* Heading */}
@@ -34,7 +35,7 @@ export default function WeatherLookupTool({ isOpen, setIsOpen }) {
           {/* BUTTONS */}
           <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
             <Button
-                  className="rounded-full text-sm flex items-center"
+                  className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
                   style={{
                     backgroundColor: "#ffffff",
                     color: "#0061A4",
@@ -51,7 +52,7 @@ export default function WeatherLookupTool({ isOpen, setIsOpen }) {
                   />
                 </Button>
                 <Button
-                  className="text-white rounded-full text-sm flex items-center"
+                  className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
                   style={{
                     backgroundColor: "#0061A4",
                     border: "2px solid #4485b2",
@@ -94,7 +95,7 @@ export default function WeatherLookupTool({ isOpen, setIsOpen }) {
                 ].map((item, i) => (
                   <div
                     key={i}
-                    className="bg-white rounded-[12px] px-3 py-3 text-left text-sm"
+                    className="bg-white text-black rounded-[12px] px-3 py-3 text-left text-sm"
                   >
                     {item}
                   </div>
@@ -119,7 +120,7 @@ export default function WeatherLookupTool({ isOpen, setIsOpen }) {
                 ].map((item, i) => (
                   <div
                     key={i}
-                    className="bg-white rounded-[12px] px-3 py-3 text-left text-sm"
+                    className="bg-white text-black rounded-[12px] px-3 py-3 text-left text-sm"
                   >
                     {item}
                   </div>
@@ -149,115 +150,60 @@ export default function WeatherLookupTool({ isOpen, setIsOpen }) {
         </div>
 
         {/* 3 cols */}
-        <div className="pt-10 mb-15 flex flex-col gap-12">
-          {/* 3 Columns */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Column 1 */}
-            <div className="flex flex-col gap-6">
-              {/* Heading */}
-              <h3 className="text-black text-lg leading-snug">
-                Strengthens Claim Defensibility <br className="hidden lg:block" /> Which Results In:
-              </h3>
+       <div className="pt-10 mb-15 flex flex-col gap-12">
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
 
-              {/* Separator */}
-              <div className="w-full h-[2px] bg-white" />
+    <AccuraCard
+      title={
+        <>
+          Strengthens Claim Defensibility <br className="hidden lg:block" /> Which Results In:
+        </>
+      }
+      bullets={[
+        "Stronger damage validation",
+        "Reduced carrier pushback",
+        "Cleaner review experience",
+      ]}
+      image="/Images/SCD.png"
+      alt="Claim Defensibility"
+    />
 
-              {/* Box */}
-              <div className="bg-[#FEEACF] rounded-[20px] p-6 flex flex-col gap-3">
-                {[
-                  "Stronger damage validation",
-                  "Reduced carrier pushback",
-                  "Cleaner review experience",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-2">
-                    <div className="w-1 h-1 bg-gray-700 rounded-full mt-1" />
-                    <span className="text-gray-700 text-sm">{item}</span>
-                  </div>
-                ))}
-              </div>
+    <AccuraCard
+      title={
+        <>
+          Eliminates Manual Documentation <br className="hidden lg:block" /> Confusion Which Results In:
+        </>
+      }
+      bullets={[
+        "No external downloads",
+        "No file mismatches",
+        "Faster submission preparation",
+      ]}
+      image="/Images/EMD.png"
+      alt="Manual Documentation"
+    />
 
-              {/* Image Box */}
-              <div className="bg-[#ebf0ec]">
-                <Image
-                  src="/Images/SCD.png"
-                  alt="Column 1 Image"
-                  width={400}
-                  height={250}
-                  className="rounded-[20px] object-cover w-full"
-                />
-              </div>
-            </div>
+    <AccuraCard
+      title={
+        <>
+          Supports Timeline Accuracy <br className="hidden lg:block" /> Which Results In:
+        </>
+      }
+      bullets={[
+        "Clear cause correlation",
+        "Reduced ambiguity",
+        "Stronger submission credibility",
+      ]}
+      image="/Images/STA.png"
+      alt="Timeline Accuracy"
+    />
 
-            {/* Column 2 */}
-            <div className="flex flex-col gap-6">
-              <h3 className="text-black text-lg leading-snug">
-                Eliminates Manual Documentation <br className="hidden lg:block" /> confusion Which Results
-                In:
-              </h3>
-
-              <div className="w-full h-[2px] bg-white" />
-
-              <div className="bg-[#FEEACF] rounded-[20px] p-6 flex flex-col gap-3">
-                {[
-                  "No external downloads",
-                  "No file mismatches",
-                  "Faster submission preparation",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-2">
-                    <div className="w-1 h-1 bg-gray-700 rounded-full mt-1" />
-                    <span className="text-gray-700 text-sm">{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="bg-[#ebf0ec] rounded-[20px] ">
-                <Image
-                  src="/Images/EMD.png"
-                  alt="Column 2 Image"
-                  width={400}
-                  height={250}
-                  className="rounded-[20px] object-cover w-full"
-                />
-              </div>
-            </div>
-
-            {/* Column 3 */}
-            <div className="flex flex-col gap-6">
-              <h3 className="text-black text-lg leading-snug">
-                Supports Timeline Accuracy <br className="hidden lg:block" /> Which Results In:
-              </h3>
-
-              <div className="w-full h-[2px] bg-white" />
-
-              <div className="bg-[#FEEACF] rounded-[20px] p-6 flex flex-col gap-3">
-                {[
-                  "Clear cause correlation",
-                  "Reduced ambiguity",
-                  "Stronger submission credibility",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-2">
-                    <div className="w-1 h-1 bg-gray-700 rounded-full mt-1" />
-                    <span className="text-gray-700 text-sm">{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="bg-[#ebf0ec] rounded-[20px] ">
-                <Image
-                  src="/Images/STA.png"
-                  alt="Column 3 Image"
-                  width={400}
-                  height={250}
-                  className="rounded-[20px] object-cover w-full"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+  </div>
+</div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button
-                  className="rounded-full text-sm flex items-center"
+                  className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
                   style={{
                     backgroundColor: "#ffffff",
                     color: "#0061A4",
@@ -274,7 +220,7 @@ export default function WeatherLookupTool({ isOpen, setIsOpen }) {
                   />
                 </Button>
                 <Button
-                  className="text-white rounded-full text-sm flex items-center"
+                  className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
                   style={{
                     backgroundColor: "#0061A4",
                     border: "2px solid #4485b2",
@@ -371,7 +317,7 @@ export default function WeatherLookupTool({ isOpen, setIsOpen }) {
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
             <Button
-                  className="rounded-full text-sm flex items-center border-2 border-gray-300"
+                  className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center border-2 border-gray-300"
                   style={{
                     backgroundColor: "#ffffff",
                     color: "#0061A4",
@@ -388,7 +334,7 @@ export default function WeatherLookupTool({ isOpen, setIsOpen }) {
                   />
                 </Button>
                 <Button
-                  className="text-white rounded-full text-sm flex items-center"
+                  className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
                   style={{
                     backgroundColor: "#0061A4",
                     border: "2px solid #4485b2",
