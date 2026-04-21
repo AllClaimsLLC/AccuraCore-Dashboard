@@ -180,7 +180,7 @@ const handleSubmit = async (e) => {
           </div>
         ) : (
           <>
-            <h2 className="text-center font-semibold text-lg">
+            <h2 className="text-center font-semibold text-md md:text-lg lg:text-lg">
               Get Started with AccuraCore
             </h2>
 
