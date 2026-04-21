@@ -175,7 +175,7 @@ export default function HeroLayout({ title, content, buttons, onGetStarted, }) {
       </div>
 
       {/* SPACING FOR OVERFLOW VIDEO */}
-      <div className="h-[200px] md:h-[250px]"></div>
+      <div className="h-[150px] md:h-[250px]"></div>
     </section>
   );
 }
