@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
-
+import { Button } from "./ui/button";
 
 const faqs = [
   {
@@ -30,8 +30,7 @@ const faqs = [
   {
     id: 5,
     question: "Can I Export My Data From The System?",
-    answer:
-      "The only data we support exporting is reports.",
+    answer: "The only data we support exporting is reports.",
   },
 ];
 
@@ -64,50 +63,49 @@ const Price2 = ({ amount }) => (
   </div>
 );
 
-const SoloCTAButton = ({ color }) => (
+const SoloCTAButton = ({ color, setIsOpen }) => (
   <button
     className="w-full text-white rounded-full flex items-center justify-between"
     style={{
       backgroundColor: color,
       padding: "20px 15px",
     }}
+    onClick={() => setIsOpen(true)}
   >
     Get Started
     <img src="/Icons/Vector.png" className="w-2 h-3 ml-2" />
   </button>
 );
 
-const CompanyCTAButton = ({ color }) => (
+const CompanyCTAButton = ({ color, setIsOpen }) => (
   <button
     className="w-full text-white rounded-full mb-6 flex items-center justify-between"
     style={{
       backgroundColor: color,
-      border: "2px solid #4485b2",
       padding: "20px 15px",
     }}
+    onClick={() => setIsOpen(true)}
   >
     Get Started
     <img src="/Icons/Vector.png" className="w-2 h-3 ml-2" />
   </button>
 );
 
+export const PricingAndPlans = ({setIsOpen}) => {
+  const [openFaq, setOpenFaq] = useState(null);
 
-
-export const PricingAndPlans = () => {
-     const [openFaq, setOpenFaq] = useState(null);
-
-     const toggleFaq = (faqId) => {
+  const toggleFaq = (faqId) => {
     setOpenFaq(openFaq === faqId ? null : faqId);
   };
   return (
     <section
-      className="px-6 py-16"
+      className="lg:px-6 py-16"
       style={{
         backgroundImage: "url('/Images/bgforlastsection.jpg')",
         backgroundSize: "cover",
       }}
     >
-      <div className="max-w-[95%] md:max-w-[85%] mx-auto">
+      <div className="max-w-[90%] md:max-w-[85%] mx-auto">
         <h1 className="text-3xl text-black dark:text-white text-left md:text-center mb-6 lg:mb-12">
           Our Pricing & Plans
         </h1>
@@ -144,7 +142,7 @@ export const PricingAndPlans = () => {
                 </div>
 
                 <div className="mt-[93px] pt-6">
-                  <SoloCTAButton color="#0061A4" />
+                  <SoloCTAButton color="#0061A4" setIsOpen={setIsOpen} />
                 </div>
               </div>
 
@@ -180,7 +178,7 @@ export const PricingAndPlans = () => {
                 </div>
 
                 <div className="mt-auto pt-6">
-                  <CompanyCTAButton color="#0061A4" />
+                  <CompanyCTAButton color="#0061A4" setIsOpen={setIsOpen} />
                 </div>
               </div>
             </div>
@@ -214,7 +212,7 @@ export const PricingAndPlans = () => {
                 </div>
 
                 <div className="mt-[111px] pt-6">
-                  <SoloCTAButton color="#FA8C3D" />
+                  <SoloCTAButton color="#FA8C3D" setIsOpen={setIsOpen} />
                 </div>
               </div>
 
@@ -249,7 +247,7 @@ export const PricingAndPlans = () => {
                 </div>
 
                 <div className="mt-auto pt-6">
-                  <CompanyCTAButton color="#FA8C3D" />
+                  <CompanyCTAButton color="#FA8C3D" setIsOpen={setIsOpen} />
                 </div>
               </div>
             </div>
@@ -296,7 +294,7 @@ export const PricingAndPlans = () => {
                 </div>
 
                 <div className="mt-auto pt-6">
-                  <SoloCTAButton color="#1161A5" />
+                  <SoloCTAButton color="#1161A5" setIsOpen={setIsOpen} />
                 </div>
               </div>
 
@@ -333,7 +331,7 @@ export const PricingAndPlans = () => {
                 </div>
 
                 <div className="mt-auto pt-6">
-                  <CompanyCTAButton color="#1161A5" />
+                  <CompanyCTAButton color="#1161A5" setIsOpen={setIsOpen} />
                 </div>
               </div>
             </div>
@@ -372,9 +370,10 @@ export const PricingAndPlans = () => {
                     color: "#0061A4",
                     padding: "20px 15px",
                   }}
+                  onClick={() => setIsOpen(true)}
                 >
                   Get Started
-                  <MdKeyboardArrowRight size={25}/>
+                  <MdKeyboardArrowRight size={25} />
                 </button>
               </div>
 
@@ -387,7 +386,9 @@ export const PricingAndPlans = () => {
                       className="w-5 h-5 mt-1"
                     />
                     <span className="text-white text-[14px]">
-                      (includes 5 seats total, shared<br/>across both platforms).
+                      (includes 5 seats total, shared
+                      <br />
+                      across both platforms).
                     </span>
                   </li>
 
@@ -397,8 +398,9 @@ export const PricingAndPlans = () => {
                       className="w-5 h-5 mt-1"
                     />
                     <span className="text-white text-[14px]">
-                      Add extra seats:<br/>$30/month per user (since they get both
-                      systems).
+                      Add extra seats:
+                      <br />
+                      $30/month per user (since they get both systems).
                     </span>
                   </li>
 
@@ -408,8 +410,9 @@ export const PricingAndPlans = () => {
                       className="w-5 h-5 mt-1"
                     />
                     <span className="text-white text-[14px]">
-                      Add extra seats:<br/>$30/month per user (since they get both
-                      systems).
+                      Add extra seats:
+                      <br />
+                      $30/month per user (since they get both systems).
                     </span>
                   </li>
 
@@ -419,8 +422,9 @@ export const PricingAndPlans = () => {
                       className="w-5 h-5 mt-1"
                     />
                     <span className="text-white text-[14px]">
-                      Add extra seats:<br/>$30/month per user (since they get both
-                      systems).
+                      Add extra seats:
+                      <br />
+                      $30/month per user (since they get both systems).
                     </span>
                   </li>
 
@@ -447,11 +451,11 @@ export const PricingAndPlans = () => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
-          <div className="container mx-auto mb-5">
 
+      {/* FAQs */}
+      <div className="max-w-[90%] mx-auto mb-5">
         <div className="mt-25">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left Column - FAQ Heading */}
@@ -465,7 +469,7 @@ export const PricingAndPlans = () => {
 
             {/* Right Column - FAQ Items */}
             <div className="space-y-4">
-             {faqs.map((faq) => (
+              {faqs.map((faq) => (
                 <div
                   key={faq.id}
                   className="
@@ -485,7 +489,7 @@ export const PricingAndPlans = () => {
                       hover:text-blue-600 dark:hover:text-blue-400
                       transition-colors duration-200
                     "
-                    style={{cursor:"pointer"}}
+                    style={{ cursor: "pointer" }}
                   >
                     <span className="text-sm font-medium pr-4">
                       {faq.question}
@@ -526,6 +530,64 @@ export const PricingAndPlans = () => {
           </div>
         </div>
       </div>
+
+      <div className="max-w-[90%] mx-auto bg-white rounded-[20px] mt-20 mb-20 px-6 md:px-12 py-10 md:py-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+              {/* LEFT CONTENT */}
+              <div className="space-y-6 text-center md:text-left">
+                <h2 className="text-2xl md:text-4xl font-[400] leading-tight text-[#FA8C3D]">
+                  Get Accurate Roof &
+                  <br className="hidden lg:block" /> Weather
+                  <span className="text-black"> Intelligence </span>
+                  <br className="hidden lg:block" /> <span className="text-black">Power Your Claims</span>
+                </h2>
+      
+                {/* Buttons */}
+                <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
+                  <Button
+                        className="rounded-full text-sm flex items-center border-2 border-gray-300"
+                        style={{
+                          backgroundColor: "#ffffff",
+                          color: "#0061A4",
+                          padding: "27px 15px",
+                         
+                        }}
+                        onClick={() => setIsOpen(true)}
+                      >
+                        Get Started
+                        <img
+                          src="/Icons/Vector2.png"
+                          alt="Arrow Icon"
+                          className="w-2 h-3 ml-2"
+                        />
+                      </Button>
+                      <Button
+                        className="text-white rounded-full text-sm flex items-center"
+                        style={{
+                          backgroundColor: "#0061A4",
+                          border: "2px solid #4485b2",
+                          padding: "25px 15px",
+                        }}
+                        onClick={() => (window.location.href = "/book-a-demo")}
+                      >
+                        Book Demo
+                        <img
+                          src="/Icons/Vector.png"
+                          alt="Arrow Icon"
+                          className="w-2 h-3 ml-2"
+                        />
+                      </Button>
+                </div>
+              </div>
+      
+              {/* RIGHT IMAGE */}
+              <div className="flex justify-center">
+                <img
+                  src="/Images/calculator-one-platform.png"
+                  alt="One Platform"
+                  className="w-full max-w-md md:max-w-full object-contain"
+                />
+              </div>
+            </div>
     </section>
   );
 };

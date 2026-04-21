@@ -12,7 +12,7 @@ export default function TheTosolsSection() {
 
       <div
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 custom-width"
-        style={{ width: "80%" }}
+        style={{ width: "90%" }}
       >
         {/* Grid Section */}
         <div
@@ -20,7 +20,7 @@ export default function TheTosolsSection() {
           style={{ alignItems: "center" }}
         >
           {/* Report Compile Card */}
-          <div className="p-8 lg:p-10">
+          <div className="p-2 lg:p-10">
             <h4 className="text-2xl mb-3 text-orange-500">
              <span className="font-bold text-gray-900 dark:text-gray-100">
                 Organize Your Company & Empower Your Team
@@ -72,7 +72,7 @@ export default function TheTosolsSection() {
           </div>
 
           {/* Claim Images & Attachments Card */}
-          <div className="p-8 lg:p-10">
+          <div className="p-2 lg:p-10">
             <h4 className="text-2xl mb-3 text-orange-500">
               <span className="font-bold text-gray-900 dark:text-gray-100">
                 Integrated Notes & File Management

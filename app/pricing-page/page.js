@@ -28,7 +28,7 @@ export default function PricingPage() {
   return (
     <>
       <div
-        className="bg-cover bg-center bg-no-repeat h-[55rem] lg:h-[35rem]"
+        className="bg-cover bg-center bg-no-repeat h-[48rem] lg:h-[35rem]"
         style={{
           backgroundImage: "url('/Images/Hero-bg.png')",
         }}
@@ -374,7 +374,7 @@ export default function PricingPage() {
         </main>
       </div>
 
-      <PricingAndPlans />
+      <PricingAndPlans setIsOpen={setIsOpen} />
 
       <Footer id="contact-section" onBookDemo={() => setIsOpen(true)} />
       {/* Popup Modal */}

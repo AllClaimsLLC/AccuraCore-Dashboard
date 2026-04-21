@@ -36,8 +36,8 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
   ];
 
   return (
-    <section className="px-6 py-16 bg-[#f4f0ed] dark:bg-slate-950">
-      <div className="max-w-7xl mx-auto custom-margin" style={{ marginTop: "15rem" }}>
+    <section className="lg:px-6 py-16 bg-[#f4f0ed] dark:bg-slate-950">
+      <div className="max-w-7xl mx-auto mt-45 md:mt-54">
         <div id={id} className="grid lg:grid-cols-2 gap-12 mb-16" style={{ width: "90%", margin: "auto" }}>
           
           {/* Left Column */}
