@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import ModeToggle from "./mode-toggle";
 
-export default function HeroLayout({ title, content, buttons, onGetStarted, }) {
+export default function HeroLayout({ title, logo, content, buttons, onGetStarted, }) {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -123,7 +123,13 @@ export default function HeroLayout({ title, content, buttons, onGetStarted, }) {
       {/* ================= HERO CONTENT ================= */}
       <div className="max-w-7xl mx-auto px-6 text-center pt-10">
         <div className="max-w-3xl mx-auto space-y-5">
-          <h1 className="text-3xl md:text-4xl text-white">{title}</h1>
+          <div className="flex justify-center">
+  {logo ? (
+    <img src={logo} className="h-20 object-contain" />
+  ) : (
+    <h1 className="text-3xl md:text-4xl text-white">{title}</h1>
+  )}
+</div>
 
           <div className="space-y-3 text-blue-100">{content}</div>
 

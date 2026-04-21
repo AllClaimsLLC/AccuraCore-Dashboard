@@ -18,7 +18,7 @@ export default function DisconnectedMeasurementTools({ isOpen, setIsOpen }) {
       {/* Section 1 */}
       <div className="max-w-[90%] mt-0 sm:mt-20 md:mt-20 lg:mt-20 mb-0 sm:mb-20 md:mb-20 lg:mb-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* LEFT COL */}
-        <div className="flex justify-center">
+        <div className="justify-center hidden lg:flex">
           <Image
             src="/Images/disconnectedmeasurementtoolsleft.png"
             alt="Disconnected Measurement Tools"
@@ -84,6 +84,16 @@ export default function DisconnectedMeasurementTools({ isOpen, setIsOpen }) {
               ))}
             </div>
           </div>
+
+                  <div className="justify-center flex lg:hidden">
+          <Image
+            src="/Images/disconnectedmeasurementtoolsleft.png"
+            alt="Disconnected Measurement Tools"
+            width={500}
+            height={500}
+            className="rounded-[16px] object-contain w-full"
+          />
+        </div>
 
           {/* BUTTONS */}
           <div className="flex flex-col sm:flex-row items-center justify-start gap-4">

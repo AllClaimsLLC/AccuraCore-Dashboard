@@ -30,7 +30,6 @@ const content = (
   </>
 );
 
-
 const buttons = (onGetStarted) => (
   <>
     <Button
@@ -43,11 +42,7 @@ const buttons = (onGetStarted) => (
       onClick={onGetStarted}
     >
       Get Started
-     <img
-                    src="/Icons/Vector2.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
+      <img src="/Icons/Vector2.png" alt="Arrow Icon" className="w-2 h-3 ml-2" />
     </Button>
 
     <Button
@@ -60,11 +55,7 @@ const buttons = (onGetStarted) => (
       onClick={() => (window.location.href = "/book-a-demo")}
     >
       Book Demo
-       <img
-                    src="/Icons/Vector.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
+      <img src="/Icons/Vector.png" alt="Arrow Icon" className="w-2 h-3 ml-2" />
     </Button>
   </>
 );
@@ -225,10 +216,12 @@ export default function MyAccuraCorePage() {
         <main className="px-6 py-16">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-4xl text-white mb-6 leading-tight">
-                My AccuraCore
-              </h1>
-              <p className="text-md text-blue-100  max-w-3xl mx-auto leading-relaxed">
+              <img
+                src="/Logos/Accuracore/My-Accuracore.png"
+                alt="AccuraCam Logo"
+                className="h-25 object-contain m-auto"
+              />
+              <p className="text-md text-blue-100 mt-6 max-w-3xl mx-auto leading-relaxed">
                 MyAccuraCore centralizes jobs, documentation, teams, and claims
                 in one structured system.
               </p>
@@ -323,7 +316,11 @@ export default function MyAccuraCorePage() {
         </main>
       </div>
 
-      <HeroLayout title="My AccuraCore" content={content} buttons={buttons(() => setIsOpen(true))} />
+      <HeroLayout
+        logo="/Logos/Accuracore/My-Accuracore.png"
+        content={content}
+        buttons={buttons(() => setIsOpen(true))}
+      />
 
       <ControlTheEntireWorkflow isOpen={isOpen} setIsOpen={setIsOpen} />
       <OperationalChaosCostsMargin isOpen={isOpen} setIsOpen={setIsOpen} />

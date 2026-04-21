@@ -244,11 +244,13 @@ export default function AccuraCoreClaimsPage() {
         {/* Hero Section */}
         <main className="px-6 py-16">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-4xl text-white mb-6 leading-tight">
-                AccuraCore Claims
-              </h1>
-              <p className="text-md text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <div className="text-center mb-6">
+               <img
+                src="/Logos/Claimcore/AccuraCore-Claims-Logo.png"
+                alt="AccuraCore Claims Logo"
+                className="h-25 object-contain m-auto"
+              />
+              <p className="text-md text-blue-100 mt-6 mb-8 max-w-3xl mx-auto leading-relaxed">
                 AccuraCore Claims standardizes documentation from field to
                 submission eliminating guesswork, incomplete files, and review
                 delays.
@@ -338,7 +340,7 @@ export default function AccuraCoreClaimsPage() {
       </div>
 
       <HeroLayout
-      title="AccuraCore Claims"
+      logo="/Logos/Claimcore/AccuraCore-Claims-Logo.png"
       content={content}
       buttons={buttons(() => setIsOpen(true))}
     />

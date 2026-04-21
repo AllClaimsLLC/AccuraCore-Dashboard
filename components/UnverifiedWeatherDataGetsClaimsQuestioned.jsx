@@ -59,6 +59,16 @@ export default function UnverifiedWeatherDataGetsClaimsQuestioned({ isOpen, setI
             ))}
           </div>
 
+<div className="w-full h-full flex lg:hidden justify-center">
+          <Image
+            src="/Images/UnverifiedWeatherDataGetsClaimsQuestioned.png"
+            alt="preview"
+            width={600}
+            height={500}
+            className="object-contain w-full max-w-md lg:max-w-full"
+          />
+        </div>
+
           {/* BUTTONS */}
           <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
             <Button
@@ -98,7 +108,7 @@ export default function UnverifiedWeatherDataGetsClaimsQuestioned({ isOpen, setI
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="w-full h-full flex justify-center">
+        <div className="w-full h-full hidden lg:flex justify-center">
           <Image
             src="/Images/UnverifiedWeatherDataGetsClaimsQuestioned.png"
             alt="preview"

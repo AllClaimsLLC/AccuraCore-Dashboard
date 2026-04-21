@@ -18,7 +18,7 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
       {/* Section 1 */}
       <div className="max-w-[90%] mt-0 sm:mt-20 md:mt-20 lg:mt-20 mb-0 sm:mb-20 md:mb-20 lg:mb-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* LEFT COL */}
-        <div className="flex justify-center">
+        <div className="justify-center hidden lg:flex">
           <div className="rounded-[30px] border-2 border-white bg-white/10 backdrop-blur-md p-12 w-full">
             <Image
               src="/Images/WeStructureTheWorkflow-left.png"
@@ -104,6 +104,19 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
               </div>
             </div>
           </div>
+
+          {/* MOBILE IMAGE (ONLY) */}
+<div className="flex justify-center lg:hidden">
+  <div className="rounded-[30px] border-2 border-white bg-white/10 backdrop-blur-md p-6 w-full">
+    <Image
+      src="/Images/WeStructureTheWorkflow-left.png"
+      alt="Structure Proof Mobile"
+      width={500}
+      height={500}
+      className="rounded-[16px] object-contain w-full"
+    />
+  </div>
+</div>
 
           <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
             <Button

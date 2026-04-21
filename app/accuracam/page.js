@@ -31,11 +31,7 @@ const buttons = (onGetStarted) => (
       onClick={onGetStarted}
     >
       Get Started
-     <img
-                    src="/Icons/Vector2.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
+      <img src="/Icons/Vector2.png" alt="Arrow Icon" className="w-2 h-3 ml-2" />
     </Button>
 
     <Button
@@ -48,11 +44,7 @@ const buttons = (onGetStarted) => (
       onClick={() => (window.location.href = "/book-a-demo")}
     >
       Book Demo
-       <img
-                    src="/Icons/Vector.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
+      <img src="/Icons/Vector.png" alt="Arrow Icon" className="w-2 h-3 ml-2" />
     </Button>
   </>
 );
@@ -213,11 +205,13 @@ export default function AccuraCamPage() {
         {/* Hero Section */}
         <main className="px-6 py-16">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-4xl text-white mb-6 leading-tight">
-                Accuracam
-              </h1>
-              <p className="text-md text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <div className="text-center mb-6">
+              <img
+                src="/Logos/Accuracam/AccuraCam-Logo.png"
+                alt="AccuraCam Logo"
+                className="h-25 object-contain m-auto"
+              />
+              <p className="text-md text-blue-100 mt-6 mb-8 max-w-3xl mx-auto leading-relaxed">
                 AccuraCore is a powerful platform that brings everything you
                 need into one dashboard — manage your team, track work orders,
                 handle finances, and stay in control of every detail.
@@ -306,7 +300,11 @@ export default function AccuraCamPage() {
         </main>
       </div>
 
-      <HeroLayout title="Accuracam" content={content} buttons={buttons(() => setIsOpen(true))} />
+      <HeroLayout
+        logo="/Logos/Accuracam/AccuraCam-Logo.png"
+        content={content}
+        buttons={buttons(() => setIsOpen(true))}
+      />
 
       <BuiltForStructuredExecution isOpen={isOpen} setIsOpen={setIsOpen} />
       <UnstructuredDocumentationCostsMoney />

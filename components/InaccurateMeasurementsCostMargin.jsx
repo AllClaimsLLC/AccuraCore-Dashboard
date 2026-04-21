@@ -65,6 +65,17 @@ export default function InaccurateMeasurementsCostMargin({ isOpen, setIsOpen }) 
             ))}
           </div>
 
+                  <div className="w-full h-full justify-center flex lg:hidden">
+          <Image
+            src="/Images/InaccurateMeasurementsCostMargin.png"
+            alt="preview"
+            width={600}
+            height={500}
+            className="object-contain w-full max-w-md lg:max-w-full"
+          />
+        </div>
+
+
           {/* BUTTONS */}
           <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
            <Button
@@ -104,7 +115,7 @@ export default function InaccurateMeasurementsCostMargin({ isOpen, setIsOpen }) 
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="w-full h-full flex justify-center">
+        <div className="w-full h-full justify-center hidden lg:flex">
           <Image
             src="/Images/InaccurateMeasurementsCostMargin.png"
             alt="preview"

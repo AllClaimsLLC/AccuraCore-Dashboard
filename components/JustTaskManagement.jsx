@@ -18,7 +18,7 @@ export default function JustTaskManagement({ isOpen, setIsOpen }) {
       {/* Section 1 */}
       <div className="max-w-[90%] mt-0 sm:mt-20 md:mt-20 lg:mt-20 mb-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* LEFT COL */}
-        <div className="flex justify-center">
+        <div className="hidden lg:flex justify-center">
           <Image
             src="/Images/JustTaskManagement.png"
             alt="Disconnected Measurement Tools"
@@ -84,6 +84,16 @@ export default function JustTaskManagement({ isOpen, setIsOpen }) {
               ))}
             </div>
           </div>
+
+ <div className="flex lg:hidden justify-center">
+          <Image
+            src="/Images/JustTaskManagement.png"
+            alt="Disconnected Measurement Tools"
+            width={500}
+            height={500}
+            className="rounded-[16px] object-contain w-full"
+          />
+        </div>
 
           {/* BUTTONS */}
           <div className="flex flex-col sm:flex-row items-center justify-start gap-4">

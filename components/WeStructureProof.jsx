@@ -17,7 +17,7 @@ export default function WeStructureProof({ isOpen, setIsOpen }) {
       {/* Section 1 */}
       <div className="max-w-[90%] mt-0 sm:mt-20 md:mt-20 lg:mt-20 mb-0 sm:mb-20 md:mb-20 lg:mb-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* LEFT COL */}
-        <div className="flex justify-center">
+        <div className="hidden lg:flex justify-center">
           <div className="rounded-[30px] border-2 border-white bg-white/10 backdrop-blur-md p-12 w-full">
             <Image
               src="/Images/WeStructureProof-left.png"
@@ -100,6 +100,18 @@ export default function WeStructureProof({ isOpen, setIsOpen }) {
               </div>
             </div>
           </div>
+
+<div className="flex lg:hidden justify-center">
+          <div className="rounded-[30px] border-2 border-white bg-white/10 backdrop-blur-md p-12 w-full">
+            <Image
+              src="/Images/WeStructureProof-left.png"
+              alt="Structure Proof"
+              width={500}
+              height={500}
+              className="rounded-[16px] object-contain w-full"
+            />
+          </div>
+        </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
            <Button

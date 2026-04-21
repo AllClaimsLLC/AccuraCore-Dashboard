@@ -61,6 +61,19 @@ export default function OperationalChaosCostsMargin({ isOpen, setIsOpen }) {
             ))}
           </div>
 
+          {/* MOBILE IMAGE (ONLY) */}
+<div className="flex justify-center lg:hidden mt-4">
+  <div className="w-full max-w-sm">
+    <Image
+      src="/Images/OperationalChaosCostsMargin.png"
+      alt="preview mobile"
+      width={600}
+      height={500}
+      className="object-contain w-full"
+    />
+  </div>
+</div>
+
           {/* BUTTONS */}
           <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
             <Button
@@ -100,7 +113,7 @@ export default function OperationalChaosCostsMargin({ isOpen, setIsOpen }) {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="w-full h-full flex justify-center">
+        <div className="w-full h-full justify-center hidden lg:flex">
           <Image
             src="/Images/OperationalChaosCostsMargin.png"
             alt="preview"

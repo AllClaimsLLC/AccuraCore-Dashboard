@@ -6,19 +6,19 @@ import AccuraCard from "./AccuraCard";
 
 export default function JustAnotherCRM({ isOpen, setIsOpen }) {
   return (
-       <section
+    <section
       className="lg:px-6 py-16"
       style={{
-  backgroundImage: "url('/Images/bgforlastsection.jpg')",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
-}}
+        backgroundImage: "url('/Images/bgforlastsection.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
     >
       {/* Section 1 */}
       <div className="max-w-[90%] mt-0 sm:mt-20 md:mt-20 lg:mt-20 mb-0 sm:mb-20 md:mb-20 lg:mb-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-30 items-center">
         {/* LEFT COL */}
-        <div className="bg-[#ede8e5] rounded-[20px] p-6">
+        <div className="bg-[#ede8e5] rounded-[20px] p-6 hidden lg:flex">
           {/* White Box */}
           <div className="bg-white rounded-[20px] p-4">
             {/* Inner Gray Box */}
@@ -86,48 +86,110 @@ export default function JustAnotherCRM({ isOpen, setIsOpen }) {
           {/* Paragraph */}
           <p className="text-gray-700 text-sm md:text-base leading-relaxed">
             Most systems simply organize information.
-            <br className="hidden lg:block" /> <span className="text-[#FA8C3D]">MyAccuraCore</span> goes
-            further by structuring operations
-            <br className="hidden lg:block" /> themselves—defining how work moves, how decisions are
-            <br className="hidden lg:block" /> made, and how accountability is enforced at every step.
+            <br className="hidden lg:block" />{" "}
+            <span className="text-[#FA8C3D]">MyAccuraCore</span> goes further by
+            structuring operations
+            <br className="hidden lg:block" /> themselves—defining how work
+            moves, how decisions are
+            <br className="hidden lg:block" /> made, and how accountability is
+            enforced at every step.
             <br className="hidden lg:block" /> That is the category difference.
           </p>
+
+          {/* Mobile only */}
+          <div className="bg-[#ede8e5] rounded-[20px] p-6 block lg:hidden">
+            {/* White Box */}
+            <div className="bg-white rounded-[20px] p-4">
+              {/* Inner Gray Box */}
+              <div className="bg-[#f7f7f7] rounded-[20px] p-2 grid grid-cols-1 md:grid-cols-2 gap-2">
+                {/* LEFT SIDE */}
+                <div className="flex flex-col gap-2">
+                  {/* Main Box */}
+                  <div className="bg-white rounded-[12px] overflow-hidden text-center">
+                    <div className="bg-[#FA8C3D] text-white py-2 text-sm">
+                      Most Contractor CRMs
+                    </div>
+                    <div className="px-3 py-3 text-black text-sm text-left">
+                      Track contacts
+                    </div>
+                  </div>
+
+                  <div className="bg-white text-black rounded-[12px] px-3 py-3 text-left text-sm">
+                    Store notes
+                  </div>
+
+                  <div className="bg-white text-black rounded-[12px] px-3 py-3 text-left text-sm">
+                    Manage pipeline
+                  </div>
+
+                  <div className="bg-white text-black text-black rounded-[12px] px-3 py-3 text-left text-sm">
+                    Display status
+                  </div>
+                </div>
+
+                {/* RIGHT SIDE */}
+                <div className="flex flex-col gap-2">
+                  {/* Main Box */}
+                  <div className="bg-white rounded-[12px] overflow-hidden text-center">
+                    <div className="bg-[#0061A4] text-white py-2 text-sm">
+                      MyAccuraCore
+                    </div>
+                    <div className="px-3 py-3 text-black text-sm text-left">
+                      Control job workflows
+                    </div>
+                  </div>
+
+                  <div className="bg-white text-black rounded-[12px] px-3 py-3 text-left text-sm">
+                    Enforce operational structure
+                  </div>
+
+                  <div className="bg-white text-black rounded-[12px] px-3 py-3 text-left text-sm">
+                    Align field, office & claims
+                  </div>
+
+                  <div className="bg-white text-black rounded-[12px] px-3 py-3 text-left text-sm">
+                    Standardize execution
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* BUTTONS */}
           <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
             <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#ffffff",
-                    color: "#0061A4",
-                    padding: "27px 15px",
-                    border: "none",
-                  }}
-                  onClick={() => setIsOpen(true)}
-                >
-                  Get Started
-                  <img
-                    src="/Icons/Vector2.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
-                <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#0061A4",
-                    border: "2px solid #4485b2",
-                    padding: "25px 15px",
-                  }}
-                  onClick={() => (window.location.href = "/book-a-demo")}
-                >
-                  Book Demo
-                  <img
-                    src="/Icons/Vector.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
+              className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
+              style={{
+                backgroundColor: "#ffffff",
+                color: "#0061A4",
+                padding: "27px 15px",
+                border: "none",
+              }}
+              onClick={() => setIsOpen(true)}
+            >
+              Get Started
+              <img
+                src="/Icons/Vector2.png"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
+            </Button>
+            <Button
+              className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
+              style={{
+                backgroundColor: "#0061A4",
+                border: "2px solid #4485b2",
+                padding: "25px 15px",
+              }}
+              onClick={() => (window.location.href = "/book-a-demo")}
+            >
+              Book Demo
+              <img
+                src="/Icons/Vector.png"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
+            </Button>
           </div>
         </div>
       </div>
@@ -151,208 +213,207 @@ export default function JustAnotherCRM({ isOpen, setIsOpen }) {
         </div>
 
         {/* 3 cols */}
-<div className="pt-10 mb-15 flex flex-col gap-12">
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="pt-10 mb-15 flex flex-col gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            <AccuraCard
+              title={
+                <>
+                  Eliminates Status Confusion <br className="hidden lg:block" />{" "}
+                  Which Results In:
+                </>
+              }
+              bullets={[
+                "Field progress",
+                "Documentation readiness",
+                "Claim status & Pending actions",
+              ]}
+              image="/Images/ESCWRI.png"
+              alt="Status Confusion"
+            />
 
-    <AccuraCard
-      title={
-        <>
-          Eliminates Status Confusion <br className="hidden lg:block" /> Which Results In:
-        </>
-      }
-      bullets={[
-        "Field progress",
-        "Documentation readiness",
-        "Claim status & Pending actions",
-      ]}
-      image="/Images/ESCWRI.png"
-      alt="Status Confusion"
-    />
+            <AccuraCard
+              title={
+                <>
+                  Prevents Workflow Breakdowns{" "}
+                  <br className="hidden lg:block" /> Which Results In:
+                </>
+              }
+              bullets={[
+                "No skipped steps",
+                "No undocumented transitions",
+                "Cleaner job progression",
+              ]}
+              image="/Images/PWBWRI.png"
+              alt="Workflow Breakdowns"
+            />
 
-    <AccuraCard
-      title={
-        <>
-          Prevents Workflow Breakdowns <br className="hidden lg:block" /> Which Results In:
-        </>
-      }
-      bullets={[
-        "No skipped steps",
-        "No undocumented transitions",
-        "Cleaner job progression",
-      ]}
-      image="/Images/PWBWRI.png"
-      alt="Workflow Breakdowns"
-    />
-
-    <AccuraCard
-      title={
-        <>
-          Connects Documentation <br className="hidden lg:block" /> To Operations Which Results In:
-        </>
-      }
-      bullets={[
-        "No data silos",
-        "No reconstruction",
-        "Clean operational continuity",
-      ]}
-      image="/Images/CDTOWRI.png"
-      alt="Documentation to Operations"
-    />
-
-  </div>
-</div>
+            <AccuraCard
+              title={
+                <>
+                  Connects Documentation <br className="hidden lg:block" /> To
+                  Operations Which Results In:
+                </>
+              }
+              bullets={[
+                "No data silos",
+                "No reconstruction",
+                "Clean operational continuity",
+              ]}
+              image="/Images/CDTOWRI.png"
+              alt="Documentation to Operations"
+            />
+          </div>
+        </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#ffffff",
-                    color: "#0061A4",
-                    padding: "27px 15px",
-                    border: "none",
-                  }}
-                  onClick={() => setIsOpen(true)}
-                >
-                  Get Started
-                  <img
-                    src="/Icons/Vector2.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
-                <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#0061A4",
-                    border: "2px solid #4485b2",
-                    padding: "25px 15px",
-                  }}
-                  onClick={() => (window.location.href = "/book-a-demo")}
-                >
-                  Book Demo
-                  <img
-                    src="/Icons/Vector.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
+            className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
+            style={{
+              backgroundColor: "#ffffff",
+              color: "#0061A4",
+              padding: "27px 15px",
+              border: "none",
+            }}
+            onClick={() => setIsOpen(true)}
+          >
+            Get Started
+            <img
+              src="/Icons/Vector2.png"
+              alt="Arrow Icon"
+              className="w-2 h-3 ml-2"
+            />
+          </Button>
+          <Button
+            className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
+            style={{
+              backgroundColor: "#0061A4",
+              border: "2px solid #4485b2",
+              padding: "25px 15px",
+            }}
+            onClick={() => (window.location.href = "/book-a-demo")}
+          >
+            Book Demo
+            <img
+              src="/Icons/Vector.png"
+              alt="Arrow Icon"
+              className="w-2 h-3 ml-2"
+            />
+          </Button>
         </div>
       </div>
 
       {/* Section 3 */}
       <div className="max-w-[90%] mx-auto mb-30 flex flex-col gap-10">
         {/* Top 2 Cols */}
-<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-  
-  {/* LEFT */}
-  <div>
-    <h1 className="text-3xl text-black">
-      Stop Managing Jobs Across<br className="hidden lg:block" /> Disconnected Tools.
-    </h1>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          {/* LEFT */}
+          <div>
+            <h1 className="text-3xl text-black">
+              Stop Managing Jobs Across
+              <br className="hidden lg:block" /> Disconnected Tools.
+            </h1>
 
-    <p className="text-gray-500 font-semibold text-sm md:text-base mt-3">
-      Most contractors operate across:
-    </p>
+            <p className="text-gray-500 font-semibold text-sm md:text-base mt-3">
+              Most contractors operate across:
+            </p>
 
-    {/* BULLETS GRID */}
-    <div className="mt-5 flex flex-col gap-4">
-      
-      {/* Row 1 (3 items) */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-        {["Text messages", "Spreadsheets", "Shared drives"].map((item, i) => (
-          <div key={i} className="flex items-center gap-2">
-            <div className="w-[5px] h-[5px] bg-gray-700 rounded-full" />
-            <span className="text-sm md:text-base text-gray-700">
-              {item}
-            </span>
+            {/* BULLETS GRID */}
+            <div className="mt-5 flex flex-col gap-4">
+              {/* Row 1 (3 items) */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {["Text messages", "Spreadsheets", "Shared drives"].map(
+                  (item, i) => (
+                    <div key={i} className="flex items-center gap-2">
+                      <div className="w-[5px] h-[5px] bg-gray-700 rounded-full" />
+                      <span className="text-sm md:text-base text-gray-700">
+                        {item}
+                      </span>
+                    </div>
+                  ),
+                )}
+              </div>
+
+              {/* Row 2 (2 items) */}
+              <div className="grid grid-cols-2 max-w-[400px]">
+                {["Field apps", "Claim portals"].map((item, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <div className="w-[5px] h-[5px] bg-gray-700 rounded-full" />
+                    <span className="text-sm md:text-base text-gray-700">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        ))}
-      </div>
 
-      {/* Row 2 (2 items) */}
-      <div className="grid grid-cols-2 max-w-[400px]">
-        {["Field apps", "Claim portals"].map((item, i) => (
-          <div key={i} className="flex items-center gap-2">
-            <div className="w-[5px] h-[5px] bg-gray-700 rounded-full" />
-            <span className="text-sm md:text-base text-gray-700">
-              {item}
-            </span>
+          {/* RIGHT */}
+          <div className="flex flex-col gap-5">
+            {/* Heading */}
+            <p className="text-gray-500 font-semibold text-[20px]">
+              MyAccuraCore replaces that fragmentation.
+            </p>
+
+            {/* 2-COL BULLETS */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                "Centralize jobs",
+                "Standardize workflow",
+                "Align teams",
+                "Track readiness",
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-2">
+                  <Image
+                    src="/Icons/checkmark-icon-green.png"
+                    alt="check"
+                    width={18}
+                    height={18}
+                  />
+                  <span className="text-sm md:text-base text-gray-700">
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* BUTTONS */}
+            <div className="flex flex-col sm:flex-row items-center justify-start gap-4 mt-4">
+              <Button
+                className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
+                style={{
+                  backgroundColor: "#ffffff",
+                  color: "#0061A4",
+                  padding: "27px 15px",
+                  border: "none",
+                }}
+                onClick={() => setIsOpen(true)}
+              >
+                Get Started
+                <img
+                  src="/Icons/Vector2.png"
+                  alt="Arrow Icon"
+                  className="w-2 h-3 ml-2"
+                />
+              </Button>
+              <Button
+                className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
+                style={{
+                  backgroundColor: "#0061A4",
+                  border: "2px solid #4485b2",
+                  padding: "25px 15px",
+                }}
+                onClick={() => (window.location.href = "/book-a-demo")}
+              >
+                Book Demo
+                <img
+                  src="/Icons/Vector.png"
+                  alt="Arrow Icon"
+                  className="w-2 h-3 ml-2"
+                />
+              </Button>
+            </div>
           </div>
-        ))}
-      </div>
-
-    </div>
-  </div>
-
-  {/* RIGHT */}
-  <div className="flex flex-col gap-5">
-    
-    {/* Heading */}
-    <p className="text-gray-500 font-semibold text-[20px]">
-      MyAccuraCore replaces that fragmentation.
-    </p>
-
-    {/* 2-COL BULLETS */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      {[
-        "Centralize jobs",
-        "Standardize workflow",
-        "Align teams",
-        "Track readiness",
-      ].map((item, i) => (
-        <div key={i} className="flex items-start gap-2">
-          <Image
-            src="/Icons/checkmark-icon-green.png"
-            alt="check"
-            width={18}
-            height={18}
-          />
-          <span className="text-sm md:text-base text-gray-700">
-            {item}
-          </span>
         </div>
-      ))}
-    </div>
-
-    {/* BUTTONS */}
-    <div className="flex flex-col sm:flex-row items-center justify-start gap-4 mt-4">
-      <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#ffffff",
-                    color: "#0061A4",
-                    padding: "27px 15px",
-                    border: "none",
-                  }}
-                  onClick={() => setIsOpen(true)}
-                >
-                  Get Started
-                  <img
-                    src="/Icons/Vector2.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
-                <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#0061A4",
-                    border: "2px solid #4485b2",
-                    padding: "25px 15px",
-                  }}
-                  onClick={() => (window.location.href = "/book-a-demo")}
-                >
-                  Book Demo
-                  <img
-                    src="/Icons/Vector.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
-    </div>
-
-  </div>
-</div>
 
         {/* Separator */}
         <div className="w-full h-[2px] bg-white" />
@@ -377,7 +438,7 @@ export default function JustAnotherCRM({ isOpen, setIsOpen }) {
 
         {/* 4 Boxes */}
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
-                   {[
+          {[
             { icon: "/Icons/InC.png", title: "Internal confusion" },
             {
               icon: "/Icons/SG.png",
@@ -389,25 +450,25 @@ export default function JustAnotherCRM({ isOpen, setIsOpen }) {
             },
             { icon: "/Icons/CC.png", title: "Workflow breakdowns" },
           ].map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="bg-[#fdfcf7] rounded-[14px] sm:rounded-[20px] md:rounded-[20px] lg:rounded-[20px] p-3 sm:p-6 md:p-6 lg:p-6 flex flex-col items-center sm:items-start md:items-start lg:items-start text-center sm:text-left md:text-left lg:text-left gap-2 sm:gap-4 shadow-sm hover:scale-105 transition-transform"
-                    >
-                      <div className="bg-[#0061A4] p-2 rounded-[10px] w-fit">
-                        <Image
-                          src={item.icon}
-                          alt={item.title}
-                          width={20}
-                          height={20}
-                        />
-                      </div>
-        
-                      <p className="text-black font-semibold text-sm md:text-base">
-                        {item.title}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+            <div
+              key={idx}
+              className="bg-[#fdfcf7] rounded-[14px] sm:rounded-[20px] md:rounded-[20px] lg:rounded-[20px] p-3 sm:p-6 md:p-6 lg:p-6 flex flex-col items-center sm:items-start md:items-start lg:items-start text-center sm:text-left md:text-left lg:text-left gap-2 sm:gap-4 shadow-sm hover:scale-105 transition-transform"
+            >
+              <div className="bg-[#0061A4] p-2 rounded-[10px] w-fit">
+                <Image
+                  src={item.icon}
+                  alt={item.title}
+                  width={20}
+                  height={20}
+                />
+              </div>
+
+              <p className="text-black font-semibold text-sm md:text-base">
+                {item.title}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Section 4 */}
@@ -418,43 +479,44 @@ export default function JustAnotherCRM({ isOpen, setIsOpen }) {
             When Operations Are
             <br className="hidden lg:block" /> Structured,
             <span className="text-[#FA8C3D]"> Growth</span>
-            <br className="hidden lg:block" /> <span className="text-[#FA8C3D]">Becomes Predictable.</span>
+            <br className="hidden lg:block" />{" "}
+            <span className="text-[#FA8C3D]">Becomes Predictable.</span>
           </h2>
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
             <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center border-2 border-gray-300"
-                  style={{
-                    backgroundColor: "#ffffff",
-                    color: "#0061A4",
-                    padding: "27px 15px",
-                  }}
-                  onClick={() => setIsOpen(true)}
-                >
-                  Get Started
-                  <img
-                    src="/Icons/Vector2.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
-                <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#0061A4",
-                    border: "2px solid #4485b2",
-                    padding: "25px 15px",
-                  }}
-                  onClick={() => (window.location.href = "/book-a-demo")}
-                >
-                  Book Demo
-                  <img
-                    src="/Icons/Vector.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
+              className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center border-2 border-gray-300"
+              style={{
+                backgroundColor: "#ffffff",
+                color: "#0061A4",
+                padding: "27px 15px",
+              }}
+              onClick={() => setIsOpen(true)}
+            >
+              Get Started
+              <img
+                src="/Icons/Vector2.png"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
+            </Button>
+            <Button
+              className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
+              style={{
+                backgroundColor: "#0061A4",
+                border: "2px solid #4485b2",
+                padding: "25px 15px",
+              }}
+              onClick={() => (window.location.href = "/book-a-demo")}
+            >
+              Book Demo
+              <img
+                src="/Icons/Vector.png"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
+            </Button>
           </div>
         </div>
 
@@ -477,8 +539,8 @@ export default function JustAnotherCRM({ isOpen, setIsOpen }) {
 
           {/* Bottom Text */}
           <p className="text-sm md:text-base">
-            MyAccuraCore turns contractor 
-            <br /> operations into a system — not a 
+            MyAccuraCore turns contractor
+            <br /> operations into a system — not a
             <br /> scramble.
           </p>
         </div>
