@@ -118,7 +118,7 @@ export default function Footer({ id, onBookDemo }) {
               <img
                 src="/Icons/Spiral.png"
                 alt="Spiral Background"
-                className="absolute w-[350px] h-[295px] top-[-120px] right-[34%] z-20 pointer-events-none select-none"
+                className="absolute w-[300px] lg:w-[350px] h-[295px] top-[-120px] right-[45%] lg:right-[34%] z-20 pointer-events-none select-none"
               />
 
               <h3 className="text-white font-semibold text-sm uppercase tracking-wider">

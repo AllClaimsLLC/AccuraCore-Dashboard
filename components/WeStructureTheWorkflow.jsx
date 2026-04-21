@@ -18,7 +18,7 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
       <div className="max-w-[90%] mt-20 mb-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* LEFT COL */}
         <div className="flex justify-center">
-          <div className="rounded-[30px] border-2 border-white bg-white/10 backdrop-blur-md p-12 w-full shadow-[0_3px_3px_rgba(0,0,0,0.25)]">
+          <div className="rounded-[30px] border-2 border-white bg-white/10 backdrop-blur-md p-12 w-full">
             <Image
               src="/Images/WeStructureTheWorkflow-left.png"
               alt="Structure Proof"
