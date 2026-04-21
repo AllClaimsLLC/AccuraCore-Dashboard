@@ -40,6 +40,11 @@ const buttons = (onGetStarted) => (
       onClick={onGetStarted}
     >
       Get Started
+     <img
+                    src="/Icons/Vector2.png"
+                    alt="Arrow Icon"
+                    className="w-2 h-3 ml-2"
+                  />
     </Button>
 
     <Button
@@ -52,6 +57,11 @@ const buttons = (onGetStarted) => (
       onClick={() => (window.location.href = "/book-a-demo")}
     >
       Book Demo
+       <img
+                    src="/Icons/Vector.png"
+                    alt="Arrow Icon"
+                    className="w-2 h-3 ml-2"
+                  />
     </Button>
   </>
 );
