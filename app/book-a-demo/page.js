@@ -18,6 +18,7 @@ export default function BookADemo() {
     const [aboutOpen, setAboutOpen] = useState(false);
   const [featuresOpen, setFeaturesOpen] = useState(false);
   const [toolsValue, setToolsValue] = useState("");
+  const [currentStep, setCurrentStep] = useState(1);
 
   const handleScroll = (id) => {
     const el = document.getElementById(id);
@@ -188,7 +189,7 @@ export default function BookADemo() {
             <img
               src="/Icons/Vector.png"
               alt="Arrow Icon"
-              className="w-2 h-3 ml-2"
+              className="w-3 h-4 ml-2"
             />
           </Button>
         </div>
@@ -307,11 +308,18 @@ export default function BookADemo() {
 
         {/* Hero Section */}
         <div id="demo-form">
-          <BookDemoForm />
+          <BookDemoForm
+  currentStep={currentStep}
+  setCurrentStep={setCurrentStep}
+/>
         </div>
       </div>
 
-      <section className="h-[35rem] md:h-[20rem] px-6 py-16 bg-[#f4f0ed] dark:bg-slate-950"></section>
+      <section
+  className={`px-6 py-16 bg-[#f4f0ed] dark:bg-slate-950 ${
+    currentStep === 3 ? "h-[60rem] md:h-[50rem]" : "h-[35rem] md:h-[20rem]"
+  }`}
+></section>
 
       <Footer id="contact-section" onBookDemo={() => setIsOpen(true)} />
       {/* Popup Modal */}

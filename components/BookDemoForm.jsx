@@ -7,10 +7,10 @@ import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import { timezones } from "./../lib/timezones";
 
-export const BookDemoForm = () => {
+export const BookDemoForm = ({ currentStep, setCurrentStep }) => {
   const router = useRouter();
-  const [currentStep, setCurrentStep] = useState(1);
   const [toolsValue, setToolsValue] = useState("");
   const [formData, setFormData] = useState({
     fullName: "",
@@ -31,37 +31,37 @@ export const BookDemoForm = () => {
   const [statusMessage, setStatusMessage] = useState({ text: "", type: "" });
 
   const validateStep = () => {
-  if (currentStep === 1) {
-    return (
-      formData.fullName &&
-      formData.companyName &&
-      formData.role &&
-      formData.email &&
-      formData.phone &&
-      formData.timezone
-    );
-  }
+    if (currentStep === 1) {
+      return (
+        formData.fullName &&
+        formData.companyName &&
+        formData.role &&
+        formData.email &&
+        formData.phone &&
+        formData.timezone
+      );
+    }
 
-  if (currentStep === 2) {
-    return formData.contractorType && formData.companySize;
-  }
+    if (currentStep === 2) {
+      return formData.contractorType && formData.companySize;
+    }
 
-  return true;
-};
+    return true;
+  };
 
-const nextStep = () => {
-  if (!validateStep()) {
-    setStatusMessage({
-      text: "Please fill all the required fields",
-      type: "error",
-    });
+  const nextStep = () => {
+    if (!validateStep()) {
+      setStatusMessage({
+        text: "Please fill all the required fields",
+        type: "error",
+      });
 
-    setTimeout(() => setStatusMessage({ text: "", type: "" }), 3000);
-    return;
-  }
+      setTimeout(() => setStatusMessage({ text: "", type: "" }), 3000);
+      return;
+    }
 
-  setCurrentStep((prev) => Math.min(prev + 1, 3));
-};
+    setCurrentStep((prev) => Math.min(prev + 1, 3));
+  };
   const prevStep = () => setCurrentStep((prev) => Math.max(prev - 1, 1));
 
   const handleChange = (e) => {
@@ -69,37 +69,37 @@ const nextStep = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-const validateForm = () => {
-  if (
-    !formData.fullName ||
-    !formData.companyName ||
-    !formData.role ||
-    !formData.email ||
-    !formData.phone ||
-    !formData.timezone ||
-    !formData.contractorType ||
-    !formData.companySize ||
-    formData.tools.length === 0
-  ) {
-    return false;
-  }
+  const validateForm = () => {
+    if (
+      !formData.fullName ||
+      !formData.companyName ||
+      !formData.role ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.timezone ||
+      !formData.contractorType ||
+      !formData.companySize ||
+      formData.tools.length === 0
+    ) {
+      return false;
+    }
 
-  return true;
-};
+    return true;
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!validateForm()) {
-    setStatusMessage({
-      text: "Please fill all the required fields",
-      type: "error",
-    });
+      setStatusMessage({
+        text: "Please fill all the required fields",
+        type: "error",
+      });
 
-    // auto hide
-    setTimeout(() => setStatusMessage({ text: "", type: "" }), 3000);
-    return;
-  }
+      // auto hide
+      setTimeout(() => setStatusMessage({ text: "", type: "" }), 3000);
+      return;
+    }
 
     try {
       const response = await fetch("https://formspree.io/f/mdapvjqv", {
@@ -249,7 +249,7 @@ const validateForm = () => {
                     </div>
 
                     <div>
-                      <label className="block text-sm text-black mb-1">
+                       <label className="block text-sm text-black mb-1">
                         Timezone *
                       </label>
                       <input
@@ -260,6 +260,18 @@ const validateForm = () => {
                         placeholder="Timezone"
                         className="inputClass"
                       />
+
+                      {/* <CustomDropdown
+  label="Timezone *"
+  name="timezone"
+  required
+  multiSelect={false}
+  options={timezones.map((tz) => tz.label)}
+  value={formData.timezone}
+  onChange={(val) =>
+    setFormData({ ...formData, timezone: val })
+  }
+/> */}
                     </div>
                   </div>
                   <div className="flex justify-end mt-4">
@@ -396,7 +408,7 @@ const validateForm = () => {
                             "Other ",
                             "None",
                           ]}
-                          value={formData.tools} 
+                          value={formData.tools}
                           onChange={(selected) =>
                             setFormData({ ...formData, tools: selected })
                           }
@@ -461,41 +473,59 @@ const validateForm = () => {
                     </div>
                   </div>
 
-                 <div className="flex flex-col items-center gap-3 mt-4 sm:flex-row sm:justify-between sm:items-center">
-  <button
-    type="button"
-    onClick={prevStep}
-    className="px-6 py-2 rounded-[5px] border border-gray-400 bg-white text-black w-full sm:w-auto"
-  >
-    Back
-  </button>
+                  {/* Google Calendar Embed */}
+<div className="mt-6">
+  <p className="text-sm text-gray-700 mb-2">
+    Schedule your demo call (optional)
+  </p>
 
-<Link href="/calculator">
-  <Button
-    className="flex items-center justify-center gap-1 text-white px-6 py-2 border border-blue-600 rounded-[5px] w-full sm:w-auto"
-    style={{
-      backgroundColor: "#ffffff",
-      color: "#0061A4",
-      padding: "25px 18px",
-    }}
-  >
-    Check My Tech-Mess Cost
-    <img
-      src="/Icons/Vector2.png"
-      alt="Arrow Icon"
-      className="w-2 h-3 ml-2"
-    />
-  </Button>
-</Link>
-
-  <button
-    type="submit"
-    className="flex items-center justify-center gap-1 text-white px-6 py-2 rounded-[5px] w-full sm:w-auto"
-    style={{ backgroundColor: "#136AF3" }}
-  >
-    Submit <MdKeyboardArrowRight size={25} />
-  </button>
+  <div className="w-full h-[400px] rounded-lg overflow-hidden border">
+    <iframe
+      src="https://calendar.app.google/kibk5aHY3J76dQZH7"
+      width="100%"
+      height="100%"
+      frameBorder="0"
+    ></iframe>
+  </div>
 </div>
+
+                  <div className="flex flex-col items-center gap-3 mt-4 sm:flex-row sm:justify-between sm:items-center">
+                    <button
+                      type="button"
+                      onClick={prevStep}
+                      className="px-6 py-2 rounded-[5px] border border-gray-400 bg-white text-black w-full sm:w-auto"
+                    >
+                      Back
+                    </button>
+
+                    <Link href="/calculator">
+                      <Button
+                        className="flex items-center justify-center gap-1 text-white px-6 py-2 border border-blue-600 rounded-[5px] w-full sm:w-auto"
+                        style={{
+                          backgroundColor: "#ffffff",
+                          color: "#0061A4",
+                          padding: "25px 18px",
+                        }}
+                      >
+                        Check My Tech-Mess Cost
+                        <img
+                          src="/Icons/Vector2.png"
+                          alt="Arrow Icon"
+                          className="w-2 h-3 ml-2"
+                        />
+                      </Button>
+                    </Link>
+
+
+
+                    <button
+                      type="submit"
+                      className="flex items-center justify-center gap-1 text-white px-6 py-2 rounded-[5px] w-full sm:w-auto"
+                      style={{ backgroundColor: "#136AF3" }}
+                    >
+                      Submit <MdKeyboardArrowRight size={25} />
+                    </button>
+                  </div>
                 </div>
               )}
 
