@@ -249,7 +249,7 @@ const handleSubmit = async (e) => {
               {/* SUBMIT */}
               <button
                 disabled={loading}
-                className="w-full bg-blue-600 text-white p-3 rounded-full"
+                className="w-full bg-[#0361a0] text-white p-3 rounded-full"
               >
                 {loading ? "Submitting..." : "Submit"}
               </button>

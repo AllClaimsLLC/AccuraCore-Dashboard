@@ -171,7 +171,7 @@ export default function PagesHeader() {
             <img
               src="/Icons/Vector.png"
               alt="Arrow Icon"
-              className="w-3 h-4 ml-2"
+              className="w-2 h-3 ml-2"
             />
           </Button>
         </div>

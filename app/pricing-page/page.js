@@ -189,7 +189,7 @@ export default function PricingPage() {
                 <img
                   src="/Icons/Vector.png"
                   alt="Arrow Icon"
-                  className="w-3 h-4 ml-2"
+                  className="w-2 h-3 ml-2"
                 />
               </Button>
             </div>
@@ -315,11 +315,11 @@ export default function PricingPage() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8 lg:mb-16">
               <h1 className="text-4xl md:text-4xl text-white leading-tight">
-                AccuraCore Pricing
+                Pricing
               </h1>
-              <h1 className="text-4xl md:text-4xl text-white mb-6 leading-tight">
+              <h2 className="text-3xl text-white mb-2 leading-tight">
                 Plans Designed for Every Business
-              </h1>
+              </h2>
               <p className="text-md text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
                 At <span className="text-[#FA8C3D]">AccuraCore</span>, we
                 understand that every business has unique needs and growth
@@ -360,7 +360,7 @@ export default function PricingPage() {
                   <img
                     src="/Icons/Vector.png"
                     alt="Arrow Icon"
-                    className="w-3 h-4 ml-2"
+                    className="w-2 h-3 ml-2"
                   />
                 </Button>
 
@@ -378,7 +378,7 @@ export default function PricingPage() {
                   <img
                     src="/Icons/Vector2.png"
                     alt="Arrow Icon"
-                    className="w-3 h-4 ml-2"
+                    className="w-2 h-3 ml-2"
                   />
                 </Button>
               </div>
