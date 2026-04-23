@@ -557,7 +557,7 @@ export default function Calculator() {
 
                   <button
                     type="submit"
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-full transition-colors duration-300"
+                    className="w-full bg-[#0361a0] hover:bg-blue-700 text-white py-3 rounded-full transition-colors duration-300"
                   >
                     Submit
                   </button>
