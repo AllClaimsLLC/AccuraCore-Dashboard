@@ -81,18 +81,11 @@ export default function HeroLayout({
 
               {aboutOpen && (
                 <div className="mt-2 w-full bg-[#51607d] dark:bg-slate-900 rounded-[10px] overflow-hidden border border-white/10">
-                  <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-white hover:text-black">
-                    Page 1
-                  </p>
-                  <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-white hover:text-black">
-                    Page 2
-                  </p>
-                  <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-white hover:text-black">
-                    Page 3
-                  </p>
-                  <p className="text-white text-sm p-3 hover:bg-white hover:text-black">
-                    Page 4
-                  </p>
+                  <Link href="/blog">
+                    <p className="text-white text-sm p-3 border-white/20 hover:bg-white hover:text-black">
+                      Blog
+                    </p>
+                  </Link>
                 </div>
               )}
             </div>
