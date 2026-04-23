@@ -71,6 +71,7 @@ const faqs = [
 export default function LovedByPeople({ id }) {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [openFaq, setOpenFaq] = useState(null);
+    const [currentStep, setCurrentStep] = useState(1);
 
   const nextTestimonial = () => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -186,7 +187,10 @@ export default function LovedByPeople({ id }) {
         </div>
       </div>
 
-      <BookDemoForm />
+       <BookDemoForm
+  currentStep={currentStep}
+  setCurrentStep={setCurrentStep}
+/>
     </section>
   );
 }
