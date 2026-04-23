@@ -1,40 +1,17 @@
-"use client";
-import { useState } from "react";
-import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import WhatMakesAccurascoreDifferent from "@/components/WhatMakesAccurascoreDifferent";
+import React, {useState} from 'react'
 import { Menu, X } from "lucide-react";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
-import ModeToggle from "@/components/mode-toggle";
 import Link from "next/link";
+import ModeToggle from './mode-toggle';
+import { Button } from './ui/button';
 
-import GetStartedModal from "@/components/GetStartedModal";
-import { PricingAndPlans } from "@/components/PricingAndPlans";
-
-export default function PricingPage() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  const [aboutOpen, setAboutOpen] = useState(false);
-  const [featuresOpen, setFeaturesOpen] = useState(false);
-
-  const handleScroll = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-      setMenuOpen(false);
-    }
-  };
-
+export const DesktopUpdatedHeader = () => {
+      const [menuOpen, setMenuOpen] = useState(false);
+      const [isPlaying, setIsPlaying] = useState(false);
+      const [aboutOpen, setAboutOpen] = useState(false);
+      const [featuresOpen, setFeaturesOpen] = useState(false);
   return (
-    <>
-      <div
-        className="bg-cover bg-center bg-no-repeat h-[50rem] lg:h-[35rem]"
-        style={{
-          backgroundImage: "url('/Images/Hero-bg.png')",
-        }}
-      >
-        {/* Updated Header */}
-        <header className="px-6 py-4 relative">
+<header className="px-6 py-4 relative">
           <nav
             className="flex items-center justify-between max-w-6xl mx-auto rounded-full px-8 py-4 border border-white/20 bg-[#51607d] dark:bg-slate-900"
             style={{ padding: "5px 30px" }}
@@ -340,88 +317,5 @@ export default function PricingPage() {
             </div>
           )}
         </header>
-
-        {/* Hero Section */}
-        <main className="px-6 py-16">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-8 lg:mb-16">
-              <h1 className="text-4xl md:text-4xl text-white leading-tight">
-                AccuraCore Pricing
-              </h1>
-              <h1 className="text-4xl md:text-4xl text-white mb-6 leading-tight">
-                Plans Designed for Every Business
-              </h1>
-              <p className="text-md text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-                At <span className="text-[#FA8C3D]">AccuraCore</span>, we understand that every business has unique
-                needs and growth paths. That’s why our pricing structure is
-                flexible, transparent, and tailored to help teams of all sizes
-                get the tools they need without unnecessary complexity.
-              </p>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/calculator">
-                  <Button
-                    className="rounded-full text-sm flex items-center justify-center"
-                    style={{
-                      backgroundColor: "#ffffff",
-                      color: "#0061A4",
-                      padding: "25px 18px",
-                    }}
-                  >
-                    Check My Tech-Mess Cost
-                    <img
-                      src="/Icons/Vector2.png"
-                      alt="Arrow Icon"
-                      className="w-2 h-3 ml-2"
-                    />
-                  </Button>
-                </Link>
-                <Button
-                  className="text-white rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#0061A4",
-                    border: "2px solid #4485b2",
-                    padding: "25px 15px",
-                  }}
-                  onClick={() => (window.location.href = "/book-a-demo")}
-                >
-                  Book Demo
-                  <img
-                    src="/Icons/Vector.png"
-                    alt="Arrow Icon"
-                    className="w-3 h-4 ml-2"
-                  />
-                </Button>
-
-                <Button
-                  className="rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#ffffff",
-                    color: "#0061A4",
-                    padding: "27px 15px",
-                    border: "none",
-                  }}
-                  onClick={() => setIsOpen(true)}
-                >
-                  Get Started Free
-                  <img
-                    src="/Icons/Vector2.png"
-                    alt="Arrow Icon"
-                    className="w-3 h-4 ml-2"
-                  />
-                </Button>
-              </div>
-            </div>
-          </div>
-        </main>
-      </div>
-
-      <PricingAndPlans setIsOpen={setIsOpen} />
-
-      <Footer id="contact-section" onBookDemo={() => setIsOpen(true)} />
-      {/* Popup Modal */}
-      {isOpen && <GetStartedModal isOpen={isOpen} setIsOpen={setIsOpen} />}
-    </>
-  );
+  )
 }

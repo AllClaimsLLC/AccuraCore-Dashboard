@@ -3,13 +3,10 @@ import { useRef, useState } from "react";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import ModeToggle from "@/components/mode-toggle";
 import Link from "next/link";
-import ControlledBeforeItLeavesTheField from "@/components/ControlledBeforeItLeavesTheField";
-import InaccurateMeasurementsCostMargin from "@/components/InaccurateMeasurementsCostMargin";
-import DisconnectedMeasurementTools from "@/components/DisconnectedMeasurementTools";
 import GetStartedModal from "@/components/GetStartedModal";
-import HeroLayout from "@/components/HeroLayout";
 import BlogHero from "@/components/BlogHero";
 import { WhatHowAccuracoreBlog } from "@/components/WhatHowAccuracoreBlog";
 import BestPracticesForTransformativeWorkflows from "@/components/BestPracticesForTransformativeWorkflows";
@@ -56,8 +53,8 @@ const buttons = (onGetStarted) => (
 export default function RoofCalculationsPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const videoRefElement = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const [featuresOpen, setFeaturesOpen] = useState(false);
 
   const handleScroll = (id) => {
     const el = document.getElementById(id);
@@ -93,22 +90,120 @@ export default function RoofCalculationsPage() {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/calculator#sound-familiar">
+            <div className="hidden md:flex items-center space-x-8 relative">
+              {/* About */}
+              <div className="relative">
+                <button
+                  onClick={() => {
+                    setAboutOpen(!aboutOpen);
+                    setFeaturesOpen(false);
+                  }}
+                  className="text-white hover:text-blue-200 text-sm flex items-center gap-1"
+                >
+                  About
+                  {aboutOpen ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
+                </button>
+
+                {aboutOpen && (
+                  <div className="text-center absolute left-1/2 -translate-x-1/2 mt-[45px] w-44 bg-[#51607d] dark:bg-slate-900 rounded-[15px] z-50 border border-white/10">
+                    <Link href="#">
+                      <span className="block text-white text-sm p-3 rounded-t-md hover:bg-white hover:text-black border-b border-white/20">
+                        Page 1
+                      </span>
+                    </Link>
+
+                    <Link href="#">
+                      <span className="block text-white text-sm p-3 hover:bg-white hover:text-black border-b border-white/20">
+                        Page 2
+                      </span>
+                    </Link>
+
+                    <Link href="#">
+                      <span className="block text-white text-sm p-3 hover:bg-white hover:text-black border-b border-white/20">
+                        Page 3
+                      </span>
+                    </Link>
+
+                    <Link href="#">
+                      <span className="block text-white text-sm p-3 rounded-b-md hover:bg-white hover:text-black">
+                        Page 4
+                      </span>
+                    </Link>
+                  </div>
+                )}
+              </div>
+
+              {/* Features */}
+              <div className="relative">
+                <button
+                  onClick={() => {
+                    setFeaturesOpen(!featuresOpen);
+                    setAboutOpen(false);
+                  }}
+                  className="text-white hover:text-blue-200 text-sm flex items-center gap-1"
+                >
+                  Features
+                  {featuresOpen ? (
+                    <MdKeyboardArrowUp />
+                  ) : (
+                    <MdKeyboardArrowDown />
+                  )}
+                </button>
+
+                {featuresOpen && (
+                  <div className="text-center absolute left-1/2 -translate-x-1/2 mt-[45px] w-56 bg-[#51607d] dark:bg-slate-900 rounded-[15px] z-50 border border-white/10 overflow-hidden">
+                    <Link href="/accuracam">
+                      <span className="block text-white text-sm p-3 hover:bg-white hover:text-black border-b border-white/20">
+                        AccuraCam
+                      </span>
+                    </Link>
+
+                    <Link href="/accuracore-claims">
+                      <span className="block text-white text-sm p-3 hover:bg-white hover:text-black border-b border-white/20">
+                        AccuraCore Claims
+                      </span>
+                    </Link>
+
+                    <Link href="/my-accuracore">
+                      <span className="block text-white text-sm p-3 hover:bg-white hover:text-black border-b border-white/20">
+                        My AccuraCore
+                      </span>
+                    </Link>
+
+                    <Link href="/roof-calculations">
+                      <span className="block text-white text-sm p-3 hover:bg-white hover:text-black border-b border-white/20">
+                        Roof Calculations
+                      </span>
+                    </Link>
+
+                    <Link href="/weather-reports">
+                      <span className="block text-white text-sm p-3 hover:bg-white hover:text-black border-b border-white/20">
+                        Weather Reports
+                      </span>
+                    </Link>
+
+                    <Link href="/workflow-automation">
+                      <span className="block text-white text-sm p-3 hover:bg-white hover:text-black">
+                        Workflow Automation
+                      </span>
+                    </Link>
+                  </div>
+                )}
+              </div>
+
+              {/* Remaining links */}
+              <Link href="/pricing-page">
                 <span className="text-white hover:text-blue-200 text-sm">
-                  Why
+                  Pricing
                 </span>
               </Link>
-              <Link href="/calculator#what-you-will-discover">
-                <span className="text-white hover:text-blue-200 text-sm">
-                  How It Works
-                </span>
-              </Link>
+
               <Link href="/#faq-section">
                 <span className="text-white hover:text-blue-200 text-sm">
                   FAQs
                 </span>
               </Link>
+
               <Link href="/book-a-demo">
                 <span className="text-white hover:text-blue-200 text-sm">
                   Contact Us
@@ -157,82 +252,7 @@ export default function RoofCalculationsPage() {
                 />
               </Button>
             </div>
-
-            {/* Mobile Hamburger */}
-            <div className="md:hidden flex items-center gap-3">
-              {/* Dark Mode Toggle */}
-              <div
-                className="
-  p-2 rounded-full 
-  bg-slate-900 dark:bg-white 
-  text-white dark:text-slate-900
-  flex items-center justify-center
-"
-              >
-                <ModeToggle />
-              </div>
-
-              {/* Hamburger */}
-              <button onClick={() => setMenuOpen(!menuOpen)}>
-                {menuOpen ? (
-                  <X className="text-white w-8 h-8" />
-                ) : (
-                  <Menu className="text-white w-8 h-8" />
-                )}
-              </button>
-            </div>
           </nav>
-
-          {/* Mobile Menu */}
-          {menuOpen && (
-            <div className="md:hidden absolute left-0 right-0 top-full bg-[#51607d] px-6 py-4 space-y-4 rounded-lg mt-2 z-50 shadow-lg w-[95%] m-auto">
-              <div className="flex flex-col space-y-4 text-white text-sm text-center">
-                <Link href="/calculator#sound-familiar">
-                  <span>Why</span>
-                </Link>
-                <Link href="/calculator#what-you-will-discover">
-                  <span>How It Works</span>
-                </Link>
-                <Link href="/#faq-section">
-                  <span>FAQs</span>
-                </Link>
-                <Link href="/book-a-demo">
-                  <span>Contact Us</span>
-                </Link>
-              </div>
-
-              {/* Mobile Action Buttons */}
-              {/* <div className="flex flex-col space-y-3 mt-4">
-                <Button
-                  className="bg-white hover:bg-gray-100 px-4 py-2 rounded-full text-sm flex items-center"
-                  style={{ color: "#0061A4", padding: "25px 15px" }}
-                >
-                  <img
-                    src="/Icons/Vector.svg"
-                    alt="Login Icon"
-                    className="w-4 h-4 mr-2"
-                  />
-                  Login
-                </Button>
-
-                <Button
-                  className="text-white rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#0061A4",
-                    padding: "25px 15px",
-                  }}
-                  onClick={() => (window.location.href = "/book-a-demo")}
-                >
-                  Book Demo
-                  <img
-                    src="/Icons/Vector.png"
-                    alt="Arrow Icon"
-                    className="w-3 h-4 ml-2"
-                  />
-                </Button>
-              </div> */}
-            </div>
-          )}
         </header>
 
         {/* Hero Section */}
@@ -262,7 +282,7 @@ export default function RoofCalculationsPage() {
                   </div>
 
                   {/* HEADING (not bold) */}
-                  <h2 className="text-2xl md:text-3xl font-normal mb-4">
+                  <h2 className="text-black text-2xl md:text-3xl font-normal mb-4">
                     <span className="text-[#1161A5]">AccuraCore:</span> A
                     Comprehensive Guide to Managing Your Business with Precision
                   </h2>
@@ -306,7 +326,7 @@ export default function RoofCalculationsPage() {
 
       <WhatHowAccuracoreBlog />
       <BestPracticesForTransformativeWorkflows />
-      <WhyModernBusinessesAreTurningToAllInOnePlatforms />
+      <WhyModernBusinessesAreTurningToAllInOnePlatforms setIsOpen={setIsOpen} />
 
       <Footer id="contact-section" onBookDemo={() => setIsOpen(true)} />
       {/* Popup Modal */}

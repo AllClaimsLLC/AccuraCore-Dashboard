@@ -47,9 +47,9 @@ const Bullet = ({ children }) => (
 
 const Price = ({ amount }) => (
   <div className="flex items-end gap-1 mt-8 mb-8">
-    <span className="text-sm relative -top-2">$</span>
-    <span className="text-3xl font-bold leading-none">{amount}</span>
-    <span className="text-sm relative top-1">/mo</span>
+    <span className="text-sm text-black relative -top-2">$</span>
+    <span className="text-3xl text-black font-bold leading-none">{amount}</span>
+    <span className="text-sm text-black relative top-1">/mo</span>
   </div>
 );
 
@@ -106,7 +106,7 @@ export const PricingAndPlans = ({setIsOpen}) => {
       }}
     >
       <div className="max-w-[90%] md:max-w-[85%] mx-auto">
-        <h1 className="text-3xl text-black dark:text-white text-left md:text-center mb-6 lg:mb-12">
+        <h1 className="text-3xl text-black text-left md:text-center mb-6 lg:mb-12">
           Our Pricing & Plans
         </h1>
 
@@ -125,7 +125,7 @@ export const PricingAndPlans = ({setIsOpen}) => {
               {/* SOLO */}
               <div className="min-h-[270px] flex flex-col">
                 <div>
-                  <h1 className="text-2xl">Solo Plan</h1>
+                  <h1 className="text-2xl text-black">Solo Plan</h1>
                   <div className="w-[90%] border-b border-gray-300 my-2"></div>
                   <Price amount="49" />
                 </div>
@@ -149,7 +149,7 @@ export const PricingAndPlans = ({setIsOpen}) => {
               {/* COMPANY */}
               <div className="flex flex-col flex-1">
                 <div>
-                  <h1 className="text-2xl">
+                  <h1 className="text-black text-2xl">
                     Company Plan <br />
                     <span>(seat-based)</span>
                   </h1>
@@ -198,7 +198,7 @@ export const PricingAndPlans = ({setIsOpen}) => {
               {/* SOLO */}
               <div className="min-h-[270px] flex flex-col">
                 <div>
-                  <h1 className="text-2xl">Solo Plan</h1>
+                  <h1 className="text-2xl text-black">Solo Plan</h1>
                   <div className="w-[90%] border-b border-gray-300 my-2"></div>
                   <Price amount="49" />
                 </div>
@@ -219,7 +219,7 @@ export const PricingAndPlans = ({setIsOpen}) => {
               {/* COMPANY */}
               <div className="flex flex-col flex-1">
                 <div>
-                  <h1 className="text-2xl">
+                  <h1 className="text-black text-2xl">
                     Company Plan <br />
                     <span>(seat-based)</span>
                   </h1>
@@ -267,7 +267,7 @@ export const PricingAndPlans = ({setIsOpen}) => {
               {/* SOLO */}
               <div className="min-h-[270px] flex flex-col">
                 <div>
-                  <h1 className="text-2xl">Solo Plan</h1>
+                  <h1 className="text-2xl text-black">Solo Plan</h1>
                   <div className="w-[90%] border-b border-gray-300 my-2"></div>
                   <Price amount="49" />
                 </div>
@@ -301,7 +301,7 @@ export const PricingAndPlans = ({setIsOpen}) => {
               {/* COMPANY */}
               <div className="flex flex-col flex-1">
                 <div>
-                  <h1 className="text-2xl">
+                  <h1 className="text-black text-2xl">
                     Company Plan <br />
                     <span>(seat-based)</span>
                   </h1>
@@ -347,7 +347,7 @@ export const PricingAndPlans = ({setIsOpen}) => {
                   {/* Heading */}
                   <div className="bg-[white] text-black p-4 rounded-[15px]">
                     <h1 className="text-2xl">
-                      AccuraCore Bundle Plan <br />
+                      AccuraCore Bundle Plan <br className="hidden sm:block md:block lg:block"/>
                       (All-In-One)
                     </h1>
                   </div>
@@ -460,7 +460,7 @@ export const PricingAndPlans = ({setIsOpen}) => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left Column - FAQ Heading */}
             <div>
-              <h3 className="text-2xl  text-gray-900 dark:text-gray-100 mb-2">
+              <h3 className="text-2xl  text-gray-900  mb-2">
                 Frequently
                 <br />
                 <strong>Asked</strong> Questions
