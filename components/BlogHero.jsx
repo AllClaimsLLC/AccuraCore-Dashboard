@@ -18,7 +18,7 @@ export default function BlogHero() {
       style={{ backgroundImage: "url('/Images/Hero-bg.png')" }}
     >
       {/* ================= HEADER ================= */}
-      <header className="px-6 py-4 relative z-50">
+<header className="px-6 py-4 relative z-50">
         <nav
           className="flex items-center justify-between max-w-6xl mx-auto rounded-full px-8 py-4 border border-white/20 bg-[#51607d] dark:bg-slate-900"
           style={{ padding: "5px 30px" }}
@@ -74,18 +74,11 @@ export default function BlogHero() {
 
               {aboutOpen && (
                 <div className="mt-2 w-full bg-[#51607d] dark:bg-slate-900 rounded-[10px] overflow-hidden border border-white/10">
-                  <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-white hover:text-black">
-                    Page 1
-                  </p>
-                  <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-white hover:text-black">
-                    Page 2
-                  </p>
-                  <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-white hover:text-black">
-                    Page 3
-                  </p>
-                  <p className="text-white text-sm p-3 hover:bg-white hover:text-black">
-                    Page 4
-                  </p>
+                  <Link href="/blog">
+                    <p className="text-white text-sm p-3 border-white/20 hover:bg-white hover:text-black">
+                      Blog
+                    </p>
+                  </Link>
                 </div>
               )}
             </div>
@@ -101,46 +94,44 @@ export default function BlogHero() {
               </button>
 
               {featuresOpen && (
-  <div className="mt-2 w-full bg-[#51607d] dark:bg-slate-900 rounded-[10px] overflow-hidden border border-white/10">
+                <div className="mt-2 w-full bg-[#51607d] dark:bg-slate-900 rounded-[10px] overflow-hidden border border-white/10">
+                  <Link href="/accuracam">
+                    <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-white hover:text-black">
+                      AccuraCam
+                    </p>
+                  </Link>
 
-    <Link href="/accuracam">
-      <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-white hover:text-black">
-        AccuraCam
-      </p>
-    </Link>
+                  <Link href="/accuracore-claims">
+                    <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-white hover:text-black">
+                      AccuraCore Claims
+                    </p>
+                  </Link>
 
-    <Link href="/accuracore-claims">
-      <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-white hover:text-black">
-        AccuraCore Claims
-      </p>
-    </Link>
+                  <Link href="/my-accuracore">
+                    <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-white hover:text-black">
+                      My AccuraCore
+                    </p>
+                  </Link>
 
-    <Link href="/my-accuracore">
-      <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-white hover:text-black">
-        My AccuraCore
-      </p>
-    </Link>
+                  <Link href="/roof-calculations">
+                    <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-white hover:text-black">
+                      Roof Calculations
+                    </p>
+                  </Link>
 
-    <Link href="/roof-calculations">
-      <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-white hover:text-black">
-        Roof Calculations
-      </p>
-    </Link>
+                  <Link href="/weather-reports">
+                    <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-white hover:text-black">
+                      Weather Reports
+                    </p>
+                  </Link>
 
-    <Link href="/weather-reports">
-      <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-white hover:text-black">
-        Weather Reports
-      </p>
-    </Link>
-
-    <Link href="/workflow-automation">
-      <p className="text-white text-sm p-3 hover:bg-white hover:text-black">
-        Workflow Automation
-      </p>
-    </Link>
-
-  </div>
-)}
+                  <Link href="/workflow-automation">
+                    <p className="text-white text-sm p-3 hover:bg-white hover:text-black">
+                      Workflow Automation
+                    </p>
+                  </Link>
+                </div>
+              )}
             </div>
 
             {/* Other Links */}
@@ -148,9 +139,9 @@ export default function BlogHero() {
               <p className="text-white text-sm mb-4">Pricing</p>
             </Link>
             <Link href="/#faq-section">
-            <p className="text-white text-sm">FAQs</p>
+              <p className="text-white text-sm mb-4">FAQs</p>
             </Link>
-            <p className="text-white text-sm">Contact Us</p>
+            <p className="text-white text-sm mb-4">Contact Us</p>
           </div>
         )}
       </header>

@@ -1,8 +1,7 @@
 "use client";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import ModeToggle from "@/components/mode-toggle";
 import Link from "next/link";
@@ -11,14 +10,6 @@ import BlogHero from "@/components/BlogHero";
 import { WhatHowAccuracoreBlog } from "@/components/WhatHowAccuracoreBlog";
 import BestPracticesForTransformativeWorkflows from "@/components/BestPracticesForTransformativeWorkflows";
 import WhyModernBusinessesAreTurningToAllInOnePlatforms from "@/components/WhyModernBusinessesAreTurningToAllInOnePlatforms";
-
-const content = (
-  <p className="text-blue-100">
-    Roof Calculations inside AccuraCore generate precise, job-linked
-    measurements — eliminating manual estimating errors, supplement disputes,
-    and costly miscalculations.
-  </p>
-);
 
 const buttons = (onGetStarted) => (
   <>
@@ -106,27 +97,9 @@ export default function RoofCalculationsPage() {
 
                 {aboutOpen && (
                   <div className="text-center absolute left-1/2 -translate-x-1/2 mt-[45px] w-44 bg-[#51607d] dark:bg-slate-900 rounded-[15px] z-50 border border-white/10">
-                    <Link href="#">
-                      <span className="block text-white text-sm p-3 rounded-t-md hover:bg-white hover:text-black border-b border-white/20">
-                        Page 1
-                      </span>
-                    </Link>
-
-                    <Link href="#">
-                      <span className="block text-white text-sm p-3 hover:bg-white hover:text-black border-b border-white/20">
-                        Page 2
-                      </span>
-                    </Link>
-
-                    <Link href="#">
-                      <span className="block text-white text-sm p-3 hover:bg-white hover:text-black border-b border-white/20">
-                        Page 3
-                      </span>
-                    </Link>
-
-                    <Link href="#">
-                      <span className="block text-white text-sm p-3 rounded-b-md hover:bg-white hover:text-black">
-                        Page 4
+                    <Link href="/blog">
+                      <span className="block text-white text-sm p-3 rounded-[15px] hover:bg-white hover:text-black border-white/20">
+                        Blog
                       </span>
                     </Link>
                   </div>
@@ -253,6 +226,103 @@ export default function RoofCalculationsPage() {
               </Button>
             </div>
           </nav>
+
+          {/* Mobile Menu */}
+          {menuOpen && (
+            <div className="md:hidden absolute left-0 right-0 top-full bg-[#51607d] px-6 py-4 rounded-[15px] mt-2 w-[95%] m-auto z-50 space-y-4 text-center">
+              {/* About */}
+              <div className="flex flex-col items-center">
+                <button
+                  onClick={() => setAboutOpen(!aboutOpen)}
+                  className="flex items-center gap-1 text-white"
+                >
+                  About
+                  {aboutOpen ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
+                </button>
+
+                {aboutOpen && (
+                  <div className="mt-2 w-full bg-[#51607d] dark:bg-slate-900 rounded-[10px] overflow-hidden border border-white/10">
+                    <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-white hover:text-black">
+                      Page 1
+                    </p>
+                    <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-white hover:text-black">
+                      Page 2
+                    </p>
+                    <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-white hover:text-black">
+                      Page 3
+                    </p>
+                    <p className="text-white text-sm p-3 hover:bg-white hover:text-black">
+                      Page 4
+                    </p>
+                  </div>
+                )}
+              </div>
+
+              {/* Features */}
+              <div className="flex flex-col items-center">
+                <button
+                  onClick={() => setFeaturesOpen(!featuresOpen)}
+                  className="flex items-center gap-1 text-white"
+                >
+                  Features
+                  {featuresOpen ? (
+                    <MdKeyboardArrowUp />
+                  ) : (
+                    <MdKeyboardArrowDown />
+                  )}
+                </button>
+
+                {featuresOpen && (
+                  <div className="mt-2 w-full bg-[#51607d] dark:bg-slate-900 rounded-[10px] overflow-hidden border border-white/10">
+                    <Link href="/accuracam">
+                      <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-white hover:text-black">
+                        AccuraCam
+                      </p>
+                    </Link>
+
+                    <Link href="/accuracore-claims">
+                      <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-white hover:text-black">
+                        AccuraCore Claims
+                      </p>
+                    </Link>
+
+                    <Link href="/my-accuracore">
+                      <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-white hover:text-black">
+                        My AccuraCore
+                      </p>
+                    </Link>
+
+                    <Link href="/roof-calculations">
+                      <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-white hover:text-black">
+                        Roof Calculations
+                      </p>
+                    </Link>
+
+                    <Link href="/weather-reports">
+                      <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-white hover:text-black">
+                        Weather Reports
+                      </p>
+                    </Link>
+
+                    <Link href="/workflow-automation">
+                      <p className="text-white text-sm p-3 hover:bg-white hover:text-black">
+                        Workflow Automation
+                      </p>
+                    </Link>
+                  </div>
+                )}
+              </div>
+
+              {/* Other Links */}
+              <Link href="/pricing-page">
+                <p className="text-white text-sm mb-4">Pricing</p>
+              </Link>
+              <Link href="/#faq-section">
+                <p className="text-white text-sm">FAQs</p>
+              </Link>
+              <p className="text-white text-sm">Contact Us</p>
+            </div>
+          )}
         </header>
 
         {/* Hero Section */}
