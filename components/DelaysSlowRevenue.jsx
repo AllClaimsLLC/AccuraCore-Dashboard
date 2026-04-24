@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import useFadeIn from "@/lib/useFadeIn";
 
 export default function DelaysSlowRevenue({ isOpen, setIsOpen }) {
+  useFadeIn();
   return (
     <section className="relative w-full py-16 lg:px-6">
       {/* Background Image */}
@@ -15,6 +17,7 @@ export default function DelaysSlowRevenue({ isOpen, setIsOpen }) {
           className="object-cover"
         />
       </div>
+ <div className="fade-up">
 
       <div className="max-w-[90%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* LEFT CONTENT */}
@@ -114,7 +117,7 @@ export default function DelaysSlowRevenue({ isOpen, setIsOpen }) {
             className="object-contain w-full max-w-md lg:max-w-full"
           />
         </div>
-      </div>
+      </div></div>
     </section>
   );
 }

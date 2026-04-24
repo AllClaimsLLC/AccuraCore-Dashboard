@@ -160,3 +160,45 @@ button, a {
   text-sm text-gray-700 bg-white 
   focus:outline-none focus:ring-1 focus:ring-blue-500 cursor-pointer;
 }
+
+.glowbutton {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glowbutton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(26, 111, 212, 0.45),
+              0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.25s ease, opacity 0.25s ease;
+  opacity: 0;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 300px;
+  padding-top: 8px;
+  opacity: 1;
+}
+
+.faq-chevron {
+  transition: transform 0.25s ease;
+}
+
+.faq-item.open .faq-chevron {
+  transform: rotate(180deg);
+}

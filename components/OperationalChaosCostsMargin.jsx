@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import useFadeIn from "@/lib/useFadeIn";
 
 export default function OperationalChaosCostsMargin({ isOpen, setIsOpen }) {
+  useFadeIn();
   return (
     <section className="relative w-full py-16 lg:px-6">
       {/* Background Image */}
@@ -16,111 +18,114 @@ export default function OperationalChaosCostsMargin({ isOpen, setIsOpen }) {
         />
       </div>
 
-      <div className="max-w-[90%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* LEFT CONTENT */}
-        <div className="flex flex-col gap-6">
-          {/* Heading */}
-          <h1 className="text-3xl text-white">
-            Operational Chaos Costs<br className="hidden lg:block" /> Margin.
-          </h1>
+      <div className="fade-up">
+        <div className="max-w-[90%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* LEFT CONTENT */}
+          <div className="flex flex-col gap-6">
+            {/* Heading */}
+            <h1 className="text-3xl text-white">
+              Operational Chaos Costs
+              <br className="hidden lg:block" /> Margin.
+            </h1>
 
-          {/* FIRST BULLET POINTS */}
-          <div className="flex flex-col gap-2">
-            {[
-              "Lost time coordinating between teams",
-              "Missed follow-ups and stalled approvals",
-              "Incomplete job files at submission",
-              "Rework caused by workflow gaps",
-              "Revenue delayed by operational friction",
-            ].map((item, idx) => (
-              <div key={idx} className="flex items-start gap-3">
-                <div className="w-[5px] h-[5px] bg-gray-400 rounded-full mt-2" />
-                <p className="text-gray-400 text-sm md:text-base">{item}</p>
+            {/* FIRST BULLET POINTS */}
+            <div className="flex flex-col gap-2">
+              {[
+                "Lost time coordinating between teams",
+                "Missed follow-ups and stalled approvals",
+                "Incomplete job files at submission",
+                "Rework caused by workflow gaps",
+                "Revenue delayed by operational friction",
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-start gap-3">
+                  <div className="w-[5px] h-[5px] bg-gray-400 rounded-full mt-2" />
+                  <p className="text-gray-400 text-sm md:text-base">{item}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* SECOND SECTION HEADING */}
+            <h2 className="text-lg md:text-xl text-[#F6BE71] mt-2">
+              My AccuraCore reduces
+            </h2>
+
+            {/* SECOND BULLET POINTS */}
+            <div className="flex flex-col gap-2">
+              {[
+                "Structured workflows from start to submission",
+                "Clear job ownership and accountability",
+                "Real-time status visibility",
+                "Built-in documentation controls",
+                "Consistent execution across every job",
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-start gap-3">
+                  <div className="w-[5px] h-[5px] bg-[#F6BE71] rounded-full mt-2" />
+                  <p className="text-white text-sm md:text-base">{item}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* MOBILE IMAGE (ONLY) */}
+            <div className="flex justify-center lg:hidden mt-4">
+              <div className="w-full max-w-sm">
+                <Image
+                  src="/Images/OperationalChaosCostsMargin.png"
+                  alt="preview mobile"
+                  width={600}
+                  height={500}
+                  className="object-contain w-full"
+                />
               </div>
-            ))}
+            </div>
+
+            {/* BUTTONS */}
+            <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
+              <Button
+                className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
+                style={{
+                  backgroundColor: "#ffffff",
+                  color: "#0061A4",
+                  padding: "27px 15px",
+                  border: "none",
+                }}
+                onClick={() => setIsOpen(true)}
+              >
+                Get Started
+                <img
+                  src="/Icons/Vector2.png"
+                  alt="Arrow Icon"
+                  className="w-2 h-3 ml-2"
+                />
+              </Button>
+              <Button
+                className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
+                style={{
+                  backgroundColor: "#0061A4",
+                  border: "2px solid #4485b2",
+                  padding: "25px 15px",
+                }}
+                onClick={() => (window.location.href = "/book-a-demo")}
+              >
+                Book Demo
+                <img
+                  src="/Icons/Vector.png"
+                  alt="Arrow Icon"
+                  className="w-2 h-3 ml-2"
+                />
+              </Button>
+            </div>
           </div>
 
-          {/* SECOND SECTION HEADING */}
-          <h2 className="text-lg md:text-xl text-[#F6BE71] mt-2">
-            My AccuraCore reduces
-          </h2>
-
-          {/* SECOND BULLET POINTS */}
-          <div className="flex flex-col gap-2">
-            {[
-              "Structured workflows from start to submission",
-              "Clear job ownership and accountability",
-              "Real-time status visibility",
-              "Built-in documentation controls",
-              "Consistent execution across every job",
-            ].map((item, idx) => (
-              <div key={idx} className="flex items-start gap-3">
-                <div className="w-[5px] h-[5px] bg-[#F6BE71] rounded-full mt-2" />
-                <p className="text-white text-sm md:text-base">{item}</p>
-              </div>
-            ))}
+          {/* RIGHT IMAGE */}
+          <div className="w-full h-full justify-center hidden lg:flex">
+            <Image
+              src="/Images/OperationalChaosCostsMargin.png"
+              alt="preview"
+              width={600}
+              height={500}
+              className="object-contain w-full max-w-md lg:max-w-full"
+            />
           </div>
-
-          {/* MOBILE IMAGE (ONLY) */}
-<div className="flex justify-center lg:hidden mt-4">
-  <div className="w-full max-w-sm">
-    <Image
-      src="/Images/OperationalChaosCostsMargin.png"
-      alt="preview mobile"
-      width={600}
-      height={500}
-      className="object-contain w-full"
-    />
-  </div>
-</div>
-
-          {/* BUTTONS */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
-            <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#ffffff",
-                    color: "#0061A4",
-                    padding: "27px 15px",
-                    border: "none",
-                  }}
-                  onClick={() => setIsOpen(true)}
-                >
-                  Get Started
-                  <img
-                    src="/Icons/Vector2.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
-                <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#0061A4",
-                    border: "2px solid #4485b2",
-                    padding: "25px 15px",
-                  }}
-                  onClick={() => (window.location.href = "/book-a-demo")}
-                >
-                  Book Demo
-                  <img
-                    src="/Icons/Vector.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
-          </div>
-        </div>
-
-        {/* RIGHT IMAGE */}
-        <div className="w-full h-full justify-center hidden lg:flex">
-          <Image
-            src="/Images/OperationalChaosCostsMargin.png"
-            alt="preview"
-            width={600}
-            height={500}
-            className="object-contain w-full max-w-md lg:max-w-full"
-          />
         </div>
       </div>
     </section>

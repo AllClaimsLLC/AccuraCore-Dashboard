@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { BookDemoForm } from "./BookDemoForm";
+import useFadeIn from "@/lib/useFadeIn";
 
 
 const testimonials = [
@@ -69,6 +70,7 @@ const faqs = [
 
 
 export default function LovedByPeople({ id }) {
+  useFadeIn();
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [openFaq, setOpenFaq] = useState(null);
     const [currentStep, setCurrentStep] = useState(1);
@@ -97,10 +99,8 @@ export default function LovedByPeople({ id }) {
         bg-[linear-gradient(312deg,_#faefe9_-17%,_#ffffff_100%)]
         dark:bg-[linear-gradient(50deg,_#020617_0%,_#0f172a_100%)]
       "
-      // style={{
-      //   background: "linear-gradient(312deg, #faefe9 -17%, #ffffff 100%)",
-      // }}
     >
+       <div className="fade-up">
       <div className="container mx-auto px-6 max-w-6xl mb-5">
         {/* First Row - Hero Section */}
         <div className="text-center mb-16">
@@ -126,17 +126,12 @@ export default function LovedByPeople({ id }) {
             {/* Right Column - FAQ Items */}
             <div className="space-y-4">
              {faqs.map((faq) => (
-                <div
-                  key={faq.id}
-                  className="
-                    p-[25px] rounded-[10px]
-                    bg-white
-                    dark:bg-slate-900
-                    border border-transparent
-                    dark:border-slate-700
-                    transition-colors
-                  "
-                >
+               <div
+  key={faq.id}
+  className={`faq-item p-[25px] rounded-[10px] bg-white dark:bg-slate-900 border border-transparent dark:border-slate-700 transition-colors ${
+    openFaq === faq.id ? "open" : ""
+  }`}s
+>
                   <button
                     onClick={() => toggleFaq(faq.id)}
                     className="
@@ -152,13 +147,11 @@ export default function LovedByPeople({ id }) {
                     </span>
 
                     <svg
-                      className={`w-5 h-5 text-gray-500 dark:text-gray-400 transform transition-transform duration-200 ${
-                        openFaq === faq.id ? "rotate-180" : ""
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
+  className="faq-chevron w-5 h-5 text-gray-500 dark:text-gray-400"
+  fill="none"
+  stroke="currentColor"
+  viewBox="0 0 24 24"
+>
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -169,21 +162,16 @@ export default function LovedByPeople({ id }) {
                   </button>
 
                   {/* Answer */}
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ${
-                      openFaq === faq.id
-                        ? "max-h-96 opacity-100"
-                        : "max-h-0 opacity-0"
-                    }`}
-                  >
-                    <div className="pt-4 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                      {faq.answer}
-                    </div>
-                  </div>
+                  <div className="faq-answer">
+  <div className="pt-4 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+    {faq.answer}
+  </div>
+</div>
                 </div>
               ))}
             </div>
           </div>
+        </div>
         </div>
       </div>
 

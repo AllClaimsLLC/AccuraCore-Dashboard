@@ -1,6 +1,9 @@
 "use client";
 
+import useFadeIn from "@/lib/useFadeIn";
+
 export default function TheTosolsSection() {
+  useFadeIn();
   return (
     <section
   className="py-16 lg:py-20 bg-[linear-gradient(50deg,_#fbfcf8_43%,_#e6f4f7_100%)]
@@ -15,6 +18,7 @@ export default function TheTosolsSection() {
         style={{ width: "90%" }}
       >
         {/* Grid Section */}
+         <div className="fade-up">
         <div
           className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8"
           style={{ alignItems: "center" }}
@@ -88,6 +92,7 @@ export default function TheTosolsSection() {
               at the right time, with nothing lost, missed, or out of place.
             </p>
           </div>
+        </div>
         </div>
       </div>
     </section>

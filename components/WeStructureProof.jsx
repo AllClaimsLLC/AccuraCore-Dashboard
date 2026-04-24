@@ -2,19 +2,22 @@
 
 import Image from "next/image";
 import { Button } from "./ui/button";
+import useFadeIn from "@/lib/useFadeIn";
 
 export default function WeStructureProof({ isOpen, setIsOpen }) {
+  useFadeIn();
   return (
     <section
       className="lg:px-6 py-16"
       style={{
-  backgroundImage: "url('/Images/bgforlastsection.jpg')",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
-}}
+        backgroundImage: "url('/Images/bgforlastsection.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
     >
       {/* Section 1 */}
+       <div className="fade-up">
       <div className="max-w-[90%] mt-0 sm:mt-20 md:mt-20 lg:mt-20 mb-0 sm:mb-20 md:mb-20 lg:mb-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* LEFT COL */}
         <div className="hidden lg:flex justify-center">
@@ -101,57 +104,58 @@ export default function WeStructureProof({ isOpen, setIsOpen }) {
             </div>
           </div>
 
-<div className="flex lg:hidden justify-center">
-          <div className="rounded-[30px] border-2 border-white bg-white/10 backdrop-blur-md p-12 w-full">
-            <Image
-              src="/Images/WeStructureProof-left.png"
-              alt="Structure Proof"
-              width={500}
-              height={500}
-              className="rounded-[16px] object-contain w-full"
-            />
+          <div className="flex lg:hidden justify-center">
+            <div className="rounded-[30px] border-2 border-white bg-white/10 backdrop-blur-md p-12 w-full">
+              <Image
+                src="/Images/WeStructureProof-left.png"
+                alt="Structure Proof"
+                width={500}
+                height={500}
+                className="rounded-[16px] object-contain w-full"
+              />
+            </div>
           </div>
-        </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
-           <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#ffffff",
-                    color: "#0061A4",
-                    padding: "27px 15px",
-                    border: "none",
-                  }}
-                  onClick={() => setIsOpen(true)}
-                >
-                  Get Started
-                  <img
-                    src="/Icons/Vector2.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
-                <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#0061A4",
-                    border: "2px solid #4485b2",
-                    padding: "25px 15px",
-                  }}
-                  onClick={() => (window.location.href = "/book-a-demo")}
-                >
-                  Book Demo
-                  <img
-                    src="/Icons/Vector.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
+            <Button
+              className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
+              style={{
+                backgroundColor: "#ffffff",
+                color: "#0061A4",
+                padding: "27px 15px",
+                border: "none",
+              }}
+              onClick={() => setIsOpen(true)}
+            >
+              Get Started
+              <img
+                src="/Icons/Vector2.png"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
+            </Button>
+            <Button
+              className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
+              style={{
+                backgroundColor: "#0061A4",
+                border: "2px solid #4485b2",
+                padding: "25px 15px",
+              }}
+              onClick={() => (window.location.href = "/book-a-demo")}
+            >
+              Book Demo
+              <img
+                src="/Icons/Vector.png"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
+            </Button>
           </div>
         </div>
-      </div>
+      </div></div>
 
       {/* Section 2 */}
+       <div className="fade-up">
       <div className="max-w-[90%] mx-auto mb-30 flex flex-col gap-10">
         {/* CENTER HEADING */}
         <h1 className="hidden lg:block text-3xl text-black lg:text-center">
@@ -329,7 +333,7 @@ export default function WeStructureProof({ isOpen, setIsOpen }) {
         </div>
 
         {/* 4 Boxes */}
-       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {[
             { icon: "/Icons/OLH.png", title: "Office labor hours" },
             { icon: "/Icons/SL.png", title: "Supplement loops" },
@@ -355,66 +359,66 @@ export default function WeStructureProof({ isOpen, setIsOpen }) {
             </div>
           ))}
         </div>
-      </div>
+      </div></div>
 
       {/* Section 4 */}
+       <div className="fade-up">
       <div className="max-w-[90%] mx-auto bg-white rounded-[20px] mt-20 mb-20 px-6 md:px-12 py-10 md:py-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* LEFT CONTENT */}
         <div className="space-y-6 text-center md:text-left">
           <h2 className="text-2xl md:text-4xl font-[400] leading-tight text-black">
-            When capture is
-            <br className="hidden lg:block" /> structured,
-            <span className="text-[#FA8C3D]"> everything</span>
-            <br className="hidden lg:block" /> <span className="text-[#FA8C3D]">downstream works.</span>
+            <span className="text-[#FA8C3D]">Capture Once.</span>
+             {" "}Structure Instantly. Review
+            Cleanly.
           </h2>
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
-           <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#ffffff",
-                    color: "#0061A4",
-                    padding: "27px 15px",
-                    border: "none",
-                  }}
-                  onClick={() => setIsOpen(true)}
-                >
-                  Get Started
-                  <img
-                    src="/Icons/Vector2.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
-                <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#0061A4",
-                    border: "2px solid #4485b2",
-                    padding: "25px 15px",
-                  }}
-                  onClick={() => (window.location.href = "/book-a-demo")}
-                >
-                  Book Demo
-                  <img
-                    src="/Icons/Vector.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
+            <Button
+              className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
+              style={{
+                backgroundColor: "#ffffff",
+                color: "#0061A4",
+                padding: "27px 15px",
+                border: "none",
+              }}
+              onClick={() => setIsOpen(true)}
+            >
+              Get Started
+              <img
+                src="/Icons/Vector2.png"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
+            </Button>
+            <Button
+              className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
+              style={{
+                backgroundColor: "#0061A4",
+                border: "2px solid #4485b2",
+                padding: "25px 15px",
+              }}
+              onClick={() => (window.location.href = "/book-a-demo")}
+            >
+              Book Demo
+              <img
+                src="/Icons/Vector.png"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
+            </Button>
           </div>
         </div>
 
         {/* RIGHT IMAGE */}
         <div className="flex justify-center">
           <img
-            src="/Images/calculator-one-platform.png"
+            src="/Images/girl-smiling.png"
             alt="One Platform"
-            className="w-full max-w-md md:max-w-full object-contain"
+            className="w-full sm:w-[90%] md:w-[90%] lg:w-[90%] max-w-md md:max-w-full object-contain"
           />
         </div>
-      </div>
+      </div></div>
     </section>
   );
 }

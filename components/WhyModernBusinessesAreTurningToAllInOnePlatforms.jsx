@@ -3,10 +3,12 @@
 import Image from "next/image";
 import { Button } from "./ui/button";
 import AccuraCard from "./AccuraCard";
+import useFadeIn from "@/lib/useFadeIn";
 
 export default function WhyModernBusinessesAreTurningToAllInOnePlatforms({
   setIsOpen,
 }) {
+  useFadeIn();
   return (
     <section
       className="lg:px-6 py-16"
@@ -18,6 +20,7 @@ export default function WhyModernBusinessesAreTurningToAllInOnePlatforms({
       }}
     >
       {/* Section 1 */}
+      <div className="fade-up">
       <div className="max-w-[90%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-20 md:gap-20 lg:gap-20 items-start py-16">
         {/* LEFT COL */}
         <div>
@@ -99,8 +102,10 @@ export default function WhyModernBusinessesAreTurningToAllInOnePlatforms({
           </p>
         </div>
       </div>
+      </div>
 
       {/* Section 3 */}
+      <div className="fade-up">
       <div className="max-w-[90%] mx-auto bg-white rounded-[20px] mt-20 mb-20 px-6 md:px-12 py-10 md:py-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* LEFT CONTENT */}
         <div className="space-y-6 text-center md:text-left">
@@ -152,11 +157,12 @@ export default function WhyModernBusinessesAreTurningToAllInOnePlatforms({
         {/* RIGHT IMAGE */}
         <div className="flex justify-center">
           <img
-            src="/Images/calculator-one-platform.png"
+            src="/Images/girl-smiling.png"
             alt="One Platform"
-            className="w-full max-w-md md:max-w-full object-contain"
+            className="w-full sm:w-[90%] md:w-[90%] lg:w-[90%] max-w-md md:max-w-full object-contain"
           />
         </div>
+      </div>
       </div>
     </section>
   );

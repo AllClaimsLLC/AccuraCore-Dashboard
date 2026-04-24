@@ -1,7 +1,9 @@
 import React from "react";
 import { Button } from "./ui/button";
+import useFadeIn from "@/lib/useFadeIn";
 
 export const WhatHowAccuracoreBlog = () => {
+useFadeIn();  
   return (
     <section
       className="lg:px-6 py-16"
@@ -12,7 +14,9 @@ export const WhatHowAccuracoreBlog = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="max-w-full sm:max-w-[90%] md:max-w-[90%] lg:max-w-[90%] mx-auto rounded-[20px] mt-75 sm:mt-65 md:mt-65 lg:mt-65 px-6 md:px-12 py-10 md:py-8 grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-30 md:gap-30 lg:gap-30 items-start">
+
+      <div className="fade-up">
+        <div className="max-w-full sm:max-w-[90%] md:max-w-[90%] lg:max-w-[90%] mx-auto rounded-[20px] mt-75 sm:mt-65 md:mt-65 lg:mt-65 px-6 md:px-12 py-10 md:py-8 grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-30 md:gap-30 lg:gap-30 items-start">
         {/* LEFT CONTENT */}
         <div className="space-y-5 text-left">
           <h2 className="text-[20px] md:text-3xl font-normal leading-tight text-black">
@@ -71,7 +75,9 @@ export const WhatHowAccuracoreBlog = () => {
           </div>
         </div>
       </div>
+      </div>
 
+<div className="fade-up">
 <div className="mt-15 sm:mt-30 md:mt-30 lg:mt-30 max-w-[90%] mx-auto bg-white rounded-[20px] mb-20 px-6 md:px-12 py-10 md:py-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
   
   {/* LEFT CONTENT */}
@@ -118,11 +124,11 @@ export const WhatHowAccuracoreBlog = () => {
     <img
       src="/Images/BM.png"
       alt="Business Management"
-      className="w-full max-w-md md:max-w-full object-contain"
+      className="w-full sm:w-[90%] md:w-[90%] lg:w-[90%] max-w-md md:max-w-full object-contain"
     />
   </div>
 
-</div>
+</div></div>
     </section>
   );
 };

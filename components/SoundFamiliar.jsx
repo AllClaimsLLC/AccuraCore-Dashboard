@@ -1,8 +1,10 @@
 "use client";
 
+import useFadeIn from "@/lib/useFadeIn";
 import { useState } from "react";
 
 export default function SoundFamiliar() {
+  useFadeIn();
   const [selectedFeature, setSelectedFeature] = useState(null);
 
   const features = [
@@ -30,6 +32,8 @@ export default function SoundFamiliar() {
 
   return (
     <section className="px-6 py-16 bg-[#f4f0ed] dark:bg-slate-950">
+       <div className="fade-up">
+
       <div className="mt-36 max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* LEFT COLUMN - Image + headings */}
@@ -105,6 +109,7 @@ export default function SoundFamiliar() {
             ))}
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

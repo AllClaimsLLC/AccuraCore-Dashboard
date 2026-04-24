@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import useFadeIn from "@/lib/useFadeIn";
 
 const steps = [
   {
@@ -36,10 +37,12 @@ const steps = [
 ];
 
 export default function WeatherIntelligenceClaimValidation({ isOpen, setIsOpen }) {
+  useFadeIn();
   return (
        <>
       <section className="hidden sm:block md:block lg:block lg:px-6 py-16 bg-[#fbf0ec] dark:bg-slate-950">
-        <div className="max-w-[90%] mx-auto space-y-4 mt-24 md:mt-72">
+         <div className="fade-up">
+<div className="max-w-[90%] mx-auto space-y-4 mt-24 md:mt-72">
           {/* Top Heading & Text */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
             <h1 className="text-3xl text-black dark:text-white">
@@ -113,11 +116,12 @@ export default function WeatherIntelligenceClaimValidation({ isOpen, setIsOpen }
               />
             </Button>
           </div>
-        </div>
+        </div></div>
       </section>
 
       <section className="block sm:hidden md:hidden lg:hidden lg:px-6 py-16 bg-[#fbf0ec] dark:bg-slate-950">
-        <div className="max-w-[90%] mx-auto space-y-4 mt-24 md:mt-72">
+         <div className="fade-up">
+<div className="max-w-[90%] mx-auto space-y-4 mt-24 md:mt-72">
           {/* Top Heading & Text */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
             <h1 className="text-3xl text-black dark:text-white">
@@ -192,7 +196,7 @@ export default function WeatherIntelligenceClaimValidation({ isOpen, setIsOpen }
               />
             </Button>
           </div>
-        </div>
+        </div></div>
       </section>
     </>
   );

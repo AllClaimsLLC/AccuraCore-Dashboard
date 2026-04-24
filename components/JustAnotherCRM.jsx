@@ -3,8 +3,10 @@
 import Image from "next/image";
 import { Button } from "./ui/button";
 import AccuraCard from "./AccuraCard";
+import useFadeIn from "@/lib/useFadeIn";
 
 export default function JustAnotherCRM({ isOpen, setIsOpen }) {
+  useFadeIn();
   return (
     <section
       className="lg:px-6 py-16"
@@ -16,6 +18,8 @@ export default function JustAnotherCRM({ isOpen, setIsOpen }) {
       }}
     >
       {/* Section 1 */}
+       <div className="fade-up">
+
       <div className="max-w-[90%] mt-0 sm:mt-20 md:mt-20 lg:mt-20 mb-0 sm:mb-20 md:mb-20 lg:mb-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-30 items-center">
         {/* LEFT COL */}
         <div className="bg-[#ede8e5] rounded-[20px] p-6 hidden lg:flex">
@@ -192,9 +196,11 @@ export default function JustAnotherCRM({ isOpen, setIsOpen }) {
             </Button>
           </div>
         </div>
-      </div>
+      </div></div>
 
       {/* Section 2 */}
+       <div className="fade-up">
+
       <div className="max-w-[90%] mx-auto pt-10 mb-30">
         <div className="bg-[#0061A4] rounded-[15px] px-8 py-8 flex flex-col items-center text-center gap-4 md:flex-row md:items-center md:text-left">
           {/* Logo */}
@@ -300,9 +306,11 @@ export default function JustAnotherCRM({ isOpen, setIsOpen }) {
             />
           </Button>
         </div>
-      </div>
+      </div></div>
 
       {/* Section 3 */}
+       <div className="fade-up">
+
       <div className="max-w-[90%] mx-auto mb-30 flex flex-col gap-10">
         {/* Top 2 Cols */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
@@ -469,18 +477,17 @@ export default function JustAnotherCRM({ isOpen, setIsOpen }) {
             </div>
           ))}
         </div>
-      </div>
+      </div></div>
 
       {/* Section 4 */}
+       <div className="fade-up">
+
       <div className="max-w-[90%] mx-auto bg-white rounded-[20px] mt-20 mb-20 px-6 md:px-12 py-10 md:py-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* LEFT CONTENT */}
         <div className="space-y-6 text-center md:text-left">
           <h2 className="text-2xl md:text-4xl font-[400] leading-tight text-black">
-            When Operations Are
-            <br className="hidden lg:block" /> Structured,
-            <span className="text-[#FA8C3D]"> Growth</span>
-            <br className="hidden lg:block" />{" "}
-            <span className="text-[#FA8C3D]">Becomes Predictable.</span>
+            <span className="text-[#FA8C3D]"> Stop Managing Jobs Across Disconnected Tools. </span>
+            Run Your Operation From One System.
           </h2>
 
           {/* Buttons */}
@@ -544,7 +551,7 @@ export default function JustAnotherCRM({ isOpen, setIsOpen }) {
             <br /> scramble.
           </p>
         </div>
-      </div>
+      </div></div>
     </section>
   );
 }

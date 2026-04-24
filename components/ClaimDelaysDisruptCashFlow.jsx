@@ -1,5 +1,6 @@
 "use client";
 
+import useFadeIn from "@/lib/useFadeIn";
 import Image from "next/image";
 
 const points = [
@@ -22,6 +23,7 @@ const points = [
 ];
 
 export default function ClaimDelaysDisruptCashFlow() {
+  useFadeIn();
   return (
     <section className="relative w-full py-16 lg:px-6">
       {/* Background Image */}
@@ -33,7 +35,7 @@ export default function ClaimDelaysDisruptCashFlow() {
           className="object-cover"
         />
       </div>
-
+ <div className="fade-up">
       <div className="max-w-[90%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* LEFT CONTENT */}
         <div className="flex flex-col gap-6">
@@ -122,6 +124,7 @@ export default function ClaimDelaysDisruptCashFlow() {
             className="object-contain w-full max-w-md lg:max-w-full"
           />
         </div>
+      </div>
       </div>
     </section>
   );

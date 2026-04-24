@@ -1,5 +1,6 @@
 "use client";
 
+import useFadeIn from "@/lib/useFadeIn";
 import React from "react";
 
 const steps = [
@@ -36,11 +37,14 @@ const steps = [
 ];
 
 export default function WhatYouWillDiscover() {
+  useFadeIn();
   return (
     <section
       className="px-6 py-16 bg-cover bg-center"
       style={{ backgroundImage: "url('/Images/Hero-bg.png')" }}
     >
+       <div className="fade-up">
+
       <div className="max-w-7xl mx-auto space-y-4">
 
         {/* Pill Heading */}
@@ -82,6 +86,7 @@ export default function WhatYouWillDiscover() {
             </div>
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

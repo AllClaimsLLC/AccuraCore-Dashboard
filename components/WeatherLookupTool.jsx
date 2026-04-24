@@ -3,19 +3,23 @@
 import Image from "next/image";
 import { Button } from "./ui/button";
 import AccuraCard from "./AccuraCard";
+import useFadeIn from "@/lib/useFadeIn";
 
 export default function WeatherLookupTool({ isOpen, setIsOpen }) {
+  useFadeIn();
   return (
-        <section
+    <section
       className="lg:px-6 py-16"
       style={{
-  backgroundImage: "url('/Images/bgforlastsection.jpg')",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
-}}
+        backgroundImage: "url('/Images/bgforlastsection.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
     >
       {/* Section 1 */}
+       <div className="fade-up">
+
       <div className="max-w-[90%] mt-0 sm:mt-20 md:mt-20 lg:mt-20 mb-0 sm:mb-20 md:mb-20 lg:mb-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-5 items-center">
         {/* LEFT COL*/}
         <div className="flex flex-col gap-6 lg:w-[72%]">
@@ -35,38 +39,38 @@ export default function WeatherLookupTool({ isOpen, setIsOpen }) {
           {/* BUTTONS */}
           <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
             <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#ffffff",
-                    color: "#0061A4",
-                    padding: "27px 15px",
-                    border: "none",
-                  }}
-                  onClick={() => setIsOpen(true)}
-                >
-                  Get Started
-                  <img
-                    src="/Icons/Vector2.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
-                <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#0061A4",
-                    border: "2px solid #4485b2",
-                    padding: "25px 15px",
-                  }}
-                  onClick={() => (window.location.href = "/book-a-demo")}
-                >
-                  Book Demo
-                  <img
-                    src="/Icons/Vector.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
+              className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
+              style={{
+                backgroundColor: "#ffffff",
+                color: "#0061A4",
+                padding: "27px 15px",
+                border: "none",
+              }}
+              onClick={() => setIsOpen(true)}
+            >
+              Get Started
+              <img
+                src="/Icons/Vector2.png"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
+            </Button>
+            <Button
+              className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
+              style={{
+                backgroundColor: "#0061A4",
+                border: "2px solid #4485b2",
+                padding: "25px 15px",
+              }}
+              onClick={() => (window.location.href = "/book-a-demo")}
+            >
+              Book Demo
+              <img
+                src="/Icons/Vector.png"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
+            </Button>
           </div>
         </div>
 
@@ -129,9 +133,11 @@ export default function WeatherLookupTool({ isOpen, setIsOpen }) {
             </div>
           </div>
         </div>
-      </div>
+      </div></div>
 
       {/* Section 2 */}
+       <div className="fade-up">
+
       <div className="max-w-[90%] mx-auto pt-10 mb-30">
         <div className="bg-[#0061A4] rounded-[15px] px-8 py-8 flex flex-col items-center text-center gap-4 md:flex-row md:items-center md:text-left">
           {/* Logo */}
@@ -150,95 +156,98 @@ export default function WeatherLookupTool({ isOpen, setIsOpen }) {
         </div>
 
         {/* 3 cols */}
-       <div className="pt-10 mb-15 flex flex-col gap-12">
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="pt-10 mb-15 flex flex-col gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            <AccuraCard
+              title={
+                <>
+                  Strengthens Claim Defensibility{" "}
+                  <br className="hidden lg:block" /> Which Results In:
+                </>
+              }
+              bullets={[
+                "Stronger damage validation",
+                "Reduced carrier pushback",
+                "Cleaner review experience",
+              ]}
+              image="/Images/SCD.png"
+              alt="Claim Defensibility"
+            />
 
-    <AccuraCard
-      title={
-        <>
-          Strengthens Claim Defensibility <br className="hidden lg:block" /> Which Results In:
-        </>
-      }
-      bullets={[
-        "Stronger damage validation",
-        "Reduced carrier pushback",
-        "Cleaner review experience",
-      ]}
-      image="/Images/SCD.png"
-      alt="Claim Defensibility"
-    />
+            <AccuraCard
+              title={
+                <>
+                  Eliminates Manual Documentation{" "}
+                  <br className="hidden lg:block" /> Confusion Which Results In:
+                </>
+              }
+              bullets={[
+                "No external downloads",
+                "No file mismatches",
+                "Faster submission preparation",
+              ]}
+              image="/Images/EMD.png"
+              alt="Manual Documentation"
+            />
 
-    <AccuraCard
-      title={
-        <>
-          Eliminates Manual Documentation <br className="hidden lg:block" /> Confusion Which Results In:
-        </>
-      }
-      bullets={[
-        "No external downloads",
-        "No file mismatches",
-        "Faster submission preparation",
-      ]}
-      image="/Images/EMD.png"
-      alt="Manual Documentation"
-    />
-
-    <AccuraCard
-      title={
-        <>
-          Supports Timeline Accuracy <br className="hidden lg:block" /> Which Results In:
-        </>
-      }
-      bullets={[
-        "Clear cause correlation",
-        "Reduced ambiguity",
-        "Stronger submission credibility",
-      ]}
-      image="/Images/STA.png"
-      alt="Timeline Accuracy"
-    />
-
-  </div>
-</div>
+            <AccuraCard
+              title={
+                <>
+                  Supports Timeline Accuracy <br className="hidden lg:block" />{" "}
+                  Which Results In:
+                </>
+              }
+              bullets={[
+                "Clear cause correlation",
+                "Reduced ambiguity",
+                "Stronger submission credibility",
+              ]}
+              image="/Images/STA.png"
+              alt="Timeline Accuracy"
+            />
+          </div>
+        </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#ffffff",
-                    color: "#0061A4",
-                    padding: "27px 15px",
-                    border: "none",
-                  }}
-                  onClick={() => setIsOpen(true)}
-                >
-                  Get Started
-                  <img
-                    src="/Icons/Vector2.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
-                <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#0061A4",
-                    border: "2px solid #4485b2",
-                    padding: "25px 15px",
-                  }}
-                  onClick={() => (window.location.href = "/book-a-demo")}
-                >
-                  Book Demo
-                  <img
-                    src="/Icons/Vector.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
+            className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
+            style={{
+              backgroundColor: "#ffffff",
+              color: "#0061A4",
+              padding: "27px 15px",
+              border: "none",
+            }}
+            onClick={() => setIsOpen(true)}
+          >
+            Get Started
+            <img
+              src="/Icons/Vector2.png"
+              alt="Arrow Icon"
+              className="w-2 h-3 ml-2"
+            />
+          </Button>
+          <Button
+            className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
+            style={{
+              backgroundColor: "#0061A4",
+              border: "2px solid #4485b2",
+              padding: "25px 15px",
+            }}
+            onClick={() => (window.location.href = "/book-a-demo")}
+          >
+            Book Demo
+            <img
+              src="/Icons/Vector.png"
+              alt="Arrow Icon"
+              className="w-2 h-3 ml-2"
+            />
+          </Button>
         </div>
-      </div>
+      </div></div>
 
       {/* Section 3 */}
+       <div className="fade-up">
+
       <div className="max-w-[90%] mt-20 mb-20 mx-auto flex flex-col gap-10">
         {/* TOP HEADING */}
         <h1 className="text-3xl text-black">
@@ -301,66 +310,67 @@ export default function WeatherLookupTool({ isOpen, setIsOpen }) {
             </div>
           </div>
         </div>
-      </div>
+      </div></div>
 
       {/* Section 4 */}
+       <div className="fade-up">
+
       <div className="max-w-[90%] mx-auto bg-white rounded-[20px] mt-30 mb-20 px-6 md:px-12 py-10 md:py-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* LEFT CONTENT */}
         <div className="space-y-6 text-center md:text-left">
-          <h2 className="text-2xl md:text-4xl font-[400] leading-tight text-[#FA8C3D]">
-            Get Accurate Roof &
-            <br className="hidden lg:block" /> Weather
-            <span className="text-black"> Intelligence </span>
-            <br className="hidden lg:block" /> <span className="text-black">Power Your Claims</span>
+          <h2 className="text-2xl md:text-4xl font-[400] leading-tight text-black">
+            <span className="text-[#FA8C3D]">
+              Stop Searching for Storm Data Outside Your Workflow.{" "}
+            </span>
+            Verified Weather Intelligence, Attached to Every Job.
           </h2>
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
             <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center border-2 border-gray-300"
-                  style={{
-                    backgroundColor: "#ffffff",
-                    color: "#0061A4",
-                    padding: "27px 15px",
-                   
-                  }}
-                  onClick={() => setIsOpen(true)}
-                >
-                  Get Started
-                  <img
-                    src="/Icons/Vector2.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
-                <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#0061A4",
-                    border: "2px solid #4485b2",
-                    padding: "25px 15px",
-                  }}
-                  onClick={() => (window.location.href = "/book-a-demo")}
-                >
-                  Book Demo
-                  <img
-                    src="/Icons/Vector.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
+              className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center border-2 border-gray-300"
+              style={{
+                backgroundColor: "#ffffff",
+                color: "#0061A4",
+                padding: "27px 15px",
+              }}
+              onClick={() => setIsOpen(true)}
+            >
+              Get Started
+              <img
+                src="/Icons/Vector2.png"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
+            </Button>
+            <Button
+              className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
+              style={{
+                backgroundColor: "#0061A4",
+                border: "2px solid #4485b2",
+                padding: "25px 15px",
+              }}
+              onClick={() => (window.location.href = "/book-a-demo")}
+            >
+              Book Demo
+              <img
+                src="/Icons/Vector.png"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
+            </Button>
           </div>
         </div>
 
         {/* RIGHT IMAGE */}
         <div className="flex justify-center">
           <img
-            src="/Images/calculator-one-platform.png"
+            src="/Images/girl-smiling.png"
             alt="One Platform"
-            className="w-full max-w-md md:max-w-full object-contain"
+            className="w-full sm:w-[90%] md:w-[90%] lg:w-[90%] max-w-md md:max-w-full object-contain"
           />
         </div>
-      </div>
+      </div></div>
     </section>
   );
 }

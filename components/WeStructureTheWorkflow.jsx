@@ -3,19 +3,22 @@
 import Image from "next/image";
 import { Button } from "./ui/button";
 import AccuraCard from "./AccuraCard";
+import useFadeIn from "@/lib/useFadeIn";
 
 export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
+  useFadeIn();
   return (
-        <section
+    <section
       className="lg:px-6 py-16"
       style={{
-  backgroundImage: "url('/Images/bgforlastsection.jpg')",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
-}}
+        backgroundImage: "url('/Images/bgforlastsection.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
     >
       {/* Section 1 */}
+       <div className="fade-up">
       <div className="max-w-[90%] mt-0 sm:mt-20 md:mt-20 lg:mt-20 mb-0 sm:mb-20 md:mb-20 lg:mb-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* LEFT COL */}
         <div className="justify-center hidden lg:flex">
@@ -106,57 +109,58 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
           </div>
 
           {/* MOBILE IMAGE (ONLY) */}
-<div className="flex justify-center lg:hidden">
-  <div className="rounded-[30px] border-2 border-white bg-white/10 backdrop-blur-md p-6 w-full">
-    <Image
-      src="/Images/WeStructureTheWorkflow-left.png"
-      alt="Structure Proof Mobile"
-      width={500}
-      height={500}
-      className="rounded-[16px] object-contain w-full"
-    />
-  </div>
-</div>
+          <div className="flex justify-center lg:hidden">
+            <div className="rounded-[30px] border-2 border-white bg-white/10 backdrop-blur-md p-6 w-full">
+              <Image
+                src="/Images/WeStructureTheWorkflow-left.png"
+                alt="Structure Proof Mobile"
+                width={500}
+                height={500}
+                className="rounded-[16px] object-contain w-full"
+              />
+            </div>
+          </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
             <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#ffffff",
-                    color: "#0061A4",
-                    padding: "27px 15px",
-                    border: "none",
-                  }}
-                  onClick={() => setIsOpen(true)}
-                >
-                  Get Started
-                  <img
-                    src="/Icons/Vector2.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
-                <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#0061A4",
-                    border: "2px solid #4485b2",
-                    padding: "25px 15px",
-                  }}
-                  onClick={() => (window.location.href = "/book-a-demo")}
-                >
-                  Book Demo
-                  <img
-                    src="/Icons/Vector.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
+              className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
+              style={{
+                backgroundColor: "#ffffff",
+                color: "#0061A4",
+                padding: "27px 15px",
+                border: "none",
+              }}
+              onClick={() => setIsOpen(true)}
+            >
+              Get Started
+              <img
+                src="/Icons/Vector2.png"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
+            </Button>
+            <Button
+              className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
+              style={{
+                backgroundColor: "#0061A4",
+                border: "2px solid #4485b2",
+                padding: "25px 15px",
+              }}
+              onClick={() => (window.location.href = "/book-a-demo")}
+            >
+              Book Demo
+              <img
+                src="/Icons/Vector.png"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
+            </Button>
           </div>
         </div>
-      </div>
+      </div></div>
 
       {/* Section 2 */}
+       <div className="fade-up">
       <div className="max-w-[90%] mx-auto pt-10 mb-30">
         <div className="bg-[#0061A4] rounded-[15px] px-8 py-8 flex flex-col items-center text-center gap-4 md:flex-row md:items-center md:text-left">
           {/* Logo */}
@@ -175,95 +179,97 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
         </div>
 
         {/* 3 cols */}
-       <div className="pt-10 mb-15 flex flex-col gap-12">
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="pt-10 mb-15 flex flex-col gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            <AccuraCard
+              title={
+                <>
+                  Prevents Incomplete Submissions{" "}
+                  <br className="hidden lg:block" /> Which Results In:
+                </>
+              }
+              bullets={[
+                "Fewer clarification requests",
+                "Faster approval cycles",
+                "Less back-and-forth",
+              ]}
+              image="/Images/PISWRI.png"
+              alt="Incomplete Submissions"
+            />
 
-    <AccuraCard
-      title={
-        <>
-          Prevents Incomplete Submissions <br className="hidden lg:block" /> Which Results In:
-        </>
-      }
-      bullets={[
-        "Fewer clarification requests",
-        "Faster approval cycles",
-        "Less back-and-forth",
-      ]}
-      image="/Images/PISWRI.png"
-      alt="Incomplete Submissions"
-    />
+            <AccuraCard
+              title={
+                <>
+                  Eliminates Scope-To-Photo <br className="hidden lg:block" />{" "}
+                  Confusion Which Results In:
+                </>
+              }
+              bullets={[
+                "Cleaner review experience",
+                "Stronger defensibility",
+                "Reduced ambiguity",
+              ]}
+              image="/Images/ESTPCWRI.png"
+              alt="Scope to Photo Confusion"
+            />
 
-    <AccuraCard
-      title={
-        <>
-          Eliminates Scope-To-Photo <br className="hidden lg:block" /> Confusion Which Results In:
-        </>
-      }
-      bullets={[
-        "Cleaner review experience",
-        "Stronger defensibility",
-        "Reduced ambiguity",
-      ]}
-      image="/Images/ESTPCWRI.png"
-      alt="Scope to Photo Confusion"
-    />
-
-    <AccuraCard
-      title={
-        <>
-          Produces Submission-Ready <br className="hidden lg:block" /> Claim Packs Which Results In:
-        </>
-      }
-      bullets={[
-        "Faster carrier review",
-        "Fewer supplement loops",
-        "Stronger documentation credibility",
-      ]}
-      image="/Images/PSRCPWRI.png"
-      alt="Submission Ready Packs"
-    />
-
-  </div>
-</div>
+            <AccuraCard
+              title={
+                <>
+                  Produces Submission-Ready <br className="hidden lg:block" />{" "}
+                  Claim Packs Which Results In:
+                </>
+              }
+              bullets={[
+                "Faster carrier review",
+                "Fewer supplement loops",
+                "Stronger documentation credibility",
+              ]}
+              image="/Images/PSRCPWRI.png"
+              alt="Submission Ready Packs"
+            />
+          </div>
+        </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#ffffff",
-                    color: "#0061A4",
-                    padding: "27px 15px",
-                    border: "none",
-                  }}
-                  onClick={() => setIsOpen(true)}
-                >
-                  Get Started
-                  <img
-                    src="/Icons/Vector2.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
-                <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#0061A4",
-                    border: "2px solid #4485b2",
-                    padding: "25px 15px",
-                  }}
-                  onClick={() => (window.location.href = "/book-a-demo")}
-                >
-                  Book Demo
-                  <img
-                    src="/Icons/Vector.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
+            className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
+            style={{
+              backgroundColor: "#ffffff",
+              color: "#0061A4",
+              padding: "27px 15px",
+              border: "none",
+            }}
+            onClick={() => setIsOpen(true)}
+          >
+            Get Started
+            <img
+              src="/Icons/Vector2.png"
+              alt="Arrow Icon"
+              className="w-2 h-3 ml-2"
+            />
+          </Button>
+          <Button
+            className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
+            style={{
+              backgroundColor: "#0061A4",
+              border: "2px solid #4485b2",
+              padding: "25px 15px",
+            }}
+            onClick={() => (window.location.href = "/book-a-demo")}
+          >
+            Book Demo
+            <img
+              src="/Icons/Vector.png"
+              alt="Arrow Icon"
+              className="w-2 h-3 ml-2"
+            />
+          </Button>
         </div>
-      </div>
+      </div></div>
 
       {/* Section 3 */}
+       <div className="fade-up">
       <div className="max-w-[90%] mx-auto mb-30 flex flex-col gap-10">
         {/* Top 2 Cols */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
@@ -271,8 +277,7 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
           <div>
             <h1 className="text-[27px] lg:text-3xl text-black">
               Stop Chasing Missing
-              <br className="hidden lg:block" /> {" "}
-               Documentation.
+              <br className="hidden lg:block" /> Documentation.
             </h1>
             <p className="text-gray-700 text-sm md:text-base mt-3">
               Most teams discover gaps after submission when
@@ -331,8 +336,8 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
         </div>
 
         {/* 4 Boxes */}
-               <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
-                  {[
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+          {[
             { icon: "/Icons/RC2.png", title: "Resubmission cycles" },
             {
               icon: "/Icons/siri.png",
@@ -344,72 +349,73 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
             },
             { icon: "/Icons/DI.png", title: "Documentation inconsistencies" },
           ].map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="bg-[#fdfcf7] rounded-[14px] sm:rounded-[20px] md:rounded-[20px] lg:rounded-[20px] p-3 sm:p-6 md:p-6 lg:p-6 flex flex-col items-center sm:items-start md:items-start lg:items-start text-center sm:text-left md:text-left lg:text-left gap-2 sm:gap-4 shadow-sm hover:scale-105 transition-transform"
-                    >
-                      <div className="bg-[#0061A4] p-2 rounded-[10px] w-fit">
-                        <Image
-                          src={item.icon}
-                          alt={item.title}
-                          width={20}
-                          height={20}
-                        />
-                      </div>
-        
-                      <p className="text-black font-semibold text-sm md:text-base">
-                        {item.title}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-      </div>
+            <div
+              key={idx}
+              className="bg-[#fdfcf7] rounded-[14px] sm:rounded-[20px] md:rounded-[20px] lg:rounded-[20px] p-3 sm:p-6 md:p-6 lg:p-6 flex flex-col items-center sm:items-start md:items-start lg:items-start text-center sm:text-left md:text-left lg:text-left gap-2 sm:gap-4 shadow-sm hover:scale-105 transition-transform"
+            >
+              <div className="bg-[#0061A4] p-2 rounded-[10px] w-fit">
+                <Image
+                  src={item.icon}
+                  alt={item.title}
+                  width={20}
+                  height={20}
+                />
+              </div>
+
+              <p className="text-black font-semibold text-sm md:text-base">
+                {item.title}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div></div>
 
       {/* Section 4 */}
+       <div className="fade-up">
       <div className="max-w-[90%] mx-auto bg-white rounded-[20px] mt-20 mb-20 px-6 md:px-12 py-10 md:py-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* LEFT CONTENT */}
         <div className="space-y-6 text-center md:text-left">
           <h2 className="text-2xl md:text-4xl font-[400] leading-tight text-black">
-            When Submission is
-            <br  className="hidden lg:block" /> Structured,
-            <span className="text-[#FA8C3D]"> Approvals</span>
-            <br  className="hidden lg:block" /> <span className="text-[#FA8C3D]">Move Faster.</span>
+            <span className="text-[#FA8C3D]">
+              Stop Chasing Missing Documentation.
+            </span>
+            {" "}Structure It Before Submission.
           </h2>
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
             <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center border-2 border-gray-300"
-                  style={{
-                    backgroundColor: "#ffffff",
-                    color: "#0061A4",
-                    padding: "27px 15px",
-                  }}
-                  onClick={() => setIsOpen(true)}
-                >
-                  Get Started
-                  <img
-                    src="/Icons/Vector2.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
-                <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#0061A4",
-                    border: "2px solid #4485b2",
-                    padding: "25px 15px",
-                  }}
-                  onClick={() => (window.location.href = "/book-a-demo")}
-                >
-                  Book Demo
-                  <img
-                    src="/Icons/Vector.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
+              className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center border-2 border-gray-300"
+              style={{
+                backgroundColor: "#ffffff",
+                color: "#0061A4",
+                padding: "27px 15px",
+              }}
+              onClick={() => setIsOpen(true)}
+            >
+              Get Started
+              <img
+                src="/Icons/Vector2.png"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
+            </Button>
+            <Button
+              className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
+              style={{
+                backgroundColor: "#0061A4",
+                border: "2px solid #4485b2",
+                padding: "25px 15px",
+              }}
+              onClick={() => (window.location.href = "/book-a-demo")}
+            >
+              Book Demo
+              <img
+                src="/Icons/Vector.png"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
+            </Button>
           </div>
         </div>
 
@@ -433,11 +439,12 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
           {/* Bottom Text */}
           <p className="text-sm md:text-base">
             AccuraCore Claims transforms
-            <br className="hidden lg:block" /> documentation from a liability into an
+            <br className="hidden lg:block" /> documentation from a liability
+            into an
             <br className="hidden lg:block" /> advantage.
           </p>
         </div>
-      </div>
+      </div></div>
     </section>
   );
 }
