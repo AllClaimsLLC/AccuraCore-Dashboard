@@ -65,7 +65,7 @@ export default function TheTosolsSection() {
           >
             <div className="relative w-full max-w-md">
               <img
-                src="/Images/Integrated-Notes-&-File-Management.png"
+                src="/Images/builtIn.png"
                 alt="Integrated Notes & File Management"
                 width={400}
                 height={400}

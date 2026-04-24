@@ -171,7 +171,7 @@ hover:border-white/40"
                     </ul>
                   </div>
 
-                  <div className="mt-45 pt-6">
+                  <div className="mt-37 pt-6">
                     <CTAButton color="#0061A4" setIsOpen={setIsOpen} />
                   </div>
                 </div>
@@ -378,7 +378,7 @@ hover:border-white/40"
                     </ul>
                   </div>
 
-                  <div className="mt-27 pt-6">
+                  <div className="mt-24 pt-6">
                     <CTAButton color="#ff6900" setIsOpen={setIsOpen} />
                   </div>
                 </div>

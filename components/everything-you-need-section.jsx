@@ -64,17 +64,25 @@ export default function EverythingYouNeedSection() {
   };
 
   return (
-    <section className="py-16 lg:py-20 bg-[#f4f0ed] dark:bg-slate-950">
+    <section
+      className="py-16 lg:py-20 bg-[#f4f0ed] dark:bg-slate-950"
+      style={{ paddingBottom: 0 }}
+    >
       <div className="w-full">
-        <div
-          className="p-8 lg:p-12"
+       <div
+          className="p-8 lg:p-12 "
           style={{
             background: "radial-gradient(circle, #2f5071 0%, #162c44 100%)",
+            paddingLeft: 0,
+            paddingRight: 0,
           }}
         >
           {/* Heading */}
-          <div className="text-center mb-10">
-            <h2 className="text-white font-bold text-xl">
+         <div className="text-center mb-8 lg:mb-12 px-4 lg:px-12">
+            <h2
+              className="text-white font-bold leading-tight"
+              style={{ fontSize: "1.5rem", lineHeight: "1.75rem" }}
+            >
               Everything You Need To
               <br />
               Run And Grow Your Business
@@ -87,11 +95,12 @@ export default function EverythingYouNeedSection() {
               <button
                 key={tab.id}
                 onClick={() => scrollTo(tab.id)}
-                className="px-5 py-2 rounded-full text-white transition-all"
+                                className={`px-4 lg:px-6 py-2 lg:py-3 rounded-full text-sm lg:text-base font-medium transition-all duration-300 whitespace-nowrap text-white`}
+
                 style={{
                   background:
                     activeTab === tab.id
-                      ? "linear-gradient(to right, #0061A4, #004b82)"
+                      ? "radial-gradient(circle at center, #0061A4 0%, #004b82 100%)"
                       : "#1f344a",
                   border:
                     activeTab === tab.id
@@ -105,12 +114,12 @@ export default function EverythingYouNeedSection() {
           </div>
 
           {/* Carousel */}
-          <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex">
+          <div className="embla overflow-hidden" ref={emblaRef}>
+            <div className="embla__container flex">
               {allImages.map((img) => (
                 <div
                   key={img.id}
-                  className="flex-[0_0_100%] md:flex-[0_0_55%] flex justify-center items-center px-2"
+                className="embla__slide flex-[0_0_100%] md:flex-[0_0_55%] flex justify-center items-center px-1 relative"
                 >
                   <img
                     src={img.src}
@@ -130,3 +139,4 @@ export default function EverythingYouNeedSection() {
     </section>
   );
 }
+

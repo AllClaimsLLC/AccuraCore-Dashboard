@@ -28,7 +28,7 @@ export default function PricingPage() {
   return (
     <>
       <div
-        className="relative bg-cover bg-center bg-no-repeat min-h-[100vh] md:min-h-[80vh] flex flex-col"
+        className="relative bg-cover bg-center bg-no-repeat min-h-[90vh] md:min-h-[80vh] flex flex-col"
         style={{ backgroundImage: "url('/Images/Hero-bg.png')" }}
       >
         {/* Updated Header */}
