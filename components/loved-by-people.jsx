@@ -130,7 +130,7 @@ export default function LovedByPeople({ id }) {
   key={faq.id}
   className={`faq-item p-[25px] rounded-[10px] bg-white dark:bg-slate-900 border border-transparent dark:border-slate-700 transition-colors ${
     openFaq === faq.id ? "open" : ""
-  }`}s
+  }`}
 >
                   <button
                     onClick={() => toggleFaq(faq.id)}

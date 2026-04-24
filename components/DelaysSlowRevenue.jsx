@@ -47,17 +47,21 @@ export default function DelaysSlowRevenue({ isOpen, setIsOpen }) {
 
           {/* SECOND BULLET POINTS */}
           <div className="flex flex-col gap-2">
-            {[
-              "Shorter Job Cycles",
-              "Faster Invoicing",
-              "Predictable Cash Flow",
-            ].map((item, idx) => (
-              <div key={idx} className="flex items-start gap-3">
-                <div className="w-[5px] h-[5px] bg-[#F6BE71] rounded-full mt-2" />
-                <p className="text-white text-sm md:text-base">{item}</p>
-              </div>
-            ))}
-          </div>
+  {[
+    "Shorter Job Cycles",
+    "Faster Invoicing",
+    "Predictable Cash Flow",
+  ].map((item, idx) => (
+    <div key={idx} className="flex items-start gap-3">
+      <img
+        src="/Icons/checkmark-icon-green.png"
+        alt="check"
+        className="w-4 h-4 mt-[2px]"
+      />
+      <p className="text-white text-sm md:text-base">{item}</p>
+    </div>
+  ))}
+</div>
 
  <div className="w-full h-full flex lg:hidden justify-center">
           <Image

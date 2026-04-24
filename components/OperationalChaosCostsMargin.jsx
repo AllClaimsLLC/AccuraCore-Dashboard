@@ -50,21 +50,24 @@ export default function OperationalChaosCostsMargin({ isOpen, setIsOpen }) {
             </h2>
 
             {/* SECOND BULLET POINTS */}
-            <div className="flex flex-col gap-2">
-              {[
-                "Structured workflows from start to submission",
-                "Clear job ownership and accountability",
-                "Real-time status visibility",
-                "Built-in documentation controls",
-                "Consistent execution across every job",
-              ].map((item, idx) => (
-                <div key={idx} className="flex items-start gap-3">
-                  <div className="w-[5px] h-[5px] bg-[#F6BE71] rounded-full mt-2" />
-                  <p className="text-white text-sm md:text-base">{item}</p>
-                </div>
-              ))}
-            </div>
-
+<div className="flex flex-col gap-2">
+  {[
+    "Structured workflows from start to submission",
+    "Clear job ownership and accountability",
+    "Real-time status visibility",
+    "Built-in documentation controls",
+    "Consistent execution across every job",
+  ].map((item, idx) => (
+    <div key={idx} className="flex items-start gap-3">
+      <img
+        src="/Icons/checkmark-icon-green.png"
+        alt="check"
+        className="w-4 h-4 mt-[2px]"
+      />
+      <p className="text-white text-sm md:text-base">{item}</p>
+    </div>
+  ))}
+</div>
             {/* MOBILE IMAGE (ONLY) */}
             <div className="flex justify-center lg:hidden mt-4">
               <div className="w-full max-w-sm">

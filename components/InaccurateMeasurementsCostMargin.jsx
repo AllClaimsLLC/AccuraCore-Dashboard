@@ -56,19 +56,23 @@ export default function InaccurateMeasurementsCostMargin({
 
             {/* SECOND BULLET POINTS */}
             <div className="flex flex-col gap-2">
-              {[
-                "Structured measurements at capture",
-                "Scope and calculations aligned automatically",
-                "Fewer disputes",
-                "Faster approvals",
-                "More predictable cash flow",
-              ].map((item, idx) => (
-                <div key={idx} className="flex items-start gap-3">
-                  <div className="w-[5px] h-[5px] bg-[#F6BE71] rounded-full mt-2" />
-                  <p className="text-white text-sm md:text-base">{item}</p>
-                </div>
-              ))}
-            </div>
+  {[
+    "Structured measurements at capture",
+    "Scope and calculations aligned automatically",
+    "Fewer disputes",
+    "Faster approvals",
+    "More predictable cash flow",
+  ].map((item, idx) => (
+    <div key={idx} className="flex items-start gap-3">
+      <img
+        src="/Icons/checkmark-icon-green.png"
+        alt="check"
+        className="w-4 h-4 mt-[2px]"
+      />
+      <p className="text-white text-sm md:text-base">{item}</p>
+    </div>
+  ))}
+</div>
 
             <div className="w-full h-full justify-center flex lg:hidden">
               <Image

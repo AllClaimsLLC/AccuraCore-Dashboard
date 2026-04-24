@@ -28,7 +28,7 @@ export default function PricingPage() {
   return (
     <>
       <div
-        className="relative bg-cover bg-center bg-no-repeat min-h-[100vh] md:min-h-[90vh] flex flex-col"
+        className="relative bg-cover bg-center bg-no-repeat min-h-[100vh] md:min-h-[80vh] flex flex-col"
         style={{ backgroundImage: "url('/Images/Hero-bg.png')" }}
       >
         {/* Updated Header */}
@@ -311,17 +311,17 @@ export default function PricingPage() {
         </header>
 
         {/* Hero Section */}
-        <main className="px-6 py-16">
+        <main className="px-6 pt-16 pb-0">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8 lg:mb-16">
               <h1 className="text-4xl md:text-4xl text-white leading-tight">
                 Pricing
               </h1>
-              <h2 className="text-3xl text-white mb-2 leading-tight">
-                Plans Designed for Every Business
-              </h2>
+              <h2 className="text-2xl md:text-3xl text-white mb-2 leading-tight font-light font-sora">
+  Plans Designed for Every Business
+</h2>
               <p className="text-md text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-                At <span className="text-[#FA8C3D]">AccuraCore</span>, we
+                At AccuraCore, we
                 understand that every business has unique needs and growth
                 paths. That’s why our pricing structure is flexible,
                 transparent, and tailored to help teams of all sizes get the

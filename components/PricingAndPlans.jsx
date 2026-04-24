@@ -137,7 +137,7 @@ export const PricingAndPlans = ({ setIsOpen }) => {
             <div className="flex flex-col gap-6">
               {/* ================= SOLO ================= */}
               <div
-                className="bg-white rounded-[15px] border-t-4 border-[#1161A5] p-4 flex flex-col h-full 
+                className="pricing-card bg-white rounded-[15px] border-t-4 border-[#1161A5] p-4 flex flex-col h-full 
 transition-all duration-300 
 hover:scale-[1.02] 
 hover:bg-white/40 
@@ -179,7 +179,7 @@ hover:border-white/40"
 
               {/* ================= COMPANY ================= */}
               <div
-                className="bg-white rounded-[15px] border-t-4 border-[#1161A5] p-4 flex flex-col h-full 
+                className="pricing-card bg-white rounded-[15px] border-t-4 border-[#1161A5] p-4 flex flex-col h-full 
 transition-all duration-300 
 hover:scale-[1.02] 
 hover:bg-white/40 
@@ -238,7 +238,7 @@ hover:border-white/40"
             <div className="flex flex-col gap-6">
               {/* ================= SOLO ================= */}
               <div
-                className="bg-white rounded-[15px] border-t-4 border-red-500 p-4 flex flex-col h-full 
+                className="pricing-card bg-white rounded-[15px] border-t-4 border-red-500 p-4 flex flex-col h-full 
 transition-all duration-300 
 hover:scale-[1.02] 
 hover:bg-white/40 
@@ -277,7 +277,7 @@ hover:border-white/40"
 
               {/* ================= COMPANY ================= */}
               <div
-                className="bg-white rounded-[15px] border-t-4 border-red-500 p-4 flex flex-col h-full 
+                className="pricing-card bg-white rounded-[15px] border-t-4 border-red-500 p-4 flex flex-col h-full 
 transition-all duration-300 
 hover:scale-[1.02] 
 hover:bg-white/40 
@@ -336,7 +336,7 @@ hover:border-white/40"
             <div className="flex flex-col gap-6">
               {/* ================= SOLO ================= */}
               <div
-                className="bg-white rounded-[15px] border-t-4 border-orange-500 p-4 flex flex-col h-full 
+                className="pricing-card bg-white rounded-[15px] border-t-4 border-orange-500 p-4 flex flex-col h-full 
 transition-all duration-300 
 hover:scale-[1.02] 
 hover:bg-white/40 
@@ -386,7 +386,7 @@ hover:border-white/40"
 
               {/* ================= COMPANY ================= */}
               <div
-                className="bg-white rounded-[15px] border-t-4 border-orange-500 p-4 flex flex-col h-full 
+                className="pricing-card bg-white rounded-[15px] border-t-4 border-orange-500 p-4 flex flex-col h-full 
 transition-all duration-300 
 hover:scale-[1.02] 
 hover:bg-white/40 
@@ -442,7 +442,8 @@ hover:border-white/40"
 
           {/* Horizontal Card */}
           <div className="col-span-1 md:col-span-2 lg:col-span-3 mt-25">
-            <div className="bg-[#FA8C3D] rounded-[15px] p-4 grid grid-cols-1 md:grid-cols-[0.7fr_1.1fr] gap-4">
+              <div className="bg-[linear-gradient(to_right,#1162a4,#518cd2a3)] rounded-[15px] p-4 grid grid-cols-1 md:grid-cols-[0.7fr_1.1fr] gap-4">
+
               {/* LEFT SIDE */}
               <div className="p-4 flex flex-col justify-between">
                 {/* Top Content */}
@@ -482,7 +483,7 @@ hover:border-white/40"
               </div>
 
               {/* RIGHT SIDE */}
-              <div className="bg-[#FA9348] rounded-[15px] p-6 flex items-center">
+              <div className="bg-[#518cd2a3] rounded-[15px] p-6 flex items-center">
                 <ul className="space-y-3">
                   <li className="flex gap-2 items-start">
                     <img

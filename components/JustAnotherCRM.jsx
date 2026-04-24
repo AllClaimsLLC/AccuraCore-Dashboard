@@ -356,71 +356,68 @@ export default function JustAnotherCRM({ isOpen, setIsOpen }) {
           </div>
 
           {/* RIGHT */}
-          <div className="flex flex-col gap-5">
-            {/* Heading */}
-            <p className="text-gray-500 font-semibold text-[20px]">
-              MyAccuraCore replaces that fragmentation.
-            </p>
+         {/* RIGHT */}
+<div className="flex flex-col gap-8">
+  {/* 2-COL BULLETS */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    {[
+      "Centralize jobs",
+      "Standardize workflow",
+      "Align teams",
+      "Track readiness",
+    ].map((item, i) => (
+      <div key={i} className="flex items-start gap-2">
+        <Image
+          src="/Icons/checkmark-icon-green.png"
+          alt="check"
+          width={18}
+          height={18}
+        />
+        <span className="text-sm md:text-base text-gray-700">
+          {item}
+        </span>
+      </div>
+    ))}
+  </div>
 
-            {/* 2-COL BULLETS */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                "Centralize jobs",
-                "Standardize workflow",
-                "Align teams",
-                "Track readiness",
-              ].map((item, i) => (
-                <div key={i} className="flex items-start gap-2">
-                  <Image
-                    src="/Icons/checkmark-icon-green.png"
-                    alt="check"
-                    width={18}
-                    height={18}
-                  />
-                  <span className="text-sm md:text-base text-gray-700">
-                    {item}
-                  </span>
-                </div>
-              ))}
-            </div>
+  {/* BUTTONS */}
+  <div className="flex flex-col sm:flex-row items-start gap-4 pt-2">
+    <Button
+      className="w-full sm:w-auto rounded-full text-sm flex items-center"
+      style={{
+        backgroundColor: "#ffffff",
+        color: "#0061A4",
+        padding: "27px 15px",
+        border: "none",
+      }}
+      onClick={() => setIsOpen(true)}
+    >
+      Get Started
+      <img
+        src="/Icons/Vector2.png"
+        alt="Arrow Icon"
+        className="w-2 h-3 ml-2"
+      />
+    </Button>
 
-            {/* BUTTONS */}
-            <div className="flex flex-col sm:flex-row items-center justify-start gap-4 mt-4">
-              <Button
-                className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
-                style={{
-                  backgroundColor: "#ffffff",
-                  color: "#0061A4",
-                  padding: "27px 15px",
-                  border: "none",
-                }}
-                onClick={() => setIsOpen(true)}
-              >
-                Get Started
-                <img
-                  src="/Icons/Vector2.png"
-                  alt="Arrow Icon"
-                  className="w-2 h-3 ml-2"
-                />
-              </Button>
-              <Button
-                className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
-                style={{
-                  backgroundColor: "#0061A4",
-                  border: "2px solid #4485b2",
-                  padding: "25px 15px",
-                }}
-                onClick={() => (window.location.href = "/book-a-demo")}
-              >
-                Book Demo
-                <img
-                  src="/Icons/Vector.png"
-                  alt="Arrow Icon"
-                  className="w-2 h-3 ml-2"
-                />
-              </Button>
-            </div>
-          </div>
+    <Button
+      className="w-full sm:w-auto text-white rounded-full text-sm flex items-center"
+      style={{
+        backgroundColor: "#0061A4",
+        border: "2px solid #4485b2",
+        padding: "25px 15px",
+      }}
+      onClick={() => (window.location.href = "/book-a-demo")}
+    >
+      Book Demo
+      <img
+        src="/Icons/Vector.png"
+        alt="Arrow Icon"
+        className="w-2 h-3 ml-2"
+      />
+    </Button>
+  </div>
+</div>
         </div>
 
         {/* Separator */}

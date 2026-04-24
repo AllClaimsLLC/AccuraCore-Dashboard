@@ -120,7 +120,9 @@ const renderSelected = () => {
       {/* Input */}
       <div
         className="w-full px-4 py-2 rounded-md border border-gray-300 text-sm text-gray-700 bg-white
-        flex justify-between items-center cursor-pointer focus:outline-none focus:ring-1 focus:ring-blue-500"
+flex justify-between items-center cursor-pointer transition-all duration-200
+focus:outline-none focus:shadow-[0_0_0_3px_rgba(26,111,212,0.22)] focus:border-[#1A6FD4]"
+tabIndex={0}
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className="truncate">{renderSelected()}</span>

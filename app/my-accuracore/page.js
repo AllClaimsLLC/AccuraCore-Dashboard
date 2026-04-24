@@ -14,10 +14,7 @@ const content = (
     <p className="text-blue-100">
       MyAccuraCore centralizes jobs, documentation, teams, and claims in one
       structured system. This is where field capture, office review, and claim
-      workflows connect.{" "}
-      <span className="text-[#FA8C3D]">
-        One system, Full visibility, Controlled execution.
-      </span>
+      workflows connect. One system, Full visibility, Controlled execution.
     </p>
   </>
 );
@@ -76,7 +73,7 @@ export default function MyAccuraCorePage() {
         }}
       >
         {/* Header */}
-       <DesktopUpdatedHeader />
+        <DesktopUpdatedHeader />
 
         {/* Hero Section */}
         <main className="px-6 py-16">
@@ -95,7 +92,7 @@ export default function MyAccuraCorePage() {
                 This is where field capture, office review, and claim workflows
                 connect.{" "}
               </p>
-              <p className="text-md text-[#FA8C3D] mb-8 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-md text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
                 One system, Full visibility, Controlled execution.
               </p>
 
