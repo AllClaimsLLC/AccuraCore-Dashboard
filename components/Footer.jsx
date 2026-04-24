@@ -36,8 +36,7 @@ export default function Footer({ id, onBookDemo }) {
 
             {/* Description */}
             <p className="text-white text-md leading-relaxed max-w-md">
-              AccuraCore complete contractor management software to manage your
-              contracting business from start to finish.
+              AccuraCore is a complete contractor management software to manage your contracting business from start to finish.
             </p>
 
             {/* Book Demo Button */}
@@ -60,7 +59,7 @@ export default function Footer({ id, onBookDemo }) {
           </div>
 
           {/* Right Column */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-gradient-to-br from-[#04213f] to-[#072b4a] border-t-2 border-l-2 border-[#0061A4] rounded-tl-[30px] p-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-0 md:gap-0 lg:gap-0 bg-gradient-to-br from-[#04213f] to-[#072b4a] border-t-2 border-l-2 border-[#0061A4] rounded-tl-[30px] p-6">
             {/* Contact Info */}
             <div className="space-y-6">
               <div className="space-y-4">
@@ -115,7 +114,49 @@ export default function Footer({ id, onBookDemo }) {
             </div>
 
             {/* Follow Us */}
-            <div className="space-y-4 relative">
+<div className="hidden sm:flex md:flex lg:flex space-y-4 flex-col items-center">
+  <h3 className="text-white font-semibold text-sm uppercase tracking-wider text-center w-full">
+    FOLLOW US
+  </h3>
+
+  {/* CENTER FIX */}
+  <div className="relative w-[320px] h-[140px] mx-auto">
+
+    {/* Spiral */}
+    <img
+      src="/Icons/Spiral.png"
+      alt="Spiral Background"
+      className="absolute 
+      top-1/2 left-1/2 
+      -translate-x-1/2 -translate-y-[60%] 
+      w-[300px] h-[350px] 
+      object-contain
+      z-0 pointer-events-none select-none"
+    />
+
+    {/* Icons */}
+    <div className="absolute inset-0 flex items-center justify-center z-10">
+      <div className="flex space-x-4">
+
+        <a className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+          <img src="/Icons/Instagram.svg" className="w-5 h-5" />
+        </a>
+
+        <a className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+          <img src="/Icons/Facebook.svg" className="w-5 h-5" />
+        </a>
+
+        <a className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+          <FaLinkedinIn color="white" />
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+ <div className="block sm:hidden md:hidden lg:hidden space-y-4 relative">
               <img
                 src="/Icons/Spiral.png"
                 alt="Spiral Background"
@@ -126,47 +167,48 @@ export default function Footer({ id, onBookDemo }) {
                 FOLLOW US
               </h3>
 
-              <div className="flex space-x-4">
-                {/* Instagram */}
-                <a
-                  href="https://www.instagram.com/accura_core/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
-                >
-                  <img
-                    src="/Icons/Instagram.svg"
-                    alt="Instagram"
-                    className="w-5 h-5"
-                  />
-                </a>
+             <div className="flex space-x-4">
+  {/* Instagram */}
+  <a
+    href="https://www.instagram.com/accura_core/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+  >
+    <img
+      src="/Icons/Instagram.svg"
+      alt="Instagram"
+      className="w-5 h-5"
+    />
+  </a>
 
-                {/* Facebook */}
-                <a
-                  href="https://www.facebook.com/p/AccuraCore-61579000254667/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
-                >
-                  <img
-                    src="/Icons/Facebook.svg"
-                    alt="Facebook"
-                    className="w-5 h-5"
-                  />
-                </a>
+  {/* Facebook */}
+  <a
+    href="https://www.facebook.com/p/AccuraCore-61579000254667/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+  >
+    <img
+      src="/Icons/Facebook.svg"
+      alt="Facebook"
+      className="w-5 h-5"
+    />
+  </a>
 
-                {/* LinkedIn */}
-                <a
-                  href="https://www.linkedin.com/company/accura-core/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
-                >
-                  <FaLinkedinIn color="white" />
-                </a>
+  {/* LinkedIn */}
+  <a
+    href="https://www.linkedin.com/company/accura-core/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+  >
+    <FaLinkedinIn color="white" />
 
-                {/* WhatsApp (commented for now) */}
-                {/*
+  </a>
+
+  {/* WhatsApp (commented for now) */}
+  {/*
   <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
     <img
       src="/Icons/whatsapp.svg"
@@ -176,15 +218,15 @@ export default function Footer({ id, onBookDemo }) {
   </div>
   */}
 
-                {/* Telegram */}
-                {/* <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
+  {/* Telegram */}
+  {/* <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
     <img
       src="/Icons/telegram.svg"
       alt="Telegram"
       className="w-5 h-5"
     />
   </div> */}
-              </div>
+</div>
             </div>
           </div>
         </div>

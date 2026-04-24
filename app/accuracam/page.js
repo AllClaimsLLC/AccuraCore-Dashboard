@@ -75,9 +75,9 @@ export default function AccuraCamPage() {
                 className="h-25 object-contain m-auto"
               />
               <p className="text-md text-blue-100 mt-6 mb-8 max-w-3xl mx-auto leading-relaxed">
-                AccuraCore is a powerful platform that brings everything you
-                need into one dashboard — manage your team, track work orders,
-                handle finances, and stay in control of every detail.
+                AccuraCam fixes documentation at the source — photos attach to
+                the job, location, and scope item the moment they&apos;re taken.
+                No rebuilding in the office.
               </p>
 
               {/* CTA Buttons */}

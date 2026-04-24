@@ -34,15 +34,15 @@ const testimonials = [
 const faqs = [
   {
     id: 1,
-    question: "Is AccuraCore Suitable For Small Companies Too?",
+    question: "Is AccuraCore Suitable For Small Contracting Companies Too?",
     answer:
-      "Yes! AccuraCore is suitable for small teams of people, as well as medium sized businesses.",
+      "Yes! AccuraCore contractor management software is suitable for small crews, as well as medium-sized contracting businesses.",
   },
   {
     id: 2,
-    question: "Can I Assign Different Roles To My Team Members?",
+    question: "Can I Assign Different Roles To My Crew Members?",
     answer:
-      "Yes, roles are fully customizable, and can be assigned to everyone.",
+      "Yes, roles are fully customizable and can be assigned to everyone on your crew.",
   },
   {
     id: 3,

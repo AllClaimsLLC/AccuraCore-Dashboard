@@ -26,7 +26,7 @@ export default function EverythingYouNeedSection() {
   // Autoplay plugin (3 seconds)
   const autoplay = Autoplay({
     delay: 3000,
-    stopOnInteraction: false, 
+    stopOnInteraction: false,
   });
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -34,7 +34,7 @@ export default function EverythingYouNeedSection() {
       loop: true,
       align: "center",
     },
-    [autoplay]
+    [autoplay],
   );
 
   // Sync active tab when slide changes (swipe / autoplay / buttons)
@@ -69,7 +69,7 @@ export default function EverythingYouNeedSection() {
       style={{ paddingBottom: 0 }}
     >
       <div className="w-full">
-       <div
+        <div
           className="p-8 lg:p-12 "
           style={{
             background: "radial-gradient(circle, #2f5071 0%, #162c44 100%)",
@@ -78,14 +78,14 @@ export default function EverythingYouNeedSection() {
           }}
         >
           {/* Heading */}
-         <div className="text-center mb-8 lg:mb-12 px-4 lg:px-12">
+          <div className="text-center mb-8 lg:mb-12 px-4 lg:px-12">
             <h2
               className="text-white font-bold leading-tight"
               style={{ fontSize: "1.5rem", lineHeight: "1.75rem" }}
             >
               Everything You Need To
               <br />
-              Run And Grow Your Business
+              Run And Grow Your Contracting Business
             </h2>
           </div>
 
@@ -95,8 +95,7 @@ export default function EverythingYouNeedSection() {
               <button
                 key={tab.id}
                 onClick={() => scrollTo(tab.id)}
-                                className={`px-4 lg:px-6 py-2 lg:py-3 rounded-full text-sm lg:text-base font-medium transition-all duration-300 whitespace-nowrap text-white`}
-
+                className={`px-4 lg:px-6 py-2 lg:py-3 rounded-full text-sm lg:text-base font-medium transition-all duration-300 whitespace-nowrap text-white`}
                 style={{
                   background:
                     activeTab === tab.id
@@ -119,7 +118,7 @@ export default function EverythingYouNeedSection() {
               {allImages.map((img) => (
                 <div
                   key={img.id}
-                className="embla__slide flex-[0_0_100%] md:flex-[0_0_55%] flex justify-center items-center px-1 relative"
+                  className="embla__slide flex-[0_0_100%] md:flex-[0_0_55%] flex justify-center items-center px-1 relative"
                 >
                   <img
                     src={img.src}
@@ -139,4 +138,3 @@ export default function EverythingYouNeedSection() {
     </section>
   );
 }
-
