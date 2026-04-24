@@ -269,7 +269,7 @@ hover:border-white/40"
                     </ul>
                   </div>
 
-                  <div className="mt-auto pt-6">
+                  <div className="mt-42 pt-6">
                     <CTAButton color="#fb2c36" setIsOpen={setIsOpen} />
                   </div>
                 </div>
