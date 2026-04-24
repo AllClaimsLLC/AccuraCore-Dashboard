@@ -146,16 +146,16 @@ hover:shadow-2xl
 hover:border-white/40"
               >
                 <div className="bg-[#1161A5] text-white p-4 rounded-[15px]">
-                  <h1 className="text-2xl">
+                  <h1 className="text-xl sm:text-2xl md:text-2xl lg:text-2xl">
                     AccuraCore
-                    <br />
+                    <br className="hidden sm:block md:block lg:block" /> {" "}
                     Subscription
                   </h1>
                 </div>
 
                 <div className="flex flex-col flex-1 mt-4">
                   <div>
-                    <h1 className="text-2xl text-black">Solo Plan</h1>
+                    <h1 className="text-xl sm:text-2xl md:text-2xl lg:text-2xl">Solo Plan</h1>
 
                     <div className="border-b border-gray-200 my-3"></div>
 
@@ -188,16 +188,16 @@ hover:shadow-2xl
 hover:border-white/40"
               >
                 <div className="bg-[#1161A5] text-white p-4 rounded-[15px]">
-                  <h1 className="text-2xl">
+                  <h1 className="text-xl sm:text-2xl md:text-2xl lg:text-2xl">
                     AccuraCore
-                    <br />
+                    <br className="hidden sm:block md:block lg:block" /> {" "}
                     Subscription
                   </h1>
                 </div>
 
                 <div className="flex flex-col flex-1 mt-4">
                   <div>
-                    <h1 className="text-2xl text-black">
+                    <h1 className="text-xl sm:text-2xl md:text-2xl lg:text-2xl">
                       Company Plan (seat-based)
                     </h1>
 
@@ -248,15 +248,15 @@ hover:border-white/40"
               >
                 {" "}
                 <div className="bg-red-500 text-white p-4 rounded-[15px]">
-                  <h1 className="text-2xl">
+                  <h1 className="text-xl sm:text-2xl md:text-2xl lg:text-2xl">
                     AccuraCore Claims
-                    <br />
+                    <br className="hidden sm:block md:block lg:block" /> {" "}
                     Subscription
                   </h1>
                 </div>
                 <div className="flex flex-col flex-1 mt-4">
                   <div>
-                    <h1 className="text-2xl text-black">Solo Plan</h1>
+                    <h1 className="text-xl sm:text-2xl md:text-2xl lg:text-2xl">Solo Plan</h1>
 
                     <div className="border-b border-gray-200 my-3"></div>
 
@@ -286,16 +286,16 @@ hover:shadow-2xl
 hover:border-white/40"
               >
                 <div className="bg-red-500 text-white p-4 rounded-[15px]">
-                  <h1 className="text-2xl">
+                  <h1 className="text-xl sm:text-2xl md:text-2xl lg:text-2xl">
                     AccuraCore Claims
-                    <br />
+                    <br className="hidden sm:block md:block lg:block" /> {" "}
                     Subscription
                   </h1>
                 </div>
 
                 <div className="flex flex-col flex-1 mt-4">
                   <div>
-                    <h1 className="text-2xl text-black">
+                    <h1 className="text-xl sm:text-2xl md:text-2xl lg:text-2xl">
                       Company Plan (seat-based)
                     </h1>
 
@@ -345,16 +345,16 @@ hover:shadow-2xl
 hover:border-white/40"
               >
                 <div className="bg-orange-500 text-white p-4 rounded-[15px]">
-                  <h1 className="text-2xl">
+                  <h1 className="text-xl sm:text-2xl md:text-2xl lg:text-2xl">
                     AccuraCam
-                    <br />
+                    <br className="hidden sm:block md:block lg:block" /> {" "}
                     Subscription
                   </h1>
                 </div>
 
                 <div className="flex flex-col flex-1 mt-4">
                   <div>
-                    <h1 className="text-2xl text-black">Solo Plan</h1>
+                    <h1 className="text-xl sm:text-2xl md:text-2xl lg:text-2xl">Solo Plan</h1>
 
                     <div className="border-b border-gray-200 my-3"></div>
 
@@ -395,16 +395,16 @@ hover:shadow-2xl
 hover:border-white/40"
               >
                 <div className="bg-orange-500 text-white p-4 rounded-[15px]">
-                  <h1 className="text-2xl">
+                  <h1 className="text-xl sm:text-2xl md:text-2xl lg:text-2xl">
                     AccuraCam
-                    <br />
+                    <br className="hidden sm:block md:block lg:block" /> {" "}
                     Subscription
                   </h1>
                 </div>
 
                 <div className="flex flex-col flex-1 mt-4">
                   <div>
-                    <h1 className="text-2xl text-black">
+                    <h1 className="text-xl sm:text-2xl md:text-2xl lg:text-2xl">
                       Company Plan (seat-based)
                     </h1>
 
@@ -450,15 +450,15 @@ hover:border-white/40"
                 <div>
                   {/* Heading */}
                   <div className="bg-[white] text-black p-4 rounded-[15px]">
-                    <h1 className="text-2xl">
+                     <h1 className="text-xl sm:text-2xl md:text-2xl lg:text-2xl">
                       AccuraCore Bundle Plan{" "}
-                      <br className="hidden sm: md: lg:" />
+                      <br className="hidden sm:block md:block lg:block" /> {" "}
                       (All-In-One)
                     </h1>
                   </div>
 
                   {/* Sub Heading */}
-                  <h1 className="text-2xl mt-10 text-white">
+                  <h1 className="text-xl sm:text-2xl md:text-2xl lg:text-2xl mt-10 text-white">
                     AccuraCore Core Suite
                   </h1>
                   <div className="w-[90%] border-b border-gray-300 my-2 mb-5"></div>
