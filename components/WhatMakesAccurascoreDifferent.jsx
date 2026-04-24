@@ -13,7 +13,8 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
 
   const images = {
     "Unified Dashboard Experience": "/Images/unified.png",
-    "Workflow That Matches Your Business": "/Images/Organize-Your-Company-&-Empower-Your-Team.png",
+    "Workflow That Matches Your Business":
+      "/Images/Organize-Your-Company-&-Empower-Your-Team.png",
     "Built-In Financial Intelligence": "/Images/builtIn.png",
   };
 
@@ -24,13 +25,13 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
       Icon: Monitor,
     },
     {
-      title: "Workflow That Matches Your Business",
+      title: "Workflow That Matches Your Contracting Process",
       desc: "We Adapt To You With Custom Workflows And Logic Switches",
       Icon: Workflow,
     },
     {
       title: "Built-In Financial Intelligence",
-      desc: "Budgeting, Estimates, Invoicing All Accurate And Audit-Ready.",
+      desc: "Budgeting, Estimates, Invoicing All Accurate And Audit-Ready",
       Icon: TrendingUp,
     },
   ];
@@ -124,11 +125,12 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
             {/* First Row - Heading */}
             <div className="text-left" style={{ marginTop: "5rem" }}>
               <h2 className="text-2xl text-gray-900 dark:text-white mb-2">
-                How It Works To Power Your Business
+                How It Works To Power Your Contracting Business
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl">
-                From Setup To Execution — See How AccuraCore Simplifies
-                Operations, Streamlines Workflows, And Puts You In Control.
+                From Setup To Execution See How AccuraCore Contractor Management
+                Software Simplifies Operations, Streamlines Workflows, And Puts
+                You In Control.
               </p>
             </div>
 
@@ -137,17 +139,17 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
               {[
                 {
                   title: "Create Your Company",
-                  desc: "Create your workspace and invite your team.",
+                  desc: "Create your workspace and invite your crew.",
                   icon: "/Icons/siri.png",
                 },
                 {
                   title: "Build Custom Workflows",
-                  desc: "Adapt the platform to your process.",
+                  desc: "Adapt the platform to your process, not the other way around no templates needed.",
                   icon: "/Icons/workflow.png",
                 },
                 {
                   title: "All-in-One Control Panel",
-                  desc: "Operations, finances & team in one place.",
+                  desc: "Jobs, finances & crew in one place.",
                   icon: "/Icons/dashboard-browsing.png",
                 },
               ].map((item, i) => (

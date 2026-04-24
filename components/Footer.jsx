@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { FaLinkedinIn } from "react-icons/fa";
 
-
 export default function Footer({ id, onBookDemo }) {
   return (
     <footer
@@ -21,24 +20,24 @@ export default function Footer({ id, onBookDemo }) {
           {/* Left Column */}
           <div
             className="space-y-6 w-[90%] lg:w-[80%] m-auto"
-            style={{ paddingBottom: "76px"}}
+            style={{ paddingBottom: "76px" }}
           >
             {/* Logo */}
             <div className="flex items-center space-x-2">
-             <Link href="/">
- <img
-                src="/Logos/Accuracore/accuraCore-logo.png"
-                alt="AccuraCore Logo"
-                className="object-contain"
-                style={{ width: "100px" }}
-              />
-</Link>
+              <Link href="/">
+                <img
+                  src="/Logos/Accuracore/accuraCore-logo.png"
+                  alt="AccuraCore Logo"
+                  className="object-contain"
+                  style={{ width: "100px" }}
+                />
+              </Link>
             </div>
 
             {/* Description */}
             <p className="text-white text-md leading-relaxed max-w-md">
-              Accuracore a complete, enterprise ready platform to manage your
-              business from start to finish, absolutely free.
+              AccuraCore complete contractor management software to manage your
+              contracting business from start to finish.
             </p>
 
             {/* Book Demo Button */}
@@ -127,48 +126,47 @@ export default function Footer({ id, onBookDemo }) {
                 FOLLOW US
               </h3>
 
-             <div className="flex space-x-4">
-  {/* Instagram */}
-  <a
-    href="https://www.instagram.com/accura_core/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
-  >
-    <img
-      src="/Icons/Instagram.svg"
-      alt="Instagram"
-      className="w-5 h-5"
-    />
-  </a>
+              <div className="flex space-x-4">
+                {/* Instagram */}
+                <a
+                  href="https://www.instagram.com/accura_core/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+                >
+                  <img
+                    src="/Icons/Instagram.svg"
+                    alt="Instagram"
+                    className="w-5 h-5"
+                  />
+                </a>
 
-  {/* Facebook */}
-  <a
-    href="https://www.facebook.com/p/AccuraCore-61579000254667/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
-  >
-    <img
-      src="/Icons/Facebook.svg"
-      alt="Facebook"
-      className="w-5 h-5"
-    />
-  </a>
+                {/* Facebook */}
+                <a
+                  href="https://www.facebook.com/p/AccuraCore-61579000254667/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+                >
+                  <img
+                    src="/Icons/Facebook.svg"
+                    alt="Facebook"
+                    className="w-5 h-5"
+                  />
+                </a>
 
-  {/* LinkedIn */}
-  <a
-    href="https://www.linkedin.com/company/accura-core/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
-  >
-    <FaLinkedinIn color="white" />
+                {/* LinkedIn */}
+                <a
+                  href="https://www.linkedin.com/company/accura-core/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+                >
+                  <FaLinkedinIn color="white" />
+                </a>
 
-  </a>
-
-  {/* WhatsApp (commented for now) */}
-  {/*
+                {/* WhatsApp (commented for now) */}
+                {/*
   <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
     <img
       src="/Icons/whatsapp.svg"
@@ -178,15 +176,15 @@ export default function Footer({ id, onBookDemo }) {
   </div>
   */}
 
-  {/* Telegram */}
-  {/* <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
+                {/* Telegram */}
+                {/* <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
     <img
       src="/Icons/telegram.svg"
       alt="Telegram"
       className="w-5 h-5"
     />
   </div> */}
-</div>
+              </div>
             </div>
           </div>
         </div>
