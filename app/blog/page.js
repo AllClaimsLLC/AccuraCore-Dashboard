@@ -378,7 +378,7 @@ export default function RoofCalculationsPage() {
                     }}
                     onClick={() => (window.location.href = "/")}
                   >
-                    Go to Accuracore
+                    Go to AccuraCore
                     <img
                       src="/Icons/Vector.png"
                       alt="Arrow Icon"

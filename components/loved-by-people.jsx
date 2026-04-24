@@ -10,7 +10,7 @@ const testimonials = [
     name: "Jerry Clark",
     image: "/Images/testimonial.png",
     feedback:
-      "Accuracore transformed how we manage our daily operations. Everything is in one place — from tasks to invoices. It’s like having a full operations team inside one dashboard.",
+      "AccuraCore transformed how we manage our daily operations. Everything is in one place — from tasks to invoices. It’s like having a full operations team inside one dashboard.",
     rating: 5,
   },
   {
