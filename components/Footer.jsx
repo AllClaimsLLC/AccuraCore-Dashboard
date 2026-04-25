@@ -146,9 +146,14 @@ export default function Footer({ id, onBookDemo }) {
           <img src="/Icons/Facebook.svg" className="w-5 h-5" />
         </a>
 
-        <a className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
-          <FaLinkedinIn color="white" />
-        </a>
+         <a
+                    href="https://www.linkedin.com/company/accura-core/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+                  >
+                    <FaLinkedinIn color="white" />
+                  </a>
 
       </div>
     </div>

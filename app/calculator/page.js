@@ -9,6 +9,7 @@ import Link from "next/link";
 import SoundFamiliar from "@/components/SoundFamiliar";
 import WhatYouWillDiscover from "@/components/WhatYouWillDiscover";
 import TechMessCostChecker from "@/components/TechMessCostChecker";
+import { FaLinkedinIn } from "react-icons/fa";
 
 export default function Calculator() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -423,6 +424,15 @@ export default function Calculator() {
                       alt="Facebook"
                       className="w-5 h-5"
                     />
+                  </a>
+
+                  <a
+                    href="https://www.linkedin.com/company/accura-core/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+                  >
+                    <FaLinkedinIn color="white" />
                   </a>
 
                   {/* WhatsApp (commented) */}
