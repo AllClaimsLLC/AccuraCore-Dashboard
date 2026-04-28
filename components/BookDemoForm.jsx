@@ -481,7 +481,7 @@ export const BookDemoForm = ({ currentStep, setCurrentStep }) => {
 
   <div className="w-full h-[400px] rounded-lg overflow-hidden border">
     <iframe
-      src="https://calendar.app.google/kibk5aHY3J76dQZH7"
+      src="https://calendar.google.com/calendar/embed?src=YWRtaW5Ac3Bhcnh0ZWNoLmNvbQ"
       width="100%"
       height="100%"
       frameBorder="0"
