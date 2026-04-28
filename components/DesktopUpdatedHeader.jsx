@@ -114,9 +114,9 @@ export const DesktopUpdatedHeader = () => {
             </span>
           </Link>
 
-          <Link href="/#faq-section">
+          {/* <Link href="/#faq-section">
             <span className="text-white hover:text-blue-200 text-sm">FAQs</span>
-          </Link>
+          </Link> */}
 
           <Link href="/book-a-demo">
             <span className="text-white hover:text-blue-200 text-sm">
@@ -254,9 +254,9 @@ export const DesktopUpdatedHeader = () => {
           <Link href="/pricing-page">
             <p className="text-white text-sm mb-4">Pricing</p>
           </Link>
-          <Link href="/#faq-section">
+          {/* <Link href="/#faq-section">
             <p className="text-white text-sm">FAQs</p>
-          </Link>
+          </Link> */}
           <p className="text-white text-sm">Contact Us</p>
         </div>
       )}

@@ -145,9 +145,9 @@ export default function HeroLayout({
             <Link href="/pricing-page">
               <p className="text-white text-sm mb-4">Pricing</p>
             </Link>
-            <Link href="/#faq-section">
+            {/* <Link href="/#faq-section">
               <p className="text-white text-sm mb-4">FAQs</p>
-            </Link>
+            </Link> */}
             <p className="text-white text-sm mb-4">Contact Us</p>
           </div>
         )}
