@@ -141,7 +141,9 @@ export default function BlogHero() {
             {/* <Link href="/#faq-section">
               <p className="text-white text-sm mb-4">FAQs</p>
             </Link> */}
-            <p className="text-white text-sm mb-4">Contact Us</p>
+            <Link href="/book-a-demo">
+                <p className="text-white text-sm mb-4">Contact Us</p>
+              </Link>
           </div>
         )}
       </header>
