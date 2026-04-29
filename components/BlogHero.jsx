@@ -72,13 +72,18 @@ export default function BlogHero() {
                 {aboutOpen ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
               </button>
 
-              {aboutOpen && (
+{aboutOpen && (
                 <div className="mt-2 w-full bg-[#51607d] dark:bg-slate-900 rounded-[10px] overflow-hidden border border-white/10">
                   <Link href="/blog">
-                    <p className="text-white text-sm p-3 border-white/20 hover:bg-white hover:text-black">
+                    <p className="text-white text-sm p-3 border-white/20 rounded-t-[15px] hover:bg-white hover:text-black">
                       Blog
                     </p>
                   </Link>
+                  <Link href="/#faq-section">
+                    <p className="text-white text-sm p-3 border-white/20 rounded-b-[15px] hover:bg-white hover:text-black">
+                      FAQs
+                    </p>
+              </Link>
                 </div>
               )}
             </div>

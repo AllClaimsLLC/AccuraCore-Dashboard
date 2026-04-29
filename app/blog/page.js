@@ -98,8 +98,13 @@ export default function RoofCalculationsPage() {
                 {aboutOpen && (
                   <div className="text-center absolute left-1/2 -translate-x-1/2 mt-[45px] w-44 bg-[#51607d] dark:bg-slate-900 rounded-[15px] z-50 border border-white/10">
                     <Link href="/blog">
-                      <span className="block text-white text-sm p-3 rounded-[15px] hover:bg-white hover:text-black border-white/20">
+                      <span className="block text-white text-sm p-3 rounded-t-[15px] hover:bg-white hover:text-black border-b border-white/20">
                         Blog
+                      </span>
+                    </Link>
+                    <Link href="/#faq-section">
+                      <span className="block text-white text-sm p-3 rounded-b-[15px] hover:bg-white hover:text-black border-white/20">
+                        FAQs
                       </span>
                     </Link>
                   </div>

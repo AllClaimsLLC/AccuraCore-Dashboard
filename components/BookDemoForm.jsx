@@ -11,6 +11,7 @@ import { timezones } from "./../lib/timezones";
 
 export const BookDemoForm = ({ currentStep, setCurrentStep }) => {
   const router = useRouter();
+  const [errors, setErrors] = useState({});
   const [toolsValue, setToolsValue] = useState("");
   const [formData, setFormData] = useState({
     fullName: "",
@@ -18,7 +19,7 @@ export const BookDemoForm = ({ currentStep, setCurrentStep }) => {
     role: "",
     email: "",
     phone: "",
-    timezone: "",
+    // timezone: "",
     contractorType: "",
     companySize: "",
     revenue: "",
@@ -30,15 +31,49 @@ export const BookDemoForm = ({ currentStep, setCurrentStep }) => {
   // New state for status message
   const [statusMessage, setStatusMessage] = useState({ text: "", type: "" });
 
+  const totalSteps = 3;
+  const totalFields = 10;
+
+  const getValidFieldCount = () => {
+    let count = 0;
+
+    // Step 1 (VALIDATION BASED)
+    if (formData.fullName.trim().length >= 2 && !errors.fullName) count++;
+    if (formData.companyName.trim().length >= 2 && !errors.companyName) count++;
+    if (formData.role.trim().length > 0) count++;
+    if (
+      formData.email.trim().length > 0 &&
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
+    )
+      count++;
+    if (
+      formData.phone.trim().length > 0 &&
+      /^\+?[0-9]{8,15}$/.test(formData.phone)
+    )
+      count++;
+
+    // Step 2
+    if (formData.contractorType) count++;
+    if (formData.companySize) count++;
+
+    // Step 3
+    if (formData.tools.length > 0) count++;
+    if (formData.challenges.length > 0) count++;
+    if (formData.improvements.length > 0) count++;
+
+    return count;
+  };
+
+  const progress = (getValidFieldCount() / totalFields) * 100;
+
   const validateStep = () => {
     if (currentStep === 1) {
       return (
-        formData.fullName &&
-        formData.companyName &&
+        formData.fullName.length >= 2 &&
+        formData.companyName.length >= 2 &&
         formData.role &&
         formData.email &&
-        formData.phone &&
-        formData.timezone
+        formData.phone
       );
     }
 
@@ -64,9 +99,44 @@ export const BookDemoForm = ({ currentStep, setCurrentStep }) => {
   };
   const prevStep = () => setCurrentStep((prev) => Math.max(prev - 1, 1));
 
+  const validate = (name, value) => {
+    let msg = "";
+
+    if (name === "fullName" && value.length > 0 && value.length < 2) {
+      msg = "Name must be at least 2 characters";
+    }
+
+    if (name === "companyName" && value.length > 0 && value.length < 2) {
+      msg = "Company must be at least 2 characters";
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (name === "email" && value.length > 0 && !emailRegex.test(value)) {
+      msg = "Enter a valid email with @ and .com";
+    }
+
+    const phoneRegex = /^\+?[0-9]{8,15}$/;
+
+    if (name === "phone" && value.length > 0 && !phoneRegex.test(value)) {
+      msg = "Enter valid international phone";
+    }
+
+    return msg;
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    setErrors((prev) => ({
+      ...prev,
+      [name]: validate(name, value),
+    }));
   };
 
   const validateForm = () => {
@@ -76,7 +146,7 @@ export const BookDemoForm = ({ currentStep, setCurrentStep }) => {
       !formData.role ||
       !formData.email ||
       !formData.phone ||
-      !formData.timezone ||
+      // !formData.timezone ||
       !formData.contractorType ||
       !formData.companySize ||
       formData.tools.length === 0
@@ -120,7 +190,7 @@ export const BookDemoForm = ({ currentStep, setCurrentStep }) => {
           role: "",
           email: "",
           phone: "",
-          timezone: "",
+          // timezone: "",
           contractorType: "",
           companySize: "",
           revenue: "",
@@ -163,6 +233,22 @@ export const BookDemoForm = ({ currentStep, setCurrentStep }) => {
 
             {/* Separator */}
             <div className="w-full h-[1px] bg-gray-200 mt-3 mb-6"></div>
+            {/* PROGRESS BAR */}
+            <div className="w-full mb-6">
+              <div className="h-1 bg-gray-200 rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-[#136AF3] transition-all duration-500 ease-in-out"
+                  style={{ width: `${progress}%` }}
+                />
+              </div>
+
+              <div className="flex justify-between text-xs text-gray-500 mt-2">
+                <span>
+                  Step {currentStep} of {totalSteps}
+                </span>
+                <span>{Math.round(progress)}% completed</span>
+              </div>
+            </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Inner Container 1 */}
@@ -186,6 +272,11 @@ export const BookDemoForm = ({ currentStep, setCurrentStep }) => {
                         placeholder="First Name / Last Name"
                         className="inputClass"
                       />
+                      {errors.fullName && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.fullName}
+                        </p>
+                      )}
                     </div>
 
                     <div>
@@ -200,6 +291,11 @@ export const BookDemoForm = ({ currentStep, setCurrentStep }) => {
                         placeholder="Company Name"
                         className="inputClass"
                       />
+                      {errors.companyName && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.companyName}
+                        </p>
+                      )}
                     </div>
 
                     <div>
@@ -231,6 +327,11 @@ export const BookDemoForm = ({ currentStep, setCurrentStep }) => {
                         placeholder="Email Address"
                         className="inputClass"
                       />
+                      {errors.email && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.email}
+                        </p>
+                      )}
                     </div>
 
                     <div>
@@ -246,10 +347,15 @@ export const BookDemoForm = ({ currentStep, setCurrentStep }) => {
                         placeholder="Phone Number"
                         className="inputClass"
                       />
+                      {errors.phone && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.phone}
+                        </p>
+                      )}
                     </div>
 
-                    <div>
-                       <label className="block text-sm text-black mb-1">
+                    {/*<div>
+                      <label className="block text-sm text-black mb-1">
                         Timezone *
                       </label>
                       <input
@@ -261,7 +367,7 @@ export const BookDemoForm = ({ currentStep, setCurrentStep }) => {
                         className="inputClass"
                       />
 
-                      {/* <CustomDropdown
+                       <CustomDropdown
   label="Timezone *"
   name="timezone"
   required
@@ -271,8 +377,8 @@ export const BookDemoForm = ({ currentStep, setCurrentStep }) => {
   onChange={(val) =>
     setFormData({ ...formData, timezone: val })
   }
-/> */}
-                    </div>
+/>
+                    </div> */}
                   </div>
                   <div className="flex justify-end mt-4">
                     <button
@@ -345,7 +451,7 @@ export const BookDemoForm = ({ currentStep, setCurrentStep }) => {
                       </div>
                     </div>
 
-                    <div>
+                    {/* <div>
                       <div className="relative">
                         <CustomDropdown
                           label="Annual Revenue (optional)"
@@ -359,7 +465,7 @@ export const BookDemoForm = ({ currentStep, setCurrentStep }) => {
                           }
                         />
                       </div>
-                    </div>
+                    </div> */}
                   </div>
 
                   <div className="flex flex-col items-center gap-3 mt-4 sm:flex-row sm:justify-between sm:items-center">
@@ -474,20 +580,20 @@ export const BookDemoForm = ({ currentStep, setCurrentStep }) => {
                   </div>
 
                   {/* Google Calendar Embed */}
-<div className="mt-6">
-  <p className="text-sm text-gray-700 mb-2">
-    Schedule your demo call (optional)
-  </p>
+                  <div className="mt-6">
+                    <p className="text-sm text-gray-700 mb-2">
+                      Schedule your demo call (optional)
+                    </p>
 
-  <div className="w-full h-[400px] rounded-lg overflow-hidden border">
-    <iframe
-      src="https://calendar.app.google/JBZYbDu1pAZL3hcv7"
-      width="100%"
-      height="100%"
-      frameBorder="0"
-    ></iframe>
-  </div>
-</div>
+                    <div className="w-full h-[400px] rounded-lg overflow-hidden border">
+                      <iframe
+                        src="https://calendar.app.google/JBZYbDu1pAZL3hcv7"
+                        width="100%"
+                        height="100%"
+                        frameBorder="0"
+                      ></iframe>
+                    </div>
+                  </div>
 
                   <div className="flex flex-col items-center gap-3 mt-4 sm:flex-row sm:justify-between sm:items-center">
                     <button
@@ -516,8 +622,6 @@ export const BookDemoForm = ({ currentStep, setCurrentStep }) => {
                       </Button>
                     </Link>
 
-
-
                     <button
                       type="submit"
                       className="flex items-center justify-center gap-1 text-white px-6 py-2 rounded-[5px] w-full sm:w-auto"
@@ -538,7 +642,7 @@ export const BookDemoForm = ({ currentStep, setCurrentStep }) => {
               <input type="hidden" name="role" value={formData.role} />
               <input type="hidden" name="email" value={formData.email} />
               <input type="hidden" name="phone" value={formData.phone} />
-              <input type="hidden" name="timezone" value={formData.timezone} />
+              {/* <input type="hidden" name="timezone" value={formData.timezone} /> */}
               <input
                 type="hidden"
                 name="contractorType"

@@ -116,72 +116,70 @@ export default function LovedByPeople({ id }) {
             </p>
 
             {/* Testimonial Slider */}
-            <div className="relative max-w-4xl mx-auto">
-              <img
-                src="/Icons/Spiral.png"
-                alt="Spiral Background"
-                className="absolute w-[480px] h-[480px] top-[-95px] left-[-80px] z-20 pointer-events-none select-none"
-              />
-              <div className="bg-white rounded-full p-4 md:p-4 relative">
-                <div
-                  className="flex flex-col md:flex-row items-center"
-                  style={{ gap: "70px" }}
-                >
-                  {/* Profile Image */}
-                  <div className="flex-shrink-0">
-                    <img
-                      src={
-                        testimonials[currentTestimonial].image ||
-                        "/placeholder.svg"
-                      }
-                      alt={testimonials[currentTestimonial].name}
-                      className="w-63 h-63 rounded-full object-cover"
-                    />
-                  </div>
+<div className="relative max-w-4xl mx-auto">
+  {/* <img
+    src="/Icons/Spiral.png"
+    alt="Spiral Background"
+    className="absolute w-[480px] h-[480px] top-[-95px] left-[-80px] z-20 pointer-events-none select-none"
+  /> */}
 
-                  {/* Testimonial Content */}
-                  <div className="flex-1 text-left">
-                    <h4 className="text-xl font-semibold text-gray-900 mb-4">
-                      {testimonials[currentTestimonial].name}
-                    </h4>
-                    <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                      {testimonials[currentTestimonial].feedback}
-                    </p>
+  <div className="bg-white rounded-full p-4 md:p-4 relative text-center">
+    <div className="flex flex-col items-center justify-center">
 
-                    {/* Star Rating */}
-                    <div className="flex gap-1">
-                      {[...Array(testimonials[currentTestimonial].rating)].map(
-                        (_, i) => (
-                          <svg
-                            key={i}
-                            className="w-5 h-5 text-yellow-400 fill-current"
-                            viewBox="0 0 20 20"
-                          >
-                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                          </svg>
-                        ),
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
+      {/* Profile Image (commented out for now)
+      <div className="flex-shrink-0">
+        <img
+          src={
+            testimonials[currentTestimonial].image ||
+            "/placeholder.svg"
+          }
+          alt={testimonials[currentTestimonial].name}
+          className="w-63 h-63 rounded-full object-cover"
+        />
+      </div>
+      */}
 
-              {/* Navigation Dots */}
-              <div className="flex justify-center gap-2 mt-8">
-                {testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => goToTestimonial(index)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      index === currentTestimonial
-                        ? "bg-[#0061A4] w-[80px]"
-                        : "bg-gray-300 hover:bg-gray-400"
-                    }`}
-                    aria-label={`Go to testimonial ${index + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
+      {/* Testimonial Content */}
+      <div className="flex-1 text-center">
+        <h4 className="text-xl font-semibold text-gray-900 mb-4">
+          {testimonials[currentTestimonial].name}
+        </h4>
+
+        <p className="text-gray-700 text-lg leading-relaxed mb-4">
+          {testimonials[currentTestimonial].feedback}
+        </p>
+
+        {/* Star Rating */}
+        <div className="flex justify-center gap-1">
+          {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
+            <svg
+              key={i}
+              className="w-5 h-5 text-yellow-400 fill-current"
+              viewBox="0 0 20 20"
+            >
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Navigation Dots */}
+  <div className="flex justify-center gap-2 mt-8">
+    {testimonials.map((_, index) => (
+      <button
+        key={index}
+        onClick={() => goToTestimonial(index)}
+        className={`w-2 h-2 rounded-full transition-all duration-300 ${
+          index === currentTestimonial
+            ? "bg-[#0061A4] w-[80px]"
+            : "bg-gray-300 hover:bg-gray-400"
+        }`}
+      />
+    ))}
+  </div>
+</div>
           </div>
 
           <div id={id} className="mt-25">
