@@ -108,10 +108,10 @@ export default function LovedByPeople({ id }) {
 
           {/* Second Row - Testimonials */}
           <div className="text-left sm:text-center">
-            <h3 className="text-2xl  text-gray-900 mb-2">
+            <h3 className="text-2xl  text-gray-900 dark:text-gray-100 mb-2">
               Trusted By Teams Who
             </h3>
-            <p className="text-xl font-bold text-gray-700 mb-12">
+            <p className="text-xl font-bold text-gray-600 dark:text-gray-400 mb-12">
               Value Clarity, Control, And Results.
             </p>
 
@@ -254,7 +254,7 @@ export default function LovedByPeople({ id }) {
 
         <p className="text-lg text-gray-600 dark:text-gray-400">
           Book a personalised 30-minute walkthrough with our team. We'll show
-          you the exact features your business needs
+          you the exact features your business needs.
         </p>
       </div>
 

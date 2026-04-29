@@ -108,9 +108,8 @@ export default function TechMessCostChecker({ onBookDemo }) {
         background: "linear-gradient(120deg, #faede7 20%, #e4f5fc 100%)",
       }}
     >
-      
-        <div className="w-full max-w-7xl rounded-[20px] bg-white p-0 overflow-hidden">
-          <div className="fade-up">
+      <div className="w-full max-w-7xl rounded-[20px] bg-white p-0 overflow-hidden">
+        <div className="fade-up">
           {/* Header */}
           <div className="w-full bg-[#0061A4] px-4 py-2 text-center relative flex flex-col items-center md:block">
             <img
@@ -148,19 +147,21 @@ export default function TechMessCostChecker({ onBookDemo }) {
                 </div>
                 <div className="relative w-full md:w-48">
                   {q.key === "hourlyRate" ? (
-  <div className="flex items-center w-full bg-white border border-gray-300 rounded-[10px] px-2">
-    <span className="text-gray-900 text-sm mr-1">$</span>
-    <input
-      type="number"
-      min="0"
-      step="1"
-      value={answers[q.key] ?? ""}
-      onChange={(e) => handleChange(q.key, e.target.value, idx)}
-      className="w-full py-1.5 bg-transparent text-gray-900 text-sm outline-none"
-      placeholder="200"
-    />
-  </div>
-) : (
+                    <div className="flex items-center w-full bg-white border border-gray-300 rounded-[10px] px-2">
+                      <span className="text-gray-900 text-sm mr-1">$</span>
+                      <input
+                        type="number"
+                        min="0"
+                        step="1"
+                        value={answers[q.key] ?? ""}
+                        onChange={(e) =>
+                          handleChange(q.key, e.target.value, idx)
+                        }
+                        className="w-full py-1.5 bg-transparent text-gray-900 text-sm outline-none"
+                        placeholder="200"
+                      />
+                    </div>
+                  ) : (
                     <>
                       <select
                         value={answers[q.key]}
@@ -171,7 +172,9 @@ export default function TechMessCostChecker({ onBookDemo }) {
                       >
                         {q.options.map((opt, oidx) => (
                           <option key={oidx} value={opt}>
-                            {opt} {q.suffix}
+                            {q.key === "avgJobValue"
+                              ? `${q.suffix} ${" "} ${opt}`
+                              : `${opt} ${q.suffix}`}
                           </option>
                         ))}
                       </select>
@@ -297,15 +300,15 @@ export default function TechMessCostChecker({ onBookDemo }) {
               </Button>
             </div>
           )}
-          </div>
         </div>
+      </div>
 
-        <p className="text-center text-gray-500 text-sm mt-6 max-w-3xl">
-          Assumes 3 people use the tech stack and average monthly software cost
-          is $3,750 for a 15-person company. Switching time: 0.25 hrs/app.
-          Communication inefficiency factor: 0.5. Revenue conversion factor:
-          0.375.
-        </p>
+      <p className="text-center text-gray-500 text-sm mt-6 max-w-3xl">
+        Assumes 3 people use the tech stack and average monthly software cost is
+        $3,750 for a 15-person company. Switching time: 0.25 hrs/app.
+        Communication inefficiency factor: 0.5. Revenue conversion factor:
+        0.375.
+      </p>
 
       {/* One Platform  */}
       <div className="fade-up">
