@@ -149,7 +149,7 @@ export default function TechMessCostChecker({ onBookDemo }) {
                 <div className="relative w-full md:w-48">
                   {q.key === "hourlyRate" ? (
   <div className="flex items-center w-full bg-white border border-gray-300 rounded-[10px] px-2">
-    <span className="text-gray-500 text-sm mr-1">$</span>
+    <span className="text-gray-900 text-sm mr-1">$</span>
     <input
       type="number"
       min="0"
