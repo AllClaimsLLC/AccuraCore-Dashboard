@@ -487,7 +487,7 @@ export default function Calculator() {
 
                 {/* Stat 3 */}
                 <div className="py-4 md:border-r md:border-gray-200 col-span-1">
-                  <h3 className="text-xl font-semibold text-black">82 hrs</h3>
+                  <h3 className="text-xl font-semibold text-black">4+ hrs</h3>
                   <p className="text-sm text-gray-500 mt-1">
                     Avg. Disconnected Apps
                   </p>

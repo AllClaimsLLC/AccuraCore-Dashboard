@@ -148,15 +148,19 @@ export default function TechMessCostChecker({ onBookDemo }) {
                 </div>
                 <div className="relative w-full md:w-48">
                   {q.key === "hourlyRate" ? (
-                    <input
-                      type="number"
-                      min="0"
-                      step="1"
-                      value={answers[q.key] ?? ""}
-                      onChange={(e) => handleChange(q.key, e.target.value, idx)}
-                      className="w-full py-1.5 px-2 rounded-[10px] bg-white border border-gray-300 text-gray-900 text-sm"
-                    />
-                  ) : (
+  <div className="flex items-center w-full bg-white border border-gray-300 rounded-[10px] px-2">
+    <span className="text-gray-500 text-sm mr-1">$</span>
+    <input
+      type="number"
+      min="0"
+      step="1"
+      value={answers[q.key] ?? ""}
+      onChange={(e) => handleChange(q.key, e.target.value, idx)}
+      className="w-full py-1.5 bg-transparent text-gray-900 text-sm outline-none"
+      placeholder="200"
+    />
+  </div>
+) : (
                     <>
                       <select
                         value={answers[q.key]}

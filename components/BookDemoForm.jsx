@@ -553,28 +553,29 @@ export const BookDemoForm = ({ currentStep, setCurrentStep }) => {
                     <div>
                       <div className="relative">
                         <CustomDropdown
-                          label="What are you most interested in improving? (select top 3) *"
-                          name="improvements"
-                          required={false}
-                          multiSelect={true}
-                          options={[
-                            "Saving time & reducing day-to-day busywork",
-                            "Improving overall efficiency & team management",
-                            "Reducing wasted time from manual processes or duplicate entry",
-                            "Lead management & pipeline visibility",
-                            "Job scheduling & calendar coordination",
-                            "Estimates & proposals",
-                            "Document & photo organization",
-                            "Automation & workflows",
-                            "Customer communication (email/SMS)",
-                            "Payments, financing & cash flow",
-                            "Reporting & business insights",
-                          ]}
-                          value={formData.improvements}
-                          onChange={(selected) =>
-                            setFormData({ ...formData, improvements: selected })
-                          }
-                        />
+  label="What are you most interested in improving? (select top 3) *"
+  name="improvements"
+  required={false}
+  multiSelect={true}
+  maxSelected={3}   // 👈 ADD THIS ONLY HERE
+  options={[
+    "Saving time & reducing day-to-day busywork",
+    "Improving overall efficiency & team management",
+    "Reducing wasted time from manual processes or duplicate entry",
+    "Lead management & pipeline visibility",
+    "Job scheduling & calendar coordination",
+    "Estimates & proposals",
+    "Document & photo organization",
+    "Automation & workflows",
+    "Customer communication (email/SMS)",
+    "Payments, financing & cash flow",
+    "Reporting & business insights",
+  ]}
+  value={formData.improvements}
+  onChange={(selected) =>
+    setFormData({ ...formData, improvements: selected })
+  }
+/>
                       </div>
                     </div>
                   </div>

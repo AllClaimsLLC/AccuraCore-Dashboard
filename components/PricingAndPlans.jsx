@@ -424,7 +424,7 @@ hover:border-white/40"
                         <li>All Solo features</li>
                         <li>Voice tagging (hands-free labeling)</li>
                         <li>Team photo library (centralized)</li>
-                        <li>Sync with AccuraCore/ClaimCore jobs/claims</li>
+                        <li>Sync with AccuraCore Claims jobs/claims</li>
                       </ul>
 
                       <Bullet>Add extra seats: $10/month per user</Bullet>
@@ -544,7 +544,7 @@ hover:border-white/40"
                   </li>
 
                   <li className="ml-12 text-white text-[14px] list-disc">
-                    Everything in AccuraCore + ClaimCore.
+                    Everything in AccuraCore Claims
                   </li>
                   <li className="ml-12 text-white text-[14px] list-disc">
                     Unified company billing.

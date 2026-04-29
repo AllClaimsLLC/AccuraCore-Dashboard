@@ -390,7 +390,7 @@ export default function HomePage() {
                   }}
                   onClick={() => setIsOpen(true)}
                 >
-                  Get Started Free
+                  Get Started
                   <img
                     src="/Icons/Vector2.png"
                     alt="Arrow Icon"

@@ -89,7 +89,7 @@ export default function LovedByPeople({ id }) {
   return (
     <section
       className="
-        py-20 relative overflow-hidden custom-padding
+        py-8 relative overflow-hidden custom-padding
         bg-[linear-gradient(312deg,_#faefe9_-17%,_#ffffff_100%)]
         dark:bg-[linear-gradient(50deg,_#020617_0%,_#0f172a_100%)]
       "
@@ -107,7 +107,7 @@ export default function LovedByPeople({ id }) {
           </div>
 
           {/* Second Row - Testimonials */}
-          <div className="text-center">
+          <div className="text-left sm:text-center">
             <h3 className="text-2xl  text-gray-900 mb-2">
               Trusted By Teams Who
             </h3>
@@ -116,17 +116,16 @@ export default function LovedByPeople({ id }) {
             </p>
 
             {/* Testimonial Slider */}
-<div className="relative max-w-4xl mx-auto">
-  {/* <img
+            <div className="relative max-w-4xl mx-auto">
+              {/* <img
     src="/Icons/Spiral.png"
     alt="Spiral Background"
     className="absolute w-[480px] h-[480px] top-[-95px] left-[-80px] z-20 pointer-events-none select-none"
   /> */}
 
-  <div className="bg-white rounded-full p-4 md:p-4 relative text-center">
-    <div className="flex flex-col items-center justify-center">
-
-      {/* Profile Image (commented out for now)
+              <div className="bg-white rounded-[20px] sm:rounded-full p-4 md:p-4 relative text-center">
+                <div className="flex flex-col items-center justify-center">
+                  {/* Profile Image (commented out for now)
       <div className="flex-shrink-0">
         <img
           src={
@@ -139,47 +138,49 @@ export default function LovedByPeople({ id }) {
       </div>
       */}
 
-      {/* Testimonial Content */}
-      <div className="flex-1 text-center">
-        <h4 className="text-xl font-semibold text-gray-900 mb-4">
-          {testimonials[currentTestimonial].name}
-        </h4>
+                  {/* Testimonial Content */}
+                  <div className="flex-1 text-center">
+                    <h4 className="text-xl font-semibold text-gray-900 mb-4">
+                      {testimonials[currentTestimonial].name}
+                    </h4>
 
-        <p className="text-gray-700 text-lg leading-relaxed mb-4">
-          {testimonials[currentTestimonial].feedback}
-        </p>
+                    <p className="text-gray-700 text-lg leading-relaxed mb-4">
+                      {testimonials[currentTestimonial].feedback}
+                    </p>
 
-        {/* Star Rating */}
-        <div className="flex justify-center gap-1">
-          {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-            <svg
-              key={i}
-              className="w-5 h-5 text-yellow-400 fill-current"
-              viewBox="0 0 20 20"
-            >
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-            </svg>
-          ))}
-        </div>
-      </div>
-    </div>
-  </div>
+                    {/* Star Rating */}
+                    <div className="flex justify-center gap-1">
+                      {[...Array(testimonials[currentTestimonial].rating)].map(
+                        (_, i) => (
+                          <svg
+                            key={i}
+                            className="w-5 h-5 text-yellow-400 fill-current"
+                            viewBox="0 0 20 20"
+                          >
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ),
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-  {/* Navigation Dots */}
-  <div className="flex justify-center gap-2 mt-8">
-    {testimonials.map((_, index) => (
-      <button
-        key={index}
-        onClick={() => goToTestimonial(index)}
-        className={`w-2 h-2 rounded-full transition-all duration-300 ${
-          index === currentTestimonial
-            ? "bg-[#0061A4] w-[80px]"
-            : "bg-gray-300 hover:bg-gray-400"
-        }`}
-      />
-    ))}
-  </div>
-</div>
+              {/* Navigation Dots */}
+              <div className="flex justify-center gap-2 mt-8">
+                {testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToTestimonial(index)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      index === currentTestimonial
+                        ? "bg-[#0061A4] w-[80px]"
+                        : "bg-gray-300 hover:bg-gray-400"
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
 
           <div id={id} className="mt-25">
@@ -243,6 +244,18 @@ export default function LovedByPeople({ id }) {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Form Heading Section */}
+      <div className="text-left sm:text-center mt-16 mx-auto" style={{ width: "90%"}}>
+        <h2 className="text-2xl text-gray-900 dark:text-white mb-2">
+          See AccuraCore in Action
+        </h2>
+
+        <p className="text-lg text-gray-600 dark:text-gray-400">
+          Book a personalised 30-minute walkthrough with our team. We'll show
+          you the exact features your business needs
+        </p>
       </div>
 
       <BookDemoForm currentStep={currentStep} setCurrentStep={setCurrentStep} />

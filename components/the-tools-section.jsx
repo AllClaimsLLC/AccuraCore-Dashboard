@@ -1,12 +1,13 @@
 "use client";
 
 import useFadeIn from "@/lib/useFadeIn";
+import { Button } from "./ui/button";
 
 export default function TheTosolsSection() {
   useFadeIn();
   return (
     <section
-      className="py-16 lg:py-20 bg-[linear-gradient(50deg,_#fbfcf8_43%,_#e6f4f7_100%)]
+      className="py-16 lg:pt-20 lg:pb-10 bg-[linear-gradient(50deg,_#fbfcf8_43%,_#e6f4f7_100%)]
     dark:bg-[linear-gradient(50deg,_#020617_0%,_#0f172a_100%)]"
       // style={{
       //     background: "linear-gradient(50deg, #fbfcf8 43%, #e6f4f7 100%)"
@@ -19,7 +20,7 @@ export default function TheTosolsSection() {
         {/* Grid Section */}
         <div className="fade-up">
           <div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-8"
             style={{ alignItems: "center" }}
           >
             {/* Report Compile Card */}
@@ -33,10 +34,10 @@ export default function TheTosolsSection() {
                 className="text-gray-600 dark:text-gray-400 text-base lg:text-lg leading-relaxed mb-6"
                 style={{ fontSize: "15px" }}
               >
-                Easily create your company profile, onboard crew members with
-                ease, assign custom roles, set permissions, and manage user
-                access — all from one powerful, centralized dashboard built for
-                control and clarity.
+                Easily create your company profile, onboard crew members, assign
+                custom roles, set permissions, and manage user access — all from
+                one powerful, centralized dashboard built for control and
+                clarity.
               </p>
             </div>
 
@@ -91,6 +92,24 @@ export default function TheTosolsSection() {
                 at the right time, with nothing lost, missed, or out of place.
               </p>
             </div>
+          </div>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button
+              className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
+              style={{
+                backgroundColor: "#0061A4",
+                border: "2px solid #4485b2",
+                padding: "25px 15px",
+              }}
+              onClick={() => (window.location.href = "/book-a-demo")}
+            >
+              Book Demo
+              <img
+                src="/Icons/Vector.png"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
+            </Button>
           </div>
         </div>
       </div>
