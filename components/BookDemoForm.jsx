@@ -553,33 +553,54 @@ export const BookDemoForm = ({ currentStep, setCurrentStep }) => {
                     <div>
                       <div className="relative">
                         <CustomDropdown
-  label="What are you most interested in improving? (select top 3) *"
-  name="improvements"
-  required={false}
-  multiSelect={true}
-  maxSelected={3}   // 👈 ADD THIS ONLY HERE
-  options={[
-    "Saving time & reducing day-to-day busywork",
-    "Improving overall efficiency & team management",
-    "Reducing wasted time from manual processes or duplicate entry",
-    "Lead management & pipeline visibility",
-    "Job scheduling & calendar coordination",
-    "Estimates & proposals",
-    "Document & photo organization",
-    "Automation & workflows",
-    "Customer communication (email/SMS)",
-    "Payments, financing & cash flow",
-    "Reporting & business insights",
-  ]}
-  value={formData.improvements}
-  onChange={(selected) =>
-    setFormData({ ...formData, improvements: selected })
-  }
-/>
+                          label="What are you most interested in improving? (select top 3) *"
+                          name="improvements"
+                          required={false}
+                          multiSelect={true}
+                          maxSelected={3} // 👈 ADD THIS ONLY HERE
+                          options={[
+                            "Saving time & reducing day-to-day busywork",
+                            "Improving overall efficiency & team management",
+                            "Reducing wasted time from manual processes or duplicate entry",
+                            "Lead management & pipeline visibility",
+                            "Job scheduling & calendar coordination",
+                            "Estimates & proposals",
+                            "Document & photo organization",
+                            "Automation & workflows",
+                            "Customer communication (email/SMS)",
+                            "Payments, financing & cash flow",
+                            "Reporting & business insights",
+                          ]}
+                          value={formData.improvements}
+                          onChange={(selected) =>
+                            setFormData({ ...formData, improvements: selected })
+                          }
+                        />
                       </div>
                     </div>
                   </div>
 
+                  {/* Schedule Demo Button */}
+                  {/* <div className="mt-6">
+                    <p className="text-sm text-gray-700 mb-3">
+                      Schedule your demo call (optional)
+                    </p>
+
+                    <a
+                      href="https://calendar.app.google/JBZYbDu1pAZL3hcv7"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block"
+                    >
+                      <Button
+                        type="button"
+                        className="flex items-center justify-center gap-2 text-white px-3 py-4 rounded-full"
+                        style={{ backgroundColor: "#136AF3" }}
+                      >
+                        Schedule Demo <MdKeyboardArrowRight size={22} />
+                      </Button>
+                    </a>
+                  </div> */}
                   {/* Google Calendar Embed */}
                   <div className="mt-6">
                     <p className="text-sm text-gray-700 mb-2">
