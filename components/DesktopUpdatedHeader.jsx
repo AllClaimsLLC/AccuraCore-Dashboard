@@ -11,6 +11,8 @@ export const DesktopUpdatedHeader = () => {
   const [aboutOpen, setAboutOpen] = useState(false);
   const [featuresOpen, setFeaturesOpen] = useState(false);
   return (
+        // <header className="hidden md:block px-6 py-4 relative">
+
     <header className="px-6 py-4 relative">
       <nav
         className="flex items-center justify-between max-w-6xl mx-auto rounded-full px-8 py-4 border border-white/20 bg-[#51607d] dark:bg-slate-900"
