@@ -12,8 +12,8 @@ import { DesktopUpdatedHeader } from "@/components/DesktopUpdatedHeader";
 const content = (
   <p className="text-blue-100">
     AccuraCore is a powerful platform that brings everything you need into one
-    dashboard, manage your team, track work orders, handle finances, and stay
-    in control of every detail.
+    dashboard, manage your team, track work orders, handle finances, and stay in
+    control of every detail.
   </p>
 );
 
@@ -121,13 +121,23 @@ export default function AccuraCamPage() {
             {/* Video Player */}
             <div className="relative w-[90%] mx-auto">
               <div className="relative overflow-hidden rounded-[30px] shadow-2xl">
+                {!isPlaying && (
+                  <img
+                    src="/Videos/video-thumbnail.png"
+                    alt="Thumbnail"
+                    className="absolute inset-0 w-full h-full object-cover z-10"
+                  />
+                )}
+
                 <video
                   ref={(videoRef) => (videoRefElement.current = videoRef)}
                   className="w-full max-h-[500px] rounded-[30px] object-cover"
-                  poster="/Videos/video-thumbnail.webp" 
-                  controls={isPlaying} 
+                  controls={isPlaying}
                 >
-                  <source src="/Videos/accuracore-explainer.mp4" type="video/mp4" />
+                  <source
+                    src="/Videos/accuracore-explainer.mp4"
+                    type="video/mp4"
+                  />
                   Your browser does not support the video tag.
                 </video>
 
@@ -137,7 +147,7 @@ export default function AccuraCamPage() {
                       videoRefElement.current.play();
                       setIsPlaying(true);
                     }}
-                    className="absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer transition duration-300 hover:bg-black/40"
+                    className="absolute inset-0 z-20 flex items-center justify-center bg-black/30 cursor-pointer transition duration-300 hover:bg-black/40"
                   >
                     <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center">
                       <svg
