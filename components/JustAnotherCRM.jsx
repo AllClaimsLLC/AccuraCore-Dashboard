@@ -544,7 +544,7 @@ export default function JustAnotherCRM({ isOpen, setIsOpen }) {
           {/* Bottom Text */}
           <p className="text-sm md:text-base">
             MyAccuraCore turns contractor
-            <br /> operations into a system — not a
+            <br /> operations into a system, not a
             <br /> scramble.
           </p>
         </div>

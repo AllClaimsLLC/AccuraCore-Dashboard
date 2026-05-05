@@ -284,7 +284,7 @@ export default function TechMessCostChecker({ onBookDemo }) {
                   Ready to stop losing this money?
                 </span>{" "}
                 AccuraCore consolidates your entire field service operation into
-                one platform — so your team never switches apps again.
+                one platform, so your team never switches apps again.
               </p>
               <Button
                 className="text-white rounded-full text-sm flex items-center"
@@ -323,7 +323,7 @@ export default function TechMessCostChecker({ onBookDemo }) {
 
             <p className="text-gray-600 text-sm md:text-base max-w-lg mx-auto md:mx-0">
               AccuraCore replaces your fragmented stack with a single, connected
-              platform built for field service — manage your team, track work
+              platform built for field service, manage your team, track work
               orders, handle finances, and stay in control.
             </p>
 

@@ -12,7 +12,7 @@ import { DesktopUpdatedHeader } from "@/components/DesktopUpdatedHeader";
 const content = (
   <p className="text-blue-100">
     AccuraCore is a powerful platform that brings everything you need into one
-    dashboard — manage your team, track work orders, handle finances, and stay
+    dashboard, manage your team, track work orders, handle finances, and stay
     in control of every detail.
   </p>
 );
@@ -75,7 +75,7 @@ export default function AccuraCamPage() {
                 className="h-25 object-contain m-auto"
               />
               <p className="text-md text-blue-100 mt-6 mb-8 max-w-3xl mx-auto leading-relaxed">
-                AccuraCam fixes documentation at the source — photos attach to
+                AccuraCam fixes documentation at the source, photos attach to
                 the job, location, and scope item the moment they&apos;re taken.
                 No rebuilding in the office.
               </p>
@@ -124,10 +124,10 @@ export default function AccuraCamPage() {
                 <video
                   ref={(videoRef) => (videoRefElement.current = videoRef)}
                   className="w-full max-h-[500px] rounded-[30px] object-cover"
-                  poster="/Images/video.png" // thumbnail
-                  controls={isPlaying} // show controls only when playing
+                  poster="/Videos/video-thumbnail.webp" 
+                  controls={isPlaying} 
                 >
-                  <source src="/Videos/DashboardDemo.mp4" type="video/mp4" />
+                  <source src="/Videos/accuracore-explainer.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
 

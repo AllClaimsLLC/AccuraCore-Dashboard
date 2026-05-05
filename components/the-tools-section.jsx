@@ -35,7 +35,7 @@ export default function TheTosolsSection() {
                 style={{ fontSize: "15px" }}
               >
                 Easily create your company profile, onboard crew members, assign
-                custom roles, set permissions, and manage user access — all from
+                custom roles, set permissions, and manage user access, all from
                 one powerful, centralized dashboard built for control and
                 clarity.
               </p>
@@ -88,7 +88,7 @@ export default function TheTosolsSection() {
               >
                 Maintain a complete and organized record by linking notes,
                 documents, and images to every contact, job, or claim within
-                AccuraCore — ensuring your crew always has the right information
+                AccuraCore, ensuring your crew always has the right information
                 at the right time, with nothing lost, missed, or out of place.
               </p>
             </div>

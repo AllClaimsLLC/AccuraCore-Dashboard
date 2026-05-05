@@ -7,12 +7,12 @@ const steps = [
   {
     number: "01",
     title: "Hours lost switching apps",
-    desc: "Every app-switch per job adds up to dozens of hours monthly — time that could be on new jobs.",
+    desc: "Every app-switch per job adds up to dozens of hours monthly, time that could be on new jobs.",
   },
   {
     number: "02",
     title: "Communication time wasted",
-    desc: "Cross-platform messaging, duplicated updates, and re-explaining — all quantified in real hours.",
+    desc: "Cross-platform messaging, duplicated updates, and re-explaining, all quantified in real hours.",
   },
   {
     number: "03",
@@ -27,7 +27,7 @@ const steps = [
   {
     number: "05",
     title: "Potential jobs you're missing",
-    desc: "Freed time translates directly into jobs you could take — calculated from your own numbers.",
+    desc: "Freed time translates directly into jobs you could take, calculated from your own numbers.",
   },
   {
     number: "06",

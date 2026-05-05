@@ -11,7 +11,7 @@ export default function SoundFamiliar() {
     {
       icon: "/Icons/CAS.png",
       title: "Constant app-switching",
-      desc: "CRM, Camera App, Claims App, Scheduling — your team lives in 4+ tools per job",
+      desc: "CRM, Camera App, Claims App, Scheduling, your team lives in 4+ tools per job",
     },
     {
       icon: "/Icons/RCL.png",
@@ -26,7 +26,7 @@ export default function SoundFamiliar() {
     {
       icon: "/Icons/RM.png",
       title: "Revenue you don't know you're missing",
-      desc: "You can't grow what you can't measure — until now",
+      desc: "You can't grow what you can't measure, until now",
     },
   ];
 
@@ -51,7 +51,7 @@ export default function SoundFamiliar() {
             {/* Small text */}
             <p className="text-gray-600 dark:text-gray-400 text-sm max-w-lg leading-relaxed">
               Every time your team switches between apps, answers the same
-              question twice, or manually copies data — your business is
+              question twice, or manually copies data, your business is
               bleeding money. Silently. Every single month.
             </p>
 

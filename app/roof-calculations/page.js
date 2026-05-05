@@ -12,7 +12,7 @@ import { DesktopUpdatedHeader } from "@/components/DesktopUpdatedHeader";
 const content = (
   <p className="text-blue-100">
     Roof Calculations inside AccuraCore generate precise, job-linked
-    measurements — eliminating manual estimating errors, supplement disputes,
+    measurements, eliminating manual estimating errors, supplement disputes,
     and costly miscalculations.
   </p>
 );
@@ -89,7 +89,7 @@ export default function RoofCalculationsPage() {
               </h1>
               <p className="text-md text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
                 Roof Calculations inside AccuraCore generate precise, job-linked
-                measurements — eliminating manual estimating errors, supplement
+                measurements, eliminating manual estimating errors, supplement
                 disputes, and costly miscalculations.
               </p>
 
@@ -132,15 +132,15 @@ export default function RoofCalculationsPage() {
             </div>
 
             {/* Video Player */}
-            <div className="relative w-[90%] mx-auto">
+                        <div className="relative w-[90%] mx-auto">
               <div className="relative overflow-hidden rounded-[30px] shadow-2xl">
                 <video
                   ref={(videoRef) => (videoRefElement.current = videoRef)}
                   className="w-full max-h-[500px] rounded-[30px] object-cover"
-                  poster="/Images/video.png" // thumbnail
-                  controls={isPlaying} // show controls only when playing
+                  poster="/Videos/video-thumbnail.webp" 
+                  controls={isPlaying} 
                 >
-                  <source src="/Videos/DashboardDemo.mp4" type="video/mp4" />
+                  <source src="/Videos/accuracore-explainer.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
 

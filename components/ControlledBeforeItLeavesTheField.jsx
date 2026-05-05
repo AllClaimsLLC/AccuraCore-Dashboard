@@ -32,7 +32,7 @@ const steps = [
   {
     icon: "/Icons/SJR.png",
     title: "Structured Job Linking",
-    desc: "Every calculation stays attached to the job — not in spreadsheets.",
+    desc: "Every calculation stays attached to the job, not in spreadsheets.",
   },
 ];
 

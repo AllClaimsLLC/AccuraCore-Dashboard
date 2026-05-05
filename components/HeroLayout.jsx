@@ -186,9 +186,9 @@ export default function HeroLayout({
             ref={videoRef}
             className="w-full h-[220px] sm:h-[320px] md:h-[420px] object-cover"
             controls={isPlaying}
-            poster="/Images/video.png"
+            poster="/Videos/video-thumbnail.webp" 
           >
-            <source src="/Videos/DashboardDemo.mp4" type="video/mp4" />
+            <source src="/Videos/accuracore-explainer.mp4" type="video/mp4" />
           </video>
 
           {!isPlaying && (

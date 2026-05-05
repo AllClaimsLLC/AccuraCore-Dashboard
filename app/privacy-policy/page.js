@@ -125,7 +125,7 @@ export default function PrivacyPolicy() {
                   </p>
 
                   <p className="mb-4 text-gray-700 text-[14px]">
-                    (https://www.accuracore.com/ , https://www.sparxtech.com/),
+                    (https://www.accuracore.com/, https://www.sparxtech.com/),
                     applications, services, tools, and features, or otherwise
                     interact with us (collectively, the “Services”). For the
                     purposes of this Privacy Notice, “you” and “your” means you

@@ -336,7 +336,7 @@ export default function HomePage() {
               </h1>
               <p className="text-md text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
                 AccuraCore is a contractor management software that brings
-                everything you need into one dashboard — manage your crew, track
+                everything you need into one dashboard, manage your crew, track
                 jobs, handle estimates and invoices, and stay in control of
                 every project.
               </p>
