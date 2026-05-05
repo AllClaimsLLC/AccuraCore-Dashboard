@@ -21,7 +21,7 @@ export default function HeroLayout({
 
   return (
     <section
-      className="block md:hidden lg:hidden relative bg-cover bg-center bg-no-repeat overflow-visible"
+      className="bg-cover bg-center bg-no-repeat overflow-visible"
       style={{ backgroundImage: "url('/Images/Hero-bg.png')" }}
     >
       {/* ================= HEADER ================= */}
