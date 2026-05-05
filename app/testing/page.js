@@ -68,11 +68,11 @@ export default function TestingPage() {
         buttons={buttons(() => setIsOpen(true))}
       /> */}
 
-      <BuiltForStructuredExecution isOpen={isOpen} setIsOpen={setIsOpen} />
+      {/* <BuiltForStructuredExecution isOpen={isOpen} setIsOpen={setIsOpen} />
       <UnstructuredDocumentationCostsMoney />
       <WeStructureProof isOpen={isOpen} setIsOpen={setIsOpen} />
 
-      <Footer id="contact-section" onBookDemo={() => setIsOpen(true)} />
+      <Footer id="contact-section" onBookDemo={() => setIsOpen(true)} /> */}
       {/* Popup Modal */}
       {isOpen && <GetStartedModal isOpen={isOpen} setIsOpen={setIsOpen} />}
     </>
