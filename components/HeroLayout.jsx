@@ -19,8 +19,9 @@ export default function HeroLayout({
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isReady, setIsReady] = useState(false);
 
-  // ✅ REAL fullscreen tracking (correct)
+  // ✅ Proper fullscreen tracking
   useEffect(() => {
     const onChange = () => {
       setIsFullscreen(!!document.fullscreenElement);
@@ -30,26 +31,26 @@ export default function HeroLayout({
     return () => document.removeEventListener("fullscreenchange", onChange);
   }, []);
 
-  // ✅ Sync real video state (important fix)
+  // ✅ Sync real video state
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    const handlePlay = () => setIsPlaying(true);
-    const handlePause = () => setIsPlaying(false);
+    const onPlay = () => setIsPlaying(true);
+    const onPause = () => setIsPlaying(false);
 
-    video.addEventListener("play", handlePlay);
-    video.addEventListener("pause", handlePause);
+    video.addEventListener("play", onPlay);
+    video.addEventListener("pause", onPause);
 
     return () => {
-      video.removeEventListener("play", handlePlay);
-      video.removeEventListener("pause", handlePause);
+      video.removeEventListener("play", onPlay);
+      video.removeEventListener("pause", onPause);
     };
   }, []);
 
   return (
     <section
-      className="block md:hidden lg:hidden relative bg-cover bg-center bg-no-repeat overflow-visible"
+      className="block md:hidden lg:hidden relative bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url('/Images/Hero-bg.png')" }}
     >
       {/* ================= HEADER ================= */}
@@ -78,7 +79,7 @@ export default function HeroLayout({
         </nav>
       </header>
 
-      {/* ================= HERO ================= */}
+      {/* ================= HERO CONTENT ================= */}
       <div className="max-w-7xl mx-auto px-6 text-center pt-10">
         <div className="space-y-5">
 
@@ -98,41 +99,50 @@ export default function HeroLayout({
         </div>
       </div>
 
-      {/* ================= VIDEO ================= */}
-      <div className="absolute left-1/2 bottom-0 w-[90%] max-w-5xl -translate-x-1/2 translate-y-1/2">
-        <div className="relative rounded-[24px] overflow-hidden shadow-2xl bg-black">
+      {/* ================= VIDEO (FIXED ARCHITECTURE) ================= */}
+      <div className="w-[92%] max-w-5xl mx-auto mt-10 relative z-40">
+
+        <div className="relative rounded-[24px] bg-black shadow-2xl">
 
           <video
             ref={videoRef}
             className="w-full h-[220px] sm:h-[320px] md:h-[420px] object-cover"
             controls
             playsInline
+            webkit-playsinline="true"
+            preload="metadata"
             disablePictureInPicture
+            onLoadedData={() => setIsReady(true)}
           >
-            <source src="/Videos/accuracore-explainer.mp4" type="video/mp4" />
+            <source
+              src="/Videos/accuracore-explainer.mp4"
+              type="video/mp4"
+            />
           </video>
 
-          {/* ✅ FIXED overlay logic (no fullscreen flicker) */}
-          {!isPlaying && !isFullscreen && (
+          {/* ✅ SAFE overlay (no fullscreen interference) */}
+          {!isPlaying && isReady && !isFullscreen && (
             <button
               onClick={async () => {
                 try {
                   await videoRef.current.play();
                 } catch (e) {
-                  console.log(e);
+                  console.log("play error:", e);
                 }
               }}
-              className="absolute inset-0 flex items-center justify-center bg-black/30"
+              className="absolute inset-0 flex items-center justify-center bg-black/30 z-10"
             >
-              <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center">
+              <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center text-black text-xl">
                 ▶
               </div>
             </button>
           )}
+
         </div>
       </div>
 
-      <div className="h-[150px] md:h-[250px]"></div>
+      {/* ================= SPACING ================= */}
+      <div className="h-[120px] md:h-[200px]" />
     </section>
   );
 }
