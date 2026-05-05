@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import {useEffect, useRef, useState } from "react";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import BuiltForStructuredExecution from "@/components/BuiltForStructuredExecution";
@@ -47,25 +47,45 @@ const buttons = (onGetStarted) => (
   </>
 );
 
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  return isMobile;
+}
+
 export default function AccuraCamPage() {
   const [isOpen, setIsOpen] = useState(false);
   const videoRefElement = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const isMobile = useIsMobile();
 
   return (
     <>
       {/* DESKTOP HERO AND HEADER */}
+      {isMobile ? (
+      <HeroLayout
+        logo="/Logos/Accuracam/AccuraCam-Logo.png"
+        content={content}
+        buttons={buttons(() => setIsOpen(true))}
+      />
+    ) : (
       <div
-        className="hidden md:block lg:block bg-cover bg-center bg-no-repeat"
+        className="bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('/Images/Hero-bg.png')",
           height: "45rem",
         }}
       >
-        {/* Header */}
         <DesktopUpdatedHeader />
 
-        {/* Hero Section */}
         <main className="px-6 py-16">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-6">
@@ -172,12 +192,13 @@ export default function AccuraCamPage() {
           </div>
         </main>
       </div>
+    )}
 
-      <HeroLayout
+      {/* <HeroLayout
         logo="/Logos/Accuracam/AccuraCam-Logo.png"
         content={content}
         buttons={buttons(() => setIsOpen(true))}
-      />
+      /> */}
 
       <BuiltForStructuredExecution isOpen={isOpen} setIsOpen={setIsOpen} />
       <UnstructuredDocumentationCostsMoney />
