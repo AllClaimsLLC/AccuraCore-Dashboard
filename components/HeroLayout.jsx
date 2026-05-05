@@ -185,15 +185,16 @@ export default function HeroLayout({
           <video
             ref={videoRef}
             className="w-full h-[220px] sm:h-[320px] md:h-[420px] object-cover"
-            controls={isPlaying}
+           controls 
             poster="/Videos/video-thumbnail.webp" 
             playsInline
-  webkit-playsinline="true"
+            onPause={() => setIsPlaying(false)}
+  onPlay={() => setIsPlaying(true)}
           >
             <source src="/Videos/accuracore-explainer.mp4" type="video/mp4" />
           </video>
 
-          {!isPlaying && (
+          {!isPlaying && !videoRef.current?.fullscreenElement && (
             <button
               onClick={() => {
                 videoRef.current.play();
