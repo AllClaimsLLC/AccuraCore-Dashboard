@@ -2,147 +2,91 @@
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import ModeToggle from "./mode-toggle";
 
-export default function HeroLayout({
-  title,
-  logo,
-  content,
-  buttons,
-}) {
+export default function HeroLayout({ title, logo, content, buttons }) {
   const videoRef = useRef(null);
 
   const [menuOpen, setMenuOpen] = useState(false);
-  const [aboutOpen, setAboutOpen] = useState(false);
-  const [featuresOpen, setFeaturesOpen] = useState(false);
-
   const [isPlaying, setIsPlaying] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [isReady, setIsReady] = useState(false);
 
-  // ✅ Proper fullscreen tracking
+  // ✅ fullscreen tracking
   useEffect(() => {
-    const onChange = () => {
+    const handler = () => {
       setIsFullscreen(!!document.fullscreenElement);
     };
-
-    document.addEventListener("fullscreenchange", onChange);
-    return () => document.removeEventListener("fullscreenchange", onChange);
+    document.addEventListener("fullscreenchange", handler);
+    return () => document.removeEventListener("fullscreenchange", handler);
   }, []);
 
-  // ✅ Sync real video state
+  // ✅ video state sync
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    const onPlay = () => setIsPlaying(true);
-    const onPause = () => setIsPlaying(false);
+    const play = () => setIsPlaying(true);
+    const pause = () => setIsPlaying(false);
 
-    video.addEventListener("play", onPlay);
-    video.addEventListener("pause", onPause);
+    video.addEventListener("play", play);
+    video.addEventListener("pause", pause);
 
     return () => {
-      video.removeEventListener("play", onPlay);
-      video.removeEventListener("pause", onPause);
+      video.removeEventListener("play", play);
+      video.removeEventListener("pause", pause);
     };
   }, []);
 
   return (
-    <section
-      className="block md:hidden lg:hidden relative bg-cover bg-center bg-no-repeat"
+    <section className="bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url('/Images/Hero-bg.png')" }}
     >
-      {/* ================= HEADER ================= */}
-      <header className="px-6 py-4 relative z-50">
-        <nav className="flex items-center justify-between max-w-6xl mx-auto rounded-full px-8 py-4 border border-white/20 bg-[#51607d] dark:bg-slate-900">
-
+      {/* HEADER */}
+      <header className="px-6 py-4">
+        <nav className="flex justify-between items-center bg-[#51607d] p-4 rounded-full">
           <Link href="/">
-            <img
-              src="/Logos/Accuracore/accuraCore-logo.png"
-              alt="Logo"
-              className="w-20 h-20 object-contain"
-            />
+            <img src="/Logos/Accuracore/accuraCore-logo.png" className="w-16" />
           </Link>
 
-          <div className="md:hidden flex items-center gap-3">
-            <ModeToggle />
-
-            <button onClick={() => setMenuOpen(!menuOpen)}>
-              {menuOpen ? (
-                <X className="text-white w-8 h-8" />
-              ) : (
-                <Menu className="text-white w-8 h-8" />
-              )}
-            </button>
-          </div>
+          <button onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? <X className="text-white" /> : <Menu className="text-white" />}
+          </button>
         </nav>
       </header>
 
-      {/* ================= HERO CONTENT ================= */}
-      <div className="max-w-7xl mx-auto px-6 text-center pt-10">
-        <div className="space-y-5">
-
-          <div className="flex justify-center">
-            {logo ? (
-              <img src={logo} className="h-20 object-contain" />
-            ) : (
-              <h1 className="text-3xl text-white">{title}</h1>
-            )}
-          </div>
-
-          <div className="text-blue-100">{content}</div>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            {buttons}
-          </div>
-        </div>
+      {/* CONTENT */}
+      <div className="text-center px-6 pt-10">
+        {logo && <img src={logo} className="h-20 mx-auto" />}
+        <div className="text-blue-100 mt-4">{content}</div>
+        <div className="mt-4">{buttons}</div>
       </div>
 
-      {/* ================= VIDEO (FIXED ARCHITECTURE) ================= */}
-      <div className="w-[92%] max-w-5xl mx-auto mt-10 relative z-40">
+      {/* ✅ VIDEO */}
+      <div className="w-[92%] mx-auto mt-10 relative">
+        <video
+          ref={videoRef}
+          className="w-full rounded-[24px]"
+          controls
+          playsInline
+          preload="metadata"
+          onLoadedData={() => setIsReady(true)}
+        >
+          <source src="/Videos/accuracore-explainer.mp4" type="video/mp4" />
+        </video>
 
-        <div className="relative rounded-[24px] bg-black shadow-2xl">
-
-          <video
-            ref={videoRef}
-            className="w-full h-[220px] sm:h-[320px] md:h-[420px] object-cover"
-            controls
-            playsInline
-            webkit-playsinline="true"
-            preload="metadata"
-            disablePictureInPicture
-            onLoadedData={() => setIsReady(true)}
+        {/* overlay */}
+        {!isPlaying && isReady && !isFullscreen && (
+          <button
+            onClick={() => videoRef.current.play()}
+            className="absolute inset-0 flex items-center justify-center bg-black/30"
           >
-            <source
-              src="/Videos/accuracore-explainer.mp4"
-              type="video/mp4"
-            />
-          </video>
-
-          {/* ✅ SAFE overlay (no fullscreen interference) */}
-          {!isPlaying && isReady && !isFullscreen && (
-            <button
-              onClick={async () => {
-                try {
-                  await videoRef.current.play();
-                } catch (e) {
-                  console.log("play error:", e);
-                }
-              }}
-              className="absolute inset-0 flex items-center justify-center bg-black/30 z-10"
-            >
-              <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center text-black text-xl">
-                ▶
-              </div>
-            </button>
-          )}
-
-        </div>
+            ▶
+          </button>
+        )}
       </div>
 
-      {/* ================= SPACING ================= */}
-      <div className="h-[120px] md:h-[200px]" />
+      <div className="h-[120px]" />
     </section>
   );
 }
