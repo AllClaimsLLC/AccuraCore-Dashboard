@@ -187,6 +187,8 @@ export default function HeroLayout({
             className="w-full h-[220px] sm:h-[320px] md:h-[420px] object-cover"
             controls={isPlaying}
             poster="/Videos/video-thumbnail.webp" 
+            playsInline
+  webkit-playsinline="true"
           >
             <source src="/Videos/accuracore-explainer.mp4" type="video/mp4" />
           </video>
