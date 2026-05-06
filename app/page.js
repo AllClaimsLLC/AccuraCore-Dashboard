@@ -331,7 +331,7 @@ export default function HomePage() {
         <main className="px-6 py-16">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8 lg:mb-16">
-              <h1 className="text-4xl md:text-4xl text-white mb-6 leading-tight">
+              <h1 className="text-3xl md:text-4xl text-white mb-6 leading-tight">
                 Simplify Your Contracting Business with Precision
               </h1>
               <p className="text-md text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">

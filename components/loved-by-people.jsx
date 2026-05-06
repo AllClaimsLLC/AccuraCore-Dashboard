@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { BookDemoForm } from "./BookDemoForm";
 import useFadeIn from "@/lib/useFadeIn";
 
@@ -68,6 +68,8 @@ export default function LovedByPeople({ id }) {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [openFaq, setOpenFaq] = useState(null);
   const [currentStep, setCurrentStep] = useState(1);
+  const [isPlaying, setIsPlaying] = useState(false);
+const videoRef = useRef(null);
 
   const nextTestimonial = () => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -96,6 +98,65 @@ export default function LovedByPeople({ id }) {
     >
       <div className="fade-up">
         <div className="container mx-auto px-6 max-w-6xl mb-5">
+         {/* Video Section */}
+<div className="text-left sm:text-center mb-20">
+  {/* Heading */}
+  <h3 className="text-2xl sm:text-4xl text-gray-900 dark:text-gray-100 mb-6">
+    Experience The Future<br className="hidden sm:block"/> Of Intelligent Operations With<br className="hidden sm:block"/> AccuraCore
+  </h3>
+
+  {/* Video Wrapper */}
+  <div className="relative w-[90%] max-w-6xl mx-auto rounded-[30px] overflow-hidden">
+    
+    {/* Thumbnail */}
+    {!isPlaying && (
+      <img
+        src="/Videos/video-thumbnail.png"
+        alt="Thumbnail"
+        className="absolute inset-0 w-full h-full object-cover z-10"
+      />
+    )}
+
+    {/* Video */}
+    <video
+      ref={videoRef}
+      className="w-full max-h-[500px] rounded-[30px] object-cover"
+      controls={isPlaying}
+    >
+      <source src="/Videos/accuracore-explainer.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    {/* Play Button */}
+    {!isPlaying && (
+      <button
+        onClick={() => {
+          videoRef.current.play();
+          setIsPlaying(true);
+        }}
+        className="absolute inset-0 z-20 flex items-center justify-center bg-black/30 hover:bg-black/40 transition"
+      >
+        <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-8 w-8 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M14.752 11.168l-6.518-3.758A1 1 0 007 8.304v7.392a1 1 0 001.234.97l6.518-1.9a1 1 0 00.748-.97v-1.864a1 1 0 00-.748-.97z"
+            />
+          </svg>
+        </div>
+      </button>
+    )}
+  </div>
+</div>
+
           {/* First Row - Hero Section */}
           <div className="text-center mb-16">
             <img
@@ -247,7 +308,10 @@ export default function LovedByPeople({ id }) {
       </div>
 
       {/* Form Heading Section */}
-      <div className="text-left sm:text-center mt-16 mx-auto" style={{ width: "90%"}}>
+      <div
+        className="text-left sm:text-center mt-16 mx-auto"
+        style={{ width: "90%" }}
+      >
         <h2 className="text-2xl text-gray-900 dark:text-white mb-2">
           See AccuraCore in Action
         </h2>
