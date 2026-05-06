@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import { BookDemoForm } from "./BookDemoForm";
 import useFadeIn from "@/lib/useFadeIn";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const testimonials = [
   {
@@ -65,6 +65,7 @@ const faqs = [
 ];
 
 export default function LovedByPeople({ id }) {
+  const containerRef = useRef(null);
   useFadeIn();
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [openFaq, setOpenFaq] = useState(null);
@@ -89,6 +90,13 @@ export default function LovedByPeople({ id }) {
   const toggleFaq = (faqId) => {
     setOpenFaq(openFaq === faqId ? null : faqId);
   };
+
+  const { scrollYProgress } = useScroll({
+  target: containerRef,
+  offset: ["start end", "end start"],
+});
+
+const scale = useTransform(scrollYProgress, [0, 0.5], [0.7, 1]);
   return (
     <section
       className="
@@ -110,10 +118,8 @@ export default function LovedByPeople({ id }) {
 
             {/* Video Wrapper */}
             <motion.div
-  initial={{ scale: 0.7, opacity: 0 }}
-  whileInView={{ scale: 1, opacity: 1 }}
-  transition={{ duration: 0.8, ease: "easeOut" }}
-  viewport={{ once: true, amount: 0.4 }}
+  ref={containerRef}
+  style={{ scale }}
   className="relative w-full sm:w-[90%] max-w-6xl mx-auto rounded-[30px] overflow-hidden"
 >
   {/* Thumbnail */}
