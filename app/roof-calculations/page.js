@@ -9,6 +9,10 @@ import FinalHeroSection from "@/components/FinalHeroSection";
 
 export default function RoofCalculationsPage() {
   const [isOpen, setIsOpen] = useState(false);
+  const convertTime = (time) => {
+  const [sec, ms] = time.toString().split(".");
+  return Number(sec) + Number(`0.${ms}`);
+};
 
   return (
     <>
@@ -18,6 +22,7 @@ export default function RoofCalculationsPage() {
                 measurements, eliminating manual estimating errors, supplement
                 disputes, and costly miscalculations."
                 height="40rem"
+                startTime={convertTime(21.29)}
         onPrimaryClick={() => setIsOpen(true)}
         onSecondaryClick={() => (window.location.href = "/book-a-demo")}
       />

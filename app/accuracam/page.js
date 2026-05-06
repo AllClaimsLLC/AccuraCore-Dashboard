@@ -9,6 +9,10 @@ import FinalHeroSection from "@/components/FinalHeroSection";
 
 export default function AccuraCamPage() {
   const [isOpen, setIsOpen] = useState(false);
+  const convertTime = (time) => {
+  const [sec, ms] = time.toString().split(".");
+  return Number(sec) + Number(`0.${ms}`);
+};
 
   return (
     <>
@@ -17,6 +21,7 @@ export default function AccuraCamPage() {
         description="AccuraCam fixes documentation at the source, photos attach to
                 the job, location, and scope item the moment they&apos;re taken.
                 No rebuilding in the office."
+                startTime={convertTime(26.18)}
         onPrimaryClick={() => setIsOpen(true)}
         onSecondaryClick={() => (window.location.href = "/book-a-demo")}
       />

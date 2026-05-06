@@ -16,6 +16,7 @@ export default function FinalHeroSection({
   onPrimaryClick,
   onSecondaryClick,
   height = "45rem",
+  startTime = 0,
 }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -65,9 +66,7 @@ export default function FinalHeroSection({
             {/* Mobile Hamburger */}
             <div className="md:hidden flex items-center gap-3">
               {/* Dark Mode Toggle */}
-              <div
-                className="p-2 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 flex items-center justify-center"
-              >
+              <div className="p-2 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 flex items-center justify-center">
                 <ModeToggle />
               </div>
 
@@ -258,7 +257,20 @@ export default function FinalHeroSection({
             {!isPlaying && (
               <button
                 onClick={() => {
-                  videoRefElement.current.play();
+                  const video = videoRefElement.current;
+
+                  if (!video) return;
+
+                  if (video.readyState >= 2) {
+                    video.currentTime = startTime;
+                    video.play();
+                  } else {
+                    video.onloadedmetadata = () => {
+                      video.currentTime = startTime;
+                      video.play();
+                    };
+                  }
+
                   setIsPlaying(true);
                 }}
                 className="absolute inset-0 z-20 flex items-center justify-center bg-black/30 cursor-pointer transition duration-300 hover:bg-black/40"

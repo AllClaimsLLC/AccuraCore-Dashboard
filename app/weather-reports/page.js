@@ -9,6 +9,11 @@ import FinalHeroSection from "@/components/FinalHeroSection";
 
 export default function WeatherReportsPage() {
   const [isOpen, setIsOpen] = useState(false);
+  const convertTime = (time) => {
+  const [sec, ms] = time.toString().split(".");
+  return Number(sec) + Number(`0.${ms}`);
+};
+
   return (
     <>
       <FinalHeroSection
@@ -18,6 +23,7 @@ export default function WeatherReportsPage() {
                 reducing disputes, and improving documentation integrity with
                 job-linked, submission-ready evidence."
                 height="40rem"
+                startTime={convertTime(23.24)}
         onPrimaryClick={() => setIsOpen(true)}
         onSecondaryClick={() => (window.location.href = "/book-a-demo")}
       />

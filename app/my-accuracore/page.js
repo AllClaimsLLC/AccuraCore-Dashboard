@@ -42,6 +42,10 @@ const buttons = (onGetStarted) => (
 
 export default function MyAccuraCorePage() {
   const [isOpen, setIsOpen] = useState(false);
+  const convertTime = (time) => {
+  const [sec, ms] = time.toString().split(".");
+  return Number(sec) + Number(`0.${ms}`);
+};
   return (
     <>
       <FinalHeroSection
@@ -49,6 +53,7 @@ export default function MyAccuraCorePage() {
         description="MyAccuraCore centralizes jobs, documentation, teams, and claims in one
       structured system. This is where field capture, office review, and claim
       workflows connect. One system, Full visibility, Controlled execution."
+      startTime={convertTime(9.04)}
         onPrimaryClick={() => setIsOpen(true)}
         onSecondaryClick={() => (window.location.href = "/book-a-demo")}
       />
