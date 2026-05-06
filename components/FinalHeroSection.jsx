@@ -285,7 +285,7 @@ export default function FinalHeroSection({
         </div>
 
         {/* SPACING FOR OVERFLOW VIDEO */}
-        <div className="h-[150px] md:h-[250px]"></div>
+        <div className="h-[125px] md:h-[250px]"></div>
       </div>
     </section>
   );
