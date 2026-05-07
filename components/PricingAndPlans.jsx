@@ -176,19 +176,21 @@ hover:before:translate-x-full"
 
                     <div className="border-b border-gray-200 my-3"></div>
 
-                    <Price amount="49" />
+                    <div className="min-h-[320px]">
+                      <Price amount="49" />
 
-                    <ul className="space-y-2">
-                      <Bullet>1 user (owner only)</Bullet>
-                      <Bullet>
-                        Core modules: Jobs, Contacts, Financials
-                        (Estimates/Invoices), Work Orders.
-                      </Bullet>
-                      <Bullet>Basic storage (5GB).</Bullet>
-                    </ul>
+                      <ul className="space-y-2">
+                        <Bullet>1 user (owner only)</Bullet>
+                        <Bullet>
+                          Core modules: Jobs, Contacts, Financials
+                          (Estimates/Invoices), Work Orders.
+                        </Bullet>
+                        <Bullet>Basic storage (5GB).</Bullet>
+                      </ul>
+                    </div>
                   </div>
 
-                  <div className="mt-37 pt-6">
+                  <div>
                     <CTAButton color="#0061A4" setIsOpen={setIsOpen} />
                   </div>
                 </div>
@@ -306,17 +308,18 @@ hover:before:translate-x-full"
                     </h1>
 
                     <div className="border-b border-gray-200 my-3"></div>
+                    <div className="min-h-[300px] sm:min-h-[320px]">
+                      <Price amount="49" />
 
-                    <Price amount="49" />
-
-                    <ul className="space-y-2">
-                      <Bullet>1 inspector/adjuster</Bullet>
-                      <Bullet>Can create & manage own claims.</Bullet>
-                      <Bullet>Upload inspections + reports.</Bullet>
-                    </ul>
+                      <ul className="space-y-2">
+                        <Bullet>1 inspector/adjuster</Bullet>
+                        <Bullet>Can create & manage own claims.</Bullet>
+                        <Bullet>Upload inspections + reports.</Bullet>
+                      </ul>
+                    </div>
                   </div>
 
-                  <div className="mt-35 sm:mt-42 pt-6">
+                  <div>
                     <CTAButton color="#fb2c36" setIsOpen={setIsOpen} />
                   </div>
                 </div>
@@ -435,6 +438,7 @@ hover:before:translate-x-full"
 
                     <div className="border-b border-gray-200 my-3"></div>
 
+<div className="min-h-[300px] sm:min-h-[320px]">
                     <Price amount="49" />
 
                     <ul className="space-y-2">
@@ -454,8 +458,9 @@ hover:before:translate-x-full"
                       </ul>
                     </ul>
                   </div>
+                  </div>
 
-                  <div className="mt-20 sm:mt-24 pt-6">
+                  <div>
                     <CTAButton color="#ff6900" setIsOpen={setIsOpen} />
                   </div>
                 </div>
