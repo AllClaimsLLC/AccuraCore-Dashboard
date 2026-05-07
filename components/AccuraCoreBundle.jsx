@@ -227,25 +227,25 @@ export default function AccuraCoreBundle() {
 
                 ${
                   opened && index === 1
-                    ? "max-md:translate-x-0 max-md:translate-y-[-180px]"
+                    ? "max-md:translate-x-0 max-md:translate-y-[-150px]"
                     : ""
                 }
 
                 ${
                   opened && index === 2
-                    ? "max-md:translate-x-0 max-md:translate-y-[-30px]"
+                    ? "max-md:translate-x-0 max-md:translate-y-[30px]"
                     : ""
                 }
 
                 ${
                   opened && index === 3
-                    ? "max-md:translate-x-0 max-md:translate-y-[120px]"
+                    ? "max-md:translate-x-0 max-md:translate-y-[200px]"
                     : ""
                 }
 
                 ${
                   opened && index === 4
-                    ? "max-md:translate-x-0 max-md:translate-y-[270px]"
+                    ? "max-md:translate-x-0 max-md:translate-y-[370px]"
                     : ""
                 }
               `}
@@ -278,7 +278,7 @@ export default function AccuraCoreBundle() {
         {/* SUMMARY */}
        {opened && (
   <div
-    className="max-w-[520px] mx-auto text-center mt-[30px] max-md:mt-[20px] animate-fadeIn"
+    className="max-w-[520px] mx-auto text-center mt-[30px] max-md:mt-[90px] animate-fadeIn"
   >
     <div className="text-[11px] uppercase tracking-[0.18em] text-gray-400">
       All-in-One Core Suite

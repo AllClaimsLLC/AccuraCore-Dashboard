@@ -536,7 +536,7 @@ hover:before:translate-x-full"
             </div>
           </div>
 
-          {/* Horizontal Card */}
+          {/* Accuracore Core Suite */}
           <AccuraCoreBundle />
         </div>
       </div>
