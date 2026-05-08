@@ -131,7 +131,7 @@ export default function EverythingYouNeedSection() {
     alt=""
     className={`w-full h-[320px] md:h-[600px] object-contain rounded-xl transition-all duration-500 ${
       activeTab === img.id
-        ? "scale-110 opacity-100"
+        ? "scale-95 sm:scale-110 opacity-100"
         : "scale-80 opacity-50"
     }`}
   />
