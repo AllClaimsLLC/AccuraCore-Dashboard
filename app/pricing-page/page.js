@@ -158,7 +158,7 @@ export default function PricingPage() {
             </div>
 
             {/* Desktop Action Buttons */}
-            {/* <div className="hidden md:flex items-center space-x-3">
+            <div className="hidden md:flex items-center space-x-3">
               <div
                 className="
   p-2 rounded-full 
@@ -197,7 +197,7 @@ export default function PricingPage() {
                   className="w-2 h-3 ml-2"
                 />
               </Button>
-            </div> */}
+            </div>
 
             {/* Mobile Hamburger */}
             <div className="md:hidden flex items-center gap-3">
