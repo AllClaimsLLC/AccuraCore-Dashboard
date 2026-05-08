@@ -159,14 +159,7 @@ export default function PricingPage() {
 
             {/* Desktop Action Buttons */}
             <div className="hidden md:flex items-center space-x-3">
-              <div
-                className="
-  p-2 rounded-full 
-  bg-slate-900 dark:bg-white 
-  text-white dark:text-slate-900
-  flex items-center justify-center
-"
-              >
+              <div className="p-2 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 flex items-center justify-center">
                 <ModeToggle />
               </div>
 
@@ -202,14 +195,7 @@ export default function PricingPage() {
             {/* Mobile Hamburger */}
             <div className="md:hidden flex items-center gap-3">
               {/* Dark Mode Toggle */}
-              <div
-                className="
-          p-2 rounded-full 
-          bg-slate-900 dark:bg-white 
-          text-white dark:text-slate-900
-          flex items-center justify-center
-        "
-              >
+              <div className="p-2 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 flex items-center justify-center">
                 <ModeToggle />
               </div>
 
@@ -238,19 +224,19 @@ export default function PricingPage() {
                 </button>
 
                 {aboutOpen && (
-                <div className="mt-2 w-full bg-[#51607d] dark:bg-slate-900 rounded-[10px] overflow-hidden border border-white/10">
-                  <Link href="/blog">
-                    <p className="text-white text-sm p-3 border-white/20 rounded-t-[15px] hover:bg-white hover:text-black">
-                      Blog
-                    </p>
-                  </Link>
-                  <Link href="/#faq-section">
-                    <p className="text-white text-sm p-3 border-white/20 rounded-b-[15px] hover:bg-white hover:text-black">
-                      FAQs
-                    </p>
-              </Link>
-                </div>
-              )}
+                  <div className="mt-2 w-full bg-[#51607d] dark:bg-slate-900 rounded-[10px] overflow-hidden border border-white/10">
+                    <Link href="/blog">
+                      <p className="text-white text-sm p-3 border-white/20 rounded-t-[15px] hover:bg-white hover:text-black">
+                        Blog
+                      </p>
+                    </Link>
+                    <Link href="/#faq-section">
+                      <p className="text-white text-sm p-3 border-white/20 rounded-b-[15px] hover:bg-white hover:text-black">
+                        FAQs
+                      </p>
+                    </Link>
+                  </div>
+                )}
               </div>
 
               {/* Features */}
@@ -326,19 +312,63 @@ export default function PricingPage() {
         <main className="px-6 pt-16 pb-0">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8 lg:mb-16">
-              <h1 className="text-4xl md:text-4xl text-white leading-tight">
-                Pricing
-              </h1>
-              <h2 className="text-2xl md:text-3xl text-white mb-2 leading-tight font-light font-sora">
-  Plans Designed for Every Business
-</h2>
-              <p className="text-md text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-                At AccuraCore, we
-                understand that every business has unique needs and growth
-                paths. That’s why our pricing structure is flexible,
-                transparent, and tailored to help teams of all sizes get the
-                tools they need without unnecessary complexity.
-              </p>
+              <div className="overflow-hidden">
+                <h1 className="text-4xl md:text-4xl text-white leading-tight flex flex-wrap justify-center">
+                  {["Pricing"].map((word, i) => (
+                    <span
+                      key={i}
+                      className="inline-block overflow-hidden align-bottom pr-[0.18em]"
+                    >
+                      <span
+                        className="inline-block animate-wordUp"
+style={{
+  transform: "translateY(110%)",
+  animationDelay: `${0.05 + i * 0.1}s`,
+  animationFillMode: "forwards",
+}}
+                      >
+                        {word}
+                      </span>
+                    </span>
+                  ))}
+                </h1>
+
+                <h2 className="text-2xl md:text-3xl text-white mb-2 leading-tight font-light font-sora flex flex-wrap justify-center mt-2">
+                  {["Plans", "Designed", "for", "Every", "Business"].map(
+                    (word, i) => (
+                      <span
+                        key={i}
+                        className="inline-block overflow-hidden align-bottom pr-[0.18em]"
+                      >
+                        <span
+                          className="inline-block animate-wordUp"
+style={{
+  transform: "translateY(110%)",
+  animationDelay: `${0.05 + i * 0.1}s`,
+  animationFillMode: "forwards",
+}}
+                        >
+                          {word}
+                        </span>
+                      </span>
+                    ),
+                  )}
+                </h2>
+
+                <p
+                  className="text-md text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed mt-4 animate-fadeUp"
+                  style={{
+                    opacity: 0,
+                    animationDelay: "0.9s",
+                    animationFillMode: "forwards",
+                  }}
+                >
+                  At AccuraCore, we understand that every business has unique
+                  needs and growth paths. That’s why our pricing structure is
+                  flexible, transparent, and tailored to help teams of all sizes
+                  get the tools they need without unnecessary complexity.
+                </p>
+              </div>
 
               {/* CTA Buttons */}
               {/* <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -397,6 +427,36 @@ export default function PricingPage() {
             </div>
           </div>
         </main>
+        <style jsx>{`
+          @keyframes wordUp {
+            from {
+              transform: translateY(110%);
+            }
+            to {
+              transform: translateY(0);
+            }
+          }
+
+          .animate-wordUp {
+            animation: wordUp 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+          }
+
+          @keyframes fadeUp {
+            from {
+              opacity: 0;
+              transform: translateY(12px);
+            }
+
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          .animate-fadeUp {
+            animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+          }
+        `}</style>
       </div>
 
       <PricingAndPlans setIsOpen={setIsOpen} />
