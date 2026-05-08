@@ -79,10 +79,10 @@ export default function EverythingYouNeedSection() {
 >
   
   {/* LEFT BG SHADOW */}
-  <div className="hidden sm:block absolute left-0 top-0 h-full w-24 md:w-84 pointer-events-none z-10 bg-gradient-to-r from-[#000b20] via-[#000b20]/10 to-transparent" />
+  <div className="hidden md:block absolute left-0 top-0 h-full w-24 md:w-84 pointer-events-none z-10 bg-gradient-to-r from-[#000b20] via-[#000b20]/10 to-transparent" />
 
   {/* RIGHT BG SHADOW */}
-  <div className="hidden sm:block absolute right-0 top-0 h-full w-24 md:w-84 pointer-events-none z-10 bg-gradient-to-l from-[#000b20] via-[#000b20]/10 to-transparent" />
+  <div className="hidden md:block absolute right-0 top-0 h-full w-24 md:w-84 pointer-events-none z-10 bg-gradient-to-l from-[#000b20] via-[#000b20]/10 to-transparent" />
           {/* Heading */}
           <div className="text-center mb-8 lg:mb-12 px-4 lg:px-12">
             <h2
@@ -129,9 +129,9 @@ export default function EverythingYouNeedSection() {
   <img
     src={img.src}
     alt=""
-    className={`w-full h-[320px] md:h-[600px] object-contain rounded-xl transition-all duration-500 ${
+    className={`w-full h-[320px] sm:h-[600px] md:h-[600px] lg:h-[600px] xl:h-[600px] object-contain rounded-xl transition-all duration-500 ${
       activeTab === img.id
-        ? "scale-95 sm:scale-110 opacity-100"
+        ? "scale-95 sm:scale-95 md:scale-110 lg:scale-110 opacity-100"
         : "scale-80 opacity-50"
     }`}
   />
