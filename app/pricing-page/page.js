@@ -158,7 +158,7 @@ export default function PricingPage() {
             </div>
 
             {/* Desktop Action Buttons */}
-            <div className="hidden md:flex items-center space-x-3">
+            {/* <div className="hidden md:flex items-center space-x-3">
               <div
                 className="
   p-2 rounded-full 
@@ -197,7 +197,7 @@ export default function PricingPage() {
                   className="w-2 h-3 ml-2"
                 />
               </Button>
-            </div>
+            </div> */}
 
             {/* Mobile Hamburger */}
             <div className="md:hidden flex items-center gap-3">
@@ -341,7 +341,7 @@ export default function PricingPage() {
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              {/* <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link href="/calculator">
                   <Button
                     className="rounded-full text-sm flex items-center justify-center"
@@ -393,7 +393,7 @@ export default function PricingPage() {
                     className="w-2 h-3 ml-2"
                   />
                 </Button>
-              </div>
+              </div> */}
             </div>
           </div>
         </main>

@@ -61,6 +61,12 @@ export default function AccuraCoreBundle() {
 
   return (
     <section className="mt-[100px] overflow-hidden">
+      {/* BEST VALUE TAG */}
+      <div className="flex justify-center mb-4">
+        <div className="bg-red-500 text-white px-4 py-1.5 rounded-full text-[11px] uppercase tracking-[0.12em] font-semibold shadow-lg animate-pulse">
+          Best Value
+        </div>
+      </div>
       {/* HEADING */}
       <div className="text-center">
         <div className="text-[10px] uppercase tracking-[0.18em] text-[#1161A5] font-medium">
@@ -276,123 +282,121 @@ export default function AccuraCoreBundle() {
         </div>
 
         {/* SUMMARY */}
-       {opened && (
-  <div
-    className="max-w-[520px] mx-auto text-center mt-[30px] max-md:mt-[90px] animate-fadeIn"
-  >
-    <div className="text-[11px] uppercase tracking-[0.18em] text-gray-400">
-      All-in-One Core Suite
-    </div>
+        {opened && (
+          <div className="max-w-[520px] mx-auto text-center mt-[30px] max-md:mt-[90px] animate-fadeIn">
+            <div className="text-[11px] uppercase tracking-[0.18em] text-gray-400">
+              All-in-One Core Suite
+            </div>
 
-    <div className="mt-4 text-[54px] font-bold tracking-[-0.04em] text-black">
-      <span className="text-[24px] line-through text-gray-400 font-normal mr-2">
-        $597
-      </span>
-      $349
-      <span className="text-[16px] text-gray-500 font-normal">
-        /mo · 5 seats
-      </span>
-    </div>
+            <div className="mt-4 text-[54px] font-bold tracking-[-0.04em] text-black">
+              <span className="text-[24px] line-through text-gray-400 font-normal mr-2">
+                $597
+              </span>
+              $349
+              <span className="text-[16px] text-gray-500 font-normal">
+                /mo · 5 seats
+              </span>
+            </div>
 
-    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 text-green-700 text-[12px] mt-4 uppercase tracking-[0.08em]">
-      ◆ You save $248/mo · 41% off
-    </div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 text-green-700 text-[12px] mt-4 uppercase tracking-[0.08em]">
+              ◆ You save $248/mo · 41% off
+            </div>
 
-    <div className="mt-6">
-      <button
-        className="inline-flex items-center gap-2 px-5 py-2 text-sm font-medium rounded-full transition-all duration-200 hover:scale-[1.03]"
-        style={{
-          backgroundColor: "#1161A5",
-          color: "#fff",
-        }}
-      >
-        Get Started
-        <img src="/Icons/Vector.png" className="w-2 h-3" />
-      </button>
-    </div>
+            <div className="mt-6">
+              <button
+                className="inline-flex items-center gap-2 px-5 py-2 text-sm font-medium rounded-full transition-all duration-200 hover:scale-[1.03]"
+                style={{
+                  backgroundColor: "#1161A5",
+                  color: "#fff",
+                }}
+              >
+                Get Started
+                <img src="/Icons/Vector.png" className="w-2 h-3" />
+              </button>
+            </div>
 
-    <div className="mt-6 flex justify-center">
-      <button
-        onClick={() => setOpened(false)}
-        className="text-[11px] uppercase tracking-[0.1em]  text-gray-500 border border-gray-200 rounded-full  px-4 py-2 hover:border-[#1161A5] hover:text-[#1161A5]   transition-all"
-      >
-        ↺ Repack Bundle
-      </button>
-    </div>
-  </div>
-)}
+            <div className="mt-6 flex justify-center">
+              <button
+                onClick={() => setOpened(false)}
+                className="text-[11px] uppercase tracking-[0.1em]  text-gray-500 border border-gray-200 rounded-full  px-4 py-2 hover:border-[#1161A5] hover:text-[#1161A5]   transition-all"
+              >
+                ↺ Repack Bundle
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* FEATURES */}
-       {opened && (
-  <div className="max-w-[560px] mx-auto mt-[60px] max-md:mt-[80px] animate-fadeIn">
-    <ul className="grid gap-3">
-      {[
-        "(includes 5 seats total, shared across both platforms).",
-        "Add extra seats: $30/month per user.",
-        "Includes: Everything in AccuraCore + ClaimCore.",
-        "Unified company billing.",
-        "Shared contacts/jobs/photos across systems.",
-      ].map((item, i) => (
-        <li
-          key={i}
-          className="flex gap-3 text-[14px] text-gray-500 items-start animate-fadeItem"            
-          style={{
-            animationDelay: `${i * 120}ms`,
-          }}
-        >
-          <span className="w-[18px] h-[18px] rounded-full bg-blue-100 grid place-items-center flex-shrink-0 mt-[2px]">
-            <svg
-              width="11"
-              height="11"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#1161A5"
-              strokeWidth="3"
-            >
-              <polyline points="20 6 9 17 4 12" />
-            </svg>
-          </span>
+        {opened && (
+          <div className="max-w-[560px] mx-auto mt-[60px] max-md:mt-[80px] animate-fadeIn">
+            <ul className="grid gap-3">
+              {[
+                "(includes 5 seats total, shared across both platforms).",
+                "Add extra seats: $30/month per user.",
+                "Includes: Everything in AccuraCore + ClaimCore.",
+                "Unified company billing.",
+                "Shared contacts/jobs/photos across systems.",
+              ].map((item, i) => (
+                <li
+                  key={i}
+                  className="flex gap-3 text-[14px] text-gray-500 items-start animate-fadeItem"
+                  style={{
+                    animationDelay: `${i * 120}ms`,
+                  }}
+                >
+                  <span className="w-[18px] h-[18px] rounded-full bg-blue-100 grid place-items-center flex-shrink-0 mt-[2px]">
+                    <svg
+                      width="11"
+                      height="11"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#1161A5"
+                      strokeWidth="3"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </span>
 
-          {item}
-        </li>
-      ))}
-    </ul>
-  </div>
-)}
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
 
       {/* CUSTOM KEYFRAMES */}
-     <style jsx>{`
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(14px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+      <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(14px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
 
-  .animate-fadeIn {
-    animation: fadeIn 0.6s ease-out forwards;
-  }
+        .animate-fadeIn {
+          animation: fadeIn 0.6s ease-out forwards;
+        }
 
-  @keyframes fadeItem {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+        @keyframes fadeItem {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
 
-  .animate-fadeItem {
-    animation: fadeItem 0.5s ease-out forwards;
-  }
-`}</style>
+        .animate-fadeItem {
+          animation: fadeItem 0.5s ease-out forwards;
+        }
+      `}</style>
     </section>
   );
 }
