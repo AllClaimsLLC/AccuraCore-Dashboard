@@ -323,7 +323,7 @@ export default function PricingPage() {
                         className="inline-block animate-wordUp"
 style={{
   transform: "translateY(110%)",
-  animationDelay: `${0.05 + i * 0.1}s`,
+  animationDelay: `${0.15 + i * 0.06}s`,
   animationFillMode: "forwards",
 }}
                       >
@@ -344,7 +344,7 @@ style={{
                           className="inline-block animate-wordUp"
 style={{
   transform: "translateY(110%)",
-  animationDelay: `${0.05 + i * 0.1}s`,
+  animationDelay: `${0.15 + i * 0.06}s`,
   animationFillMode: "forwards",
 }}
                         >
@@ -359,7 +359,7 @@ style={{
                   className="text-md text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed mt-4 animate-fadeUp"
                   style={{
                     opacity: 0,
-                    animationDelay: "0.9s",
+                    animationDelay: "0.35s",
                     animationFillMode: "forwards",
                   }}
                 >

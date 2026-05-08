@@ -64,28 +64,34 @@ export default function EverythingYouNeedSection() {
   };
 
   return (
-    <section
-      className="py-16 lg:py-20 bg-[#f4f0ed] dark:bg-slate-950"
-      style={{ paddingBottom: 0 }}
-    >
-      <div className="w-full">
-        <div
-          className="p-8 lg:p-12 "
-          style={{
-            background: "radial-gradient(circle, #2f5071 0%, #162c44 100%)",
-            paddingLeft: 0,
-            paddingRight: 0,
-          }}
-        >
+<section
+  className="py-16 lg:py-20 bg-[#f4f0ed] dark:bg-slate-950"
+  style={{ paddingBottom: 0 }}
+>
+  <div className="w-full">
+<div
+  className="relative p-8 lg:p-12 bg-cover bg-center bg-no-repeat overflow-hidden"
+  style={{
+    backgroundImage: "url('/Images/everything-bg.png')",
+    paddingLeft: 0,
+    paddingRight: 0,
+  }}
+>
+  
+  {/* LEFT BG SHADOW */}
+  <div className="hidden sm:block absolute left-0 top-0 h-full w-24 md:w-84 pointer-events-none z-10 bg-gradient-to-r from-[#000b20] via-[#000b20]/10 to-transparent" />
+
+  {/* RIGHT BG SHADOW */}
+  <div className="hidden sm:block absolute right-0 top-0 h-full w-24 md:w-84 pointer-events-none z-10 bg-gradient-to-l from-[#000b20] via-[#000b20]/10 to-transparent" />
           {/* Heading */}
           <div className="text-center mb-8 lg:mb-12 px-4 lg:px-12">
             <h2
-              className="text-white font-bold leading-tight"
+              className="text-white leading-tight"
               style={{ fontSize: "1.5rem", lineHeight: "1.75rem" }}
             >
-              Everything You Need To
+              Everything You Need To Run
               <br />
-              Run And Grow Your Contracting Business
+              And Grow Your Contracting Business
             </h2>
           </div>
 
@@ -117,19 +123,19 @@ export default function EverythingYouNeedSection() {
             <div className="embla__container flex">
               {allImages.map((img) => (
                 <div
-                  key={img.id}
-                  className="embla__slide flex-[0_0_100%] md:flex-[0_0_55%] flex justify-center items-center px-1 relative"
-                >
-                  <img
-                    src={img.src}
-                    alt=""
-                    className={`w-full h-[300px] md:h-[500px] object-contain rounded-xl transition-all duration-500 ${
-                      activeTab === img.id
-                        ? "scale-100 opacity-100"
-                        : "scale-75 opacity-50"
-                    }`}
-                  />
-                </div>
+  key={img.id}
+  className="embla__slide flex-[0_0_100%] md:flex-[0_0_55%] flex justify-center items-center px-[2px] relative"
+>
+  <img
+    src={img.src}
+    alt=""
+    className={`w-full h-[320px] md:h-[600px] object-contain rounded-xl transition-all duration-500 ${
+      activeTab === img.id
+        ? "scale-110 opacity-100"
+        : "scale-80 opacity-50"
+    }`}
+  />
+</div>
               ))}
             </div>
           </div>

@@ -12,6 +12,7 @@ import ModeToggle from "@/components/mode-toggle";
 import Link from "next/link";
 
 import GetStartedModal from "@/components/GetStartedModal";
+import Marquee from "@/components/Marquee";
 
 export default function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -165,12 +166,7 @@ export default function HomePage() {
             {/* Desktop Action Buttons */}
             <div className="hidden md:flex items-center space-x-3">
               <div
-                className="
-  p-2 rounded-full 
-  bg-slate-900 dark:bg-white 
-  text-white dark:text-slate-900
-  flex items-center justify-center
-"
+                className="  p-2 rounded-full   bg-slate-900 dark:bg-white   text-white dark:text-slate-900 flex items-center justify-center"
               >
                 <ModeToggle />
               </div>
@@ -208,12 +204,7 @@ export default function HomePage() {
             <div className="md:hidden flex items-center gap-3">
               {/* Dark Mode Toggle */}
               <div
-                className="
-          p-2 rounded-full 
-          bg-slate-900 dark:bg-white 
-          text-white dark:text-slate-900
-          flex items-center justify-center
-        "
+                className="p-2 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 flex items-center justify-center"
               >
                 <ModeToggle />
               </div>
@@ -331,15 +322,42 @@ export default function HomePage() {
         <main className="px-6 py-16">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8 lg:mb-16">
-              <h1 className="text-3xl md:text-4xl text-white mb-6 leading-tight">
-                Simplify Your Contracting Business with Precision
-              </h1>
-              <p className="text-md text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-                AccuraCore is a contractor management software that brings
-                everything you need into one dashboard, manage your crew, track
-                jobs, handle estimates and invoices, and stay in control of
-                every project.
-              </p>
+              <div className="overflow-hidden">
+  <h1 className="text-3xl md:text-4xl text-white mb-6 leading-tight flex flex-wrap justify-center">
+    {"Simplify Your Contracting Business with Precision"
+      .split(" ")
+      .map((word, i) => (
+        <span
+          key={i}
+          className="inline-block overflow-hidden align-bottom pr-[0.18em]"
+        >
+          <span
+            className="inline-block animate-wordUp"
+            style={{
+              transform: "translateY(110%)",
+              animationDelay: `${0.15 + i * 0.06}s`,
+              animationFillMode: "forwards",
+            }}
+          >
+            {word}
+          </span>
+        </span>
+      ))}
+  </h1>
+
+  <p
+    className="text-md text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeUp"
+    style={{
+      opacity: 0,
+      animationDelay: "0.35s",
+      animationFillMode: "forwards",
+    }}
+  >
+    AccuraCore is a contractor management software that brings everything you
+    need into one dashboard, manage your crew, track jobs, handle estimates and
+    invoices, and stay in control of every project.
+  </p>
+</div>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -416,6 +434,37 @@ export default function HomePage() {
             </div>
           </div>
         </main>
+        <style jsx>{`
+  @keyframes wordUp {
+    from {
+      transform: translateY(110%);
+    }
+
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .animate-wordUp {
+    animation: wordUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeUp {
+    animation: fadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+`}</style>
       </div>
 
       <WhatMakesAccurascoreDifferent

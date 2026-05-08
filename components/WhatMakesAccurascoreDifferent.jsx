@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Monitor, Workflow, TrendingUp } from "lucide-react";
 import useFadeIn from "@/lib/useFadeIn";
+import Marquee from "./Marquee";
 
 export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
   useFadeIn();
@@ -38,7 +39,8 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
 
   return (
     <section className="lg:px-6 py-16 bg-[#f4f0ed] dark:bg-slate-950">
-      <div className="max-w-7xl mx-auto mt-45 md:mt-54">
+      <Marquee />
+      <div className="max-w-7xl mx-auto mt-14 md:mt-18">
         <div className="fade-up">
           <div
             id={id}
