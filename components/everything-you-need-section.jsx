@@ -129,7 +129,7 @@ export default function EverythingYouNeedSection() {
   <img
     src={img.src}
     alt=""
-    className={`w-full h-[320px] sm:h-[600px] md:h-[600px] lg:h-[600px] xl:h-[600px] object-contain rounded-xl transition-all duration-500 ${
+    className={`w-full h-[35vh] sm:h-[90vh] md:h-[80vh] lg:h-[90vh] object-contain rounded-xl transition-all duration-500 ${
       activeTab === img.id
         ? "scale-95 sm:scale-95 md:scale-110 lg:scale-110 opacity-100"
         : "scale-80 opacity-50"
