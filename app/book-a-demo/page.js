@@ -57,41 +57,50 @@ export default function BookADemo() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8 relative">
           {/* About */}
-          <div className="relative">
-            <button
-              onClick={() => {
-                setAboutOpen(!aboutOpen);
-                setFeaturesOpen(false);
-              }}
-              className="text-white hover:text-blue-200 text-sm flex items-center gap-1"
-            >
+          <div
+            className="relative"
+            onMouseEnter={() => {
+              setAboutOpen(true);
+              setFeaturesOpen(false);
+            }}
+            onMouseLeave={() => {
+              setAboutOpen(false);
+            }}
+          >
+            <button className="text-white hover:text-blue-200 text-sm flex items-center gap-1">
               About
               {aboutOpen ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
             </button>
 
             {aboutOpen && (
-                  <div className="text-center absolute left-1/2 -translate-x-1/2 mt-[45px] w-44 bg-[#51607d] dark:bg-slate-900 rounded-[15px] z-50 border border-white/10">
-                    <Link href="/blog">
-                      <span className="block text-white text-sm p-3 rounded-t-[15px] hover:bg-white hover:text-black border-b border-white/20">
-                        Blog
-                      </span>
-                    </Link>
-                    <Link href="/#faq-section">
-                      <span className="block text-white text-sm p-3 rounded-b-[15px] hover:bg-white hover:text-black border-white/20">
-                        FAQs
-                      </span>
-                    </Link>
-                  </div>
-                )}
+              <div className="text-center absolute left-1/2 -translate-x-1/2 top-full pt-12 w-44 z-50">
+                <div className="bg-[#51607d] dark:bg-slate-900 rounded-[15px] border border-white/10 overflow-hidden">
+                  <Link href="/blog">
+                    <span className="block text-white text-sm p-3 hover:bg-white hover:text-black border-b border-white/20">
+                      Blog
+                    </span>
+                  </Link>
+
+                  <Link href="/#faq-section">
+                    <span className="block text-white text-sm p-3 hover:bg-white hover:text-black">
+                      FAQs
+                    </span>
+                  </Link>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Features */}
-          <div className="relative">
-            <button
-              onClick={() => {
-                setFeaturesOpen(!featuresOpen);
+          <div className="relative" onMouseEnter={() => {
+                setFeaturesOpen(true);
                 setAboutOpen(false);
               }}
+              onMouseLeave={() => {
+                setFeaturesOpen(false);
+              }}>
+            <button
+              
               className="text-white hover:text-blue-200 text-sm flex items-center gap-1"
             >
               Features
@@ -99,42 +108,44 @@ export default function BookADemo() {
             </button>
 
             {featuresOpen && (
-              <div className="text-center absolute left-1/2 -translate-x-1/2 mt-[45px] w-56 bg-[#51607d] dark:bg-slate-900 rounded-[15px] z-50 border border-white/10 overflow-hidden">
-                <Link href="/accuracam">
-                  <span className="block text-white text-sm p-3 hover:bg-white hover:text-black border-b border-white/20">
-                    AccuraCam
-                  </span>
-                </Link>
+              <div className="text-center absolute left-1/2 -translate-x-1/2 top-full pt-12 w-56 z-50">
+                <div className="bg-[#51607d] dark:bg-slate-900 rounded-[15px] border border-white/10 overflow-hidden">
+                  <Link href="/accuracam">
+                    <span className="block text-white text-sm p-3 hover:bg-white hover:text-black border-b border-white/20">
+                      AccuraCam
+                    </span>
+                  </Link>
 
-                <Link href="/accuracore-claims">
-                  <span className="block text-white text-sm p-3 hover:bg-white hover:text-black border-b border-white/20">
-                    AccuraCore Claims
-                  </span>
-                </Link>
+                  <Link href="/accuracore-claims">
+                    <span className="block text-white text-sm p-3 hover:bg-white hover:text-black border-b border-white/20">
+                      AccuraCore Claims
+                    </span>
+                  </Link>
 
-                <Link href="/my-accuracore">
-                  <span className="block text-white text-sm p-3 hover:bg-white hover:text-black border-b border-white/20">
-                    My AccuraCore
-                  </span>
-                </Link>
+                  <Link href="/my-accuracore">
+                    <span className="block text-white text-sm p-3 hover:bg-white hover:text-black border-b border-white/20">
+                      My AccuraCore
+                    </span>
+                  </Link>
 
-                <Link href="/roof-calculations">
-                  <span className="block text-white text-sm p-3 hover:bg-white hover:text-black border-b border-white/20">
-                    Roof Calculations
-                  </span>
-                </Link>
+                  <Link href="/roof-calculations">
+                    <span className="block text-white text-sm p-3 hover:bg-white hover:text-black border-b border-white/20">
+                      Roof Calculations
+                    </span>
+                  </Link>
 
-                <Link href="/weather-reports">
-                  <span className="block text-white text-sm p-3 hover:bg-white hover:text-black border-b border-white/20">
-                    Weather Reports
-                  </span>
-                </Link>
+                  <Link href="/weather-reports">
+                    <span className="block text-white text-sm p-3 hover:bg-white hover:text-black border-b border-white/20">
+                      Weather Reports
+                    </span>
+                  </Link>
 
-                <Link href="/workflow-automation">
-                  <span className="block text-white text-sm p-3 hover:bg-white hover:text-black">
-                    Workflow Automation
-                  </span>
-                </Link>
+                  <Link href="/workflow-automation">
+                    <span className="block text-white text-sm p-3 hover:bg-white hover:text-black">
+                      Workflow Automation
+                    </span>
+                  </Link>
+                </div>
               </div>
             )}
           </div>
