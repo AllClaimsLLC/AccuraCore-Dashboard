@@ -180,97 +180,94 @@ export default function FinalHeroSection({
         </header>
 
         {/* ================= HERO CONTENT ================= */}
-{/* ================= HERO CONTENT ================= */}
-<div className="max-w-7xl mx-auto px-6 text-center pt-16">
-  <div className="text-center mb-6">
-    <div className="overflow-hidden">
-      {logo ? (
-        <div className="overflow-hidden flex justify-center">
-          <img
-            src={logo}
-            className="h-20 sm:h-25 md:h-25 lg:h-25 object-contain animate-wordUp"
-            style={{
-              transform: "translateY(110%)",
-              animationDelay: "0.1s",
-              animationFillMode: "forwards",
-            }}
-          />
-        </div>
-      ) : (
-        <h1 className="text-3xl md:text-4xl text-white flex flex-wrap justify-center">
-          {title.split(" ").map((word, i) => (
-            <span
-              key={i}
-              className="inline-block overflow-hidden align-bottom pr-[0.18em]"
-            >
-              <span
-                className="inline-block animate-wordUp"
+        <div className="max-w-7xl mx-auto px-6 text-center pt-16">
+          <div className="text-center mb-6">
+            <div className="overflow-hidden">
+              {logo ? (
+                <div className="overflow-hidden flex justify-center">
+                  <img
+                    src={logo}
+                    className="h-20 sm:h-25 md:h-25 lg:h-25 object-contain animate-wordUp"
+                    style={{
+                      transform: "translateY(110%)",
+                      animationDelay: "0.1s",
+                      animationFillMode: "forwards",
+                    }}
+                  />
+                </div>
+              ) : (
+                <h1 className="text-3xl md:text-4xl text-white flex flex-wrap justify-center">
+                  {title.split(" ").map((word, i) => (
+                    <span
+                      key={i}
+                      className="inline-block overflow-hidden align-bottom pr-[0.18em]"
+                    >
+                      <span
+                        className="inline-block animate-wordUp"
+                        style={{
+                          transform: "translateY(110%)",
+                          animationDelay: `${0.15 + i * 0.06}s`,
+                          animationFillMode: "forwards",
+                        }}
+                      >
+                        {word}
+                      </span>
+                    </span>
+                  ))}
+                </h1>
+              )}
+
+              <p
+                className="text-md text-blue-100 mt-6 mb-8 max-w-4xl mx-auto animate-fadeUp"
                 style={{
-                  transform: "translateY(110%)",
-                  animationDelay: `${0.15 + i * 0.06}s`,
+                  opacity: 0,
+                  animationDelay: "0.35s",
                   animationFillMode: "forwards",
                 }}
               >
-                {word}
-              </span>
-            </span>
-          ))}
-        </h1>
-      )}
+                {description}
+              </p>
+            </div>
 
-      <p
-        className="text-md text-blue-100 mt-6 mb-8 max-w-4xl mx-auto animate-fadeUp"
-        style={{
-          opacity: 0,
-          animationDelay: "0.35s",
-          animationFillMode: "forwards",
-        }}
-      >
-        {description}
-      </p>
-    </div>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button
+                className="w-full sm:w-auto rounded-full text-sm flex items-center justify-center"
+                style={{
+                  backgroundColor: "#ffffff",
+                  color: "#0061A4",
+                  padding: "27px 15px",
+                  border: "none",
+                }}
+                onClick={onPrimaryClick}
+              >
+                Get Started
+                <img
+                  src="/Icons/Vector2.png"
+                  alt="Arrow Icon"
+                  className="w-2 h-3 ml-2"
+                />
+              </Button>
 
-    {/* CTA Buttons */}
-    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <Button
-        className="w-full sm:w-auto rounded-full text-sm flex items-center justify-center"
-        style={{
-          backgroundColor: "#ffffff",
-          color: "#0061A4",
-          padding: "27px 15px",
-          border: "none",
-        }}
-        onClick={onPrimaryClick}
-      >
-        Get Started
-        <img
-          src="/Icons/Vector2.png"
-          alt="Arrow Icon"
-          className="w-2 h-3 ml-2"
-        />
-      </Button>
-
-      <Button
-        className="w-full sm:w-auto text-white rounded-full text-sm flex items-center justify-center"
-        style={{
-          backgroundColor: "#0061A4",
-          border: "2px solid #4485b2",
-          padding: "25px 15px",
-        }}
-        onClick={onSecondaryClick}
-      >
-        Book Demo
-        <img
-          src="/Icons/Vector.png"
-          alt="Arrow Icon"
-          className="w-2 h-3 ml-2"
-        />
-      </Button>
-    </div>
-  </div>
-</div>
-
-
+              <Button
+                className="w-full sm:w-auto text-white rounded-full text-sm flex items-center justify-center"
+                style={{
+                  backgroundColor: "#0061A4",
+                  border: "2px solid #4485b2",
+                  padding: "25px 15px",
+                }}
+                onClick={onSecondaryClick}
+              >
+                Book Demo
+                <img
+                  src="/Icons/Vector.png"
+                  alt="Arrow Icon"
+                  className="w-2 h-3 ml-2"
+                />
+              </Button>
+            </div>
+          </div>
+        </div>
 
         {/* ================= VIDEO ================= */}
         <div className="absolute left-1/2 bottom-0 w-[90%] max-w-6xl -translate-x-1/2 translate-y-1/2 rounded-[24px]">
@@ -339,35 +336,35 @@ export default function FinalHeroSection({
       </div>
 
       <style jsx>{`
-  @keyframes wordUp {
-    from {
-      transform: translateY(110%);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
+        @keyframes wordUp {
+          from {
+            transform: translateY(110%);
+          }
+          to {
+            transform: translateY(0);
+          }
+        }
 
-  .animate-wordUp {
-    animation: wordUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  }
+        .animate-wordUp {
+          animation: wordUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
 
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(12px);
-    }
+        @keyframes fadeUp {
+          from {
+            opacity: 0;
+            transform: translateY(12px);
+          }
 
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
 
-  .animate-fadeUp {
-    animation: fadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  }
-`}</style>
+        .animate-fadeUp {
+          animation: fadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+      `}</style>
     </section>
   );
 }

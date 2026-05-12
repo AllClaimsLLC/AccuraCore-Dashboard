@@ -30,6 +30,7 @@ export default function HomePage() {
 
   return (
     <>
+    {/* Header + Hero Section */}
       <div
         className="bg-cover bg-center bg-no-repeat"
         style={{
@@ -471,6 +472,8 @@ export default function HomePage() {
   }
 `}</style>
       </div>
+
+      {/* Other components */}
 
       <WhatMakesAccurascoreDifferent
         id="why-section"
