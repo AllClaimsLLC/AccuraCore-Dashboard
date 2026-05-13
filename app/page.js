@@ -209,7 +209,7 @@ export default function HomePage() {
             <div className="md:hidden flex items-center gap-3">
               {/* Dark Mode Toggle */}
               <div
-                className="p-2 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 flex items-center justify-center"
+                className="p-2 rounded-full bg-black dark:bg-white text-white dark:text-slate-900 flex items-center justify-center"
               >
                 <ModeToggle />
               </div>

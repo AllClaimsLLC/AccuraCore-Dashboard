@@ -79,7 +79,7 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
     <section className="lg:px-6 py-16 bg-[#f4f0ed] dark:bg-slate-950">
       <Marquee />
 
-      <section className="hidden sm:block md:block lg:block lg:px-6 py-16 dark:bg-slate-950 ">
+      <section className="hidden sm:hidden md:hidden lg:hidden lg:px-6 py-16 dark:bg-slate-950 ">
         <div className="fade-up">
           <div className="max-w-[90%] mx-auto space-y-4 mt-8">
             {/* Top Heading & Text */}
@@ -138,7 +138,7 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
         </div>
       </section>
 
-      <section className="block sm:hidden md:hidden lg:hidden lg:px-6 py-16 dark:bg-slate-950 ">
+      <section className="hidden sm:hidden md:hidden lg:hidden lg:px-6 py-16 dark:bg-slate-950 ">
         <div className="fade-up">
           <div className="max-w-[90%] mx-auto space-y-4 mt-8">
             {/* Top Heading & Text */}
@@ -198,7 +198,7 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto mt-14 md:mt-10">
+      <div className="max-w-7xl mx-auto mt-14 md:mt-18">
         <div className="fade-up">
           <div
             id={id}
