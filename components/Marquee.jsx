@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 const items = [
   "Work Orders",
   "Smart Dashboard",
@@ -14,37 +16,27 @@ const items = [
 
 export default function Marquee() {
   return (
-    <>
-      <div className="relative overflow-hidden border-y border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.015] py-[18px]  mt-45 md:mt-54">
-        <div className="flex w-max animate-marquee gap-[60px]">
-          {[...items, ...items].map((item, i) => (
-            <span
-              key={i}
-              className="inline-flex items-center gap-[14px] uppercase tracking-[0.06em] text-[13px] leading-none font-[400] text-black/70 dark:text-white/70 whitespace-nowrap"
-            >
-              {item}
-
-              <span className="text-[#0062a5] text-[12px]">◆</span>
-            </span>
-          ))}
-        </div>
-      </div>
-
-      <style jsx>{`
-        .animate-marquee {
-          animation: marquee 28s linear infinite;
-        }
-
-        @keyframes marquee {
-          from {
-            transform: translateX(0);
-          }
-
-          to {
-            transform: translateX(-50%);
-          }
-        }
-      `}</style>
-    </>
+    <div className="relative overflow-hidden border-y border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.015] py-[18px] mt-45 md:mt-54">
+      
+      <motion.div
+        className="flex w-max gap-[60px]"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{
+          duration: 28,
+          ease: "linear",
+          repeat: Infinity,
+        }}
+      >
+        {[...items, ...items].map((item, i) => (
+          <span
+            key={i}
+            className="inline-flex items-center gap-[14px] uppercase tracking-[0.06em] text-[13px] leading-none font-[400] text-black/70 dark:text-white/70 whitespace-nowrap"
+          >
+            {item}
+            <span className="text-[#0062a5] text-[12px]">◆</span>
+          </span>
+        ))}
+      </motion.div>
+    </div>
   );
 }

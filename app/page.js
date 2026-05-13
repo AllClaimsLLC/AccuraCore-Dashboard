@@ -101,7 +101,7 @@ export default function HomePage() {
                           }}>
                         <button
                           
-                          className="text-black dark:text-white hover:text-blue-200 text-sm flex items-center gap-1"
+                          className="text-black dark:text-white  text-sm flex items-center gap-1"
                         >
                           Features
                           {featuresOpen ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
@@ -152,17 +152,17 @@ export default function HomePage() {
             
                       {/* Remaining links */}
                       <Link href="/pricing-page">
-                        <span className="text-black dark:text-white hover:text-blue-200 text-sm">
+                        <span className="text-black dark:text-white  text-sm">
                           Pricing
                         </span>
                       </Link>
             
                       {/* <Link href="/#faq-section">
-                        <span className="text-black dark:text-white hover:text-blue-200 text-sm">FAQs</span>
+                        <span className="text-black dark:text-white  text-sm">FAQs</span>
                       </Link> */}
             
                       <Link href="/book-a-demo">
-                        <span className="text-black dark:text-white hover:text-blue-200 text-sm">
+                        <span className="text-black dark:text-white  text-sm">
                           Contact Us
                         </span>
                       </Link>
@@ -217,9 +217,9 @@ export default function HomePage() {
               {/* Hamburger */}
               <button onClick={() => setMenuOpen(!menuOpen)}>
                 {menuOpen ? (
-                  <X className="text-white w-8 h-8" />
+                  <X className="text-black dark:text-white w-8 h-8" />
                 ) : (
-                  <Menu className="text-white w-8 h-8" />
+                  <Menu className="text-black dark:text-white w-8 h-8" />
                 )}
               </button>
             </div>
@@ -227,12 +227,12 @@ export default function HomePage() {
 
           {/* Mobile Menu */}
           {menuOpen && (
-            <div className="md:hidden absolute left-0 right-0 top-full bg-white px-6 py-4 rounded-[15px] mt-2 w-[95%] m-auto z-50 space-y-4 text-center">
+            <div className="md:hidden absolute left-0 right-0 top-full bg-white dark:bg-black px-6 py-4 rounded-[15px] mt-2 w-[95%] m-auto z-50 space-y-4 text-center">
               {/* About */}
               <div className="flex flex-col items-center">
                 <button
                   onClick={() => setAboutOpen(!aboutOpen)}
-                  className="flex items-center gap-1 text-white"
+                  className="flex items-center gap-1 text-black dark:text-white"
                 >
                   About
                   {aboutOpen ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
@@ -241,12 +241,12 @@ export default function HomePage() {
                 {aboutOpen && (
                 <div className="mt-2 w-full bg-white dark:bg-slate-900 rounded-[10px] overflow-hidden border border-white/10">
                   <Link href="/blog">
-                    <p className="text-white text-sm p-3 border-white/20 rounded-t-[15px] hover:bg-gray-500 hover:text">
+                    <p className="text-black dark:text-white text-sm p-3 border-b border-white/20 rounded-t-[15px] hover:bg-gray-500 hover:text">
                       Blog
                     </p>
                   </Link>
                   <Link href="/#faq-section">
-                    <p className="text-white text-sm p-3 border-white/20 rounded-b-[15px] hover:bg-gray-500 hover:text">
+                    <p className="text-black dark:text-white text-sm p-3 rounded-b-[15px] hover:bg-gray-500 hover:text">
                       FAQs
                     </p>
               </Link>
@@ -258,7 +258,7 @@ export default function HomePage() {
               <div className="flex flex-col items-center">
                 <button
                   onClick={() => setFeaturesOpen(!featuresOpen)}
-                  className="flex items-center gap-1 text-white"
+                  className="flex items-center gap-1 text-black dark:text-white"
                 >
                   Features
                   {featuresOpen ? (
@@ -271,37 +271,37 @@ export default function HomePage() {
                 {featuresOpen && (
                   <div className="mt-2 w-full bg-white dark:bg-slate-900 rounded-[10px] overflow-hidden border border-white/10">
                     <Link href="/accuracam">
-                      <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-gray-500 hover:text">
+                      <p className="text-black dark:text-white text-sm p-3 border-b border-white/20 hover:bg-gray-500 hover:text">
                         AccuraCam
                       </p>
                     </Link>
 
                     <Link href="/accuracore-claims">
-                      <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-gray-500 hover:text">
+                      <p className="text-black dark:text-white text-sm p-3 border-b border-white/20 hover:bg-gray-500 hover:text">
                         AccuraCore Claims
                       </p>
                     </Link>
 
                     <Link href="/my-accuracore">
-                      <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-gray-500 hover:text">
+                      <p className="text-black dark:text-white text-sm p-3 border-b border-white/20 hover:bg-gray-500 hover:text">
                         My AccuraCore
                       </p>
                     </Link>
 
                     <Link href="/roof-calculations">
-                      <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-gray-500 hover:text">
+                      <p className="text-black dark:text-white text-sm p-3 border-b border-white/20 hover:bg-gray-500 hover:text">
                         Roof Calculations
                       </p>
                     </Link>
 
                     <Link href="/weather-reports">
-                      <p className="text-white text-sm p-3 border-b border-white/20 hover:bg-gray-500 hover:text">
+                      <p className="text-black dark:text-white text-sm p-3 border-b border-white/20 hover:bg-gray-500 hover:text">
                         Weather Reports
                       </p>
                     </Link>
 
                     <Link href="/workflow-automation">
-                      <p className="text-white text-sm p-3 hover:bg-gray-500 hover:text">
+                      <p className="text-black dark:text-white text-sm p-3 hover:bg-gray-500 hover:text">
                         Workflow Automation
                       </p>
                     </Link>
@@ -311,13 +311,13 @@ export default function HomePage() {
 
               {/* Other Links */}
               <Link href="/pricing-page">
-                <p className="text-white text-sm mb-4">Pricing</p>
+                <p className="text-black dark:text-white text-sm mb-4">Pricing</p>
               </Link>
               {/* <Link href="/#faq-section">
-                <p className="text-white text-sm mb-4">FAQs</p>
+                <p className="text-black dark:text-white text-sm mb-4">FAQs</p>
               </Link> */}
               <Link href="/book-a-demo">
-                <p className="text-white text-sm mb-4">Contact Us</p>
+                <p className="text-black dark:text-white text-sm mb-4">Contact Us</p>
               </Link>
             </div>
           )}
