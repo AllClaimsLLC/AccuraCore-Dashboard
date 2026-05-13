@@ -15,8 +15,14 @@ export default function FinalHeroSection({
   thumbnail = "/Videos/video-thumbnail.png",
   onPrimaryClick,
   onSecondaryClick,
-  height = "45rem",
+  height = "50rem",
   startTime = 0,
+  mediaType = "video",
+  mediaSrc,
+  imageSrc = "",
+  imageMaxHeight = "400px",
+  mediaTranslateY = "24%",
+  mobileSpacingHeight = "200px",
 }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -56,7 +62,7 @@ export default function FinalHeroSection({
             <div className="flex items-center space-x-2">
               <Link href="/">
                 <img
-                  src="/Logos/Accuracore/accuraCore-logo.png"
+                  src="/Logos/Accuracore/AC2025.png"
                   alt="AccuraCore Logo"
                   className="w-20 h-20 object-contain cursor-pointer"
                 />
@@ -269,70 +275,96 @@ export default function FinalHeroSection({
           </div>
         </div>
 
-        {/* ================= VIDEO ================= */}
-        <div className="absolute left-1/2 bottom-0 w-[90%] max-w-6xl -translate-x-1/2 translate-y-1/2 rounded-[24px]">
-          <div className="relative overflow-hidden rounded-[30px] shadow-2xl">
-            {!isPlaying && (
-              <img
-                src={thumbnail}
-                alt="Thumbnail"
-                className="absolute inset-0 w-full h-full object-cover z-10"
-              />
-            )}
+        {/* ================= MEDIA PREVIEW (VIDEO / IMAGE) ================= */}
+        <div
+          className="absolute left-1/2 bottom-0 w-[90%] max-w-6xl rounded-[24px]"
+          style={{
+            transform: `translate(-50%, ${mediaTranslateY})`,
+          }}
+        >
+          {/* ========== IMAGE MODE (Dashboard Preview) ========== */}
+          {mediaType === "image" && (
+            <div className="relative mx-auto">
+              <div className="flex justify-center items-center p-2 lg:p-4">
+                <img
+                  src={imageSrc}
+                  alt="Hero"
+                  className="h-auto"
+                  style={{ maxHeight: imageMaxHeight }}
+                />
+              </div>
+            </div>
+          )}
 
-            <video
-              ref={(videoRef) => (videoRefElement.current = videoRef)}
-              className="w-full max-h-[500px] rounded-[30px] object-cover"
-              controls={isPlaying}
-            >
-              <source src={videoSrc} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          {/* ========== VIDEO MODE ========== */}
+          {mediaType === "video" && (
+            <>
+              <div className="relative overflow-hidden rounded-[30px] shadow-2xl">
+                {!isPlaying && (
+                  <img
+                    src={thumbnail}
+                    alt="Thumbnail"
+                    className="absolute inset-0 w-full h-full object-cover z-10"
+                  />
+                )}
 
-            {!isPlaying && (
-              <button
-                onClick={() => {
-                  const video = videoRefElement.current;
+                <video
+                  ref={(videoRef) => (videoRefElement.current = videoRef)}
+                  className="w-full max-h-[500px] rounded-[30px] object-cover"
+                  controls={isPlaying}
+                >
+                  <source src={mediaSrc} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
 
-                  if (!video) return;
+                {!isPlaying && (
+                  <button
+                    onClick={() => {
+                      const video = videoRefElement.current;
+                      if (!video) return;
 
-                  if (video.readyState >= 2) {
-                    video.currentTime = startTime;
-                    video.play();
-                  } else {
-                    video.onloadedmetadata = () => {
-                      video.currentTime = startTime;
-                      video.play();
-                    };
-                  }
+                      if (video.readyState >= 2) {
+                        video.currentTime = startTime;
+                        video.play();
+                      } else {
+                        video.onloadedmetadata = () => {
+                          video.currentTime = startTime;
+                          video.play();
+                        };
+                      }
 
-                  setIsPlaying(true);
-                }}
-                className="absolute inset-0 z-20 flex items-center justify-center bg-black/30 cursor-pointer transition duration-300 hover:bg-black/40"
-              >
-                <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-8 w-8 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+                      setIsPlaying(true);
+                    }}
+                    className="absolute inset-0 z-20 flex items-center justify-center bg-black/30 cursor-pointer transition duration-300 hover:bg-black/40"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M14.752 11.168l-6.518-3.758A1 1 0 007 8.304v7.392a1 1 0 001.234.97l6.518-1.9a1 1 0 00.748-.97v-1.864a1 1 0 00-.748-.97z"
-                    />
-                  </svg>
-                </div>
-              </button>
-            )}
-          </div>
+                    <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-8 w-8 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M14.752 11.168l-6.518-3.758A1 1 0 007 8.304v7.392a1 1 0 001.234.97l6.518-1.9a1 1 0 00.748-.97v-1.864a1 1 0 00-.748-.97z"
+                        />
+                      </svg>
+                    </div>
+                  </button>
+                )}
+              </div>
+            </>
+          )}
         </div>
 
         {/* SPACING FOR OVERFLOW VIDEO */}
-        <div className="h-[125px] md:h-[250px]"></div>
+        <div
+  className="md:h-[250px]"
+  style={{ height: mobileSpacingHeight }}
+/>
       </div>
 
       <style jsx>{`

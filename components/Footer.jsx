@@ -26,7 +26,7 @@ export default function Footer({ id, onBookDemo }) {
             <div className="flex items-center space-x-2">
               <Link href="/">
                 <img
-                  src="/Logos/Accuracore/accuraCore-logo.png"
+                  src="/Logos/Accuracore/AC2025.png"
                   alt="AccuraCore Logo"
                   className="object-contain"
                   style={{ width: "100px" }}

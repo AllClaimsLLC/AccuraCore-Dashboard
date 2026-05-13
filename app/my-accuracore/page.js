@@ -53,7 +53,8 @@ export default function MyAccuraCorePage() {
         description="MyAccuraCore centralizes jobs, documentation, teams, and claims in one
       structured system. This is where field capture, office review, and claim
       workflows connect. One system, Full visibility, Controlled execution."
-      startTime={convertTime(9.04)}
+      mediaType="image"
+             imageSrc="/Images/myaccuracore-ui.png"
         onPrimaryClick={() => setIsOpen(true)}
         onSecondaryClick={() => (window.location.href = "/book-a-demo")}
       />

@@ -19,7 +19,12 @@ export default function WorkflowAutomationPage() {
                 job progresses automatically in the correct sequence. Tasks are
                 triggered systematically, so nothing is forgotten and no stage
                 is skipped."
-                height="40rem"
+                                height="45rem"
+        mediaType="image"
+        imageSrc="/Images/workflowAutomation-ui.png"
+        imageMaxHeight="600px"
+        mediaTranslateY="51%"
+        mobileSpacingHeight="100px"
         onPrimaryClick={() => setIsOpen(true)}
         onSecondaryClick={() => (window.location.href = "/book-a-demo")}
       />

@@ -22,7 +22,8 @@ export default function AccuraCamPage() {
         description="AccuraCam fixes documentation at the source, photos attach to
                 the job, location, and scope item the moment they're taken.
                 No rebuilding in the office."
-        startTime={convertTime(26.18)}
+        mediaType="image"
+        imageSrc="/Images/accuracam-ui.png"
         onPrimaryClick={() => setIsOpen(true)}
         onSecondaryClick={() => (window.location.href = "/book-a-demo")}
       />

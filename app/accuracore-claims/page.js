@@ -51,14 +51,16 @@ export default function AccuraCoreClaimsPage() {
 
   return (
     <>
-      <FinalHeroSection
-        logo="/Logos/Claimcore/AccuraCore-Claims-Logo.png"
+           <FinalHeroSection
+             logo="/Logos/Claimcore/AccuraCore-Claims-Logo.png"
         description="AccuraCore Claims standardizes documentation from field to
                 submission eliminating guesswork, incomplete files, and review
                 delays."
-        onPrimaryClick={() => setIsOpen(true)}
-        onSecondaryClick={() => (window.location.href = "/book-a-demo")}
-      />
+             mediaType="image"
+             imageSrc="/Images/accuracoreClaims-ui.png"
+             onPrimaryClick={() => setIsOpen(true)}
+             onSecondaryClick={() => (window.location.href = "/book-a-demo")}
+           />
 
       <StructuredBeforeItLeavesTheField
         isOpen={isOpen}

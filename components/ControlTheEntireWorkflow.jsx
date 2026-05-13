@@ -42,7 +42,7 @@ export default function ControlTheEntireWorkflow({ isOpen, setIsOpen }) {
     <>
       <section className="hidden sm:block md:block lg:block lg:px-6 py-16 bg-[#fbf0ec] dark:bg-slate-950">
         <div className="fade-up">
-          <div className="max-w-[90%] mx-auto space-y-4 mt-24 md:mt-72">
+          <div className="max-w-[90%] mx-auto space-y-4 mt-24 md:mt-35">
             {/* Top Heading & Text */}
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
               <h1 className="text-3xl text-black dark:text-white">

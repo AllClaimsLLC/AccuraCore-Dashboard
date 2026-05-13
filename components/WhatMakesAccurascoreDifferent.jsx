@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Monitor, Workflow, TrendingUp } from "lucide-react";
 import useFadeIn from "@/lib/useFadeIn";
@@ -37,10 +38,167 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
     },
   ];
 
+  const steps = [
+    {
+      title: "A CRM That Fits One Operating System. Zero App Switching",
+      desc: "Run your entire business from a single dashboard. No more juggling 5 tools to get through one job. Everything lives here your crew, your jobs, your money, your customers.",
+    },
+    {
+      number: "02",
+      title: "A CRM That Fits How You Actually Work",
+      desc: "Fully customizable to match your workflow, your team, and your trade, not the other way around.",
+    },
+    {
+      number: "03",
+      title: "Snap. Speak. Upload. Done.",
+      desc: "Integrated camera with voice labeling instantly uploads job photos and notes to the right file. No paperwork later.",
+    },
+    {
+      number: "04",
+      title: "Talk Directly to Your Customers with MyAccuraCore",
+      desc: "Real time two way communication that keeps clients in the loop and your phone from blowing up.",
+    },
+    {
+      number: "05",
+      title: "Get More Insurance Claims Paid",
+      desc: "Track every claim and auto generate damage reports that adjusters actually approve. More approvals equals more revenue.",
+    },
+    {
+      number: "06",
+      title: "We Move Your Data In, Free",
+      desc: "Switching systems? We migrate everything from your current setup at zero cost. No friction, no fees, no stress.",
+    },
+    {
+      number: "07",
+      title: "Onboarding and Support That Has Your Back",
+      desc: "Real humans, real fast. We make the switch EASY so you can get back to building.",
+    },
+  ];
+
   return (
     <section className="lg:px-6 py-16 bg-[#f4f0ed] dark:bg-slate-950">
       <Marquee />
-      <div className="max-w-7xl mx-auto mt-14 md:mt-18">
+
+      <section className="hidden sm:block md:block lg:block lg:px-6 py-16 dark:bg-slate-950 ">
+        <div className="fade-up">
+          <div className="max-w-[90%] mx-auto space-y-4 mt-8">
+            {/* Top Heading & Text */}
+            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+             <h2 className="text-2xl text-gray-900 dark:text-white">
+                Everything you need. Nothing you don't.
+              </h2>
+            </div>
+
+            <div className="gradient-border gradient-shadow p-[1px] rounded-[15px]">
+  <div className="bg-white dark:bg-slate-900 p-6 rounded-[15px] flex flex-col gap-4 transition-transform transform hover:scale-105">
+
+    {/* Number */}
+    <div className="text-white w-10 h-10 flex items-center justify-center bg-[#0061A4] rounded-[10px]">
+      01
+    </div>
+
+    {/* Content */}
+    <div>
+      <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+        {steps[0].title}
+      </h3>
+      <p className="text-gray-600 dark:text-gray-400 mt-2">
+        {steps[0].desc}
+      </p>
+    </div>
+
+  </div>
+</div>
+
+            {/* Steps / Boxes */}
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+              {steps.slice(1).map((step, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white dark:bg-slate-900 p-6 rounded-[15px] shadow-lg flex flex-col gap-4 transition-transform transform hover:scale-105"
+                >
+                  {/* Number Box */}
+                  <div className="text-white w-10 h-10 flex items-center justify-center bg-[#0061A4] rounded-[10px]">
+                    {step.number}
+                  </div>
+
+                  {/* Heading */}
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                    {step.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">
+                    {step.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="block sm:hidden md:hidden lg:hidden lg:px-6 py-16 dark:bg-slate-950 ">
+        <div className="fade-up">
+          <div className="max-w-[90%] mx-auto space-y-4 mt-8">
+            {/* Top Heading & Text */}
+            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+              <h2 className="text-2xl text-gray-900 dark:text-white">
+                Everything you need. Nothing you don't.
+              </h2>
+            </div>
+
+ <div className="gradient-border gradient-shadow p-[1px] rounded-[15px]">
+            <div className="bg-white dark:bg-slate-900 p-2 rounded-[16px] shadow-lg hover:scale-[1.01] transition-transform">
+              <div className="flex gap-4 items-start">
+                {/* Number */}
+                <div className="text-white w-6 h-6 md:w-10 md:h-10 flex items-center justify-center bg-[#0061A4] rounded-[8px] md:rounded-[10px] shrink-0">
+                  <span className="text-[12px]">01</span>
+                </div>
+
+                {/* Content */}
+                <div>
+                  <h3 className="text-[13px] md:text-lg font-semibold text-gray-900 dark:text-white">
+                    {steps[0].title}
+                  </h3>
+                  <p className="text-[12px] md:text-sm text-gray-600 dark:text-gray-400 leading-snug">
+                    {steps[0].desc}
+                  </p>
+                </div>
+              </div>
+            </div>
+            </div>
+
+            {/* Steps / Boxes */}
+            <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+              {steps.slice(1).map((step, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white dark:bg-slate-900 p-2 md:p-6 rounded-[12px] md:rounded-[15px] shadow-lg flex flex-row md:flex-col items-start gap-3 md:gap-4 transition-transform transform hover:scale-105"
+                >
+                  {/* Number Box */}
+                  <div className="text-white  w-6 h-6 md:w-10 md:h-10 flex items-center justify-center bg-[#0061A4] rounded-[8px] md:rounded-[10px] shrink-0">
+                    <span className="text-[12px]">{step.number}</span>
+                  </div>
+
+                  {/* Heading */}
+                  <div className="flex flex-col gap-2">
+                    <h3 className="text-[13px] md:text-lg font-semibold text-gray-900 dark:text-white">
+                      {step.title}
+                    </h3>
+
+                    <p className="text-[12px] md:text-sm text-gray-600 dark:text-gray-400 leading-snug">
+                      {step.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto mt-14 md:mt-10">
         <div className="fade-up">
           <div
             id={id}
