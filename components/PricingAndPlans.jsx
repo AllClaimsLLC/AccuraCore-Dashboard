@@ -537,7 +537,7 @@ hover:before:translate-x-full"
           </div>
 
           {/* Accuracore Core Suite */}
-          <AccuraCoreBundle />
+          <AccuraCoreBundle setIsOpen={setIsOpen} />
         </div>
       </div>
 
