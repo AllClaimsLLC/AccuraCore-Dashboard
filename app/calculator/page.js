@@ -62,7 +62,7 @@ export default function Calculator() {
       >
         {/* Header */}
         <header className="px-6 py-4 relative">
-          <nav
+                   <nav
             className="flex items-center justify-between max-w-6xl mx-auto rounded-full px-8 py-4 border bg-white dark:bg-slate-900"
             style={{ padding: "5px 30px" }}
           >
@@ -174,6 +174,11 @@ export default function Calculator() {
                       </div>
             
                       {/* Remaining links */}
+                      <Link href="/">
+                        <span className="text-black dark:text-white  text-sm">
+                          Our Story
+                        </span>
+                      </Link>
                       <Link href="/pricing-page">
                         <span className="text-black dark:text-white  text-sm">
                           Pricing
@@ -333,6 +338,9 @@ export default function Calculator() {
               </div>
 
               {/* Other Links */}
+              <Link href="/">
+                <p className="text-black dark:text-white text-sm mb-4">Our Story</p>
+              </Link>
               <Link href="/pricing-page">
                 <p className="text-black dark:text-white text-sm mb-4">Pricing</p>
               </Link>

@@ -151,6 +151,11 @@ export default function HomePage() {
                       </div>
             
                       {/* Remaining links */}
+                      <Link href="/">
+                        <span className="text-black dark:text-white  text-sm">
+                          Our Story
+                        </span>
+                      </Link>
                       <Link href="/pricing-page">
                         <span className="text-black dark:text-white  text-sm">
                           Pricing
@@ -310,6 +315,9 @@ export default function HomePage() {
               </div>
 
               {/* Other Links */}
+              <Link href="/">
+                <p className="text-black dark:text-white text-sm mb-4">Our Story</p>
+              </Link>
               <Link href="/pricing-page">
                 <p className="text-black dark:text-white text-sm mb-4">Pricing</p>
               </Link>
