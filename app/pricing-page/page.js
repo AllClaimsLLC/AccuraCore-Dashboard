@@ -10,6 +10,7 @@ import Link from "next/link";
 
 import GetStartedModal from "@/components/GetStartedModal";
 import { PricingAndPlans } from "@/components/PricingAndPlans";
+import Pricing from "@/components/Pricing";
 
 export default function PricingPage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -475,7 +476,7 @@ style={{
           }
         `}</style>
       </div>
-
+{/* <Pricing /> */}
       <PricingAndPlans setIsOpen={setIsOpen} />
 
       <Footer id="contact-section" onBookDemo={() => setIsOpen(true)} />
