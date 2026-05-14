@@ -1,6 +1,7 @@
 import { Sora, Outfit } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { Analytics } from "@vercel/analytics/next" 
 
 // Fonts
 const sora = Sora({ subsets: ["latin"], weight: ["300", "400", "500", "700"] })
@@ -18,6 +19,8 @@ export default function RootLayout({ children }) {
           <div className={sora.className}>
             {children}
           </div>
+
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
