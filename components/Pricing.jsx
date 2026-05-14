@@ -130,9 +130,23 @@ export default function Pricing({ addonEnabled, setIsOpen }) {
     plans.find((p) => p.tier === "titanium"),
   ];
 
+  const formatFeature = (text) => {
+    const regex = /(\d+\s*[-–+]?\s*\d*\susers)/g;
+
+    return text.split(regex).map((part, i) =>
+      regex.test(part) ? (
+        <span key={i} className="font-semibold text-black">
+          {part}
+        </span>
+      ) : (
+        <span key={i}>{part}</span>
+      ),
+    );
+  };
+
   return (
     <section className="relative bg-[#fbf0ec] py-20 z-20">
-<div className="mx-auto max-w-7xl px-5 relative">
+      <div className="mx-auto max-w-7xl px-5 relative">
         {/* PRICING GRID */}
         <div className="flex flex-wrap justify-center gap-6 relative z-30 mt-[-53%] sm:mt-[-20%]">
           {orderedPlans.map((plan, index) => {
@@ -244,7 +258,9 @@ export default function Pricing({ addonEnabled, setIsOpen }) {
                           />
                         </span>
 
-                        <span className="text-slate-600">{feature}</span>
+                        <span className="text-sm text-gray-600">
+                          {formatFeature(feature)}
+                        </span>
                       </li>
                     ))}
                   </ul>
