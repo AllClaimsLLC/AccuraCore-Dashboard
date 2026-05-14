@@ -22,8 +22,12 @@ export default function WeatherReportsPage() {
                 weather data directly to job records, strengthening claims,
                 reducing disputes, and improving documentation integrity with
                 job-linked, submission-ready evidence."
-                height="40rem"
-                startTime={convertTime(23.24)}
+                height="50rem"
+                        mediaType="image"
+                        imageSrc="/Images/weatherReports-ui.png"
+                        imageMaxHeight="600px"
+                        mediaTranslateY="38%"
+                        mobileSpacingHeight="120px"
         onPrimaryClick={() => setIsOpen(true)}
         onSecondaryClick={() => (window.location.href = "/book-a-demo")}
       />

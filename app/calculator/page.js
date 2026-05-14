@@ -174,7 +174,7 @@ export default function Calculator() {
                       </div>
             
                       {/* Remaining links */}
-                      <Link href="/">
+                      <Link href="/our-story">
                         <span className="text-black dark:text-white  text-sm">
                           Our Story
                         </span>
@@ -338,7 +338,7 @@ export default function Calculator() {
               </div>
 
               {/* Other Links */}
-              <Link href="/">
+              <Link href="/our-story">
                 <p className="text-black dark:text-white text-sm mb-4">Our Story</p>
               </Link>
               <Link href="/pricing-page">
