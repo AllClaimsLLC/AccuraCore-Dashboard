@@ -155,9 +155,9 @@ export default function WhyModernBusinessesAreTurningToAllInOnePlatforms({
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="flex justify-center">
+        <div className="flex justify-end">
           <img
-            src="/Images/girl-smiling.png"
+            src="/Images/girl-using-laptop.png"
             alt="One Platform"
             className="w-full sm:w-[90%] md:w-[90%] lg:w-[90%] max-w-md md:max-w-full object-contain"
           />

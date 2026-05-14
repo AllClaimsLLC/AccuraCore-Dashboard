@@ -3,7 +3,7 @@ import { useState } from "react";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import WhatMakesAccurascoreDifferent from "@/components/WhatMakesAccurascoreDifferent";
-import { Menu, X } from "lucide-react";
+import { Camera, Menu, X } from "lucide-react";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import ModeToggle from "@/components/mode-toggle";
 import Link from "next/link";
@@ -11,8 +11,11 @@ import Link from "next/link";
 import GetStartedModal from "@/components/GetStartedModal";
 import { PricingAndPlans } from "@/components/PricingAndPlans";
 import Pricing from "@/components/Pricing";
+import CompareThePlans from "@/components/CompareThePlans";
+import PricingFaqs from "@/components/PricingFaqs";
 
 export default function PricingPage() {
+  const [addonEnabled, setAddonEnabled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
@@ -32,9 +35,9 @@ export default function PricingPage() {
         className="relative bg-cover bg-center bg-no-repeat min-h-[90vh] md:min-h-[80vh] flex flex-col"
         style={{ backgroundImage: "url('/Images/Hero-bg.png')" }}
       >
-        {/* Updated Header */}
+        {/* Header */}
         <header className="px-6 py-4 relative">
-                   <nav
+          <nav
             className="flex items-center justify-between max-w-6xl mx-auto rounded-full px-8 py-4 border bg-white dark:bg-slate-900"
             style={{ padding: "5px 30px" }}
           >
@@ -51,128 +54,130 @@ export default function PricingPage() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8 relative">
-                      {/* About */}
-                      <div
-                        className="relative"
-                        onMouseEnter={() => {
-                          setAboutOpen(true);
-                          setFeaturesOpen(false);
-                        }}
-                        onMouseLeave={() => {
-                          setAboutOpen(false);
-                        }}
-                      >
-                        <button className="text-black dark:text-white text-sm flex items-center gap-1">
-                          About
-                          {aboutOpen ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
-                        </button>
-            
-                        {aboutOpen && (
-                          <div className="text-center absolute left-1/2 -translate-x-1/2 top-full pt-12 w-44 z-50">
-                            <div className="bg-white dark:bg-slate-900 rounded-[15px] border border-white/10 overflow-hidden">
-                              <Link href="/blog">
-                                <span className="block text-black dark:text-white text-sm p-3 hover:bg-gray-500 border-b border-white/20">
-                                  Blog
-                                </span>
-                              </Link>
-            
-                              <Link href="/#faq-section">
-                                <span className="block text-black dark:text-white text-sm p-3 hover:bg-gray-500">
-                                  FAQs
-                                </span>
-                              </Link>
-                            </div>
-                          </div>
-                        )}
-                      </div>
-            
-                      {/* Features */}
-                      <div className="relative" onMouseEnter={() => {
-                            setFeaturesOpen(true);
-                            setAboutOpen(false);
-                          }}
-                          onMouseLeave={() => {
-                            setFeaturesOpen(false);
-                          }}>
-                        <button
-                          
-                          className="text-black dark:text-white  text-sm flex items-center gap-1"
-                        >
-                          Features
-                          {featuresOpen ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
-                        </button>
-            
-                        {featuresOpen && (
-                          <div className="text-center absolute left-1/2 -translate-x-1/2 top-full pt-12 w-56 z-50">
-                            <div className="bg-white dark:bg-slate-900 rounded-[15px] border border-white/10 overflow-hidden">
-                              <Link href="/accuracam">
-                                <span className="block text-black dark:text-white text-sm p-3 hover:bg-gray-500 hover:text border-b border-white/20">
-                                  AccuraCam
-                                </span>
-                              </Link>
-            
-                              <Link href="/accuracore-claims">
-                                <span className="block text-black dark:text-white text-sm p-3 hover:bg-gray-500 hover:text border-b border-white/20">
-                                  AccuraCore Claims
-                                </span>
-                              </Link>
-            
-                              <Link href="/my-accuracore">
-                                <span className="block text-black dark:text-white text-sm p-3 hover:bg-gray-500 hover:text border-b border-white/20">
-                                  My AccuraCore
-                                </span>
-                              </Link>
-            
-                              <Link href="/roof-calculations">
-                                <span className="block text-black dark:text-white text-sm p-3 hover:bg-gray-500 hover:text border-b border-white/20">
-                                  Roof Calculations
-                                </span>
-                              </Link>
-            
-                              <Link href="/weather-reports">
-                                <span className="block text-black dark:text-white text-sm p-3 hover:bg-gray-500 hover:text border-b border-white/20">
-                                  Weather Reports
-                                </span>
-                              </Link>
-            
-                              <Link href="/workflow-automation">
-                                <span className="block text-black dark:text-white text-sm p-3 hover:bg-gray-500 hover:text">
-                                  Workflow Automation
-                                </span>
-                              </Link>
-                            </div>
-                          </div>
-                        )}
-                      </div>
-            
-                      {/* Remaining links */}
-                      <Link href="/our-story">
-                        <span className="text-black dark:text-white  text-sm">
-                          Our Story
+              {/* About */}
+              <div
+                className="relative"
+                onMouseEnter={() => {
+                  setAboutOpen(true);
+                  setFeaturesOpen(false);
+                }}
+                onMouseLeave={() => {
+                  setAboutOpen(false);
+                }}
+              >
+                <button className="text-black dark:text-white text-sm flex items-center gap-1">
+                  About
+                  {aboutOpen ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
+                </button>
+
+                {aboutOpen && (
+                  <div className="text-center absolute left-1/2 -translate-x-1/2 top-full pt-12 w-44 z-50">
+                    <div className="bg-white dark:bg-slate-900 rounded-[15px] border border-white/10 overflow-hidden">
+                      <Link href="/blog">
+                        <span className="block text-black dark:text-white text-sm p-3 hover:bg-gray-500 border-b border-white/20">
+                          Blog
                         </span>
                       </Link>
-                      <Link href="/pricing-page">
-                        <span className="text-black dark:text-white  text-sm">
-                          Pricing
-                        </span>
-                      </Link>
-            
-                      {/* <Link href="/#faq-section">
-                        <span className="text-black dark:text-white  text-sm">FAQs</span>
-                      </Link> */}
-            
-                      <Link href="/book-a-demo">
-                        <span className="text-black dark:text-white  text-sm">
-                          Contact Us
+
+                      <Link href="/#faq-section">
+                        <span className="block text-black dark:text-white text-sm p-3 hover:bg-gray-500">
+                          FAQs
                         </span>
                       </Link>
                     </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Features */}
+              <div
+                className="relative"
+                onMouseEnter={() => {
+                  setFeaturesOpen(true);
+                  setAboutOpen(false);
+                }}
+                onMouseLeave={() => {
+                  setFeaturesOpen(false);
+                }}
+              >
+                <button className="text-black dark:text-white  text-sm flex items-center gap-1">
+                  Features
+                  {featuresOpen ? (
+                    <MdKeyboardArrowUp />
+                  ) : (
+                    <MdKeyboardArrowDown />
+                  )}
+                </button>
+
+                {featuresOpen && (
+                  <div className="text-center absolute left-1/2 -translate-x-1/2 top-full pt-12 w-56 z-50">
+                    <div className="bg-white dark:bg-slate-900 rounded-[15px] border border-white/10 overflow-hidden">
+                      <Link href="/accuracam">
+                        <span className="block text-black dark:text-white text-sm p-3 hover:bg-gray-500 hover:text border-b border-white/20">
+                          AccuraCam
+                        </span>
+                      </Link>
+
+                      <Link href="/accuracore-claims">
+                        <span className="block text-black dark:text-white text-sm p-3 hover:bg-gray-500 hover:text border-b border-white/20">
+                          AccuraCore Claims
+                        </span>
+                      </Link>
+
+                      <Link href="/my-accuracore">
+                        <span className="block text-black dark:text-white text-sm p-3 hover:bg-gray-500 hover:text border-b border-white/20">
+                          My AccuraCore
+                        </span>
+                      </Link>
+
+                      <Link href="/roof-calculations">
+                        <span className="block text-black dark:text-white text-sm p-3 hover:bg-gray-500 hover:text border-b border-white/20">
+                          Roof Calculations
+                        </span>
+                      </Link>
+
+                      <Link href="/weather-reports">
+                        <span className="block text-black dark:text-white text-sm p-3 hover:bg-gray-500 hover:text border-b border-white/20">
+                          Weather Reports
+                        </span>
+                      </Link>
+
+                      <Link href="/workflow-automation">
+                        <span className="block text-black dark:text-white text-sm p-3 hover:bg-gray-500 hover:text">
+                          Workflow Automation
+                        </span>
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Remaining links */}
+              <Link href="/our-story">
+                <span className="text-black dark:text-white  text-sm">
+                  Our Story
+                </span>
+              </Link>
+              <Link href="/pricing-page">
+                <span className="text-black dark:text-white  text-sm">
+                  Pricing
+                </span>
+              </Link>
+
+              {/* <Link href="/#faq-section">
+                        <span className="text-black dark:text-white  text-sm">FAQs</span>
+                      </Link> */}
+
+              <Link href="/book-a-demo">
+                <span className="text-black dark:text-white  text-sm">
+                  Contact Us
+                </span>
+              </Link>
+            </div>
 
             {/* Desktop Action Buttons */}
             <div className="hidden md:flex items-center space-x-3">
-              <div
-                className="  p-2 rounded-full   bg-slate-900 dark:bg-white   text-white dark:text-slate-900 flex items-center justify-center"
-              >
+              <div className="  p-2 rounded-full   bg-slate-900 dark:bg-white   text-white dark:text-slate-900 flex items-center justify-center">
                 <ModeToggle />
               </div>
 
@@ -208,9 +213,7 @@ export default function PricingPage() {
             {/* Mobile Hamburger */}
             <div className="md:hidden flex items-center gap-3">
               {/* Dark Mode Toggle */}
-              <div
-                className="p-2 rounded-full bg-black dark:bg-white text-white dark:text-slate-900 flex items-center justify-center"
-              >
+              <div className="p-2 rounded-full bg-black dark:bg-white text-white dark:text-slate-900 flex items-center justify-center">
                 <ModeToggle />
               </div>
 
@@ -239,19 +242,19 @@ export default function PricingPage() {
                 </button>
 
                 {aboutOpen && (
-                <div className="mt-2 w-full bg-white dark:bg-slate-900 rounded-[10px] overflow-hidden border border-white/10">
-                  <Link href="/blog">
-                    <p className="text-black dark:text-white text-sm p-3 border-b border-white/20 rounded-t-[15px] hover:bg-gray-500 hover:text">
-                      Blog
-                    </p>
-                  </Link>
-                  <Link href="/#faq-section">
-                    <p className="text-black dark:text-white text-sm p-3 rounded-b-[15px] hover:bg-gray-500 hover:text">
-                      FAQs
-                    </p>
-              </Link>
-                </div>
-              )}
+                  <div className="mt-2 w-full bg-white dark:bg-slate-900 rounded-[10px] overflow-hidden border border-white/10">
+                    <Link href="/blog">
+                      <p className="text-black dark:text-white text-sm p-3 border-b border-white/20 rounded-t-[15px] hover:bg-gray-500 hover:text">
+                        Blog
+                      </p>
+                    </Link>
+                    <Link href="/#faq-section">
+                      <p className="text-black dark:text-white text-sm p-3 rounded-b-[15px] hover:bg-gray-500 hover:text">
+                        FAQs
+                      </p>
+                    </Link>
+                  </div>
+                )}
               </div>
 
               {/* Features */}
@@ -311,16 +314,22 @@ export default function PricingPage() {
 
               {/* Other Links */}
               <Link href="/our-story">
-                <p className="text-black dark:text-white text-sm mb-4">Our Story</p>
+                <p className="text-black dark:text-white text-sm mb-4">
+                  Our Story
+                </p>
               </Link>
               <Link href="/pricing-page">
-                <p className="text-black dark:text-white text-sm mb-4">Pricing</p>
+                <p className="text-black dark:text-white text-sm mb-4">
+                  Pricing
+                </p>
               </Link>
               {/* <Link href="/#faq-section">
                 <p className="text-black dark:text-white text-sm mb-4">FAQs</p>
               </Link> */}
               <Link href="/book-a-demo">
-                <p className="text-black dark:text-white text-sm mb-4">Contact Us</p>
+                <p className="text-black dark:text-white text-sm mb-4">
+                  Contact Us
+                </p>
               </Link>
             </div>
           )}
@@ -332,27 +341,7 @@ export default function PricingPage() {
             <div className="text-center mb-8 lg:mb-16">
               <div className="overflow-hidden">
                 <h1 className="text-4xl md:text-4xl text-white leading-tight flex flex-wrap justify-center">
-                  {["Pricing"].map((word, i) => (
-                    <span
-                      key={i}
-                      className="inline-block overflow-hidden align-bottom pr-[0.18em]"
-                    >
-                      <span
-                        className="inline-block animate-wordUp"
-style={{
-  transform: "translateY(110%)",
-  animationDelay: `${0.15 + i * 0.06}s`,
-  animationFillMode: "forwards",
-}}
-                      >
-                        {word}
-                      </span>
-                    </span>
-                  ))}
-                </h1>
-
-                <h2 className="text-2xl md:text-3xl text-white mb-2 leading-tight font-light font-sora flex flex-wrap justify-center mt-2">
-                  {["Plans", "Designed", "for", "Every", "Business"].map(
+                  {["Pricing", "That", "Scales", "With", "You"].map(
                     (word, i) => (
                       <span
                         key={i}
@@ -360,18 +349,18 @@ style={{
                       >
                         <span
                           className="inline-block animate-wordUp"
-style={{
-  transform: "translateY(110%)",
-  animationDelay: `${0.15 + i * 0.06}s`,
-  animationFillMode: "forwards",
-}}
+                          style={{
+                            transform: "translateY(110%)",
+                            animationDelay: `${0.15 + i * 0.06}s`,
+                            animationFillMode: "forwards",
+                          }}
                         >
                           {word}
                         </span>
                       </span>
                     ),
                   )}
-                </h2>
+                </h1>
 
                 <p
                   className="text-md text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed mt-4 animate-fadeUp"
@@ -381,67 +370,56 @@ style={{
                     animationFillMode: "forwards",
                   }}
                 >
-                  At AccuraCore, we understand that every business has unique
-                  needs and growth paths. That’s why our pricing structure is
-                  flexible, transparent, and tailored to help teams of all sizes
-                  get the tools they need without unnecessary complexity.
+                  Pick the plan that fits your crew today. Upgrade anytime as
+                  you grow.
                 </p>
-              </div>
 
-              {/* CTA Buttons */}
-              {/* <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/calculator">
-                  <Button
-                    className="rounded-full text-sm flex items-center justify-center"
-                    style={{
-                      backgroundColor: "#ffffff",
-                      color: "#0061A4",
-                      padding: "25px 18px",
-                    }}
+                {/* ================= ADD-ON TOGGLE ================= */}
+                <p
+                  className="text-md text-[#FA8C3D] mb-2 max-w-3xl mx-auto leading-relaxed mt-4 animate-fadeUp"
+                  style={{
+                    opacity: 0,
+                    animationDelay: "0.35s",
+                    animationFillMode: "forwards",
+                  }}
+                >
+                  OPTIONAL ADD ON
+                </p>
+                <div className="flex justify-center">
+                  <button
+                    onClick={() => setAddonEnabled(!addonEnabled)}
+                    className="flex items-center gap-4 rounded-[15px] border border-gray-400 bg-[#32456d] px-5 py-5"
                   >
-                    Check My Tech-Mess Cost
-                    <img
-                      src="/Icons/Vector2.png"
-                      alt="Arrow Icon"
-                      className="w-2 h-3 ml-2"
-                    />
-                  </Button>
-                </Link>
-                <Button
-                  className="text-white rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#0061A4",
-                    border: "2px solid #4485b2",
-                    padding: "25px 15px",
-                  }}
-                  onClick={() => (window.location.href = "/book-a-demo")}
-                >
-                  Book Demo
-                  <img
-                    src="/Icons/Vector.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
+                    {/* ICON */}
+                    <span className="grid h-9 w-9 place-items-center rounded-[8px] bg-white">
+                      <Camera className="h-5 w-5 text-black" />
+                    </span>
 
-                <Button
-                  className="rounded-full text-sm flex items-center"
-                  style={{
-                    backgroundColor: "#ffffff",
-                    color: "#0061A4",
-                    padding: "27px 15px",
-                    border: "none",
-                  }}
-                  onClick={() => setIsOpen(true)}
-                >
-                  Get Started
-                  <img
-                    src="/Icons/Vector2.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
-              </div> */}
+                    {/* TEXT */}
+                    <span className="text-left">
+                      <span className="block text-md font-[500] text-white">
+                        Add My AccuraCore
+                      </span>
+                      <span className="block text-sm text-gray-400">
+                        Where Your Customers and Crew Stay Connected
+                      </span>
+                    </span>
+
+                    {/* SWITCH */}
+                    <span
+                      className={`relative h-6 w-11 rounded-full transition ${
+                        addonEnabled ? "bg-[#0061A4]" : "bg-gray-500"
+                      }`}
+                    >
+                      <span
+                        className={`absolute top-[2px] left-[2px] h-5 w-5 rounded-full bg-white transition ${
+                          addonEnabled ? "translate-x-5" : ""
+                        }`}
+                      />
+                    </span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </main>
@@ -476,8 +454,11 @@ style={{
           }
         `}</style>
       </div>
-{/* <Pricing /> */}
-      <PricingAndPlans setIsOpen={setIsOpen} />
+      <Pricing addonEnabled={addonEnabled} setIsOpen={setIsOpen} />
+      <CompareThePlans />
+      <PricingFaqs />
+      
+      {/* <PricingAndPlans setIsOpen={setIsOpen} /> */}
 
       <Footer id="contact-section" onBookDemo={() => setIsOpen(true)} />
       {/* Popup Modal */}
