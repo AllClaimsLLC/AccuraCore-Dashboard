@@ -131,10 +131,10 @@ export default function Pricing({ addonEnabled, setIsOpen }) {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#fbf0ec] py-20">
-      <div className="mx-auto max-w-7xl px-5">
+    <section className="relative bg-[#fbf0ec] py-20 z-20">
+<div className="mx-auto max-w-7xl px-5 relative">
         {/* PRICING GRID */}
-        <div className="mt-16 flex flex-wrap justify-center gap-6">
+        <div className="flex flex-wrap justify-center gap-6 relative z-30 mt-[-53%] sm:mt-[-20%]">
           {orderedPlans.map((plan, index) => {
             const Icon = plan.icon;
             const price = addonEnabled ? plan.base + plan.addon : plan.base;
@@ -142,7 +142,7 @@ export default function Pricing({ addonEnabled, setIsOpen }) {
             return (
               <article
                 key={plan.tier}
-                className={`w-full max-w-sm group relative flex flex-col rounded-[22px] bg-white p-6 pt-[30px] transition-all duration-500 ease-out ${
+                className={`w-full max-w-sm relative flex flex-col rounded-[22px] bg-white p-6 pt-[30px] transition-all duration-500 ease-out ${
                   plan.tier === "gold"
                     ? "shadow-[inset_12px_0_18px_rgba(250,140,61,0.10),inset_-12px_0_18px_rgba(250,140,61,0.10)]"
                     : ""
@@ -152,7 +152,7 @@ export default function Pricing({ addonEnabled, setIsOpen }) {
                 }}
               >
                 {/* SHIMMER */}
-                <span className="pointer-events-none absolute inset-y-0 left-[-30%] z-[1] w-[60%] skew-x-[-20deg] bg-gradient-to-r from-transparent via-white/50 to-transparent transition-transform duration-1000 ease-out group-hover:translate-x-[280%]" />
+                {/* <span className="pointer-events-none absolute inset-y-0 left-[-30%] z-[0] w-[60%] skew-x-[-20deg] bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-1000 ease-out group-hover:translate-x-[280%]" /> */}
 
                 {/* GOLD BORDER */}
                 {plan.tier === "gold" && (

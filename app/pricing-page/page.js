@@ -31,8 +31,7 @@ export default function PricingPage() {
 
   return (
     <>
-      <div
-        className="relative bg-cover bg-center bg-no-repeat min-h-[90vh] md:min-h-[80vh] flex flex-col"
+<div className="relative z-10 bg-cover bg-center bg-no-repeat min-h-[75vh] md:min-h-[100vh] flex flex-col"
         style={{ backgroundImage: "url('/Images/Hero-bg.png')" }}
       >
         {/* Header */}
@@ -388,7 +387,7 @@ export default function PricingPage() {
                 <div className="flex justify-center">
                   <button
                     onClick={() => setAddonEnabled(!addonEnabled)}
-                    className="flex items-center gap-4 rounded-[15px] border border-gray-400 bg-[#32456d] px-5 py-5"
+                    className="flex items-center gap-4 rounded-[15px] border border-gray-400 bg-[#32456d] px-2 py-2 sm:px-5 sm:py-5"
                   >
                     {/* ICON */}
                     <span className="grid h-9 w-9 place-items-center rounded-[8px] bg-white">
@@ -396,7 +395,7 @@ export default function PricingPage() {
                     </span>
 
                     {/* TEXT */}
-                    <span className="text-left">
+                    <span className="text-left w-[70%]">
                       <span className="block text-md font-[500] text-white">
                         Add My AccuraCore
                       </span>

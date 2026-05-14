@@ -10,30 +10,31 @@ const faqs = [
     id: 1,
     question: "What's included in MyAccuraCore add-on?",
     answer:
-      "Yes! AccuraCore contractor management software is suitable for small crews, as well as medium-sized contracting businesses.",
+      "MyAccuraCore is the mobile companion app for your field crew, capture photos, voice-tag jobs, and sync everything back to your AccuraCore workspace in real time.",
   },
   {
     id: 2,
     question: "Can I upgrade or downgrade my plan anytime?",
     answer:
-      "Yes, roles are fully customizable and can be assigned to everyone on your crew.",
+      "Yes, change plans whenever your crew grows or contracts. Pro-rated billing handles the math.",
   },
   {
     id: 3,
     question: "What happens if I exceed my user limit?",
     answer:
-      "Yes, financial calculations are handled automatically, and displayed for easy review.",
+      "You'll automatically be charged the per-additional-user rate shown on each plan, billed at the end of the cycle.",
   },
   {
     id: 4,
     question: "Is there a free trial?",
     answer:
-      "Yes, AccuraCore is a SaaS platform that exists in the cloud, and requires internet access to use.",
+      "Book a demo with our team, we'll set you up with a guided 14-day trial on the plan that fits.",
   },
   {
     id: 5,
     question: "Can I export my data?",
-    answer: "The only data we support exporting is reports.",
+    answer:
+      "Reports can be exported at any time. Other data export options are available on Platinum and Titanium.",
   },
 ];
 
