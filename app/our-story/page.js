@@ -413,6 +413,7 @@ export default function OurStoryPage() {
                       border: "2px solid #4485b2",
                       padding: "25px 18px",
                     }}
+                    onClick={() => (window.location.href = "/book-a-demo")}
                   >
                     Book Demo
                     <img
