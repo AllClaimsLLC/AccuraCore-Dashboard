@@ -21,9 +21,9 @@ const plans = [
     tier: "pro",
     name: "Pro",
     title: "MyAccuraCore Pro",
-    base: 150,
-    addon: 180,
-    users: "10 users",
+    base: 99,
+    addon: 249,
+    users: "Up to 10 users",
     label: "Up to",
     perUser: "$30",
     icon: Camera,
@@ -35,12 +35,13 @@ const plans = [
     ],
     button: "Get Started",
   },
-  {
+
+    {
     tier: "gold",
     name: "Gold",
     title: "MyAccuraCore Gold",
-    base: 350,
-    addon: 380,
+    base: 299,
+    addon: 649,
     users: "26 – 50 users",
     label: "For",
     perUser: "$20",
@@ -55,15 +56,16 @@ const plans = [
     ],
     button: "Get Started",
   },
+
   {
     tier: "plus",
     name: "Plus",
     title: "MyAccuraCore Plus",
-    base: 350,
-    addon: 380,
-    users: "26 – 50 users",
+    base: 199,
+    addon: 449,
+    users: "11 – 25 users",
     label: "For",
-    perUser: "$20",
+    perUser: "$25",
     icon: PartyPopper,
     features: [
       "11 – 25 users covered",
@@ -74,12 +76,14 @@ const plans = [
     button: "Get Started",
   },
 
+
+
   {
     tier: "platinum",
     name: "Platinum",
     title: "MyAccuraCore Platinum",
-    base: 500,
-    addon: 530,
+    base: 499,
+    addon: 999,
     users: "51 – 99 users",
     label: "For",
     perUser: "$15",
@@ -93,12 +97,13 @@ const plans = [
     ],
     button: "Get Started",
   },
+
   {
     tier: "titanium",
     name: "Titanium",
     title: "MyAccuraCore Titanium",
-    base: 750,
-    addon: 780,
+    base: 799,
+    addon: 1549,
     users: "100+ users",
     label: "For",
     perUser: "$15",
@@ -151,7 +156,7 @@ export default function Pricing({ addonEnabled, setIsOpen }) {
         <div className="flex flex-wrap justify-center gap-6 relative z-30 sm:mt-[-20%]">
           {orderedPlans.map((plan, index) => {
             const Icon = plan.icon;
-            const price = addonEnabled ? plan.base + plan.addon : plan.base;
+            const price = addonEnabled ? plan.addon : plan.base;
 
             return (
               <article
