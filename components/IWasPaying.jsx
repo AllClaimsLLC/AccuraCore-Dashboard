@@ -398,7 +398,7 @@ export default function IWasPaying() {
   className="
     w-full
     max-w-[600px]
-    h-[475px]
+    h-[285px] sm:h-[475px]
     object-contain
     rounded-[20px]
   "
