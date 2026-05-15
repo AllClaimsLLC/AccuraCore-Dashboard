@@ -15,8 +15,7 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
 
   const images = {
     "Unified Dashboard Experience": "/Images/unified.png",
-    "Workflow That Matches Your Business":
-      "/Images/Organize-Your-Company-&-Empower-Your-Team.png",
+    "Workflow That Matches Your Contracting Process": "/Images/OCET.png",
     "Built-In Financial Intelligence": "/Images/builtIn.png",
   };
 
