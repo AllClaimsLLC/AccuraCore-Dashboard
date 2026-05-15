@@ -56,8 +56,11 @@ export default function AccuraCoreClaimsPage() {
         description="AccuraCore Claims standardizes documentation from field to
                 submission eliminating guesswork, incomplete files, and review
                 delays."
+                 height="50rem"
+                  mediaTranslateY="23%"
              mediaType="image"
              imageSrc="/Images/accuracoreClaims-ui.png"
+             mobileSpacingHeight="170px"
              onPrimaryClick={() => setIsOpen(true)}
              onSecondaryClick={() => (window.location.href = "/book-a-demo")}
            />

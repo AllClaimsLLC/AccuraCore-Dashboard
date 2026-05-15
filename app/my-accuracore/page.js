@@ -10,35 +10,7 @@ import HeroLayout from "@/components/HeroLayout";
 import { DesktopUpdatedHeader } from "@/components/DesktopUpdatedHeader";
 import FinalHeroSection from "@/components/FinalHeroSection";
 
-const buttons = (onGetStarted) => (
-  <>
-    <Button
-      className="rounded-full text-sm flex items-center"
-      style={{
-        backgroundColor: "#fff",
-        color: "#0061A4",
-        padding: "27px 15px",
-      }}
-      onClick={onGetStarted}
-    >
-      Get Started
-      <img src="/Icons/Vector2.png" alt="Arrow Icon" className="w-2 h-3 ml-2" />
-    </Button>
 
-    <Button
-      className="text-white rounded-full text-sm flex items-center"
-      style={{
-        backgroundColor: "#0061A4",
-        border: "2px solid #4485b2",
-        padding: "25px 15px",
-      }}
-      onClick={() => (window.location.href = "/book-a-demo")}
-    >
-      Book Demo
-      <img src="/Icons/Vector.png" alt="Arrow Icon" className="w-2 h-3 ml-2" />
-    </Button>
-  </>
-);
 
 export default function MyAccuraCorePage() {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,6 +27,8 @@ export default function MyAccuraCorePage() {
       workflows connect. One system, Full visibility, Controlled execution."
       mediaType="image"
              imageSrc="/Images/myaccuracore-ui.png"
+               height="46rem"
+               mediaTranslateY="39%"
         onPrimaryClick={() => setIsOpen(true)}
         onSecondaryClick={() => (window.location.href = "/book-a-demo")}
       />
