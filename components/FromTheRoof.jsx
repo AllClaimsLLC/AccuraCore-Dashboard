@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "./ui/button";
 import useFadeIn from "@/lib/useFadeIn";
 import Link from "next/link";
+import Image from "next/image";
 
 const timeline = [
   {
@@ -238,12 +239,17 @@ export default function FromTheRoof() {
             </div>
 
             {/* RIGHT IMAGE */}
-            <div className="flex justify-center">
-              <img
-                src="/Images/Ithink.png"
-                alt="I think"
-                className="w-full sm:w-[90%] md:w-[90%] lg:w-[90%] max-w-md md:max-w-full object-contain"
-              />
+            <div className="flex justify-end">
+              <Image
+  src="/Images/Ithink.png"
+  alt="I think"
+  width={1200}
+  height={800}
+  sizes="(max-width: 768px) 90vw, 90vw"
+  className="w-full sm:w-[90%] md:w-[90%] lg:w-[90%] max-w-md md:max-w-full object-contain"
+  quality={100}
+  priority
+/>
             </div>
           </div>
         </div>

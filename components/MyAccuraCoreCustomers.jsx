@@ -85,9 +85,9 @@ export default function MyAccuraCoreCustomers() {
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className="w-full h-full flex justify-center">
+          <div className="w-full h-full flex justify-center bg-[#e9f2f9] p-10 rounded-[20px]">
             <Image
-              src="/Images/MyAccuracoreCustomers.png"
+              src="/Images/MAC.png"
               alt="preview"
               width={600}
               height={500}

@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import useFadeIn from "@/lib/useFadeIn";
+import Image from "next/image";
 
 export default function IWasPaying() {
   useFadeIn();
@@ -222,17 +223,16 @@ export default function IWasPaying() {
 
             {/* RIGHT IMAGE */}
             <div className="w-full flex justify-center lg:justify-end">
-              <img
-                src="/Images/twenty-five-years.png"
-                alt="Twenty Five Years"
-                className="
-        w-full
-        max-w-[600px]
-        h-auto
-        object-contain
-        rounded-[20px]
-      "
-              />
+             <Image
+  src="/Images/twenty-five-years.png"
+  alt="Twenty Five Years"
+  width={2744}
+  height={2176}
+  sizes="(max-width: 1024px) 100vw, 600px"
+  className="w-full max-w-[600px] aspect-[2744/2176] h-auto object-contain rounded-[20px]"
+  quality={100}
+  priority
+/>
             </div>
           </div>
         </div>
@@ -388,18 +388,23 @@ export default function IWasPaying() {
             </div>
 
             {/* RIGHT IMAGE */}
-            <div className="w-full flex justify-center lg:justify-end">
-              <img
-                src="/Images/five-systems.png"
-                alt="Twenty Five Years"
-                className="
-        w-full
-        max-w-[600px]
-        h-auto
-        object-contain
-        rounded-[20px]
-      "
-              />
+            <div className="w-full flex justify-center lg:justify-end bg-white rounded-[20px] p-10">
+             <Image
+  src="/Images/five-systems.png"
+  alt="Five Systems"
+  width={2744}
+  height={2176}
+  sizes="(max-width: 1024px) 100vw, 600px"
+  className="
+    w-full
+    max-w-[600px]
+    h-auto
+    object-contain
+    rounded-[20px]
+  "
+  quality={100}
+  priority
+/>
             </div>
           </div>
         </div>
@@ -552,17 +557,23 @@ export default function IWasPaying() {
 
             {/* RIGHT IMAGE */}
             <div className="w-full flex justify-center lg:justify-end">
-              <img
-                src="/Images/built-something.png"
-                alt="Twenty Five Years"
-                className="
-        w-full
-        max-w-[600px]
-        h-auto
-        object-contain
-        rounded-[20px]
-      "
-              />
+
+<Image
+  src="/Images/built-something.png"
+  alt="Built Something"
+  width={2744}
+  height={2176}
+  sizes="(max-width: 1024px) 100vw, 600px"
+  className="
+    w-full
+    max-w-[600px]
+    h-auto
+    object-contain
+    rounded-[20px]
+  "
+  quality={100}
+  priority
+/>
             </div>
           </div>
           {/* Bottom Section - How It Works */}

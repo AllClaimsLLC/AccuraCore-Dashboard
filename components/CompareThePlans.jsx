@@ -143,22 +143,18 @@ export default function CompareThePlans() {
                           }`}
                         >
                           {typeof value === "boolean" ? (
-                            value ? (
-                              <img
-                                src="/Icons/checkmark-icon-green.png"
-                                alt="Check"
-                                className="h-6 w-6 object-contain"
-                              />
-                            ) : (
-                              <img
-                                src="/Icons/checkmark-icon-red.png"
-                                alt="Cross"
-                                className="h-6 w-6 object-contain"
-                              />
-                            )
-                          ) : (
-                            <span className="text-black">{value}</span>
-                          )}
+  value ? (
+    <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#0eae4a]">
+      <Check className="h-4 w-4 text-white" strokeWidth={3} />
+    </div>
+  ) : (
+    <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#fe0000]">
+      <X className="h-4 w-4 text-white" strokeWidth={3} />
+    </div>
+  )
+) : (
+  <span className="text-black">{value}</span>
+)}
                         </div>
                       );
                     })}

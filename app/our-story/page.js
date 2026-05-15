@@ -10,6 +10,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import IWasPaying from "@/components/IWasPaying";
 import MyAccuraCoreCustomers from "@/components/MyAccuraCoreCustomers";
 import FromTheRoof from "@/components/FromTheRoof";
+import Image from "next/image";
 
 export default function OurStoryPage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,7 +21,7 @@ export default function OurStoryPage() {
   return (
     <>
       <div
-        className="bg-cover bg-center bg-no-repeat h-[85rem] lg:h-[50rem]"
+        className="bg-cover bg-center bg-no-repeat h-[65rem] lg:h-[50rem]"
         style={{
           backgroundImage: "url('/Images/Hero-bg.png')",
         }}
@@ -345,50 +346,51 @@ export default function OurStoryPage() {
                   the cracks.
                 </p>
 
-                {/* NEW STATS BOX */}
-                <div className="mt-4 mb-10 border border-gray-500 rounded-[10px] bg-[#2c3b62] px-6 py-8">
-                  <div className="grid grid-cols-1 sm:grid-cols-3">
-                    {/* Item 1 */}
-                    <div className="relative flex flex-col items-center sm:items-start pb-6 sm:pb-0 sm:pr-8">
-                      <h3 className="text-white text-3xl font-[500]">25+</h3>
+{/* NEW STATS BOX */}
+<div className="mt-4 mb-10 border border-gray-500 rounded-[10px] bg-[#2c3b62] py-6 sm:py-8">
+  <div className="grid grid-cols-3">
 
-                      <p className="text-gray-300 text-sm mt-2 text-left">
-                        Years in the trade
-                      </p>
+    {/* Item 1 */}
+    <div className="relative flex flex-col justify-center px-5 sm:px-8 text-left">
+      <h3 className="text-white text-2xl sm:text-3xl font-[500]">
+        25+
+      </h3>
 
-                      {/* Desktop Vertical Separator */}
-                      <div className="hidden sm:block absolute right-0 top-1/2 -translate-y-1/2 h-full w-[2px] bg-gray-500"></div>
+      <p className="text-gray-300 text-xs sm:text-sm mt-2">
+        Years in the trade
+      </p>
 
-                      {/* Mobile Horizontal Separator */}
-                      <div className="w-full border-b border-gray-500 mt-6 sm:hidden"></div>
-                    </div>
+      {/* Separator */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 h-full w-[2px] bg-gray-500" />
+    </div>
 
-                    {/* Item 2 */}
-                    <div className="relative flex flex-col items-center sm:items-start py-6 sm:py-0 sm:px-8">
-                      <h3 className="text-white text-3xl font-[500]">5→1</h3>
+    {/* Item 2 */}
+    <div className="relative flex flex-col justify-center px-5 sm:px-8 text-left">
+      <h3 className="text-white text-2xl sm:text-3xl font-[500]">
+        5 → 1
+      </h3>
 
-                      <p className="text-gray-300 text-sm mt-2 text-left">
-                        Systems to one
-                      </p>
+      <p className="text-gray-300 text-xs sm:text-sm mt-2">
+        Systems to one
+      </p>
 
-                      {/* Desktop Vertical Separator */}
-                      <div className="hidden sm:block absolute right-0 top-1/2 -translate-y-1/2 h-full w-[2px] bg-gray-500"></div>
+      {/* Separator (centered inside column via absolute) */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 h-full w-[2px] bg-gray-500" />
+    </div>
 
-                      {/* Mobile Horizontal Separator */}
-                      <div className="w-full border-b border-gray-500 mt-6 sm:hidden"></div>
-                    </div>
+    {/* Item 3 */}
+    <div className="flex flex-col justify-center px-5 sm:px-8 text-left">
+      <h3 className="text-white text-2xl sm:text-3xl font-[500]">
+        ∞
+      </h3>
 
-                    {/* Item 3 */}
-                    <div className="flex flex-col items-center sm:items-start pt-6 sm:pt-0 sm:pl-8">
-                      <h3 className="text-white text-3xl font-[500]">∞</h3>
+      <p className="text-gray-300 text-xs sm:text-sm mt-2">
+        Time given back
+      </p>
+    </div>
 
-                      <p className="text-gray-300 text-sm mt-2 text-left">
-                        Time given back
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
+  </div>
+</div>
                 {/* Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button
@@ -427,11 +429,15 @@ export default function OurStoryPage() {
 
               {/* RIGHT COLUMN (IMAGE) */}
               <div className="flex justify-center">
-                <img
-                  src="/Images/our-story-right.png"
-                  alt="Calculator hero right"
-                  className="w-full object-contain"
-                />
+               <Image
+  src="/Images/our-story-right.jpeg"
+  alt="Our Story Right Image"
+  width={2744}
+  height={2176}
+  className="w-full object-contain rounded-[20px]"
+  quality={100}
+  priority
+/>
               </div>
             </div>
           </div>
