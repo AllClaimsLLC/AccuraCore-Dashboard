@@ -10,7 +10,7 @@ export default function IWasPaying() {
       <section className="w-full flex justify-center bg-[#fbf6f0] py-16 md:py-24 px-4 overflow-hidden">
         <div className="w-full md:max-w-[90%]">
           {/* QUOTE BLOCK */}
-          <div className="relative flex justify-center items-center text-center px-4 md:px-10 mt-10">
+          <div className="fade-up relative flex justify-center items-center text-center px-4 md:px-10 mt-10">
             {/* Top Left Quote */}
             <img
               src="/Images/inverted-comma-top-left.png"
@@ -70,7 +70,7 @@ export default function IWasPaying() {
           </div>
 
           {/* CONTENT SECTION */}
-          <div className="mt-20 md:mt-28 grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+          <div className="fade-up mt-20 md:mt-28 grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
             {/* LEFT CONTENT */}
             <div className="w-full">
               {/* Desktop Layout */}
@@ -242,7 +242,7 @@ export default function IWasPaying() {
       <section className="w-full flex justify-center bg-[#fce6d9] pb-16 md:pb-24 px-4 overflow-hidden">
         <div className="w-full md:max-w-[90%]">
           {/* CONTENT SECTION */}
-          <div className="mt-20 md:mt-28 grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+          <div className="fade-up mt-20 md:mt-28 grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
             {/* LEFT CONTENT */}
             <div className="w-full">
               {/* Desktop Layout */}
@@ -388,7 +388,7 @@ export default function IWasPaying() {
             </div>
 
             {/* RIGHT IMAGE */}
-            <div className="w-full flex justify-center lg:justify-end bg-white rounded-[20px] p-10">
+            <div className="w-full flex justify-center lg:justify-end bg-white rounded-[20px] p-2">
              <Image
   src="/Images/five-systems.png"
   alt="Five Systems"
@@ -398,7 +398,7 @@ export default function IWasPaying() {
   className="
     w-full
     max-w-[600px]
-    h-auto
+    h-[475px]
     object-contain
     rounded-[20px]
   "
@@ -414,7 +414,7 @@ export default function IWasPaying() {
       <section className="w-full flex justify-center bg-[linear-gradient(to_bottom_right,_#f9efed,_#eaf7fd)] pb-16 md:pb-24 px-4 overflow-hidden">
         <div className="w-full md:max-w-[90%]">
           {/* CONTENT SECTION */}
-          <div className="mt-20 md:mt-28 grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+          <div className="fade-up mt-20 md:mt-28 grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
             {/* LEFT CONTENT */}
             <div className="w-full">
               {/* Desktop Layout */}
