@@ -112,15 +112,16 @@ export default function DelaysSlowRevenue({ isOpen, setIsOpen }) {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="w-full h-full hidden lg:flex justify-center">
-          <Image
-            src="/Images/DelaysSlowRevenue.webp"
-            alt="preview"
-            width={600}
-            height={500}
-            className="object-contain w-full max-w-md lg:max-w-full"
-          />
-        </div>
+<div className="w-full h-full hidden lg:flex justify-center">
+  <Image
+    src="/Images/DelaysSlowRevenue.svg"
+    alt="preview"
+    width={600}
+    height={500}
+    className="max-w-full h-auto"
+    priority
+  />
+</div>
       </div></div>
     </section>
   );
