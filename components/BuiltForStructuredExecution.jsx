@@ -2,35 +2,41 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import useFadeIn from "@/lib/useFadeIn";
+import CaptureOnceIcon from "@/public/Icons/Accuracam/Capture Once.svg?url";
+import OrganizedIcon from "@/public/Icons/Accuracam/Organized From Day One.svg?url";
+import InstantSyncIcon from "@/public/Icons/Accuracam/Instant Job Sync.svg?url";
+import BuiltInProofIcon from "@/public/Icons/Accuracam/Built-In Proof.svg?url";
+import NoReconstructionIcon from "@/public/Icons/Accuracam/No Reconstruction Later.svg?url";
+import StructuredMediaIcon from "@/public/Icons/Accuracam/Structured Media by Default.svg?url";
 
 const steps = [
   {
-    icon: "/Icons/CO.png",
+    icon: CaptureOnceIcon,
     title: "Capture Once",
     desc: "Photos attach to job, location, and scope item instantly.",
   },
   {
-    icon: "/Icons/OFDO.png",
+    icon: OrganizedIcon,
     title: "Organized From Day One",
     desc: "Every image enters the system already structured and in place.",
   },
   {
-    icon: "/Icons/IJS.png",
+    icon: InstantSyncIcon,
     title: "Instant Job Sync",
     desc: "Field photos flow straight into the project. No re-uploading. No file chasing.",
   },
   {
-    icon: "/Icons/BIP.png",
+    icon: BuiltInProofIcon,
     title: "Built-In Proof",
     desc: "Time, location, and job details are recorded automatically.",
   },
   {
-    icon: "/Icons/NRL.png",
+    icon: NoReconstructionIcon,
     title: "No Reconstruction Later",
     desc: "The office doesn’t sort, rename, or rebuild documentation.",
   },
   {
-    icon: "/Icons/SMBD.png",
+    icon: StructuredMediaIcon,
     title: "Structured Media by Default",
     desc: "Every job stays clean, complete, and ready for review.",
   },
@@ -58,15 +64,15 @@ export default function BuiltForStructuredExecution({ isOpen, setIsOpen }) {
                   className="bg-white dark:bg-slate-900 p-6 rounded-[15px] shadow-lg flex flex-col gap-4 transition-transform transform hover:scale-105"
                 >
                   {/* Number Box */}
-                  <div className="w-10 h-10 flex items-center justify-center bg-[#0061A4] rounded-[10px]">
-                    <Image
-                      src={step.icon}
-                      alt={step.title}
-                      width={20}
-                      height={20}
-                      className="object-contain"
-                    />
-                  </div>
+                 <div className="w-10 h-10 flex items-center justify-center bg-[#0061A4] rounded-[10px]">
+  <Image
+    src={step.icon}
+    alt={step.title}
+    width={20}
+    height={20}
+    className="w-5 h-5 object-contain"
+  />
+</div>
 
                   {/* Heading */}
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -140,12 +146,12 @@ export default function BuiltForStructuredExecution({ isOpen, setIsOpen }) {
                   {/* Number Box */}
                   <div className="w-6 h-6 md:w-10 md:h-10 flex items-center justify-center bg-[#0061A4] rounded-[8px] md:rounded-[10px] shrink-0">
                     <Image
-                      src={step.icon}
-                      alt={step.title}
-                      width={14}
-                      height={14}
-                      className="object-contain md:w-5 md:h-5"
-                    />
+  src={step.icon}
+  alt={step.title}
+  width={14}
+  height={14}
+  className="w-4 h-4 object-contain"
+/>
                   </div>
 
                   {/* Heading */}

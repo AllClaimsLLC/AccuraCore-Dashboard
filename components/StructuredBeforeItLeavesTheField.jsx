@@ -2,35 +2,42 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import useFadeIn from "@/lib/useFadeIn";
+import StructureBeforeSubmissionIcon from "@/public/Icons/AccuraCoreClaims/Structure Before Submission.svg?url";
+import RequirementsControlIcon from "@/public/Icons/AccuraCoreClaims/Requirements Control.svg?url";
+import ScopeToEvidenceIcon from "@/public/Icons/AccuraCoreClaims/Scope-to-Evidence Alignment.svg?url";
+import ReviewReadyIcon from "@/public/Icons/AccuraCoreClaims/Review-Ready Organization.svg?url";
+import CleanClaimPackIcon from "@/public/Icons/AccuraCoreClaims/Clean Claim Pack Export.svg?url";
+import StatusVisibilityIcon from "@/public/Icons/AccuraCoreClaims/Status Visibility.svg?url";
+
 
 const steps = [
   {
-    icon: "/Icons/SBS.png",
+    icon: StructureBeforeSubmissionIcon,
     title: "Structure Before Submission",
     desc: "Claims follow a consistent documentation framework every time.",
   },
   {
-    icon: "/Icons/RC.png",
+    icon: RequirementsControlIcon,
     title: "Requirements Control",
     desc: "Prevent incomplete submissions before they leave your office.",
   },
   {
-    icon: "/Icons/STEA.png",
+    icon: ScopeToEvidenceIcon,
     title: "Scope-to-Evidence Alignment",
     desc: "Photos, notes, and documentation map directly to scope items.",
   },
   {
-    icon: "/Icons/RRO.png",
+    icon: ReviewReadyIcon,
     title: "Review-Ready Organization",
     desc: "Office teams verify documentation in a clean, structured flow.",
   },
   {
-    icon: "/Icons/CCPE.png",
+    icon: CleanClaimPackIcon,
     title: "Clean Claim Pack Export",
     desc: "Generate submission-grade documentation instantly with structured, verified claim-ready data.",
   },
   {
-    icon: "/Icons/SV.png",
+    icon: StatusVisibilityIcon,
     title: "Status Visibility",
     desc: "Track claim readiness, progress, and blockers in real time.",
   },

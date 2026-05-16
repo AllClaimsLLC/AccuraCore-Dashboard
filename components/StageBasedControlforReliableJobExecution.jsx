@@ -2,35 +2,41 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import useFadeIn from "@/lib/useFadeIn";
+import StageBasedJobProgressionIcon from "@/public/Icons/WorkflowAutomation/Stage-Based Job Progression.svg?url";
+import TaskEnforcementIcon from "@/public/Icons/WorkflowAutomation/Task Enforcement.svg?url";
+import AutomatedNotificationsIcon from "@/public/Icons/WorkflowAutomation/Automated Notifications.svg?url";
+import StatusVisibilityIcon from "@/public/Icons/WorkflowAutomation/Status Visibility.svg?url";
+import DocumentationGatesIcon from "@/public/Icons/WorkflowAutomation/Documentation Gates.svg?url";
+import OperationalConsistencyIcon from "@/public/Icons/WorkflowAutomation/Operational Consistency.svg?url";
 
 const steps = [
   {
-    icon: "/Icons/SBJR.png",
+    icon: StageBasedJobProgressionIcon,
     title: "Stage-Based Job Progression",
     desc: "Jobs move through predefined phases automatically with structured control and clarity.",
   },
   {
-    icon: "/Icons/TE.png",
+    icon: TaskEnforcementIcon,
     title: "Task Enforcement",
     desc: "Critical steps cannot be skipped, ensuring proper process control at every stage.",
   },
   {
-    icon: "/Icons/AN.png",
+    icon: AutomatedNotificationsIcon,
     title: "Automated Notifications",
     desc: "Teams are alerted when action is required, ensuring timely response and accountability.",
   },
   {
-    icon: "/Icons/SE.png",
+    icon: StatusVisibilityIcon,
     title: "Status Visibility",
     desc: "See bottlenecks instantly to identify and resolve workflow delays quickly.",
   },
   {
-    icon: "/Icons/DG.png",
+    icon: DocumentationGatesIcon,
     title: "Documentation Gates",
     desc: "Prevent jobs from advancing without required items.",
   },
   {
-    icon: "/Icons/OC.png",
+    icon: OperationalConsistencyIcon,
     title: "Operational Consistency",
     desc: "Every job follows the same clear and structured path from start to finish.",
   },

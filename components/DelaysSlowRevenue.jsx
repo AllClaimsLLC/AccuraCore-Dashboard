@@ -65,7 +65,7 @@ export default function DelaysSlowRevenue({ isOpen, setIsOpen }) {
 
  <div className="w-full h-full flex lg:hidden justify-center">
           <Image
-            src="/Images/DelaysSlowRevenue.png"
+            src="/Images/DelaysSlowRevenue.webp"
             alt="preview"
             width={600}
             height={500}
@@ -114,7 +114,7 @@ export default function DelaysSlowRevenue({ isOpen, setIsOpen }) {
         {/* RIGHT IMAGE */}
         <div className="w-full h-full hidden lg:flex justify-center">
           <Image
-            src="/Images/DelaysSlowRevenue.png"
+            src="/Images/DelaysSlowRevenue.webp"
             alt="preview"
             width={600}
             height={500}

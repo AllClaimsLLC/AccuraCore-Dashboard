@@ -3,9 +3,14 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Monitor, Workflow, TrendingUp } from "lucide-react";
 import useFadeIn from "@/lib/useFadeIn";
 import Marquee from "./Marquee";
+import DashboardIcon from "@/public/Icons/Homepage/Unified Dashboard Experience.svg?url";
+import WorkflowIcon from "@/public/Icons/Homepage/Workflow That Matches Your Contracting Process.svg?url";
+import FinancialIcon from "@/public/Icons/Homepage/Built-in Financial Intelligence.svg?url";
+import CreateCompanyIcon from "@/public/Icons/Homepage/Create Your Company.svg?url";
+import BuildWorkflowIcon from "@/public/Icons/Homepage/Build Custom Workflows.svg?url";
+import ControlPanelIcon from "@/public/Icons/Homepage/All-in-One Control Panel.svg?url";
 
 export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
   useFadeIn();
@@ -19,23 +24,23 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
     "Built-In Financial Intelligence": "/Images/builtIn.png",
   };
 
-  const features = [
-    {
-      title: "Unified Dashboard Experience",
-      desc: "One Platform, Total Control, Zero Hassle",
-      Icon: Monitor,
-    },
-    {
-      title: "Workflow That Matches Your Contracting Process",
-      desc: "We Adapt To You With Custom Workflows And Logic Switches",
-      Icon: Workflow,
-    },
-    {
-      title: "Built-In Financial Intelligence",
-      desc: "Budgeting, Estimates, Invoicing All Accurate And Audit-Ready",
-      Icon: TrendingUp,
-    },
-  ];
+const features = [
+  {
+    title: "Unified Dashboard Experience",
+    desc: "One Platform, Total Control, Zero Hassle",
+    Icon: DashboardIcon,
+  },
+  {
+    title: "Workflow That Matches Your Contracting Process",
+    desc: "We Adapt To You With Custom Workflows And Logic Switches",
+    Icon: WorkflowIcon,
+  },
+  {
+    title: "Built-In Financial Intelligence",
+    desc: "Budgeting, Estimates, Invoicing All Accurate And Audit-Ready",
+    Icon: FinancialIcon,
+  },
+];
 
   const steps = [
     {
@@ -226,14 +231,19 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
                      }
                   `}
                   >
-                    <div className="w-12 h-12 rounded-lg flex items-center p-2 lg:p-0 justify-center bg-slate-100 dark:bg-slate-800 group-hover:bg-[#0061a5] transition-all">
-                      <feature.Icon
-                        className="
-                      w-6 h-6 text-gray-800 dark:text-slate-200
-                      group-hover:text-white
-                    "
-                      />
-                    </div>
+                   <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-[#0061a5] transition-all shrink-0">
+  <Image
+    src={feature.Icon}
+    alt={feature.title}
+    width={28}
+    height={28}
+    className="
+  w-7 h-7 object-contain
+  brightness-0 invert
+  transition-all duration-300
+"
+  />
+</div>
 
                     <div>
                       <h3 className="text-md font-semibold text-gray-800 dark:text-white">
@@ -296,29 +306,39 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
             {/* Second Row - 3 Columns */}
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                {
-                  title: "Create Your Company",
-                  desc: "Create your workspace and invite your crew.",
-                  icon: "/Icons/siri.png",
-                },
-                {
-                  title: "Build Custom Workflows",
-                  desc: "Adapt the platform to your process, not the other way around no templates needed.",
-                  icon: "/Icons/workflow.png",
-                },
-                {
-                  title: "All-in-One Control Panel",
-                  desc: "Jobs, finances & crew in one place.",
-                  icon: "/Icons/dashboard-browsing.png",
-                },
-              ].map((item, i) => (
+  {
+    title: "Create Your Company",
+    desc: "Create your workspace and invite your crew.",
+    icon: CreateCompanyIcon,
+  },
+  {
+    title: "Build Custom Workflows",
+    desc: "Adapt the platform to your process, not the other way around no templates needed.",
+    icon: BuildWorkflowIcon,
+  },
+  {
+    title: "All-in-One Control Panel",
+    desc: "Jobs, finances & crew in one place.",
+    icon: ControlPanelIcon,
+  },
+].map((item, i) => (
                 <div
                   key={i}
                   className="bg-white dark:bg-slate-900 p-6 rounded-2xl space-y-4 transition-all duration-300 hover:scale-105 hover:shadow-xl"
                 >
-                  <div className="w-16 h-16 rounded-2xl bg-[#0061A5] flex items-center justify-center">
-                    <img src={item.icon} alt={item.title} />
-                  </div>
+                 <div className="w-12 h-12 rounded-lg bg-[#0061A5] flex items-center justify-center group transition-all duration-300">
+  <Image
+    src={item.icon}
+    alt={item.title}
+    width={28}
+    height={28}
+    className="
+      w-7 h-7 object-contain
+      brightness-0 invert
+      transition-all duration-300
+    "
+  />
+</div>
 
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                     {item.title}

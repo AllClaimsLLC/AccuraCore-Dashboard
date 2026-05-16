@@ -2,6 +2,9 @@
 import { useState } from "react";
 import useFadeIn from "@/lib/useFadeIn";
 import Image from "next/image";
+import WalkTheSiteIcon from "@/public/Icons/OurStory/walk-the-site.svg?url";
+import MyAccuraCoreCustomersIcon from "@/public/Icons/OurStory/my-accuracore-customers.svg?url";
+import YourTimeReturnedIcon from "@/public/Icons/OurStory/your-time-returned.svg?url";
 
 export default function IWasPaying() {
   useFadeIn();
@@ -223,16 +226,16 @@ export default function IWasPaying() {
 
             {/* RIGHT IMAGE */}
             <div className="w-full flex justify-center lg:justify-end">
-             <Image
-  src="/Images/twenty-five-years.png"
-  alt="Twenty Five Years"
-  width={2744}
-  height={2176}
-  sizes="(max-width: 1024px) 100vw, 600px"
-  className="w-full max-w-[600px] aspect-[2744/2176] h-auto object-contain rounded-[20px]"
-  quality={100}
-  priority
-/>
+              <Image
+                src="/Images/twenty-five-years.png"
+                alt="Twenty Five Years"
+                width={2744}
+                height={2176}
+                sizes="(max-width: 1024px) 100vw, 600px"
+                className="w-full max-w-[600px] aspect-[2744/2176] h-auto object-contain rounded-[20px]"
+                quality={100}
+                priority
+              />
             </div>
           </div>
         </div>
@@ -389,22 +392,22 @@ export default function IWasPaying() {
 
             {/* RIGHT IMAGE */}
             <div className="w-full flex justify-center lg:justify-end bg-white rounded-[20px] p-2">
-             <Image
-  src="/Images/five-systems.png"
-  alt="Five Systems"
-  width={2744}
-  height={2176}
-  sizes="(max-width: 1024px) 100vw, 600px"
-  className="
+              <Image
+                src="/Images/five-systems.png"
+                alt="Five Systems"
+                width={2744}
+                height={2176}
+                sizes="(max-width: 1024px) 100vw, 600px"
+                className="
     w-full
     max-w-[600px]
     h-[285px] sm:h-[475px]
     object-contain
     rounded-[20px]
   "
-  quality={100}
-  priority
-/>
+                quality={100}
+                priority
+              />
             </div>
           </div>
         </div>
@@ -557,23 +560,22 @@ export default function IWasPaying() {
 
             {/* RIGHT IMAGE */}
             <div className="w-full flex justify-center lg:justify-end">
-
-<Image
-  src="/Images/built-something.png"
-  alt="Built Something"
-  width={2744}
-  height={2176}
-  sizes="(max-width: 1024px) 100vw, 600px"
-  className="
+              <Image
+                src="/Images/built-something.png"
+                alt="Built Something"
+                width={2744}
+                height={2176}
+                sizes="(max-width: 1024px) 100vw, 600px"
+                className="
     w-full
     max-w-[600px]
     h-auto
     object-contain
     rounded-[20px]
   "
-  quality={100}
-  priority
-/>
+                quality={100}
+                priority
+              />
             </div>
           </div>
           {/* Bottom Section - How It Works */}
@@ -581,14 +583,14 @@ export default function IWasPaying() {
             <div className="space-y-12 mt-10">
               {/* First Row - Heading */}
               <div className="text-left" style={{ marginTop: "5rem" }}>
-                 <h3
-                    className="
+                <h3
+                  className="
             text-[#1d1d1d]
             font-[400]
             leading-[1.2]
             text-[25px] md:text-[30px]
           "
-                  >
+                >
                   One platform, built the way you actually work.
                 </h3>
               </div>
@@ -599,17 +601,17 @@ export default function IWasPaying() {
                   {
                     title: "Walk the site, capture it all.",
                     desc: "Snap photos and videos with the integrated camera. Tag them with your voice. Watch everything flow into a single clean report.",
-                    icon: "/Icons/camera.png",
+                    icon: WalkTheSiteIcon,
                   },
                   {
                     title: "MyAccuraCore for customers.",
                     desc: "The add on that lets you talk directly with your customers. They love it. My crew loves it. And I love finally having everything in one place.",
-                    icon: "/Icons/chat.png",
+                    icon: MyAccuraCoreCustomersIcon,
                   },
                   {
                     title: "Your time, returned.",
                     desc: "AccuraCore gave me time back to focus on growing my company. I think you will love it as much as I do.",
-                    icon: "/Icons/clock.png",
+                    icon: YourTimeReturnedIcon,
                   },
                 ].map((item, i) => (
                   <div
@@ -617,16 +619,19 @@ export default function IWasPaying() {
                     className="bg-white p-6 rounded-2xl space-y-4 transition-all duration-300 hover:scale-105 hover:shadow-xl"
                   >
                     <div className="w-10 h-10 rounded-[10px] bg-[#0061A5] flex items-center justify-center">
-                      <img src={item.icon} alt={item.title} />
+                      <Image
+  src={item.icon}
+  alt={item.title}
+  width={25}
+  height={25}
+/>
                     </div>
 
                     <h3 className="text-xl font-semibold text-gray-900">
                       {item.title}
                     </h3>
 
-                    <p className="text-gray-600 ">
-                      {item.desc}
-                    </p>
+                    <p className="text-gray-600 ">{item.desc}</p>
                   </div>
                 ))}
               </div>

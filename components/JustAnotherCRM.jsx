@@ -4,6 +4,10 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import AccuraCard from "./AccuraCard";
 import useFadeIn from "@/lib/useFadeIn";
+import InternalConfusionIcon from "@/public/Icons/MyAccuracore/Internal confusion.svg?url";
+import StatusGuessingIcon from "@/public/Icons/MyAccuracore/Status guessing.svg?url";
+import MissedDocumentationIcon from "@/public/Icons/MyAccuracore/Missed documentation.svg?url";
+import WorkflowBreakdownsIcon from "@/public/Icons/MyAccuracore/Workflow breakdowns.svg?url";
 
 export default function JustAnotherCRM({ isOpen, setIsOpen }) {
   useFadeIn();
@@ -444,17 +448,11 @@ export default function JustAnotherCRM({ isOpen, setIsOpen }) {
         {/* 4 Boxes */}
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {[
-            { icon: "/Icons/InC.png", title: "Internal confusion" },
-            {
-              icon: "/Icons/SG.png",
-              title: "Status guessing",
-            },
-            {
-              icon: "/Icons/MD.png",
-              title: "Missed documentation",
-            },
-            { icon: "/Icons/CC.png", title: "Workflow breakdowns" },
-          ].map((item, idx) => (
+  { icon: InternalConfusionIcon, title: "Internal confusion" },
+  { icon: StatusGuessingIcon, title: "Status guessing" },
+  { icon: MissedDocumentationIcon, title: "Missed documentation" },
+  { icon: WorkflowBreakdownsIcon, title: "Workflow breakdowns" },
+].map((item, idx) => (
             <div
               key={idx}
               className="bg-[#fdfcf7] rounded-[14px] sm:rounded-[20px] md:rounded-[20px] lg:rounded-[20px] p-3 sm:p-6 md:p-6 lg:p-6 flex flex-col items-center sm:items-start md:items-start lg:items-start text-center sm:text-left md:text-left lg:text-left gap-2 sm:gap-4 shadow-sm hover:scale-105 transition-transform"

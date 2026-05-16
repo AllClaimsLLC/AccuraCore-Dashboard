@@ -2,35 +2,41 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import useFadeIn from "@/lib/useFadeIn";
+import JobLinkedWeatherDataIcon from "@/public/Icons/WeatherReports/Job-Linked Weather Data.svg?url";
+import StormEventVerificationIcon from "@/public/Icons/WeatherReports/Storm Event Verification.svg?url";
+import ClaimSupportAlignmentIcon from "@/public/Icons/WeatherReports/Claim Support Alignment.svg?url";
+import DisputeReductionIcon from "@/public/Icons/WeatherReports/Dispute Reduction.svg?url";
+import ExportReadyReportsIcon from "@/public/Icons/WeatherReports/Export-Ready Reports.svg?url";
+import TimelineCorrelationIcon from "@/public/Icons/WeatherReports/Timeline Correlation.svg?url";
 
 const steps = [
   {
-    icon: "/Icons/JLWD.png",
+    icon: JobLinkedWeatherDataIcon,
     title: "Job-Linked Weather Data",
-    desc: " Attach historical weather conditions directly to each job.",
+    desc: "Attach historical weather conditions directly to each job.",
   },
   {
-    icon: "/Icons/SEV.png",
+    icon: StormEventVerificationIcon,
     title: "Storm Event Verification",
     desc: "Document hail, wind, or severe weather activity tied to the property location",
   },
   {
-    icon: "/Icons/CSA.png",
+    icon: ClaimSupportAlignmentIcon,
     title: "Claim Support Alignment",
     desc: "Weather reports align with scope and damage documentation.",
   },
   {
-    icon: "/Icons/DR.png",
+    icon: DisputeReductionIcon,
     title: "Dispute Reduction",
     desc: "Strengthen defensibility with structured third-party data.",
   },
   {
-    icon: "/Icons/ERR.png",
+    icon: ExportReadyReportsIcon,
     title: "Export-Ready Reports",
     desc: "Generate submission-grade weather documentation instantly.",
   },
   {
-    icon: "/Icons/TC.png",
+    icon: TimelineCorrelationIcon,
     title: "Timeline Correlation",
     desc: "Match weather events with inspection dates and damage reports.",
   },

@@ -2,40 +2,45 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import useFadeIn from "@/lib/useFadeIn";
+import UnifiedJobControlIcon from "@/public/Icons/MyAccuracore/Unified Job Control.svg?url";
+import InstantCustomerConnectionIcon from "@/public/Icons/MyAccuracore/Instant Customer Connection.svg?url";
+import AlwaysWithinReachIcon from "@/public/Icons/MyAccuracore/Always Within Reach.svg?url";
+import RealTimeJobUpdatesIcon from "@/public/Icons/MyAccuracore/Real-Time Job Updates.svg?url";
+import CentralizedCommunicationIcon from "@/public/Icons/MyAccuracore/Centralized Communication.svg?url";
+import MoreTrustLessFrictionIcon from "@/public/Icons/MyAccuracore/More Trust, Less Friction.svg?url";
 
 const steps = [
   {
-    icon: "/Icons/UJC.png",
+    icon: UnifiedJobControlIcon,
     title: "Unified Job Control",
     desc: "Every job lives inside a structured workflow from start to finish.",
   },
   {
-    icon: "/Icons/ICC.png",
+    icon: InstantCustomerConnectionIcon,
     title: "Instant Customer Connection",
     desc: "The fastest way to link your team with homeowners.",
   },
   {
-    icon: "/Icons/AWR.png",
+    icon: AlwaysWithinReachIcon,
     title: "Always Within Reach",
     desc: "Customers stay connected to their job without chasing your office.",
   },
   {
-    icon: "/Icons/RTJU.png",
+    icon: RealTimeJobUpdatesIcon,
     title: "Real-Time Job Updates",
     desc: "Share progress, photos, and status as the project moves forward.",
   },
   {
-    icon: "/Icons/CC.png",
+    icon: CentralizedCommunicationIcon,
     title: "Centralized Communication",
     desc: "Messages stay tied to the correct job record.",
   },
   {
-    icon: "/Icons/MTLF.png",
+    icon: MoreTrustLessFrictionIcon,
     title: "More Trust, Less Friction",
     desc: "Clear updates build confidence and reduce misunderstandings.",
   },
 ];
-
 export default function ControlTheEntireWorkflow({ isOpen, setIsOpen }) {
   useFadeIn();
   return (

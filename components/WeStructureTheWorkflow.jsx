@@ -4,6 +4,11 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import AccuraCard from "./AccuraCard";
 import useFadeIn from "@/lib/useFadeIn";
+import CheckmarkIcon from "@/public/Icons/Accuracam/checkmark.svg?url";
+import ResubmissionCyclesIcon from "@/public/Icons/AccuraCoreClaims/Resubmission cycles.svg?url";
+import InternalFollowUpsIcon from "@/public/Icons/AccuraCoreClaims/Internal follow-ups with field crews.svg?url";
+import ScopeVsProofIcon from "@/public/Icons/AccuraCoreClaims/Confusion between scope and proof.svg?url";
+import DocumentationInconsistenciesIcon from "@/public/Icons/AccuraCoreClaims/Documentation inconsistencies.svg?url";
 
 export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
   useFadeIn();
@@ -69,43 +74,43 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
             <h3 className="text-black font-semibold">AccuraCam:</h3>
 
             {/* Vertical points */}
-            <div className="flex flex-col gap-3">
-              <div className="flex items-start gap-3">
-                <Image
-                  src="/Icons/checkmark-icon.png"
-                  alt="check"
-                  width={18}
-                  height={18}
-                />
-                <span className="text-gray-700 text-sm md:text-base">
-                  Enforces structure at capture
-                </span>
-              </div>
+           <div className="flex flex-col gap-3">
+  <div className="flex items-start gap-3">
+    <Image
+      src={CheckmarkIcon}
+      alt="check"
+      width={18}
+      height={18}
+    />
+    <span className="text-gray-700 text-sm md:text-base">
+      Enforces structure at capture
+    </span>
+  </div>
 
-              <div className="flex items-start gap-3">
-                <Image
-                  src="/Icons/checkmark-icon.png"
-                  alt="check"
-                  width={18}
-                  height={18}
-                />
-                <span className="text-gray-700 text-sm md:text-base">
-                  Align scope with supporting evidence
-                </span>
-              </div>
+  <div className="flex items-start gap-3">
+    <Image
+      src={CheckmarkIcon}
+      alt="check"
+      width={18}
+      height={18}
+    />
+    <span className="text-gray-700 text-sm md:text-base">
+      Align scope with supporting evidence
+    </span>
+  </div>
 
-              <div className="flex items-start gap-3">
-                <Image
-                  src="/Icons/checkmark-icon.png"
-                  alt="check"
-                  width={18}
-                  height={18}
-                />
-                <span className="text-gray-700 text-sm md:text-base">
-                  Create review-ready claim files automatically
-                </span>
-              </div>
-            </div>
+  <div className="flex items-start gap-3">
+    <Image
+      src={CheckmarkIcon}
+      alt="check"
+      width={18}
+      height={18}
+    />
+    <span className="text-gray-700 text-sm md:text-base">
+      Create review-ready claim files automatically
+    </span>
+  </div>
+</div>
           </div>
 
           {/* MOBILE IMAGE (ONLY) */}
@@ -338,17 +343,20 @@ export default function WeStructureTheWorkflow({ isOpen, setIsOpen }) {
         {/* 4 Boxes */}
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {[
-            { icon: "/Icons/RC2.png", title: "Resubmission cycles" },
-            {
-              icon: "/Icons/siri.png",
-              title: "Internal follow-ups with field crews",
-            },
-            {
-              icon: "/Icons/IC.png",
-              title: "Confusion between scope and proof",
-            },
-            { icon: "/Icons/DI.png", title: "Documentation inconsistencies" },
-          ].map((item, idx) => (
+  { icon: ResubmissionCyclesIcon, title: "Resubmission cycles" },
+  {
+    icon: InternalFollowUpsIcon,
+    title: "Internal follow-ups with field crews",
+  },
+  {
+    icon: ScopeVsProofIcon,
+    title: "Confusion between scope and proof",
+  },
+  {
+    icon: DocumentationInconsistenciesIcon,
+    title: "Documentation inconsistencies",
+  },
+].map((item, idx) => (
             <div
               key={idx}
               className="bg-[#fdfcf7] rounded-[14px] sm:rounded-[20px] md:rounded-[20px] lg:rounded-[20px] p-3 sm:p-6 md:p-6 lg:p-6 flex flex-col items-center sm:items-start md:items-start lg:items-start text-center sm:text-left md:text-left lg:text-left gap-2 sm:gap-4 shadow-sm hover:scale-105 transition-transform"

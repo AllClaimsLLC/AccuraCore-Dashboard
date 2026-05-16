@@ -2,7 +2,8 @@
 
 import useFadeIn from "@/lib/useFadeIn";
 import Image from "next/image";
-import { Check, X, Star } from "lucide-react";
+import { Star } from "lucide-react";
+
 
 const features = [
   "User capacity",
@@ -144,14 +145,24 @@ export default function CompareThePlans() {
                         >
                           {typeof value === "boolean" ? (
   value ? (
-    <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#0eae4a]">
-      <Check className="h-4 w-4 text-white" strokeWidth={3} />
-    </div>
-  ) : (
-    <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#fe0000]">
-      <X className="h-4 w-4 text-white" strokeWidth={3} />
-    </div>
-  )
+  <div className="flex items-center justify-center">
+    <Image
+      src="/Icons/PricingPage/Tick.svg"
+      alt="Check"
+      width={25}
+      height={25}
+    />
+  </div>
+) : (
+  <div className="flex items-center justify-center">
+    <Image
+      src="/Icons/PricingPage/Cross.svg"
+      alt="Cross"
+      width={25}
+      height={25}
+    />
+  </div>
+)
 ) : (
   <span className="text-black">{value}</span>
 )}

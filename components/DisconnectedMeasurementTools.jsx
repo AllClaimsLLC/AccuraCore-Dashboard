@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import AccuraCard from "./AccuraCard";
 import useFadeIn from "@/lib/useFadeIn";
+import CheckmarkIcon from "@/public/Icons/Accuracam/checkmark.svg?url";
 
 export default function DisconnectedMeasurementTools({ isOpen, setIsOpen }) {
   useFadeIn();
@@ -77,11 +78,11 @@ export default function DisconnectedMeasurementTools({ isOpen, setIsOpen }) {
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <Image
-                      src="/Icons/checkmark-icon.png"
-                      alt="check"
-                      width={18}
-                      height={18}
-                    />
+      src={CheckmarkIcon}
+      alt="check"
+      width={18}
+      height={18}
+    />
                     <span className="text-gray-700 text-sm md:text-base">
                       {item}
                     </span>

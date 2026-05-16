@@ -1,23 +1,31 @@
 "use client";
 import useFadeIn from "@/lib/useFadeIn";
 import Image from "next/image";
+import WorkflowStandardizeIcon from "@/public/Icons/BlogPage/Standardize Your Workflow.svg?url";
+import RealtimeDataIcon from "@/public/Icons/BlogPage/Utilize Real-Time Data.svg?url";
+import AutomateTasksIcon from "@/public/Icons/BlogPage/Automate Routine Tasks.svg?url";
+import CentralizeCommunicationIcon from "@/public/Icons/BlogPage/Centralize Communication.svg?url";
 
 const steps = [
   {
     title: "Standardize Your Workflow",
     desc: "By defining clear stages for every job—from request to completion—you minimize confusion and reduce turnaround time.",
+    icon: WorkflowStandardizeIcon,
   },
   {
     title: "Utilize Real-Time Data",
     desc: "Live dashboards help you monitor team performance and identify bottlenecks before they impact delivery.",
+    icon: RealtimeDataIcon,
   },
   {
     title: "Automate Routine Tasks",
     desc: "Use built-in features to automate recurring jobs, alerts, and reports so your team can focus on high-value work.",
+    icon: AutomateTasksIcon,
   },
   {
     title: "Centralize Communication",
     desc: "Keep all project details, notes, and files linked to relevant tasks or contacts to eliminate scattered information.",
+    icon: CentralizeCommunicationIcon,
   },
 ];
 
@@ -47,15 +55,15 @@ export default function BestPracticesForTransformativeWorkflows() {
                   className="bg-white p-4 md:p-6 rounded-[15px] shadow-lg flex flex-col gap-3 transition-transform hover:scale-105"
                 >
                   {/* ICON */}
-                  <div className="w-10 h-10 flex items-center justify-center bg-[#0061A4] rounded-[10px]">
-                    <Image
-                      src="/Icons/SYW.png"
-                      alt="icon"
-                      width={20}
-                      height={20}
-                      className="object-contain"
-                    />
-                  </div>
+                 <div className="w-10 h-10 flex items-center justify-center bg-[#0061A4] rounded-[10px] shrink-0">
+  <Image
+    src={step.icon}
+    alt={step.title}
+    width={20}
+    height={20}
+    className="w-5 h-5 object-contain brightness-0 invert"
+  />
+</div>
 
                   {/* TITLE */}
                   <h3 className="text-sm md:text-lg font-semibold text-gray-900">
@@ -96,14 +104,14 @@ export default function BestPracticesForTransformativeWorkflows() {
                 >
                   {/* Number Box */}
                   <div className="w-6 h-6 md:w-10 md:h-10 flex items-center justify-center bg-[#0061A4] rounded-[8px] md:rounded-[10px] shrink-0">
-                    <Image
-                      src="/Icons/SYW.png"
-                      alt="icon"
-                      width={20}
-                      height={20}
-                      className="object-contain"
-                    />
-                  </div>
+  <Image
+    src={step.icon}
+    alt={step.title}
+    width={20}
+    height={20}
+    className="w-3 h-3 md:w-5 md:h-5 object-contain brightness-0 invert"
+  />
+</div>
 
                   {/* Heading */}
                   <div className="flex flex-col gap-2">

@@ -15,6 +15,11 @@ import {
 } from "lucide-react";
 import { Button } from "./ui/button";
 import useFadeIn from "@/lib/useFadeIn";
+import JobsContactsIcon from "@/public/Icons/PricingPage/Jobs & Contacts.svg";
+import EstimatesInvoicingIcon from "@/public/Icons/PricingPage/Estimates & Invoicing.svg";
+import LiveDashboardsIcon from "@/public/Icons/PricingPage/Live Dashboards.svg";
+import ClaimsModuleIcon from "@/public/Icons/PricingPage/Claims Module.svg";
+import Image from "next/image";
 
 const plans = [
   {
@@ -26,7 +31,7 @@ const plans = [
     users: "Up to 10 users",
     label: "Up to",
     perUser: "$30",
-    icon: Camera,
+    icon: "/Icons/PricingPage/MyAccuraCore Pro.svg",
     features: [
       "Up to 10 users included",
       "Core AccuraCore platform",
@@ -45,7 +50,7 @@ const plans = [
     users: "26 – 50 users",
     label: "For",
     perUser: "$20",
-    icon: Zap,
+    icon: "/Icons/PricingPage/MyAccuraCore Gold.svg",
     popular: true,
     features: [
       "26 – 50 users covered",
@@ -66,7 +71,7 @@ const plans = [
     users: "11 – 25 users",
     label: "For",
     perUser: "$25",
-    icon: PartyPopper,
+    icon: "/Icons/PricingPage/MyAccuraCore Plus.svg",
     features: [
       "11 – 25 users covered",
       "Everything in Pro",
@@ -87,7 +92,7 @@ const plans = [
     users: "51 – 99 users",
     label: "For",
     perUser: "$15",
-    icon: Star,
+    icon: "/Icons/PricingPage/MyAccuraCore Platinum.svg",
     features: [
       "51 – 99 users covered",
       "Everything in Gold",
@@ -107,7 +112,7 @@ const plans = [
     users: "100+ users",
     label: "For",
     perUser: "$15",
-    icon: ShieldCheck,
+    icon: "/Icons/PricingPage/MyAccuraCore Titanium.svg",
     features: [
       "100+ users supported",
       "Everything in Platinum",
@@ -188,7 +193,12 @@ export default function Pricing({ addonEnabled, setIsOpen }) {
 
                 {/* ICON */}
                 <div className="relative mb-4 grid h-12 w-12 place-items-center rounded-[14px] bg-[#f5f7f4] text-black shadow-[0_6px_18px_rgba(0,0,0,0.12)] transition-all duration-500 group-hover:-rotate-6 group-hover:scale-110">
-                  <Icon className="h-6 w-6 text-black" />
+                 <Image
+  src={plan.icon}
+  alt={plan.name}
+  width={24}
+  height={24}
+/>
                 </div>
 
                 <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#FA8C3D]">
@@ -256,12 +266,14 @@ export default function Pricing({ addonEnabled, setIsOpen }) {
                         key={feature}
                         className="flex items-start gap-2.5 text-[13.5px] leading-[1.4] text-slate-500"
                       >
-                        <span className="mt-[2px] grid h-[18px] w-[18px] flex-shrink-0 place-items-center rounded-full bg-[#0CB146] transition-all duration-300 group-hover:scale-110">
-                          <Check
-                            className="h-[10px] w-[10px] text-white"
-                            strokeWidth={3.5}
-                          />
-                        </span>
+                        <span className="grid h-[22px] w-[22px] flex-shrink-0 place-items-center rounded-full transition-all duration-300 group-hover:scale-110">
+  <Image
+    src="/Icons/PricingPage/Tick.svg"
+    alt="Tick"
+    width={22}
+    height={22}
+  />
+</span>
 
                         <span className="text-sm text-gray-600">
                           {formatFeature(feature)}
@@ -320,33 +332,38 @@ export default function Pricing({ addonEnabled, setIsOpen }) {
           {/* Second Row - 3 Columns */}
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              {
-                title: "Jobs & Contacts",
-                desc: "One source of truth for every client, vendor, crew member, and job.",
-                icon: "/Icons/camera.png",
-              },
-              {
-                title: "Estimates & Invoicing",
-                desc: "Audit-ready financials with built-in approvals and payment links.",
-                icon: "/Icons/chat.png",
-              },
-              {
-                title: "Live Dashboards",
-                desc: "Real-time KPIs, anomaly alerts, and forecasting on one screen.",
-                icon: "/Icons/clock.png",
-              },
-              {
-                title: "Claims Module",
-                desc: "Inspection-to-payout pipeline with photo evidence trails.",
-                icon: "/Icons/clock.png",
-              },
-            ].map((item, i) => (
+  {
+    title: "Jobs & Contacts",
+    desc: "One source of truth for every client, vendor, crew member, and job.",
+    icon: JobsContactsIcon,
+  },
+  {
+    title: "Estimates & Invoicing",
+    desc: "Audit-ready financials with built-in approvals and payment links.",
+    icon: EstimatesInvoicingIcon,
+  },
+  {
+    title: "Live Dashboards",
+    desc: "Real-time KPIs, anomaly alerts, and forecasting on one screen.",
+    icon: LiveDashboardsIcon,
+  },
+  {
+    title: "Claims Module",
+    desc: "Inspection-to-payout pipeline with photo evidence trails.",
+    icon: ClaimsModuleIcon,
+  },
+].map((item, i) => (
               <div
                 key={i}
                 className="bg-white p-6 rounded-2xl space-y-4 transition-all duration-300 hover:scale-105 hover:shadow-xl"
               >
                 <div className="w-10 h-10 rounded-[10px] bg-[#0061A5] flex items-center justify-center">
-                  <img src={item.icon} alt={item.title} />
+                  <Image
+  src={item.icon}
+  alt={item.title}
+  width={25}
+  height={25}
+/>
                 </div>
 
                 <h3 className="text-xl font-semibold text-gray-900">

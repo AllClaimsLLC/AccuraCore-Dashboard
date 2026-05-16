@@ -3,6 +3,11 @@
 import Image from "next/image";
 import { Button } from "./ui/button";
 import useFadeIn from "@/lib/useFadeIn";
+import OfficeHoursIcon from "@/public/Icons/Accuracam/Office labor hours.svg?url";
+import SupplementLoopsIcon from "@/public/Icons/Accuracam/Supplement loops.svg?url";
+import InternalConfusionIcon from "@/public/Icons/Accuracam/Internal confusion.svg?url";
+import MissedPhotoRiskIcon from "@/public/Icons/Accuracam/Missed photo risk.svg?url";
+import CheckmarkIcon from "@/public/Icons/Accuracam/checkmark.svg?url";
 
 export default function WeStructureProof({ isOpen, setIsOpen }) {
   useFadeIn();
@@ -65,43 +70,43 @@ export default function WeStructureProof({ isOpen, setIsOpen }) {
             <h3 className="text-black font-semibold">AccuraCam:</h3>
 
             {/* Vertical points */}
-            <div className="flex flex-col gap-3">
-              <div className="flex items-start gap-3">
-                <Image
-                  src="/Icons/checkmark-icon.png"
-                  alt="check"
-                  width={18}
-                  height={18}
-                />
-                <span className="text-gray-700 text-sm md:text-base">
-                  Enforces structure at capture
-                </span>
-              </div>
+          <div className="flex flex-col gap-3">
+  <div className="flex items-start gap-3">
+    <Image
+      src={CheckmarkIcon}
+      alt="check"
+      width={18}
+      height={18}
+    />
+    <span className="text-gray-700 text-sm md:text-base">
+      Enforces structure at capture
+    </span>
+  </div>
 
-              <div className="flex items-start gap-3">
-                <Image
-                  src="/Icons/checkmark-icon.png"
-                  alt="check"
-                  width={18}
-                  height={18}
-                />
-                <span className="text-gray-700 text-sm md:text-base">
-                  Aligns field documentation with claims workflows
-                </span>
-              </div>
+  <div className="flex items-start gap-3">
+    <Image
+      src={CheckmarkIcon}
+      alt="check"
+      width={18}
+      height={18}
+    />
+    <span className="text-gray-700 text-sm md:text-base">
+      Aligns field documentation with claims workflows
+    </span>
+  </div>
 
-              <div className="flex items-start gap-3">
-                <Image
-                  src="/Icons/checkmark-icon.png"
-                  alt="check"
-                  width={18}
-                  height={18}
-                />
-                <span className="text-gray-700 text-sm md:text-base">
-                  Creates review-ready records automatically
-                </span>
-              </div>
-            </div>
+  <div className="flex items-start gap-3">
+    <Image
+      src={CheckmarkIcon}
+      alt="check"
+      width={18}
+      height={18}
+    />
+    <span className="text-gray-700 text-sm md:text-base">
+      Creates review-ready records automatically
+    </span>
+  </div>
+</div>
           </div>
 
           <div className="flex lg:hidden justify-center">
@@ -335,22 +340,23 @@ export default function WeStructureProof({ isOpen, setIsOpen }) {
         {/* 4 Boxes */}
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {[
-            { icon: "/Icons/OLH.png", title: "Office labor hours" },
-            { icon: "/Icons/SL.png", title: "Supplement loops" },
-            { icon: "/Icons/IC.png", title: "Internal confusion" },
-            { icon: "/Icons/MPR.png", title: "Missed photo risk" },
-          ].map((item, idx) => (
+  { icon: OfficeHoursIcon, title: "Office labor hours" },
+  { icon: SupplementLoopsIcon, title: "Supplement loops" },
+  { icon: InternalConfusionIcon, title: "Internal confusion" },
+  { icon: MissedPhotoRiskIcon, title: "Missed photo risk" },
+].map((item, idx) => (
             <div
               key={idx}
               className="bg-[#fdfcf7] rounded-[14px] sm:rounded-[20px] md:rounded-[20px] lg:rounded-[20px] p-3 sm:p-6 md:p-6 lg:p-6 flex flex-col items-center sm:items-start md:items-start lg:items-start text-center gap-2 sm:gap-4 shadow-sm hover:scale-105 transition-transform"
             >
               <div className="bg-[#0061A4] p-2 rounded-[10px] w-fit">
-                <Image
-                  src={item.icon}
-                  alt={item.title}
-                  width={20}
-                  height={20}
-                />
+               <Image
+  src={item.icon}
+  alt={item.title}
+  width={20}
+  height={20}
+  className="w-5 h-5 object-contain"
+/>
               </div>
 
               <p className="text-black font-semibold text-sm md:text-base">

@@ -2,35 +2,41 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import useFadeIn from "@/lib/useFadeIn";
+import MeasurementAccuracyIcon from "@/public/Icons/RoofCalculations/Measurement Accuracy.svg?url";
+import ScopeAlignmentIcon from "@/public/Icons/RoofCalculations/Scope Alignment.svg?url";
+import EstimateConfidenceIcon from "@/public/Icons/RoofCalculations/Estimate Confidence.svg?url";
+import DocumentationIntegrityIcon from "@/public/Icons/RoofCalculations/Documentation Integrity.svg?url";
+import SupplementReductionIcon from "@/public/Icons/RoofCalculations/Supplement Reduction.svg?url";
+import StructuredJobLinkingIcon from "@/public/Icons/RoofCalculations/Structured Job Linking.svg?url";
 
 const steps = [
   {
-    icon: "/Icons/MA.png",
+    icon: MeasurementAccuracyIcon,
     title: "Measurement Accuracy",
     desc: "Generate precise roof dimensions tied to each job record.",
   },
   {
-    icon: "/Icons/SA.png",
+    icon: ScopeAlignmentIcon,
     title: "Scope Alignment",
     desc: "Calculations connect directly to scope items and documentation",
   },
   {
-    icon: "/Icons/EC.png",
+    icon: EstimateConfidenceIcon,
     title: "Estimate Confidence",
     desc: "Reduce guesswork and ensure accuracy before every submission or proposal.",
   },
   {
-    icon: "/Icons/DI2.png",
+    icon: DocumentationIntegrityIcon,
     title: "Documentation Integrity",
     desc: "Measurements align with photo evidence and claim data.",
   },
   {
-    icon: "/Icons/SR.png",
+    icon: SupplementReductionIcon,
     title: "Supplement Reduction",
     desc: "Fewer disagreements and corrections due to accurate sizing.",
   },
   {
-    icon: "/Icons/SJR.png",
+    icon: StructuredJobLinkingIcon,
     title: "Structured Job Linking",
     desc: "Every calculation stays attached to the job, not in spreadsheets.",
   },
