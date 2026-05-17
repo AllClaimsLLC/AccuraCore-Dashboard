@@ -371,12 +371,12 @@ export default function JustAnotherCRM({ isOpen, setIsOpen }) {
       "Track readiness",
     ].map((item, i) => (
       <div key={i} className="flex items-start gap-2">
-        <Image
-          src="/Icons/checkmark-icon-green.png"
-          alt="check"
-          width={18}
-          height={18}
-        />
+                             <Image
+    src="/Icons/PricingPage/Tick.svg"
+    alt="Tick"
+    width={18}
+    height={18}
+  />
         <span className="text-sm md:text-base text-gray-700">
           {item}
         </span>

@@ -105,20 +105,22 @@ export default function ClaimDelaysDisruptCashFlow() {
 
            <div className="flex justify-between items-center flex-wrap gap-2">
   <p className="text-gray-600 dark:text-white text-sm flex items-center gap-2">
-    <img
-      src="/Icons/checkmark-icon-green.png"
-      alt="check"
-      className="w-4 h-4"
-    />
+                         <Image
+    src="/Icons/PricingPage/Tick.svg"
+    alt="Tick"
+    width={18}
+    height={18}
+  />
     That’s cash flow protection.
   </p>
 
   <p className="text-gray-600 dark:text-white text-sm flex items-center gap-2">
-    <img
-      src="/Icons/checkmark-icon-green.png"
-      alt="check"
-      className="w-4 h-4"
-    />
+                         <Image
+    src="/Icons/PricingPage/Tick.svg"
+    alt="Tick"
+    width={18}
+    height={18}
+  />
     That’s operational leverage.
   </p>
 </div>

@@ -175,10 +175,12 @@ export default function WeStructureProof({ isOpen, setIsOpen }) {
             {/* LEFT OVERLAY CONTENT */}
             <div className="absolute left-5 top-41 z-10 max-w-[250px] flex flex-col gap-3">
               <div className="flex items-start gap-2">
-                <img
-                  src="/Icons/checkmark-icon-green.png"
-                  className="w-5 h-5 mt-1"
-                />
+                  <Image
+    src="/Icons/PricingPage/Tick.svg"
+    alt="Tick"
+    width={22}
+    height={22}
+  />
                 <h3 className="text-black text-sm">
                   Establishes Ownership & Accountability
                 </h3>
@@ -191,10 +193,12 @@ export default function WeStructureProof({ isOpen, setIsOpen }) {
 
             <div className="absolute left-5 top-88 z-10 max-w-[250px] flex flex-col gap-3">
               <div className="flex items-start gap-2">
-                <img
-                  src="/Icons/checkmark-icon-green.png"
-                  className="w-5 h-5 mt-1"
-                />
+                  <Image
+    src="/Icons/PricingPage/Tick.svg"
+    alt="Tick"
+    width={22}
+    height={22}
+  />
                 <h3 className="text-black text-sm">
                   Centralizes Asset Control
                 </h3>
@@ -208,10 +212,12 @@ export default function WeStructureProof({ isOpen, setIsOpen }) {
             {/* RIGHT OVERLAY CONTENT */}
             <div className="absolute right-5 top-41 z-10 max-w-[250px] flex flex-col gap-3">
               <div className="flex items-start gap-2">
-                <img
-                  src="/Icons/checkmark-icon-green.png"
-                  className="w-5 h-5 mt-1"
-                />
+                  <Image
+    src="/Icons/PricingPage/Tick.svg"
+    alt="Tick"
+    width={22}
+    height={22}
+  />
                 <h3 className="text-black text-sm">
                   Provides Instant Project Visibility
                 </h3>
@@ -224,10 +230,12 @@ export default function WeStructureProof({ isOpen, setIsOpen }) {
 
             <div className="absolute right-5 top-88 z-10 max-w-[250px] flex flex-col gap-3">
               <div className="flex items-start gap-2">
-                <img
-                  src="/Icons/checkmark-icon-green.png"
-                  className="w-5 h-5 mt-1"
-                />
+                  <Image
+    src="/Icons/PricingPage/Tick.svg"
+    alt="Tick"
+    width={22}
+    height={22}
+  />
                 <h3 className="text-black text-sm">
                   Enables Real-Time Field Documentation
                 </h3>
@@ -267,10 +275,12 @@ export default function WeStructureProof({ isOpen, setIsOpen }) {
           ].map((item, i) => (
             <div key={i} className="flex flex-col gap-2">
               <div className="flex items-start gap-2">
-                <img
-                  src="/Icons/checkmark-icon-green.png"
-                  className="w-5 h-5 mt-1"
-                />
+                  <Image
+    src="/Icons/PricingPage/Tick.svg"
+    alt="Tick"
+    width={22}
+    height={22}
+  />
                 <h3 className="text-black text-sm font-medium">{item.title}</h3>
               </div>
 
@@ -302,12 +312,12 @@ export default function WeStructureProof({ isOpen, setIsOpen }) {
               {["Capture once.", "Structure instantly.", "Review cleanly"].map(
                 (item, i) => (
                   <div key={i} className="flex items-center gap-2">
-                    <Image
-                      src="/Icons/checkmark-icon-green.png"
-                      alt="check"
-                      width={18}
-                      height={18}
-                    />
+                     <Image
+    src="/Icons/PricingPage/Tick.svg"
+    alt="Tick"
+    width={18}
+    height={18}
+  />
                     <span className="text-sm md:text-base text-gray-700">
                       {item}
                     </span>

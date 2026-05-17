@@ -53,11 +53,12 @@ export default function DelaysSlowRevenue({ isOpen, setIsOpen }) {
     "Predictable Cash Flow",
   ].map((item, idx) => (
     <div key={idx} className="flex items-start gap-3">
-      <img
-        src="/Icons/checkmark-icon-green.png"
-        alt="check"
-        className="w-4 h-4 mt-[2px]"
-      />
+                           <Image
+    src="/Icons/PricingPage/Tick.svg"
+    alt="Tick"
+    width={18}
+    height={18}
+  />
       <p className="text-white text-sm md:text-base">{item}</p>
     </div>
   ))}
