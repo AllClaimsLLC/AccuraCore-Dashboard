@@ -58,7 +58,7 @@ export default function OperationalChaosCostsMargin({ isOpen, setIsOpen }) {
     "Built-in documentation controls",
     "Consistent execution across every job",
   ].map((item, idx) => (
-    <div key={idx} className="flex items-start gap-3">
+    <div key={idx} className="flex items-center gap-3">
                            <Image
     src="/Icons/PricingPage/Tick.svg"
     alt="Tick"
