@@ -23,7 +23,6 @@ export default function FlashSaleRibbon() {
         
         {/* Main message */}
         <span className="flex items-center gap-2">
-          <span className="animate-pulse">⚡</span>
           LIMITED OFFER: First 90 Days FREE
         </span>
 
