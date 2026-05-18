@@ -5,51 +5,46 @@ import { useEffect, useState } from "react";
 export default function FlashSaleRibbon() {
   const [slotsLeft, setSlotsLeft] = useState(25);
 
-useEffect(() => {
-  const interval = setInterval(() => {
-    setSlotsLeft((prev) => {
-      if (prev > 0) return prev - 1;
-      return 0;
-    });
-  }, 60000);
+  // optional controlled urgency (slow decay, avoids fake “too fast” drop)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSlotsLeft((prev) => {
+        if (prev > 12) return prev - 1;
+        return prev; // stop at safe minimum
+      });
+    }, 60000); // every 60s
 
-  return () => clearInterval(interval);
-}, []);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-<div className="bg-[#ff7a1a] p-1 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-center">
+    <div className="w-full bg-gradient-to-r from-[#FA8C3D] via-[#0061A4] to-[#FA8C3D] text-white">
+      
+      <div className="max-w-6xl mx-auto px-4 py-2 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-3 text-center text-xs sm:text-sm font-medium tracking-wide">
+        
+        {/* Main message */}
+        <span className="flex items-center gap-2">
+          <span className="animate-pulse">⚡</span>
+          LIMITED OFFER: First 90 Days FREE
+        </span>
 
-  {/* Flash Badge */}
-  <div className="bg-white text-[#ff7a1a] font-bold uppercase text-[10px] sm:text-xs px-3 py-1 rounded-full tracking-wider shadow-md animate-pulse">
-    Flash Sale
-  </div>
+        {/* Separator */}
+        <span className="hidden sm:inline opacity-70">|</span>
 
-  {/* Main Content */}
-  <h2 className="text-white font-extrabold text-sm sm:text-md leading-tight tracking-wide">
+        {/* Urgency text */}
+        <span className="flex items-center gap-2">
+          Only{" "}
+          <span className="font-bold text-white text-sm sm:text-base animate-pulse">
+            {slotsLeft}
+          </span>{" "}
+          contractors left
+        </span>
 
-    LIMITED OFFER:
-    
-    <span className="mx-2 text-black bg-white px-2 py-1 rounded-md inline-block">
-      First 90 Days FREE
-    </span>
-
-    — Only for the next
-
-    <span className="mx-2 inline-flex items-center gap-2 bg-black/20 border border-white/20 px-3 py-1 rounded-full align-middle">
-
-      <span className="relative flex h-2 w-2">
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-        <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
-      </span>
-
-      <span className="text-white font-extrabold text-base sm:text-lg">
-        {slotsLeft}
-      </span>
-    </span>
-
-    contractors to sign up.
-
-  </h2>
-</div>
+        {/* CTA hint (optional subtle urgency hook) */}
+        <span className="hidden md:inline opacity-90">
+          — Act fast before spots fill up
+        </span>
+      </div>
+    </div>
   );
 }
