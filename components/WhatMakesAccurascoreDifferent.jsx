@@ -462,23 +462,22 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
     <section className="lg:px-6 py-16 bg-[#f4f0ed] dark:bg-slate-950">
       <Marquee />
 
-{/* Built by a Contractor, for Contractors */}
-<section
-  id="built-by-a-contractor-for-contractors"
-  className="lg:px-6 py-16 dark:bg-slate-950 "
->
-  <div className="fade-up">
-    <div className="max-w-[90%] mx-auto space-y-4 mt-8">
-      {/* Top Heading & Text */}
-      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
-        <h2 className="text-2xl text-gray-900 dark:text-white">
-          Built by a Contractor,{" "}
-          <span className="text-[#f3893d]">for Contractors</span>
-        </h2>
-      </div>
+      {/* Built by a Contractor, for Contractors */}
+      <section
+        id="built-by-a-contractor-for-contractors"
+        className="lg:px-6 py-16 dark:bg-slate-950 "
+      >
+        <div className="fade-up">
+          <div className="max-w-[90%] mx-auto space-y-4 mt-8">
+            {/* Top Heading & Text */}
+            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+              <h2 className="text-2xl text-gray-900 dark:text-white">
+                Built by a Contractor,{" "}
+                <span className="text-[#f3893d]">for Contractors</span>
+              </h2>
+            </div>
 
-      <div className="gradient-border gradient-shadow p-[1px] rounded-[15px]">
-                   <div className="gradient-border gradient-shadow p-[1px] rounded-[15px]">
+            <div className="gradient-border gradient-shadow p-[1px] rounded-[15px]">
               <div className="bg-white dark:bg-slate-900 p-2 md:p-6 rounded-[15px] flex flex-col gap-4 transition-transform transform hover:scale-105">
                 {/* Number */}
                 <div className="text-white w-6 h-6 md:w-10 md:h-10 flex items-center text-[12px] md:text-lg justify-center bg-[#0061A4] rounded-[8px] md:rounded-[12px]">
@@ -496,36 +495,37 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
                 </div>
               </div>
             </div>
-      </div>
 
-      {/* Steps / Boxes */}
-      <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-        {steps.slice(1).map((step, idx) => (
-          <div
-            key={idx}
-            className="bg-white dark:bg-slate-900 p-2 md:p-6 rounded-[12px] md:rounded-[15px] shadow-lg flex flex-row md:flex-col items-start gap-3 md:gap-4 transition-transform transform hover:scale-105"
-          >
-            {/* Number Box */}
-            <div className="text-white w-6 h-6 md:w-10 md:h-10 flex items-center justify-center bg-[#0061A4] rounded-[8px] md:rounded-[10px] shrink-0">
-              <span className="text-[12px] md:text-lg">{step.number}</span>
-            </div>
+            {/* Steps / Boxes */}
+            <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+              {steps.slice(1).map((step, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white dark:bg-slate-900 p-2 md:p-6 rounded-[12px] md:rounded-[15px] shadow-lg flex flex-row md:flex-col items-start gap-3 md:gap-4 transition-transform transform hover:scale-105"
+                >
+                  {/* Number Box */}
+                  <div className="text-white w-6 h-6 md:w-10 md:h-10 flex items-center justify-center bg-[#0061A4] rounded-[8px] md:rounded-[10px] shrink-0">
+                    <span className="text-[12px] md:text-lg">
+                      {step.number}
+                    </span>
+                  </div>
 
-            {/* Content */}
-            <div className="flex flex-col gap-2">
-              <h3 className="text-[13px] md:text-lg font-semibold text-gray-900 dark:text-white">
-                {step.title}
-              </h3>
+                  {/* Content */}
+                  <div className="flex flex-col gap-2">
+                    <h3 className="text-[13px] md:text-lg font-semibold text-gray-900 dark:text-white">
+                      {step.title}
+                    </h3>
 
-              <p className="text-[12px] md:text-sm text-gray-600 dark:text-gray-400 leading-snug">
-                {step.desc}
-              </p>
+                    <p className="text-[12px] md:text-sm text-gray-600 dark:text-gray-400 leading-snug">
+                      {step.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
       <div className="max-w-7xl mx-auto md:mt-10">
         <div className="fade-up">
