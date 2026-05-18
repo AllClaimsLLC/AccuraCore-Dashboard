@@ -5,14 +5,13 @@ import { useEffect, useState } from "react";
 export default function FlashSaleRibbon() {
   const [slotsLeft, setSlotsLeft] = useState(25);
 
-  // optional controlled urgency (slow decay, avoids fake “too fast” drop)
   useEffect(() => {
     const interval = setInterval(() => {
       setSlotsLeft((prev) => {
         if (prev > 12) return prev - 1;
-        return prev; // stop at safe minimum
+        return prev; 
       });
-    }, 60000); // every 60s
+    }, 60000); 
 
     return () => clearInterval(interval);
   }, []);
@@ -40,7 +39,7 @@ export default function FlashSaleRibbon() {
           contractors left
         </span>
 
-        {/* CTA hint (optional subtle urgency hook) */}
+        {/* CTA hint */}
         <span className="hidden md:inline opacity-90">
           — Act fast before spots fill up
         </span>
