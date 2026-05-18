@@ -31,7 +31,7 @@ export default function FlashSaleRibbon() {
 
         {/* Urgency text */}
         <span className="flex items-center gap-2">
-          Only{" "}
+          Only for the next
           <span className="font-bold text-white text-sm sm:text-base animate-pulse">
             {slotsLeft}
           </span>{" "}
