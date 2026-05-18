@@ -52,7 +52,7 @@ export default function AccuraCoreClaimsPage() {
   return (
     <>
            <FinalHeroSection
-             logo="/Logos/Claimcore/AccuraCore-Claims-Logo.png"
+             logo="/Logos/Claimcore/AccuraCore-Claims.svg"
         description="AccuraCore Claims standardizes documentation from field to
                 submission eliminating guesswork, incomplete files, and review
                 delays."

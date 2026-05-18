@@ -421,42 +421,42 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
     },
   ];
 
-  const steps = [
-    {
-      title: "A CRM That Fits One Operating System. Zero App Switching",
-      desc: "Run your entire business from a single dashboard. No more juggling 5 tools to get through one job. Everything lives here your crew, your jobs, your money, your customers.",
-    },
-    {
-      number: "02",
-      title: "A CRM That Fits How You Actually Work",
-      desc: "Fully customizable to match your workflow, your team, and your trade, not the other way around.",
-    },
-    {
-      number: "03",
-      title: "Snap. Speak. Upload. Done.",
-      desc: "Integrated camera with voice labeling instantly uploads job photos and notes to the right file. No paperwork later.",
-    },
-    {
-      number: "04",
-      title: "Talk Directly to Your Customers with MyAccuraCore",
-      desc: "Real time two way communication that keeps clients in the loop and your phone from blowing up.",
-    },
-    {
-      number: "05",
-      title: "Get More Insurance Claims Paid",
-      desc: "Track every claim and auto generate damage reports that adjusters actually approve. More approvals equals more revenue.",
-    },
-    {
-      number: "06",
-      title: "We Move Your Data In, Free",
-      desc: "Switching systems? We migrate everything from your current setup at zero cost. No friction, no fees, no stress.",
-    },
-    {
-      number: "07",
-      title: "Onboarding and Support That Has Your Back",
-      desc: "Real humans, real fast. We make the switch EASY so you can get back to building.",
-    },
-  ];
+const steps = [
+  {
+    title: "One Operating System. Zero App-Switching.",
+    desc: "Run your entire business from a single dashboard, no more juggling 5 tools to get through one job.",
+  },
+  {
+    number: "02",
+    title: "A CRM That Fits How You Actually Work",
+    desc: "Fully customizable to match your workflow, your team, and your trade, not the other way around.",
+  },
+  {
+    number: "03",
+    title: "Snap. Speak. Upload. Done.",
+    desc: "Integrated camera with voice labeling instantly uploads job photos and notes to the right file. No paperwork later.",
+  },
+  {
+    number: "04",
+    title: "Talk Directly to Your Customers with MyAccuraCore",
+    desc: "Real-time, two-way communication that keeps clients in the loop and your phone from blowing up.",
+  },
+  {
+    number: "05",
+    title: "Get More Insurance Claims Paid",
+    desc: "Track every claim and auto-generate damage reports that adjusters actually approve. More approvals = more revenue.",
+  },
+  {
+    number: "06",
+    title: "We Move Your Data In, Free",
+    desc: "Switching systems? We migrate everything from your current setup at zero cost.",
+  },
+  {
+    number: "07",
+    title: "Onboarding & Support That Has Your Back",
+    desc: "Real humans, real fast. We make the switch EASY so you can get back to building.",
+  },
+];
 
   return (
     <section className="lg:px-6 py-16 bg-[#f4f0ed] dark:bg-slate-950">
@@ -472,8 +472,8 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
             {/* Top Heading & Text */}
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
               <h2 className="text-2xl text-gray-900 dark:text-white">
-                Built by a Contractor,{" "}
-                <span className="text-[#f3893d]">for Contractors</span>
+                Simplify Your Business With Precision
+                {/* <span className="text-[#f3893d]">for Contractors</span> */}
               </h2>
             </div>
 

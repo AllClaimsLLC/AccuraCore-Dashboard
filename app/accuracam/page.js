@@ -18,7 +18,7 @@ export default function AccuraCamPage() {
   return (
     <>
       <FinalHeroSection
-        logo="/Logos/Accuracam/AccuraCam-Logo.png"
+        logo="/Logos/Accuracam/AccuraCam.svg"
         description="AccuraCam fixes documentation at the source, photos attach to
                 the job, location, and scope item the moment they're taken.
                 No rebuilding in the office."

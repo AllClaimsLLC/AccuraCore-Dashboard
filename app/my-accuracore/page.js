@@ -21,7 +21,7 @@ export default function MyAccuraCorePage() {
   return (
     <>
       <FinalHeroSection
-        logo ="/Logos/Accuracore/My-Accuracore.png"
+        logo ="/Logos/Accuracore/My-Accuracore.svg"
         description="MyAccuraCore centralizes jobs, documentation, teams, and claims in one
       structured system. This is where field capture, office review, and claim
       workflows connect. One system, Full visibility, Controlled execution."

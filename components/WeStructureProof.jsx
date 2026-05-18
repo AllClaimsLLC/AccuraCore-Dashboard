@@ -335,7 +335,7 @@ export default function WeStructureProof({ isOpen, setIsOpen }) {
         <div className="flex items-center gap-3">
           <div className="bg-white p-2 rounded-[5px]">
             <Image
-              src="/Icons/accuracam.png"
+              src="/Logos/Accuracam/Accuracam.svg"
               alt="AccuraCam"
               width={40}
               height={40}

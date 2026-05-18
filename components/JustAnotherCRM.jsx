@@ -432,7 +432,7 @@ export default function JustAnotherCRM({ isOpen, setIsOpen }) {
           {/* Icon Box */}
           <div className="bg-white p-2 rounded-[5px]">
             <Image
-              src="/Icons/my-accuracore.png"
+              src="/Logos/Accuracore/My-Accuracore.svg"
               alt="AccuraCam"
               width={40}
               height={40}
