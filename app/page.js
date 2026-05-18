@@ -352,26 +352,26 @@ export default function HomePage() {
                         block: "start",
                       });
                   }}
-                  className="text-3xl md:text-4xl text-white mb-6 leading-tight flex flex-wrap justify-center cursor-pointer"
+                 className="text-3xl md:text-4xl text-white mb-6 leading-tight flex flex-wrap justify-center cursor-pointer relative z-10"
                 >
                   {"Built by a Contractor, for Contractors"
                     .split(" ")
                     .map((word, i) => (
                       <span
-                        key={i}
-                        className="inline-block overflow-hidden align-bottom pr-[0.18em]"
-                      >
-                        <span
-                          className="inline-block animate-wordUp"
-                          style={{
-                            transform: "translateY(110%)",
-                            animationDelay: `${0.15 + i * 0.06}s`,
-                            animationFillMode: "forwards",
-                          }}
-                        >
-                          {word}
-                        </span>
-                      </span>
+  key={i}
+  className="inline-block overflow-hidden align-bottom pr-[0.18em] pointer-events-none"
+>
+  <span
+    className="inline-block animate-wordUp pointer-events-none"
+    style={{
+      transform: "translateY(110%)",
+      animationDelay: `${0.15 + i * 0.06}s`,
+      animationFillMode: "forwards",
+    }}
+  >
+    {word}
+  </span>
+</span>
                     ))}
                 </h1>
 
