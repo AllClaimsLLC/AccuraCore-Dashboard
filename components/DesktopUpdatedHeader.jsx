@@ -21,7 +21,7 @@ export const DesktopUpdatedHeader = () => {
             <div className="flex items-center space-x-2">
               <Link href="/">
                 <img
-                  src="/Logos/Accuracore/AC2025.png"
+                  src="/Logos/Accuracore/Accuracore.svg"
                   alt="AccuraCore Logo"
                   className="w-20 h-20 object-contain cursor-pointer"
                 />
