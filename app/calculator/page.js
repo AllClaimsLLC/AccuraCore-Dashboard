@@ -70,7 +70,7 @@ export default function Calculator() {
             <div className="flex items-center space-x-2">
               <Link href="/">
                 <img
-                  src="/Logos/Accuracore/Accuracore.svg"
+                  src="/Logos/Accuracore/AccuraCore.svg"
                   alt="AccuraCore Logo"
                   className="w-20 h-20 object-contain cursor-pointer"
                 />
