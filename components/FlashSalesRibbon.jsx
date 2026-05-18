@@ -35,13 +35,13 @@ export default function FlashSaleRibbon() {
           <span className="font-bold text-white text-sm sm:text-base animate-pulse">
             {slotsLeft}
           </span>{" "}
-          contractors left
+          contractors to sign up.
         </span>
 
         {/* CTA hint */}
-        <span className="hidden md:inline opacity-90">
+        {/* <span className="hidden md:inline opacity-90">
         - Act fast before spots fill up
-        </span>
+        </span> */}
       </div>
     </div>
   );
