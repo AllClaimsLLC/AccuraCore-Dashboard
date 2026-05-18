@@ -84,7 +84,7 @@ export default function UnstructuredDocumentationCostsMoney() {
               {/* Icon */}
               <div className="w-20 h-20 flex items-center justify-center">
                 <Image
-                  src="/Logos/Accuracam/Accuracam.svg"
+                  src="/Logos/Accuracam/AccuraCam.svg"
                   alt="AccuraCam"
                   width={80}
                   height={80}
