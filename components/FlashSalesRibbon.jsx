@@ -41,7 +41,7 @@ export default function FlashSaleRibbon() {
 
         {/* CTA hint */}
         <span className="hidden md:inline opacity-90">
-          — Act fast before spots fill up
+        - Act fast before spots fill up
         </span>
       </div>
     </div>
