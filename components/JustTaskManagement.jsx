@@ -23,15 +23,13 @@ export default function JustTaskManagement({ isOpen, setIsOpen }) {
       <div className="fade-up">
         <div className="max-w-[90%] mt-0 sm:mt-20 md:mt-20 lg:mt-20 mb-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* LEFT COL */}
-          <div className="hidden lg:flex justify-center">
-            <Image
-              src="/Images/JustTaskManagement.png"
-              alt="Disconnected Measurement Tools"
-              width={500}
-              height={500}
-              className="rounded-[16px] object-contain w-full"
-            />
-          </div>
+         <div className="hidden lg:flex justify-center items-center">
+  <img
+    src="/Images/JustTaskManagement.svg"
+    alt="preview"
+    className="max-w-full h-auto"
+  />
+</div>
 
           {/* RIGHT COL */}
           <div className="flex flex-col gap-6">
@@ -91,15 +89,13 @@ export default function JustTaskManagement({ isOpen, setIsOpen }) {
               </div>
             </div>
 
-            <div className="flex lg:hidden justify-center">
-              <Image
-                src="/Images/JustTaskManagement.png"
-                alt="Disconnected Measurement Tools"
-                width={500}
-                height={500}
-                className="rounded-[16px] object-contain w-full"
-              />
-            </div>
+            <div className="w-full h-full flex lg:hidden justify-center">
+          <img
+    src="/Images/JustTaskManagement.svg"
+    alt="preview"
+    className="max-w-full h-auto"
+  />
+        </div>
 
             {/* BUTTONS */}
             <div className="flex flex-col sm:flex-row items-center justify-start gap-4">

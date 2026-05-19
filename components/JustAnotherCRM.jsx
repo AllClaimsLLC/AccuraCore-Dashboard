@@ -28,7 +28,7 @@ export default function JustAnotherCRM({ isOpen, setIsOpen }) {
         {/* LEFT COL */}
         <div className="bg-[#ede8e5] rounded-[20px] p-6 hidden lg:flex">
           {/* White Box */}
-          <div className="bg-white rounded-[20px] p-4">
+          <div className="w-full bg-white rounded-[20px] p-4">
             {/* Inner Gray Box */}
             <div className="bg-[#f7f7f7] rounded-[20px] p-2 grid grid-cols-1 md:grid-cols-2 gap-2">
               {/* LEFT SIDE */}

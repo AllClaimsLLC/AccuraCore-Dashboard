@@ -68,17 +68,13 @@ export default function UnverifiedWeatherDataGetsClaimsQuestioned({ isOpen, setI
   ))}
 </div>
 
-<div className="w-full h-full flex lg:hidden justify-center">
-  <div className="bg-[#e9f2f9] rounded-[20px] lg:rounded-[30px] p-4 flex justify-center items-center">
-    <Image
-      src="/Images/UnverifiedWeatherDataGetsClaimsQuestioned.png"
-      alt="preview"
-      width={600}
-      height={500}
-      className="object-contain w-full max-w-md lg:max-w-full"
-    />
-  </div>
-</div>
+ <div className="w-full h-full flex lg:hidden justify-center">
+          <img
+    src="/Images/UnverifiedWeatherDataGetsClaimsQuestioned.svg"
+    alt="preview"
+    className="max-w-full h-auto"
+  />
+        </div>
 
           {/* BUTTONS */}
           <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
@@ -119,16 +115,12 @@ export default function UnverifiedWeatherDataGetsClaimsQuestioned({ isOpen, setI
         </div>
 
         {/* RIGHT IMAGE */}
-       <div className="w-full h-full hidden lg:flex justify-center">
-  <div className="bg-[#e9f2f9] rounded-[30px] p-6 flex justify-center items-center">
-    <Image
-      src="/Images/UnverifiedWeatherDataGetsClaimsQuestioned.png"
-      alt="preview"
-      width={600}
-      height={500}
-      className="object-contain w-full max-w-md lg:max-w-full"
-    />
-  </div>
+      <div className="hidden lg:flex justify-center items-center">
+  <img
+    src="/Images/UnverifiedWeatherDataGetsClaimsQuestioned.svg"
+    alt="preview"
+    className="max-w-full h-auto"
+  />
 </div>
       </div></div>
     </section>

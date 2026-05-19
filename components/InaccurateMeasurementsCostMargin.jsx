@@ -56,32 +56,30 @@ export default function InaccurateMeasurementsCostMargin({
 
             {/* SECOND BULLET POINTS */}
             <div className="flex flex-col gap-2">
-  {[
-    "Structured measurements at capture",
-    "Scope and calculations aligned automatically",
-    "Fewer disputes",
-    "Faster approvals",
-    "More predictable cash flow",
-  ].map((item, idx) => (
-    <div key={idx} className="flex items-center gap-3">
-                           <Image
-    src="/Icons/PricingPage/Tick.svg"
-    alt="Tick"
-    width={18}
-    height={18}
-  />
-      <p className="text-white text-sm md:text-base">{item}</p>
-    </div>
-  ))}
-</div>
+              {[
+                "Structured measurements at capture",
+                "Scope and calculations aligned automatically",
+                "Fewer disputes",
+                "Faster approvals",
+                "More predictable cash flow",
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-center gap-3">
+                  <Image
+                    src="/Icons/PricingPage/Tick.svg"
+                    alt="Tick"
+                    width={18}
+                    height={18}
+                  />
+                  <p className="text-white text-sm md:text-base">{item}</p>
+                </div>
+              ))}
+            </div>
 
-            <div className="w-full h-full justify-center flex lg:hidden">
-              <Image
-                src="/Images/InaccurateMeasurementsCostMargin.png"
+            <div className="w-full h-full flex lg:hidden justify-center">
+              <img
+                src="/Images/InaccurateMeasurementsCostMargin.svg"
                 alt="preview"
-                width={600}
-                height={500}
-                className="object-contain w-full max-w-md lg:max-w-full"
+                className="max-w-full h-auto"
               />
             </div>
 
@@ -124,13 +122,11 @@ export default function InaccurateMeasurementsCostMargin({
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className="w-full h-full justify-center hidden lg:flex">
-            <Image
-              src="/Images/InaccurateMeasurementsCostMargin.png"
+          <div className="hidden lg:flex justify-center items-center">
+            <img
+              src="/Images/InaccurateMeasurementsCostMargin.svg"
               alt="preview"
-              width={600}
-              height={500}
-              className="object-contain w-full max-w-md lg:max-w-full"
+              className="max-w-full h-auto"
             />
           </div>
         </div>

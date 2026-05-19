@@ -130,7 +130,7 @@ export default function ClaimDelaysDisruptCashFlow() {
         {/* RIGHT IMAGE */}
         <div className="w-full h-full flex justify-center">
           <Image
-            src="/Images/ClaimDelaysDisruptCashFlow-right.png"
+            src="/Images/ClaimDelaysDisruptCashFlow-right.svg"
             alt="preview"
             width={600}
             height={500}

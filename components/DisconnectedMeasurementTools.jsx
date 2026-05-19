@@ -22,15 +22,13 @@ export default function DisconnectedMeasurementTools({ isOpen, setIsOpen }) {
       <div className="fade-up">
         <div className="max-w-[90%] mt-0 sm:mt-20 md:mt-20 lg:mt-20 mb-0 sm:mb-20 md:mb-20 lg:mb-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* LEFT COL */}
-          <div className="justify-center hidden lg:flex">
-            <Image
-              src="/Images/disconnectedmeasurementtoolsleft.png"
-              alt="Disconnected Measurement Tools"
-              width={500}
-              height={500}
-              className="rounded-[16px] object-contain w-full"
-            />
-          </div>
+         <div className="hidden lg:flex justify-center items-center">
+  <img
+    src="/Images/disconnectedmeasurementtoolsleft.svg"
+    alt="preview"
+    className="max-w-full h-auto"
+  />
+</div>
 
           {/* RIGHT COL */}
           <div className="flex flex-col gap-6">
@@ -91,15 +89,13 @@ export default function DisconnectedMeasurementTools({ isOpen, setIsOpen }) {
               </div>
             </div>
 
-            <div className="justify-center flex lg:hidden">
-              <Image
-                src="/Images/disconnectedmeasurementtoolsleft.png"
-                alt="Disconnected Measurement Tools"
-                width={500}
-                height={500}
-                className="rounded-[16px] object-contain w-full"
-              />
-            </div>
+            <div className="w-full h-full flex lg:hidden justify-center">
+          <img
+    src="/Images/disconnectedmeasurementtoolsleft.svg"
+    alt="preview"
+    className="max-w-full h-auto"
+  />
+        </div>
 
             {/* BUTTONS */}
             <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
