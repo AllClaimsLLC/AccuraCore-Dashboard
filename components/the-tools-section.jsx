@@ -7,14 +7,14 @@ export default function TheTosolsSection() {
   useFadeIn();
   return (
     <section
-      className="py-16 lg:pt-20 lg:pb-10 bg-[linear-gradient(50deg,_#fbfcf8_43%,_#e6f4f7_100%)]
+      className="py-16 lg:pb-10 bg-[linear-gradient(50deg,_#fbfcf8_43%,_#e6f4f7_100%)]
     dark:bg-[linear-gradient(50deg,_#020617_0%,_#0f172a_100%)]"
       // style={{
       //     background: "linear-gradient(50deg, #fbfcf8 43%, #e6f4f7 100%)"
       //   }}
     >
       <div
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 custom-width"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 custom-width pt-8 sm:pt-16"
         style={{ width: "90%" }}
       >
         {/* Grid Section */}

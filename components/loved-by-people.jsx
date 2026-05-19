@@ -106,7 +106,7 @@ const scale = useTransform(scrollYProgress, [0, 0.5], [0.7, 1]);
       "
     >
       <div>
-        <div className="container mx-auto px-6 max-w-6xl mb-5">
+        <div className="container mx-auto px-6 max-w-6xl mb-0 sm:mb-5 py-8 sm:py-0">
           {/* Video Section */}
           <div className="fade-up text-left sm:text-center mb-20">
             {/* Heading */}
@@ -158,7 +158,7 @@ const scale = useTransform(scrollYProgress, [0, 0.5], [0.7, 1]);
           </div>
 
           {/* First Row - Hero Section */}
-          <div className="text-center mb-16">
+          <div className="text-center py-8 sm:py-16">
             <img
               src="/Images/Loved-by-people.png"
               alt="Loved by People"
@@ -168,7 +168,7 @@ const scale = useTransform(scrollYProgress, [0, 0.5], [0.7, 1]);
           </div>
 
           {/* Second Row - Testimonials */}
-          <div className="text-left sm:text-center">
+          <div className="pt-16 text-left sm:text-center">
             <h3 className="text-2xl  text-gray-900 dark:text-gray-100 mb-2">
               Trusted By Teams Who
             </h3>
@@ -309,7 +309,7 @@ const scale = useTransform(scrollYProgress, [0, 0.5], [0.7, 1]);
 
       {/* Form Heading Section */}
       <div
-        className="text-left sm:text-center mt-16 mx-auto"
+        className="text-left sm:text-center mt-20 sm:mt-24 mx-auto"
         style={{ width: "90%" }}
       >
         <h2 className="text-2xl text-gray-900 dark:text-white mb-2">
