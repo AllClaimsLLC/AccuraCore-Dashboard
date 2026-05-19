@@ -326,7 +326,7 @@
 //                   key={i}
 //                   className="bg-white dark:bg-slate-900 p-6 rounded-2xl space-y-4 transition-all duration-300 hover:scale-105 hover:shadow-xl"
 //                 >
-//                  <div className="w-12 h-12 rounded-lg bg-[#0061A5] flex items-center justify-center group transition-all duration-300">
+//                  <div className="w-6 h-6 md:w-10 md:h-10 flex items-center justify-center bg-[#0061A4] rounded-[8px] md:rounded-[10px] shrink-0">
 //   <Image
 //     src={item.icon}
 //     alt={item.title}
@@ -378,83 +378,59 @@
 // V3 of Homepage
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Monitor, Workflow, TrendingUp } from "lucide-react";
 import useFadeIn from "@/lib/useFadeIn";
 import Marquee from "./Marquee";
-import DashboardIcon from "@/public/Icons/Homepage/Unified Dashboard Experience.svg?url";
-import WorkflowIcon from "@/public/Icons/Homepage/Workflow That Matches Your Contracting Process.svg?url";
-import FinancialIcon from "@/public/Icons/Homepage/Built-in Financial Intelligence.svg?url";
 import CreateCompanyIcon from "@/public/Icons/Homepage/Create Your Company.svg?url";
 import BuildWorkflowIcon from "@/public/Icons/Homepage/Build Custom Workflows.svg?url";
 import ControlPanelIcon from "@/public/Icons/Homepage/All-in-One Control Panel.svg?url";
+import Link from "next/link";
 
 export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
   useFadeIn();
-  const [selectedFeature, setSelectedFeature] = useState(
-    "Unified Dashboard Experience",
-  );
-
-  const images = {
-    "Unified Dashboard Experience": "/Images/unified.png",
-    "Workflow That Matches Your Contracting Process": "/Images/OCET.png",
-    "Built-In Financial Intelligence": "/Images/builtIn.png",
-  };
-
-  const features = [
-    {
-      title: "Unified Dashboard Experience",
-      desc: "One Platform, Total Control, Zero Hassle",
-      Icon: DashboardIcon,
-    },
-    {
-      title: "Workflow That Matches Your Contracting Process",
-      desc: "We Adapt To You With Custom Workflows And Logic Switches",
-      Icon: WorkflowIcon,
-    },
-    {
-      title: "Built-In Financial Intelligence",
-      desc: "Budgeting, Estimates, Invoicing All Accurate And Audit-Ready",
-      Icon: FinancialIcon,
-    },
-  ];
 
 const steps = [
   {
+    icon: "/Icons/one-operating.svg",
     title: "One Operating System. Zero App-Switching.",
     desc: "Run your entire business from a single dashboard, no more juggling 5 tools to get through one job.",
+    link: null,
   },
   {
-    number: "02",
+    icon: "/Icons/a-crm-that-fits.svg",
     title: "A CRM That Fits How You Actually Work",
     desc: "Fully customizable to match your workflow, your team, and your trade, not the other way around.",
+    link: "/workflow-automation",
   },
   {
-    number: "03",
+    icon: "/Icons/snap.svg",
     title: "Snap. Speak. Upload. Done.",
     desc: "Integrated camera with voice labeling instantly uploads job photos and notes to the right file. No paperwork later.",
+    link: "/accuracam",
   },
   {
-    number: "04",
+    icon: "/Icons/talk.svg",
     title: "Talk Directly to Your Customers with MyAccuraCore",
     desc: "Real-time, two-way communication that keeps clients in the loop and your phone from blowing up.",
+    link: "/my-accuracore",
   },
   {
-    number: "05",
+    icon: "/Icons/insurance.svg",
     title: "Get More Insurance Claims Paid",
     desc: "Track every claim and auto-generate damage reports that adjusters actually approve. More approvals = more revenue.",
+    link: "/accuracore-claims",
   },
   {
-    number: "06",
+    icon: "/Icons/move.svg",
     title: "We Move Your Data In, Free",
     desc: "Switching systems? We migrate everything from your current setup at zero cost.",
+    link: "/book-a-demo",
   },
   {
-    number: "07",
+    icon: "/Icons/support.svg",
     title: "Onboarding & Support That Has Your Back",
     desc: "Real humans, real fast. We make the switch EASY so you can get back to building.",
+    link: "/book-a-demo",
   },
 ];
 
@@ -480,9 +456,15 @@ const steps = [
             <div className="gradient-border gradient-shadow p-[1px] rounded-[15px]">
               <div className="bg-white dark:bg-slate-900 p-2 md:p-6 rounded-[15px] flex flex-col gap-4 transition-transform transform hover:scale-105">
                 {/* Number */}
-                <div className="text-white w-6 h-6 md:w-10 md:h-10 flex items-center text-[12px] md:text-lg justify-center bg-[#0061A4] rounded-[8px] md:rounded-[12px]">
-                  01
-                </div>
+                 <div className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-[#0061A4] rounded-[8px] md:rounded-[10px] shrink-0">
+                    <Image
+                      src={steps[0].icon}
+                    alt={steps[0].title}
+                      width={20}
+                      height={20}
+                      className="object-contain md:w-5 md:h-5"
+                    />
+                  </div>
 
                 {/* Content */}
                 <div>
@@ -499,15 +481,20 @@ const steps = [
             {/* Steps / Boxes */}
             <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
               {steps.slice(1).map((step, idx) => (
-                <div
-                  key={idx}
-                  className="bg-white dark:bg-slate-900 p-2 md:p-6 rounded-[12px] md:rounded-[15px] shadow-lg flex flex-row md:flex-col items-start gap-3 md:gap-4 transition-transform transform hover:scale-105"
-                >
+  <Link
+    key={idx}
+    href={step.link}
+    className="bg-white dark:bg-slate-900 p-2 md:p-6 rounded-[12px] md:rounded-[15px] shadow-lg flex flex-row md:flex-col items-start gap-3 md:gap-4 transition-transform transform hover:scale-105 cursor-pointer"
+  >
                   {/* Number Box */}
-                  <div className="text-white w-6 h-6 md:w-10 md:h-10 flex items-center justify-center bg-[#0061A4] rounded-[8px] md:rounded-[10px] shrink-0">
-                    <span className="text-[12px] md:text-lg">
-                      {step.number}
-                    </span>
+                 <div className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-[#0061A4] rounded-[8px] md:rounded-[10px] shrink-0">
+                    <Image
+                     src={step.icon}
+                      alt={step.title}
+                      width={20}
+                      height={20}
+                      className="object-contain md:w-5 md:h-5"
+                    />
                   </div>
 
                   {/* Content */}
@@ -520,7 +507,7 @@ const steps = [
                       {step.desc}
                     </p>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -528,87 +515,7 @@ const steps = [
       </section>
 
       <div className="max-w-7xl mx-auto md:mt-10">
-        <div className="fade-up">
-          <div
-            id={id}
-            className="grid lg:grid-cols-2 gap-12 mb-16"
-            style={{ width: "90%", margin: "auto" }}
-          >
-            {/* Left Column */}
-            <div className="space-y-8">
-              <h2 className="text-2xl text-gray-900 dark:text-white">
-                What Makes <br />
-                <strong>AccuraCore</strong> Different?
-              </h2>
-
-              {/* Feature Items */}
-              <div className="space-y-6">
-                {features.map((feature, idx) => (
-                  <div
-                    key={idx}
-                    onClick={() => setSelectedFeature(feature.title)}
-                    className={`
-                    group flex items-start space-x-4 p-4 rounded-xl cursor-pointer transition-all duration-300 transform hover:scale-105 bg-white dark:bg-slate-900 hover:shadow-[0_8px_25px_rgba(0,97,165,0.3)]
-                     ${
-                       selectedFeature === feature.title
-                         ? "border-2 border-[#0061a5]"
-                         : "border border-transparent"
-                     }
-                  `}
-                  >
-                    <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-[#0061a5] transition-all shrink-0">
-                      <Image
-                        src={feature.Icon}
-                        alt={feature.title}
-                        width={28}
-                        height={28}
-                        className="
-  w-7 h-7 object-contain
-  brightness-0 invert
-  transition-all duration-300
-"
-                      />
-                    </div>
-
-                    <div>
-                      <h3 className="text-md font-semibold text-gray-800 dark:text-white">
-                        {feature.title}
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-400">
-                        {feature.desc}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <Button
-                className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center text-white bg-[#0061A4] hover:bg-[#00548f]"
-                style={{
-                  padding: "25px 15px",
-                }}
-                onClick={() => (window.location.href = "/book-a-demo")}
-              >
-                Book Demo
-                <img
-                  src="/Icons/Vector.png"
-                  alt="Arrow Icon"
-                  className="w-2 h-3 ml-2"
-                />
-              </Button>
-            </div>
-
-            {/* Right Column - Animated Image */}
-            <div className="relative overflow-hidden">
-              <img
-                key={selectedFeature} // Forces re-render when feature changes
-                src={images[selectedFeature]}
-                alt={selectedFeature}
-                className="rounded-2xl w-full h-auto object-cover slide-in"
-              />
-            </div>
-          </div>
-        </div>
+       
         {/* Bottom Section - How It Works */}
         <div className="fade-up">
           <div
@@ -617,7 +524,7 @@ const steps = [
             style={{ width: "90%", margin: "auto" }}
           >
             {/* First Row - Heading */}
-            <div className="text-left" style={{ marginTop: "5rem" }}>
+            <div className="text-left">
               <h2 className="text-2xl text-gray-900 dark:text-white mb-2">
                 How It Works To Power Your Contracting Business
               </h2>
@@ -651,17 +558,13 @@ const steps = [
                   key={i}
                   className="bg-white dark:bg-slate-900 p-6 rounded-2xl space-y-4 transition-all duration-300 hover:scale-105 hover:shadow-xl"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-[#0061A5] flex items-center justify-center group transition-all duration-300">
+                 <div className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-[#0061A4] rounded-[8px] md:rounded-[10px] shrink-0">
                     <Image
-                      src={item.icon}
+                     src={item.icon}
                       alt={item.title}
-                      width={28}
-                      height={28}
-                      className="
-      w-7 h-7 object-contain
-      brightness-0 invert
-      transition-all duration-300
-    "
+                      width={20}
+                      height={20}
+                      className="object-contain md:w-5 md:h-5"
                     />
                   </div>
 
