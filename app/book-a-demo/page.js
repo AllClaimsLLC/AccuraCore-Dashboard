@@ -9,7 +9,8 @@ import Link from "next/link";
 import { RxCross2 } from "react-icons/rx";
 import { useRouter } from "next/navigation";
 import CustomDropdown from "@/components/CustomDropdown";
-import { BookDemoForm } from "@/components/BookDemoForm";
+// import { BookDemoForm } from "@/components/BookDemoForm";
+import { BookDemoFormV2 } from "@/components/BookDemoFormV2";
 
 export default function BookADemo() {
   const router = useRouter();
@@ -333,18 +334,14 @@ export default function BookADemo() {
 
         {/* Hero Section */}
         <div id="demo-form">
-          <BookDemoForm
+          <BookDemoFormV2
   currentStep={currentStep}
   setCurrentStep={setCurrentStep}
 />
         </div>
       </div>
 
-      <section
-  className={`px-6 py-16 bg-[#f4f0ed] dark:bg-slate-950 ${
-    currentStep === 3 ? "h-[60rem] md:h-[50rem]" : "h-[35rem] md:h-[20rem]"
-  }`}
-></section>
+     <section className="px-6 py-16 bg-[#f4f0ed] dark:bg-slate-950 h-[35rem] md:h-[20rem]" />
 
       <Footer id="contact-section" onBookDemo={() => setIsOpen(true)} />
       {/* Popup Modal */}

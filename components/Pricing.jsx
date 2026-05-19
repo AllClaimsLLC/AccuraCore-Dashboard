@@ -253,7 +253,7 @@ export default function Pricing({ addonEnabled, setIsOpen }) {
                         {plan.perUser}
                       </span>
                       <br />
-                      per additional user
+                      per user
                     </div>
                   </div>
                 </div>
