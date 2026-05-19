@@ -1,11 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { FaLinkedinIn } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 export default function Footer({ id, onBookDemo }) {
+  const [hideBookDemo, setHideBookDemo] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setHideBookDemo(sessionStorage.getItem("submitted") === "1");
+    }
+  }, []);
+
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const submitted = sessionStorage.getItem("submitted") === "1";
+
+    if (pathname !== "/thank-you") {
+      sessionStorage.removeItem("submitted");
+      setHideBookDemo(false);
+      return;
+    }
+
+    setHideBookDemo(submitted);
+  }, [pathname]);
+
   return (
     <footer
       id={id}
@@ -41,22 +64,24 @@ export default function Footer({ id, onBookDemo }) {
             </p>
 
             {/* Book Demo Button */}
-            <Button
-              className="text-white rounded-full text-sm flex items-center"
-              style={{
-                backgroundColor: "#0061A4",
-                padding: "25px 15px",
-                cursor: "pointer",
-              }}
-              onClick={() => (window.location.href = "/book-a-demo")}
-            >
-              Book Demo
-              <img
-                src="/Icons/Vector.png"
-                alt="Arrow Icon"
-                className="w-2 h-3 ml-2"
-              />
-            </Button>
+            {!hideBookDemo && (
+              <Button
+                className="text-white rounded-full text-sm flex items-center"
+                style={{
+                  backgroundColor: "#0061A4",
+                  padding: "25px 15px",
+                  cursor: "pointer",
+                }}
+                onClick={() => (window.location.href = "/book-a-demo")}
+              >
+                Book Demo
+                <img
+                  src="/Icons/Vector.png"
+                  alt="Arrow Icon"
+                  className="w-2 h-3 ml-2"
+                />
+              </Button>
+            )}
           </div>
 
           {/* Right Column */}

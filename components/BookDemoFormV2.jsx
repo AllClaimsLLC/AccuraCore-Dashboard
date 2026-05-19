@@ -8,12 +8,12 @@ export const BookDemoFormV2 = () => {
   const router = useRouter();
   const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
-  fullName: "",
-  companyName: "",
-  role: "",
-  email: "",
-  phone: "",
-});
+    fullName: "",
+    companyName: "",
+    role: "",
+    email: "",
+    phone: "",
+  });
 
   // New state for status message
   const [statusMessage, setStatusMessage] = useState({ text: "", type: "" });
@@ -86,15 +86,15 @@ export const BookDemoFormV2 = () => {
     }));
   };
 
-const validateForm = () => {
-  return (
-    formData.fullName.trim().length >= 2 &&
-    formData.companyName.trim().length >= 2 &&
-    formData.role.trim().length > 0 &&
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) &&
-    /^\+?[0-9]{8,15}$/.test(formData.phone)
-  );
-};
+  const validateForm = () => {
+    return (
+      formData.fullName.trim().length >= 2 &&
+      formData.companyName.trim().length >= 2 &&
+      formData.role.trim().length > 0 &&
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) &&
+      /^\+?[0-9]{8,15}$/.test(formData.phone)
+    );
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -120,21 +120,22 @@ const validateForm = () => {
       });
 
       if (response.ok) {
+        sessionStorage.setItem("submitted", "1");
         router.push("/thank-you");
 
         // Reset form
-setFormData({
-  fullName: "",
-  companyName: "",
-  role: "",
-  email: "",
-  phone: "",
-});
+        setFormData({
+          fullName: "",
+          companyName: "",
+          role: "",
+          email: "",
+          phone: "",
+        });
       } else {
         throw new Error("Form submission failed");
       }
     } catch (error) {
-      console.error("❌ Error:", error);
+      console.error("Error:", error);
       setStatusMessage({
         text: "Error submitting form. Please try again.",
         type: "error",

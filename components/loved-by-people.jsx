@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { BookDemoForm } from "./BookDemoForm";
+import { BookDemoFormV2 } from "./BookDemoFormV2";
 import useFadeIn from "@/lib/useFadeIn";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -322,7 +322,7 @@ const scale = useTransform(scrollYProgress, [0, 0.5], [0.7, 1]);
         </p>
       </div>
 
-      <BookDemoForm currentStep={currentStep} setCurrentStep={setCurrentStep} />
+      <BookDemoFormV2 />
     </section>
   );
 }
