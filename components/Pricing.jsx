@@ -158,7 +158,7 @@ export default function Pricing({ addonEnabled, setIsOpen }) {
     <section className="relative bg-[#fbf0ec] pt-5 pb-20 sm:py-20 z-20">
       <div className="mx-auto max-w-7xl px-5 relative">
         {/* PRICING GRID */}
-        <div className="flex flex-wrap justify-center gap-6 relative z-30 sm:mt-[-20%]">
+                <div className="flex flex-wrap justify-center gap-6 relative z-30 sm:mt-[-300px]">
           {orderedPlans.map((plan, index) => {
             const Icon = plan.icon;
             const price = addonEnabled ? plan.addon : plan.base;

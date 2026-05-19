@@ -31,7 +31,7 @@ export default function PricingPage() {
 
   return (
     <>
-<div className="relative z-10 bg-cover bg-center bg-no-repeat min-h-[55vh] sm:min-h-[100vh] flex flex-col"
+<div className="relative z-10 bg-cover bg-center bg-no-repeat min-h-[55vh] sm:min-h-[100vh] flex flex-col sm:pb-[220px]"
         style={{ backgroundImage: "url('/Images/Hero-bg.png')" }}
       >
         {/* Header */}
