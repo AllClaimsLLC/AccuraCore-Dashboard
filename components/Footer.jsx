@@ -95,7 +95,7 @@ export default function Footer({ id, onBookDemo }) {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3 cursor-pointer hover:text-[#0061A4]">
                     <img
-                      src="/Icons/call-add.png"
+                      src="/Icons/call-add.svg"
                       alt="Call Icon"
                       className="w-4 h-4"
                     />
@@ -103,7 +103,7 @@ export default function Footer({ id, onBookDemo }) {
                   </div>
                   <div className="flex items-center space-x-3 cursor-pointer hover:text-[#0061A4]">
                     <img
-                      src="/Icons/mail-at-sign-01.png"
+                      src="/Icons/mail-at-sign-01.svg"
                       alt="Mail Icon"
                       className="w-4 h-4"
                     />
