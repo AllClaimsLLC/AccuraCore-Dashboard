@@ -222,7 +222,7 @@ export default function CompareThePlans() {
                     <div key={feature}>
                       {/* FEATURE ROW (UNCHANGED UI + ARROW ADDED) */}
                       <div className="bg-white rounded-[10px] px-6 py-4 flex items-center justify-between">
-                        <span className="text-[12px] font-medium">
+                        <span className="text-[12px] text-black font-medium">
                           {feature}
                         </span>
 
@@ -261,7 +261,7 @@ export default function CompareThePlans() {
                           return (
                             <div
                               key={plan.name}
-                              className="flex items-center justify-center rounded-[10px] min-h-[45px] text-[12px] font-[500] bg-white"
+                              className="text-black flex items-center justify-center rounded-[10px] min-h-[45px] text-[12px] font-[500] bg-white"
                             >
                               {typeof value === "boolean" ? (
                                 value ? (
