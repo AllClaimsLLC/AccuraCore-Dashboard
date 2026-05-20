@@ -4,7 +4,6 @@ import useFadeIn from "@/lib/useFadeIn";
 import Image from "next/image";
 import { Star } from "lucide-react";
 
-
 const features = [
   "User capacity",
   "Per-additional-user",
@@ -49,7 +48,7 @@ export default function CompareThePlans() {
   useFadeIn();
 
   return (
-    <section className="relative w-full overflow-hidden pt-16 pb-14 lg:px-6">
+<section className="relative w-full overflow-hidden pt-12 pb-10 lg:px-6 md:pt-16 md:pb-14">
       {/* Background Image */}
       <div className="absolute inset-0 -z-10">
         <Image
@@ -60,15 +59,15 @@ export default function CompareThePlans() {
         />
       </div>
 
-      <div className="fade-up mx-auto max-w-[95%] px-4">
+      <div className="fade-up mx-auto max-w-[95%] px-3 md:px-4">
         {/* HEADING */}
-        <div className="mb-12 text-center">
+        <div className="mb-8 text-center md:mb-12">
           <h3
             className="
             text-white
             font-[400]
             leading-[1.2]
-            text-[25px] md:text-[30px]
+            text-[22px] md:text-[30px]
           "
           >
             Compare The Plans
@@ -78,57 +77,55 @@ export default function CompareThePlans() {
         {/* TABLE WRAPPER */}
         <div className="overflow-x-auto pb-2">
           {/* MAIN CONTAINER */}
-          <div className="min-w-[1100px] rounded-[30px] bg-white p-5 shadow-[0_10px_40px_rgba(0,0,0,0.05)]">
+          <div className="min-w-[950px] rounded-[22px] bg-white p-3 shadow-[0_10px_40px_rgba(0,0,0,0.05)] md:min-w-[1100px] md:rounded-[30px] md:p-5">
             {/* INNER CONTAINER */}
-            <div className="rounded-[24px] bg-[#f4f7f7] p-2">
-             {/* HEADER */}
-<div className="mb-2 flex h-[70px] w-full overflow-hidden rounded-t-[24px] bg-[#0061A4] text-white">
+            <div className="rounded-[18px] bg-[#f4f7f7] p-1.5 md:rounded-[24px] md:p-2">
+              {/* HEADER */}
+              <div className="mb-1.5 flex h-[56px] w-full overflow-hidden rounded-t-[18px] bg-[#0061A4] text-white md:mb-2 md:h-[70px] md:rounded-t-[24px]">
+                {/* FEATURE */}
+                <div className="flex flex-[1.1] items-center px-3 text-[11px] font-[500] uppercase tracking-[0.05em] md:px-5 md:text-sm md:tracking-[0.08em]">
+                  Feature
+                </div>
 
-  {/* FEATURE */}
-  <div className="flex-[1.1] flex items-center px-5 text-sm font-[500] uppercase tracking-[0.08em]">
-    Feature
-  </div>
+                {/* PRO */}
+                <div className="flex flex-1 items-center justify-center text-[11px] font-[500] uppercase tracking-[0.05em] md:text-sm md:tracking-[0.08em]">
+                  Pro
+                </div>
 
-  {/* PRO */}
-  <div className="flex flex-1 items-center justify-center text-sm font-[500] uppercase tracking-[0.08em]">
-    Pro
-  </div>
+                {/* PLUS */}
+                <div className="flex flex-1 items-center justify-center text-[11px] font-[500] uppercase tracking-[0.05em] md:text-sm md:tracking-[0.08em]">
+                  Plus
+                </div>
 
-  {/* PLUS */}
-  <div className="flex flex-1 items-center justify-center text-sm font-[500] uppercase tracking-[0.08em]">
-    Plus
-  </div>
+                {/* GOLD */}
+                <div className="flex flex-1 items-center justify-center gap-1 text-[11px] font-[500] uppercase tracking-[0.05em] md:gap-2 md:text-sm md:tracking-[0.08em]">
+                  <Star className="h-3 w-3 fill-current text-white md:h-4 md:w-4" />
+                  Gold
+                </div>
 
-  {/* GOLD */}
-  <div className="flex flex-1 items-center justify-center gap-2 text-sm font-[500] uppercase tracking-[0.08em]">
-    <Star className="h-4 w-4 fill-current text-white" />
-    Gold
-  </div>
+                {/* PLATINUM */}
+                <div className="flex flex-1 items-center justify-center text-[11px] font-[500] uppercase tracking-[0.05em] md:text-sm md:tracking-[0.08em]">
+                  Platinum
+                </div>
 
-  {/* PLATINUM */}
-  <div className="flex flex-1 items-center justify-center text-sm font-[500] uppercase tracking-[0.08em]">
-    Platinum
-  </div>
-
-  {/* TITANIUM */}
-  <div className="flex flex-1 items-center justify-center text-sm font-[500] uppercase tracking-[0.08em]">
-    Titanium
-  </div>
-
-</div>
+                {/* TITANIUM */}
+                <div className="flex flex-1 items-center justify-center text-[11px] font-[500] uppercase tracking-[0.05em] md:text-sm md:tracking-[0.08em]">
+                  Titanium
+                </div>
+              </div>
 
               {/* ROWS */}
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-1.5 md:gap-2">
                 {features.map((feature, rowIndex) => (
                   <div
                     key={feature}
-                    className="grid gap-2"
+                    className="grid gap-1.5 md:gap-2"
                     style={{
                       gridTemplateColumns: "1.4fr repeat(5, 1fr)",
                     }}
                   >
                     {/* FEATURE COLUMN */}
-                    <div className="flex min-h-[64px] items-center rounded-[10px] bg-white px-5 text-[15px] font-medium text-black">
+                    <div className="flex min-h-[52px] items-center rounded-[8px] bg-white px-3 text-[12px] font-medium leading-[1.3] text-black md:min-h-[64px] md:rounded-[10px] md:px-5 md:text-[15px]">
                       {feature}
                     </div>
 
@@ -139,33 +136,35 @@ export default function CompareThePlans() {
                       return (
                         <div
                           key={plan.name + rowIndex}
-                          className={`flex min-h-[64px] items-center justify-center rounded-[10px] text-[15px] font-[500] ${
+                          className={`flex min-h-[52px] items-center justify-center rounded-[8px] text-[12px] font-[500] md:min-h-[64px] md:rounded-[10px] md:text-[15px] ${
                             plan.highlight ? "bg-[#dfecf4]" : "bg-white"
                           }`}
                         >
                           {typeof value === "boolean" ? (
-  value ? (
-  <div className="flex items-center justify-center">
-    <Image
-      src="/Icons/PricingPage/Tick.svg"
-      alt="Check"
-      width={25}
-      height={25}
-    />
-  </div>
-) : (
-  <div className="flex items-center justify-center">
-    <Image
-      src="/Icons/PricingPage/Cross.svg"
-      alt="Cross"
-      width={25}
-      height={25}
-    />
-  </div>
-)
-) : (
-  <span className="text-black">{value}</span>
-)}
+                            value ? (
+                              <div className="flex items-center justify-center">
+                                <Image
+                                  src="/Icons/PricingPage/Tick.svg"
+                                  alt="Check"
+                                  width={20}
+                                  height={20}
+                                  className="md:h-[25px] md:w-[25px]"
+                                />
+                              </div>
+                            ) : (
+                              <div className="flex items-center justify-center">
+                                <Image
+                                  src="/Icons/PricingPage/Cross.svg"
+                                  alt="Cross"
+                                  width={20}
+                                  height={20}
+                                  className="md:h-[25px] md:w-[25px]"
+                                />
+                              </div>
+                            )
+                          ) : (
+                            <span className="text-black">{value}</span>
+                          )}
                         </div>
                       );
                     })}
