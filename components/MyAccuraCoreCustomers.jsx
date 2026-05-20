@@ -47,41 +47,45 @@ export default function MyAccuraCoreCustomers() {
             </p>
 
             {/* PILL ROW */}
-            <div className="mt-4 flex flex-wrap items-center gap-4">
-              {/* Pill 1 */}
-              <div
-                className="
+<div className="mt-4 flex flex-wrap items-center gap-4">
+  {/* Pill 1 */}
+  <div
+    className="
       flex items-center gap-2
       px-4 py-4
       rounded-full
       border border-[#0061A4]
     "
-              >
-                <img
-                  src="/Icons/cli.png"
-                  alt="Customers"
-                  className="w-5 h-5 object-contain"
-                />
-                <span className="text-sm text-white">Customers love it</span>
-              </div>
+  >
+    <Image
+      src="/Icons/OurStory/customers-love-it.svg"
+      alt="Customers"
+      width={20}
+      height={20}
+      className="w-5 h-5 object-contain"
+    />
+    <span className="text-sm text-white">Customers love it</span>
+  </div>
 
-              {/* Pill 2 */}
-              <div
-                className="
+  {/* Pill 2 */}
+  <div
+    className="
       flex items-center gap-2
       px-4 py-4
       rounded-full
       border border-[#FA8C3D]
     "
-              >
-                <img
-                  src="/Icons/crew.png"
-                  alt="Crew"
-                  className="w-5 h-5 object-contain"
-                />
-                <span className="text-sm text-white">Crew loves it</span>
-              </div>
-            </div>
+  >
+    <Image
+      src="/Icons/OurStory/crew-loves-it.svg"
+      alt="Crew"
+      width={20}
+      height={20}
+      className="w-5 h-5 object-contain"
+    />
+    <span className="text-sm text-white">Crew loves it</span>
+  </div>
+</div>
           </div>
 
           {/* RIGHT IMAGE */}

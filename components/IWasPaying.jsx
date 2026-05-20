@@ -22,7 +22,7 @@ export default function IWasPaying() {
           absolute
           left-0 md:left-50
           top-5
-          w-10 md:w-20
+          w-8 md:w-20
           object-contain
           pointer-events-none
           select-none
@@ -64,7 +64,7 @@ export default function IWasPaying() {
           absolute
           right-0 md:right-70
           bottom-20
-          w-10 md:w-20
+          w-8 md:w-20
           object-contain
           pointer-events-none
           select-none
