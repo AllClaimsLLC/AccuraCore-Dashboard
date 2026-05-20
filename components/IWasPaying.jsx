@@ -10,7 +10,7 @@ export default function IWasPaying() {
   useFadeIn();
   return (
     <>
-      <section className="w-full flex justify-center bg-[#fbf6f0] py-16 md:py-24 px-4 overflow-hidden">
+      <section id="Iwaspaying" className="w-full flex justify-center bg-[#fbf6f0] py-16 md:py-24 px-4 overflow-hidden">
         <div className="w-full md:max-w-[90%]">
           {/* QUOTE BLOCK */}
           <div className="fade-up relative flex justify-center items-center text-center px-4 md:px-10 mt-10">

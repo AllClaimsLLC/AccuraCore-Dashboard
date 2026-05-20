@@ -13,6 +13,7 @@ import { PricingAndPlans } from "@/components/PricingAndPlans";
 import Pricing from "@/components/Pricing";
 import CompareThePlans from "@/components/CompareThePlans";
 import PricingFaqs from "@/components/PricingFaqs";
+import FlashSaleRibbon from "@/components/FlashSalesRibbon";
 
 export default function PricingPage() {
   const [addonEnabled, setAddonEnabled] = useState(false);
@@ -31,9 +32,11 @@ export default function PricingPage() {
 
   return (
     <>
-<div className="relative z-10 bg-cover bg-center bg-no-repeat min-h-[55vh] sm:min-h-[100vh] flex flex-col sm:pb-[220px]"
+      <div
+        className="relative z-10 bg-cover bg-center bg-no-repeat min-h-[55vh] sm:min-h-[100vh] flex flex-col sm:pb-[220px]"
         style={{ backgroundImage: "url('/Images/Hero-bg.png')" }}
       >
+        <FlashSaleRibbon />
         {/* Header */}
         <header className="px-6 py-4 relative">
           <nav
@@ -456,7 +459,7 @@ export default function PricingPage() {
       <Pricing addonEnabled={addonEnabled} setIsOpen={setIsOpen} />
       <CompareThePlans />
       <PricingFaqs />
-      
+
       {/* <PricingAndPlans setIsOpen={setIsOpen} /> */}
 
       <Footer id="contact-section" onBookDemo={() => setIsOpen(true)} />

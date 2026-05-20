@@ -41,7 +41,7 @@ const plans = [
     button: "Get Started",
   },
 
-    {
+  {
     tier: "gold",
     name: "Gold",
     title: "MyAccuraCore Gold",
@@ -80,8 +80,6 @@ const plans = [
     ],
     button: "Get Started",
   },
-
-
 
   {
     tier: "platinum",
@@ -158,7 +156,7 @@ export default function Pricing({ addonEnabled, setIsOpen }) {
     <section className="relative bg-[#fbf0ec] pt-5 pb-20 sm:py-20 z-20">
       <div className="mx-auto max-w-7xl px-5 relative">
         {/* PRICING GRID */}
-                <div className="flex flex-wrap justify-center gap-6 relative z-30 sm:mt-[-300px]">
+        <div className="flex flex-wrap justify-center gap-6 relative z-30 sm:mt-[-300px]">
           {orderedPlans.map((plan, index) => {
             const Icon = plan.icon;
             const price = addonEnabled ? plan.addon : plan.base;
@@ -193,12 +191,12 @@ export default function Pricing({ addonEnabled, setIsOpen }) {
 
                 {/* ICON */}
                 <div className="relative mb-4 grid h-12 w-12 place-items-center rounded-[14px] bg-[#f5f7f4] text-black shadow-[0_6px_18px_rgba(0,0,0,0.12)] transition-all duration-500 group-hover:-rotate-6 group-hover:scale-110">
-                 <Image
-  src={plan.icon}
-  alt={plan.name}
-  width={24}
-  height={24}
-/>
+                  <Image
+                    src={plan.icon}
+                    alt={plan.name}
+                    width={24}
+                    height={24}
+                  />
                 </div>
 
                 <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#FA8C3D]">
@@ -267,13 +265,13 @@ export default function Pricing({ addonEnabled, setIsOpen }) {
                         className="flex items-start gap-2.5 text-[13.5px] leading-[1.4] text-slate-500"
                       >
                         <span className="grid h-[22px] w-[22px] flex-shrink-0 place-items-center rounded-full transition-all duration-300 group-hover:scale-110">
-  <Image
-    src="/Icons/PricingPage/Tick.svg"
-    alt="Tick"
-    width={22}
-    height={22}
-  />
-</span>
+                          <Image
+                            src="/Icons/PricingPage/Tick.svg"
+                            alt="Tick"
+                            width={22}
+                            height={22}
+                          />
+                        </span>
 
                         <span className="text-sm text-gray-600">
                           {formatFeature(feature)}
@@ -330,47 +328,52 @@ export default function Pricing({ addonEnabled, setIsOpen }) {
           </div>
 
           {/* Second Row - 3 Columns */}
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             {[
-  {
-    title: "Jobs & Contacts",
-    desc: "One source of truth for every client, vendor, crew member, and job.",
-    icon: JobsContactsIcon,
-  },
-  {
-    title: "Estimates & Invoicing",
-    desc: "Audit-ready financials with built-in approvals and payment links.",
-    icon: EstimatesInvoicingIcon,
-  },
-  {
-    title: "Live Dashboards",
-    desc: "Real-time KPIs, anomaly alerts, and forecasting on one screen.",
-    icon: LiveDashboardsIcon,
-  },
-  {
-    title: "Claims Module",
-    desc: "Inspection-to-payout pipeline with photo evidence trails.",
-    icon: ClaimsModuleIcon,
-  },
-].map((item, i) => (
+              {
+                title: "Jobs & Contacts",
+                desc: "One source of truth for every client, vendor, crew member, and job.",
+                icon: JobsContactsIcon,
+              },
+              {
+                title: "Estimates & Invoicing",
+                desc: "Audit-ready financials with built-in approvals and payment links.",
+                icon: EstimatesInvoicingIcon,
+              },
+              {
+                title: "Live Dashboards",
+                desc: "Real-time KPIs, anomaly alerts, and forecasting on one screen.",
+                icon: LiveDashboardsIcon,
+              },
+              {
+                title: "Claims Module",
+                desc: "Inspection-to-payout pipeline with photo evidence trails.",
+                icon: ClaimsModuleIcon,
+              },
+            ].map((item, i) => (
               <div
                 key={i}
-                className="bg-white p-6 rounded-2xl space-y-4 transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                className="bg-white p-2 md:p-6 rounded-[12px] md:rounded-2xl shadow-lg flex flex-row md:flex-col items-start gap-3 md:gap-4 transition-all duration-300 hover:scale-105 hover:shadow-xl"
               >
-                <div className="w-10 h-10 rounded-[10px] bg-[#0061A5] flex items-center justify-center">
+                <div className="w-6 h-6 md:w-10 md:h-10 rounded-[8px] md:rounded-[10px] bg-[#0061A5] flex items-center justify-center shrink-0">
                   <Image
-  src={item.icon}
-  alt={item.title}
-  width={25}
-  height={25}
-/>
+                    src={item.icon}
+                    alt={item.title}
+                    width={14}
+                    height={14}
+                    className="object-contain md:w-[25px] md:h-[25px]"
+                  />
                 </div>
 
-                <h3 className="text-xl font-semibold text-gray-900">
-                  {item.title}
-                </h3>
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-[13px] md:text-xl font-semibold text-gray-900 leading-snug">
+                    {item.title}
+                  </h3>
 
-                <p className="text-gray-600 text-sm">{item.desc}</p>
+                  <p className="text-[12px] md:text-sm text-gray-600 leading-snug">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
