@@ -180,7 +180,7 @@ export default function CompareThePlans() {
           <div className="bg-white rounded-[18px] p-2">
             <div className="rounded-[18px] bg-[#f6f6f6] p-1">
               {/* TOP HEADER */}
-              <div className="flex h-[52px] w-full items-center rounded-[14px] bg-[#0061A4] px-2 text-white">
+              <div className="flex h-[52px] w-full items-center rounded-t-[14px] bg-[#0061A4] px-2 text-white">
                 {/* PRO (narrow) */}
                 <div className="flex-[0.8] flex items-center justify-center text-[11px] font-[500] uppercase">
                   Pro
