@@ -20,8 +20,8 @@ const buttons = (onGetStarted) => (
       onClick={onGetStarted}
     >
       Get Started
-     <img
-                    src="/Icons/Vector2.png"
+    <img
+                    src="/Icons/right-arrow-blue.svg"
                     alt="Arrow Icon"
                     className="w-2 h-3 ml-2"
                   />
@@ -38,7 +38,7 @@ const buttons = (onGetStarted) => (
     >
       Book Demo
        <img
-                    src="/Icons/Vector.png"
+                    src="/Icons/right-arrow-white.svg"
                     alt="Arrow Icon"
                     className="w-2 h-3 ml-2"
                   />

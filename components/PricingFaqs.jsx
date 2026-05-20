@@ -38,7 +38,7 @@ const faqs = [
   },
 ];
 
-export default function PricingFaqs({ id }) {
+export default function PricingFaqs({ id, setIsOpen }) {
   useFadeIn();
   const [openFaq, setOpenFaq] = useState(null);
 
@@ -47,13 +47,13 @@ export default function PricingFaqs({ id }) {
   };
 
   return (
-<section
-  className="
+    <section
+      className="
     py-8 relative overflow-hidden custom-padding
     bg-[linear-gradient(to_top_right,_#faf5ef_40%,_#e8f5fb_60%)]
     dark:bg-[linear-gradient(50deg,_#020617_0%,_#0f172a_100%)]
   "
->
+    >
       <div>
         <div className="container mx-auto sm:px-6 max-w-[90%] mb-5">
           <div className="mt-25">
@@ -142,23 +142,23 @@ export default function PricingFaqs({ id }) {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
-              <Link href="/" className="w-full sm:w-auto md:w-auto lg:w-auto ">
-                <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center justify-center"
-                  style={{
-                    backgroundColor: "#ffffff",
-                    color: "#0061A4",
-                    padding: "25px 18px",
-                  }}
-                >
-                  Talk to Sales
-                  <img
-                    src="/Icons/Vector2.png"
-                    alt="Arrow Icon"
-                    className="w-2 h-3 ml-2"
-                  />
-                </Button>
-              </Link>
+              <Button
+                className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center justify-center"
+                style={{
+                  backgroundColor: "#ffffff",
+                  color: "#0061A4",
+                  padding: "25px 18px",
+                }}
+                onClick={() => setIsOpen(true)}
+              >
+                Talk to Sales
+                <img
+                src="/Icons/right-arrow-blue.svg"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
+              </Button>
+
               <Button
                 className="w-full sm:w-auto text-white rounded-full text-sm flex items-center"
                 style={{
@@ -170,10 +170,10 @@ export default function PricingFaqs({ id }) {
               >
                 Book Demo
                 <img
-                  src="/Icons/Vector.png"
-                  alt="Arrow Icon"
-                  className="w-2 h-3 ml-2"
-                />
+                src="/Icons/right-arrow-white.svg"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
               </Button>
             </div>
           </div>

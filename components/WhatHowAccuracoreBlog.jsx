@@ -105,11 +105,11 @@ useFadeIn();
         "Financial Overview & Audit-Ready Records",
       ].map((item, index) => (
         <div key={index} className="flex items-start gap-3">
-          <img
-            src="/Icons/check.png"
-            alt="check"
-            className="w-4 h-4 mt-1"
-          />
+<img
+  src="/Icons/BlogPage/tick.svg"
+  alt="check"
+  className="w-3 h-3 mt-1"
+/>
           <p className="text-[12px] md:text-[14px] text-gray-500">
             {item}
           </p>

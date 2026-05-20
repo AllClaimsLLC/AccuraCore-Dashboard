@@ -226,9 +226,9 @@ export default function TechMessCostChecker({ onBookDemo }) {
                     </span>
                     <div className="w-8 h-8 bg-white rounded-[5px] flex items-center justify-center">
                       <img
-                        src="/Icons/auto-conversations.png"
+                        src="/Icons/auto-conversations.svg"
                         alt="icon"
-                        className="w-5 h-5"
+                        className="w-6 h-6"
                       />
                     </div>
                   </div>
@@ -259,11 +259,11 @@ export default function TechMessCostChecker({ onBookDemo }) {
                     Monthly revenue you're losing
                   </span>
                   <div className="w-8 h-8 bg-white rounded-[5px] flex items-center justify-center">
-                    <img
-                      src="/Icons/auto-conversations.png"
-                      alt="icon"
-                      className="w-5 h-5"
-                    />
+                     <img
+                        src="/Icons/auto-conversations.svg"
+                        alt="icon"
+                        className="w-6 h-6"
+                      />
                   </div>
                 </div>
                 <span className="font-semibold text-lg text-gray-900">
@@ -293,10 +293,10 @@ export default function TechMessCostChecker({ onBookDemo }) {
               >
                 Book a Demo{" "}
                 <img
-                  src="/Icons/Vector.png"
-                  alt="Arrow Icon"
-                  className="w-2 h-3 ml-2"
-                />
+                src="/Icons/right-arrow-white.svg"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
               </Button>
             </div>
           )}
@@ -343,10 +343,10 @@ export default function TechMessCostChecker({ onBookDemo }) {
               >
                 Back to AccuraCore.com
                 <img
-                  src="/Icons/Vector2.png"
-                  alt="Arrow Icon"
-                  className="w-2 h-3 ml-2"
-                />
+                src="/Icons/right-arrow-blue.svg"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
               </Button>
 
               {/* Demo button */}
@@ -357,10 +357,10 @@ export default function TechMessCostChecker({ onBookDemo }) {
               >
                 Book Demo
                 <img
-                  src="/Icons/Vector.png"
-                  alt="Arrow Icon"
-                  className="w-2 h-3 ml-2"
-                />
+                src="/Icons/right-arrow-white.svg"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
               </Button>
             </div>
           </div>

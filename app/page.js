@@ -206,10 +206,10 @@ export default function HomePage() {
               >
                 Book Demo
                 <img
-                  src="/Icons/Vector.png"
-                  alt="Arrow Icon"
-                  className="w-2 h-3 ml-2"
-                />
+                src="/Icons/right-arrow-white.svg"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
               </Button>
             </div>
 
@@ -406,7 +406,7 @@ export default function HomePage() {
                   >
                     Check My Tech-Mess Cost
                     <img
-                      src="/Icons/Vector2.png"
+                      src="/Icons/right-arrow-blue.svg"
                       alt="Arrow Icon"
                       className="w-2 h-3 ml-2"
                     />
@@ -423,7 +423,7 @@ export default function HomePage() {
                 >
                   Book Demo
                   <img
-                    src="/Icons/Vector.png"
+                    src="/Icons/right-arrow-white.svg"
                     alt="Arrow Icon"
                     className="w-2 h-3 ml-2"
                   />
@@ -440,8 +440,8 @@ export default function HomePage() {
                   onClick={() => setIsOpen(true)}
                 >
                   Get Started
-                  <img
-                    src="/Icons/Vector2.png"
+                 <img
+                    src="/Icons/right-arrow-blue.svg"
                     alt="Arrow Icon"
                     className="w-2 h-3 ml-2"
                   />

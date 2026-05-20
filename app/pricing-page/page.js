@@ -205,10 +205,10 @@ export default function PricingPage() {
               >
                 Book Demo
                 <img
-                  src="/Icons/Vector.png"
-                  alt="Arrow Icon"
-                  className="w-2 h-3 ml-2"
-                />
+                src="/Icons/right-arrow-white.svg"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
               </Button>
             </div>
 
@@ -458,7 +458,7 @@ export default function PricingPage() {
       </div>
       <Pricing addonEnabled={addonEnabled} setIsOpen={setIsOpen} />
       <CompareThePlans />
-      <PricingFaqs />
+      <PricingFaqs setIsOpen={setIsOpen} />
 
       {/* <PricingAndPlans setIsOpen={setIsOpen} /> */}
 

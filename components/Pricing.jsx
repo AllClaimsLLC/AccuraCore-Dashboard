@@ -294,7 +294,7 @@ export default function Pricing({ addonEnabled, setIsOpen }) {
                   {plan.button}
 
                   <img
-                    src="/Icons/arrow-right.png"
+                    src="/Icons/right-arrow-white.svg"
                     alt="Arrow Icon"
                     className="ml-2 h-3 w-2"
                   />

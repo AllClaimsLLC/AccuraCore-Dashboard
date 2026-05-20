@@ -63,29 +63,30 @@ export default function WhatYouWillDiscover() {
         </div>
 
         {/* Steps / Boxes */}
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-          {steps.map((step, idx) => (
-            <div
-              key={idx}
-              className="bg-white dark:bg-slate-900 p-6 rounded-[15px] shadow-lg flex flex-col gap-4 transition-transform transform hover:scale-105"
-            >
-              {/* Number Box */}
-              <div className="w-10 h-10 flex items-center justify-center bg-[#0061A4] text-white font-semibold rounded-[10px] text-sm">
-                {step.number}
+         <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            {steps.map((step, idx) => (
+              <div
+                key={idx}
+                className="bg-white dark:bg-slate-900 p-2 md:p-6 rounded-[12px] md:rounded-[15px] shadow-lg flex flex-row md:flex-col items-start gap-3 md:gap-4 transition-transform transform hover:scale-105"
+              >
+                {/* Number Box */}
+                <div className="w-6 h-6 md:w-10 md:h-10 flex items-center justify-center bg-[#0061A4] text-white font-semibold rounded-[8px] md:rounded-[10px] shrink-0 text-[11px] md:text-sm">
+                  {step.number}
+                </div>
+
+                {/* Content */}
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-[13px] md:text-lg font-semibold text-gray-900 dark:text-white leading-snug">
+                    {step.title}
+                  </h3>
+
+                  <p className="text-[12px] md:text-sm text-gray-600 dark:text-gray-400 leading-snug">
+                    {step.desc}
+                  </p>
+                </div>
               </div>
-
-              {/* Heading */}
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                {step.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
-                {step.desc}
-              </p>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
       </div>
       </div>
     </section>

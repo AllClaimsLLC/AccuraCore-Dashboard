@@ -316,7 +316,7 @@ export default function AccuraCoreBundle({setIsOpen}) {
                   onClick={() => setIsOpen(true)}
                 >
                   Get Started
-                  <img src="/Icons/Vector.png" className="w-2 h-3" />
+                  <img src="/Icons/right-arrow-white.svg" className="w-2 h-3" />
                 </button>
               </div>
 

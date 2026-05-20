@@ -76,10 +76,10 @@ export default function Footer({ id, onBookDemo }) {
               >
                 Book Demo
                 <img
-                  src="/Icons/Vector.png"
-                  alt="Arrow Icon"
-                  className="w-2 h-3 ml-2"
-                />
+                src="/Icons/right-arrow-white.svg"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
               </Button>
             )}
           </div>

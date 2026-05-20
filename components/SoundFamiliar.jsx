@@ -2,6 +2,11 @@
 
 import useFadeIn from "@/lib/useFadeIn";
 import { useState } from "react";
+import AppSwitchingIcon from "@/public/Icons/constant-app-switching.svg";
+import CommunicationIcon from "@/public/Icons/repeated-communication-loops.svg";
+import TimeLossIcon from "@/public/Icons/time-you-can-never-recover.svg";
+import RevenueIcon from "@/public/Icons/revenue-you-dont-know-youre-missing.svg";
+import Image from "next/image";
 
 export default function SoundFamiliar() {
   useFadeIn();
@@ -9,22 +14,22 @@ export default function SoundFamiliar() {
 
   const features = [
     {
-      icon: "/Icons/CAS.png",
+      icon: AppSwitchingIcon,
       title: "Constant app-switching",
       desc: "CRM, Camera App, Claims App, Scheduling, your team lives in 4+ tools per job",
     },
     {
-      icon: "/Icons/RCL.png",
+      icon: CommunicationIcon,
       title: "Repeated communication loops",
       desc: "The same job discussed across 3 platforms with no single source of truth",
     },
     {
-      icon: "/Icons/TR.png",
+      icon: TimeLossIcon,
       title: "Time you can never recover",
       desc: "Hours burned every month that could have been new billable jobs",
     },
     {
-      icon: "/Icons/RM.png",
+      icon: RevenueIcon,
       title: "Revenue you don't know you're missing",
       desc: "You can't grow what you can't measure, until now",
     },
@@ -57,7 +62,7 @@ export default function SoundFamiliar() {
 
             {/* Image */}
             <img
-              src="/Images/soundfamiliar.png"
+              src="/Images/sound-familiar.svg"
               alt="Team working"
               className="rounded-2xl w-full h-auto object-cover mt-4"
             />
@@ -90,11 +95,11 @@ export default function SoundFamiliar() {
           flex-shrink-0
         "
       >
-        <img
-          src={feature.icon}
-          alt={feature.title}
-          className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
-        />
+        <Image
+              src={feature.icon}
+              alt={feature.title}
+              className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
+            />
       </div>
 
                 <div>

@@ -226,10 +226,10 @@ export default function Calculator() {
               >
                 Book Demo
                 <img
-                  src="/Icons/Vector.png"
-                  alt="Arrow Icon"
-                  className="w-2 h-3 ml-2"
-                />
+                src="/Icons/right-arrow-white.svg"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
               </Button>
             </div>
 
@@ -386,7 +386,7 @@ export default function Calculator() {
                   >
                     Check My Tech-Mess Cost
                     <img
-                      src="/Icons/Vector2.png"
+                      src="/Icons/right-arrow-blue.svg"
                       alt="Arrow Icon"
                       className="w-2 h-3 ml-2"
                     />
@@ -401,8 +401,8 @@ export default function Calculator() {
                     onClick={() => handleScroll("what-you-will-discover")}
                   >
                     See how it works
-                    <img
-                      src="/Icons/Vector.png"
+                     <img
+                      src="/Icons/right-arrow-white.svg"
                       alt="Arrow Icon"
                       className="w-2 h-3 ml-2"
                     />
@@ -462,9 +462,9 @@ export default function Calculator() {
               {/* RIGHT COLUMN (IMAGE) */}
               <div className="flex justify-center md:justify-end">
                 <img
-                  src="/Images/calculator-hero-right.png"
+                  src="/Images/calculator-hero-right.svg"
                   alt="Calculator hero right"
-                  className="w-full max-w-md object-contain"
+                  className="w-full object-contain"
                 />
               </div>
             </div>

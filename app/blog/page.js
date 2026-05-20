@@ -11,6 +11,7 @@ import BlogHero from "@/components/BlogHero";
 import { WhatHowAccuracoreBlog } from "@/components/WhatHowAccuracoreBlog";
 import BestPracticesForTransformativeWorkflows from "@/components/BestPracticesForTransformativeWorkflows";
 import WhyModernBusinessesAreTurningToAllInOnePlatforms from "@/components/WhyModernBusinessesAreTurningToAllInOnePlatforms";
+import Image from "next/image";
 
 const buttons = (onGetStarted) => (
   <>
@@ -24,7 +25,7 @@ const buttons = (onGetStarted) => (
       onClick={onGetStarted}
     >
       Get Started
-      <img src="/Icons/Vector2.png" alt="Arrow Icon" className="w-2 h-3 ml-2" />
+      <img src="/Icons/right-arrow-blue.svg" alt="Arrow Icon" className="w-2 h-3 ml-2" />
     </Button>
 
     <Button
@@ -37,12 +38,12 @@ const buttons = (onGetStarted) => (
       onClick={() => (window.location.href = "/book-a-demo")}
     >
       Book Demo
-      <img src="/Icons/Vector.png" alt="Arrow Icon" className="w-2 h-3 ml-2" />
+      <img src="/Icons/right-arrow-white.svg" alt="Arrow Icon" className="w-2 h-3 ml-2" />
     </Button>
   </>
 );
 
-export default function RoofCalculationsPage() {
+export default function BlogPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
@@ -230,10 +231,10 @@ export default function RoofCalculationsPage() {
               >
                 Book Demo
                 <img
-                  src="/Icons/Vector.png"
-                  alt="Arrow Icon"
-                  className="w-2 h-3 ml-2"
-                />
+                src="/Icons/right-arrow-white.svg"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
               </Button>
             </div>
 
@@ -412,11 +413,11 @@ export default function RoofCalculationsPage() {
                     onClick={() => (window.location.href = "/")}
                   >
                     Go to AccuraCore
-                    <img
-                      src="/Icons/Vector.png"
-                      alt="Arrow Icon"
-                      className="w-2 h-3 ml-2"
-                    />
+                   <img
+                src="/Icons/right-arrow-white.svg"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
                   </Button>
                 </div>
               </div>

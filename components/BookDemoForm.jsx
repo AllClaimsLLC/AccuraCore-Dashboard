@@ -637,7 +637,7 @@ export const BookDemoForm = ({ currentStep, setCurrentStep }) => {
                       >
                         Check My Tech-Mess Cost
                         <img
-                          src="/Icons/Vector2.png"
+                          src="/Icons/right-arrow-blue.svg"
                           alt="Arrow Icon"
                           className="w-2 h-3 ml-2"
                         />

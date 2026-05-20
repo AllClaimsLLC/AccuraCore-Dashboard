@@ -102,7 +102,7 @@ const CTAButton = ({ color, setIsOpen }) => (
     }}
   >
     Get Started
-    <img src="/Icons/Vector.png" className="w-2 h-3" />
+    <img src="/Icons/right-arrow-white.svg" className="w-2 h-3" />
   </button>
 );
 
@@ -625,10 +625,10 @@ hover:before:translate-x-full"
               >
                 Get Started
                 <img
-                  src="/Icons/Vector2.png"
-                  alt="Arrow Icon"
-                  className="w-2 h-3 ml-2"
-                />
+                src="/Icons/right-arrow-blue.svg"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
               </Button>
               <Button
                 className="text-white rounded-full text-sm flex items-center"
@@ -641,10 +641,10 @@ hover:before:translate-x-full"
               >
                 Book Demo
                 <img
-                  src="/Icons/Vector.png"
-                  alt="Arrow Icon"
-                  className="w-2 h-3 ml-2"
-                />
+                src="/Icons/right-arrow-white.svg"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
               </Button>
             </div>
           </div>

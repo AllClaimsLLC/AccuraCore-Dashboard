@@ -194,10 +194,10 @@ export default function OurStoryPage() {
               >
                 Book Demo
                 <img
-                  src="/Icons/Vector.png"
-                  alt="Arrow Icon"
-                  className="w-2 h-3 ml-2"
-                />
+                src="/Icons/right-arrow-white.svg"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
               </Button>
             </div>
 
@@ -411,7 +411,7 @@ export default function OurStoryPage() {
                   >
                     Read the Letter
                     <img
-                      src="/Icons/Vector2.png"
+                      src="/Icons/right-arrow-blue.svg"
                       alt="Arrow Icon"
                       className="w-2 h-3 ml-2"
                     />
@@ -426,8 +426,8 @@ export default function OurStoryPage() {
                     onClick={() => (window.location.href = "/book-a-demo")}
                   >
                     Book Demo
-                    <img
-                      src="/Icons/Vector.png"
+                     <img
+                      src="/Icons/right-arrow-white.svg"
                       alt="Arrow Icon"
                       className="w-2 h-3 ml-2"
                     />

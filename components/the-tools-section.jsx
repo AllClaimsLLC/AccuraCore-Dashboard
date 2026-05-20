@@ -105,7 +105,7 @@ export default function TheTosolsSection() {
             >
               Book Demo
               <img
-                src="/Icons/Vector.png"
+                src="/Icons/right-arrow-white.svg"
                 alt="Arrow Icon"
                 className="w-2 h-3 ml-2"
               />

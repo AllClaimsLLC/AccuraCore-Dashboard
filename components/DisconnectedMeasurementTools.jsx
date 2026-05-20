@@ -111,10 +111,10 @@ export default function DisconnectedMeasurementTools({ isOpen, setIsOpen }) {
               >
                 Get Started
                 <img
-                  src="/Icons/Vector2.png"
-                  alt="Arrow Icon"
-                  className="w-2 h-3 ml-2"
-                />
+                src="/Icons/right-arrow-blue.svg"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
               </Button>
               <Button
                 className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
@@ -127,10 +127,10 @@ export default function DisconnectedMeasurementTools({ isOpen, setIsOpen }) {
               >
                 Book Demo
                 <img
-                  src="/Icons/Vector.png"
-                  alt="Arrow Icon"
-                  className="w-2 h-3 ml-2"
-                />
+                src="/Icons/right-arrow-white.svg"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
               </Button>
             </div>
           </div>
@@ -221,7 +221,7 @@ export default function DisconnectedMeasurementTools({ isOpen, setIsOpen }) {
             >
               Get Started
               <img
-                src="/Icons/Vector2.png"
+                src="/Icons/right-arrow-blue.svg"
                 alt="Arrow Icon"
                 className="w-2 h-3 ml-2"
               />
@@ -237,7 +237,7 @@ export default function DisconnectedMeasurementTools({ isOpen, setIsOpen }) {
             >
               Book Demo
               <img
-                src="/Icons/Vector.png"
+                src="/Icons/right-arrow-white.svg"
                 alt="Arrow Icon"
                 className="w-2 h-3 ml-2"
               />
@@ -270,10 +270,10 @@ export default function DisconnectedMeasurementTools({ isOpen, setIsOpen }) {
               >
                 Get Started
                 <img
-                  src="/Icons/Vector2.png"
-                  alt="Arrow Icon"
-                  className="w-2 h-3 ml-2"
-                />
+                src="/Icons/right-arrow-blue.svg"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
               </Button>
               <Button
                 className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
@@ -286,10 +286,10 @@ export default function DisconnectedMeasurementTools({ isOpen, setIsOpen }) {
               >
                 Book Demo
                 <img
-                  src="/Icons/Vector.png"
-                  alt="Arrow Icon"
-                  className="w-2 h-3 ml-2"
-                />
+                src="/Icons/right-arrow-white.svg"
+                alt="Arrow Icon"
+                className="w-2 h-3 ml-2"
+              />
               </Button>
             </div>
           </div>
