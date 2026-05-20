@@ -97,7 +97,7 @@ export default function JustAnotherCRM({ isOpen, setIsOpen }) {
             <br className="hidden lg:block" />{" "}
             <span className="text-[#FA8C3D]">MyAccuraCore</span> goes further by
             structuring operations
-            <br className="hidden lg:block" /> themselves—defining how work
+            <br className="hidden lg:block" /> themselves, defining how work
             moves, how decisions are
             <br className="hidden lg:block" /> made, and how accountability is
             enforced at every step.

@@ -174,7 +174,7 @@ export default function AccuraCoreBundle({setIsOpen}) {
                           </h1>
 
                           <small className="block mt-4 text-[11px] uppercase tracking-[0.2em] text-[#1161A5] font-medium not-italic">
-                            Core Suite — All-In-One
+                            Core Suite ,  All-In-One
                           </small>
                         </div>
 

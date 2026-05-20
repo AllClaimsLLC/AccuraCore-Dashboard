@@ -37,7 +37,7 @@ export default function WhyModernBusinessesAreTurningToAllInOnePlatforms({
         <div className="text-[12px] md:text-sm text-gray-600 dark:text-gray-400 leading-snug space-y-6">
           <p>
             As businesses grow, operational complexity increases across
-            departments—whether it’s managing teams, tracking financial
+            departments, whether it’s managing teams, tracking financial
             performance, overseeing field operations, or maintaining clear
             communication channels. Relying on disconnected tools and manual
             processes often leads to inefficiencies, data silos, and delayed
@@ -71,7 +71,7 @@ export default function WhyModernBusinessesAreTurningToAllInOnePlatforms({
 
           <p>
             As businesses grow, operational complexity increases across
-            departments—whether it’s managing teams, tracking financial
+            departments, whether it’s managing teams, tracking financial
             performance, overseeing field operations, or maintaining clear
             communication channels. Relying on disconnected tools and manual
             processes often leads to inefficiencies, data silos, and delayed

@@ -9,7 +9,7 @@ import CentralizeCommunicationIcon from "@/public/Icons/BlogPage/Centralize Comm
 const steps = [
   {
     title: "Standardize Your Workflow",
-    desc: "By defining clear stages for every job—from request to completion—you minimize confusion and reduce turnaround time.",
+    desc: "By defining clear stages for every job, from request to completion, you minimize confusion and reduce turnaround time.",
     icon: WorkflowStandardizeIcon,
   },
   {
