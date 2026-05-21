@@ -94,7 +94,7 @@ const handleSubmit = async (e) => {
     ]);
 
     if (error) {
-      alert("Error saving data");
+      console.log("Error saving data");
       setLoading(false);
       return;
     }
@@ -124,7 +124,7 @@ const handleSubmit = async (e) => {
     if (!emailData.success || !waData.success) {
       console.error("Email:", emailData);
       console.error("WhatsApp:", waData);
-      alert("Lead saved but notification failed");
+      console.log("Lead saved but notification failed");
     }
 
     setSuccess(true);
@@ -139,7 +139,7 @@ const handleSubmit = async (e) => {
     setErrors({});
   } catch (err) {
     console.error(err);
-    alert("Something went wrong");
+    console.log("Something went wrong");
   }
 
   setLoading(false);
