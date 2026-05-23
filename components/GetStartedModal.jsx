@@ -57,93 +57,63 @@ export default function GetStartedModal({ isOpen, setIsOpen }) {
   };
 
 const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  let newErrors = {};
+    let newErrors = {};
 
-  if (form.name.trim().length < 2)
-    newErrors.name = "Name must be at least 2 characters";
+    if (form.name.trim().length < 2)
+      newErrors.name = "Name must be at least 2 characters";
 
-  if (!form.email)
-    newErrors.email = "Email is required";
+    if (!form.email)
+      newErrors.email = "Email is required";
 
-  if (!form.phone)
-    newErrors.phone = "Phone is required";
+    if (!form.phone)
+      newErrors.phone = "Phone is required";
 
-  if (form.company.trim().length < 2)
-    newErrors.company = "Company must be at least 2 characters";
+    if (form.company.trim().length < 2)
+      newErrors.company = "Company must be at least 2 characters";
 
-  setErrors(newErrors);
+    setErrors(newErrors);
 
-  if (Object.keys(newErrors).length > 0) {
-    setLoading(false);
-    return;
-  }
-
-  setLoading(true);
-
-  try {
-    // DB
-    const { error } = await supabase.from("leads").insert([
-      {
-        full_name: form.name,
-        phone: form.phone,
-        company_name: form.company,
-        email: form.email,
-      },
-    ]);
-
-    if (error) {
-      console.log("Error saving data");
+    if (Object.keys(newErrors).length > 0) {
       setLoading(false);
       return;
     }
 
-    // Email
-    const emailRes = await fetch("/api/send-lead-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(form),
-    });
+    setLoading(true);
 
-    const emailData = await emailRes.json();
+    try {
+      // FORMSPREE SUBMIT
+      const response = await fetch("https://formspree.io/f/xredkjda", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(form),
+      });
 
-    // WhatsApp
-    const waRes = await fetch("/api/send-whatsapp", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(form),
-    });
+      if (response.ok) {
+        setSuccess(true);
 
-    const waData = await waRes.json();
+        setForm({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+        });
 
-    if (!emailData.success || !waData.success) {
-      console.error("Email:", emailData);
-      console.error("WhatsApp:", waData);
-      console.log("Lead saved but notification failed");
+        setErrors({});
+      } else {
+        console.log("Form submission failed");
+      }
+    } catch (err) {
+      console.error(err);
+      console.log("Something went wrong");
     }
 
-    setSuccess(true);
-
-    setForm({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-    });
-
-    setErrors({});
-  } catch (err) {
-    console.error(err);
-    console.log("Something went wrong");
-  }
-
-  setLoading(false);
-};
+    setLoading(false);
+  };
 
   if (!isOpen) return null;
 
