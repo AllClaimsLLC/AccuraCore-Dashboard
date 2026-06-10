@@ -2,6 +2,7 @@ import { Sora, Outfit } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Analytics } from "@vercel/analytics/next" 
+import Script from "next/script"
 
 // Fonts
 const sora = Sora({ subsets: ["latin"], weight: ["300", "400", "500", "700"] })
@@ -21,6 +22,20 @@ export default function RootLayout({ children }) {
           </div>
 
           <Analytics />
+
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=G-BSJFNSTFG4"
+            strategy="afterInteractive"
+          />
+
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-BSJFNSTFG4');
+            `}
+          </Script>
         </ThemeProvider>
       </body>
     </html>
