@@ -8,33 +8,33 @@ import Link from "next/link";
 const faqs = [
   {
     id: 1,
-    question: "What's included in MyAccuraCore add-on?",
+    question: "What's included with every plan?",
     answer:
-      "MyAccuraCore is the mobile companion app for your field crew, capture photos, voice-tag jobs, and sync everything back to your AccuraCore workspace in real time.",
+      "Every AccuraCore plan includes the full suite: a customizable CRM, AccuraCam with voice labeling and instant AI reporting, AccuraClaims for insurance claims and AI damage reports, free data transfer from your current system, and free onboarding and training.",
   },
   {
     id: 2,
-    question: "Can I upgrade or downgrade my plan anytime?",
+    question: "What is the MyAccuraCore add-on?",
     answer:
-      "Yes, change plans whenever your crew grows or contracts. Pro-rated billing handles the math.",
+      "MyAccuraCore is optional customer communication that keeps your clients and crew connected in real time. You can add it to any plan for the monthly price shown on each card.",
   },
   {
     id: 3,
     question: "What happens if I exceed my user limit?",
     answer:
-      "You'll automatically be charged the per-additional-user rate shown on each plan, billed at the end of the cycle.",
+      "You'll be charged the per-additional-user rate shown on your plan, billed at the end of the cycle. When your team outgrows a tier, you can move up anytime.",
   },
   {
     id: 4,
-    question: "Is there a free trial?",
+    question: "Can I upgrade or downgrade anytime?",
     answer:
-      "Book a demo with our team, we'll set you up with a guided 14-day trial on the plan that fits.",
+      "Yes. Change plans whenever your crew grows or contracts, and pro-rated billing handles the math.",
   },
   {
     id: 5,
-    question: "Can I export my data?",
+    question: "How does the 50% off offer work?",
     answer:
-      "Reports can be exported at any time. Other data export options are available on Platinum and Titanium.",
+      "Sign up by July 31st and you'll get 50% off your chosen plan for the first 6 months. After six months, your plan continues at its standard monthly rate.",
   },
 ];
 
