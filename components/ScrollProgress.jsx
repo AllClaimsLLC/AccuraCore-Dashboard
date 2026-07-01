@@ -34,7 +34,7 @@ export default function ScrollProgress() {
       ref={progressRef}
       className="fixed top-0 left-0 h-[3px] w-0 z-[9999]"
       style={{
-        background: "linear-gradient(90deg, #0061A4, #F59E0B)",
+        background: "linear-gradient(90deg, #1E63FF, #FF7A1A)",
         transition: "width 0.1s linear",
       }}
     />
