@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import { useEffect, useState } from "react";
 import {
@@ -608,6 +608,11 @@ export default function Pricing({ addonEnabled, setIsOpen }) {
 //     <section className="relative bg-[#fbf0ec] pt-5 pb-20 sm:py-20 z-20">
 //       <div className="mx-auto max-w-7xl px-5 relative">
 //         {/* PRICING GRID */}
+//          {loading ? (
+//     <div className="flex justify-center items-center min-h-[500px]">
+//       <div className="h-14 w-14 animate-spin rounded-full border-4 border-[#FA8C3D]/20 border-t-[#FA8C3D]" />
+//     </div>
+//   ) : (
 //         <div className="flex flex-wrap justify-center gap-20 sm:gap-6 relative z-30 sm:mt-[-300px]">
 //           {mergedPlans.map((plan, index) => {
 //             const Icon = plan.icon;
@@ -645,7 +650,7 @@ export default function Pricing({ addonEnabled, setIsOpen }) {
 //                 <div className="relative mb-4 grid h-12 w-12 place-items-center rounded-[14px] bg-[#f5f7f4] text-black shadow-[0_6px_18px_rgba(0,0,0,0.12)] transition-all duration-500 group-hover:-rotate-6 group-hover:scale-110">
 //                   <Image
 //                     src={plan.icon}
-//                     alt={plan.name}
+//                     alt={plan.name || plan.title || "Plan Icon"}
 //                     width={24}
 //                     height={24}
 //                   />
@@ -763,6 +768,7 @@ export default function Pricing({ addonEnabled, setIsOpen }) {
 //             );
 //           })}
 //         </div>
+//          )}
 //       </div>
 
 //       <div className="fade-up mx-auto w-[90%]">
