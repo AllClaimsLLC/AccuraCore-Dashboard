@@ -23,25 +23,25 @@ export default function Get50Off() {
                       alt=""
                       width={140}
                       height={140}
-                      className="absolute -top-10 sm:-top-25 left-70 sm:left-1/2 -translate-x-1/2 md:left-auto sm:right-[-40px] md:translate-x-0 w-[90px] h-[90px] sm:w-[110px] sm:h-[110px] z-10 pointer-events-none select-none"
+                      className="absolute -top-6 left-60 sm:-top-25 sm:left-1/2 -translate-x-1/2 md:left-auto sm:right-[-40px] md:translate-x-0 w-[60px] h-[60px] sm:w-[110px] sm:h-[110px] z-10 pointer-events-none select-none"
                     />
                     <Image
                       src="/Images/mic-left.png"
                       alt="Microphone"
                       width={400}
                       height={400}
-                      className="relative z-0 w-[400px] h-[400px] object-contain"
+                      className="relative z-0 w-[250px] h-[250px] sm:w-[400px] sm:h-[400px] object-contain"
                     />
                   </div>
                 </div>
 
                 {/* RIGHT: Promo content */}
                 <div className="text-left">
-                  <h2 className="text-[#FA8C3D] font-[600] tracking-tight leading-tight text-[32px] sm:text-[42px]">
+                  <h2 className="text-[#FA8C3D] font-[600] tracking-tight leading-tight text-[25px] sm:text-[42px]">
                     Get 50% Off
                   </h2>
 
-                  <h3 className="text-[#1d1d1d] text-[20px] sm:text-[26px] leading-snug mt-1">
+                  <h3 className="text-[#1d1d1d] text-[18px] sm:text-[26px] leading-snug mt-1">
                     Your Plan For The First <br className="hidden sm:block" />6 Months
                   </h3>
 
