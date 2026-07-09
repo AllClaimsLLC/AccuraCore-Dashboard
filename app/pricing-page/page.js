@@ -20,6 +20,24 @@ export default function PricingPage() {
   const [isOpen, setIsOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const [featuresOpen, setFeaturesOpen] = useState(false);
+  const [isDiscounted, setIsDiscounted] = useState(false);
+
+  const handleClaim = () => {
+    setIsDiscounted((prev) => {
+      const next = !prev;
+
+      if (next) {
+        requestAnimationFrame(() => {
+          const el = document.getElementById("pricing-cards");
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      }
+
+      return next;
+    });
+  };
 
   return (
     <>
@@ -374,7 +392,17 @@ export default function PricingPage() {
 
                 {/* Mobile heading */}
                 <h1 className="text-4xl md:text-4xl text-white leading-tight sm:hidden flex flex-wrap justify-center">
-                  {["Choose", "the", "plan", "that", "is", "right", "for", "your", "business"].map((word, i) => (
+                  {[
+                    "Choose",
+                    "the",
+                    "plan",
+                    "that",
+                    "is",
+                    "right",
+                    "for",
+                    "your",
+                    "business",
+                  ].map((word, i) => (
                     <span
                       key={i}
                       className="inline-block overflow-hidden align-bottom pr-[0.18em]"
@@ -440,10 +468,10 @@ export default function PricingPage() {
           }
         `}</style>
       </div>
-      <Get50Off />
-      <PricingV2 />
+      <Get50Off onClaim={handleClaim} isDiscounted={isDiscounted} />
+      <PricingV2 setIsOpen={setIsOpen} isDiscounted={isDiscounted} />
       <AccuraCoreSuite />
-       <CompareThePlans />
+      <CompareThePlans />
       <PricingFaqs setIsOpen={setIsOpen} />
 
       {/* <PricingAndPlans setIsOpen={setIsOpen} /> */}

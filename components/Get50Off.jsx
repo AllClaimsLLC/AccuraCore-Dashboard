@@ -4,7 +4,7 @@ import Image from "next/image";
 import useFadeIn from "@/lib/useFadeIn";
 import { Button } from "@/components/ui/button";
 
-export default function Get50Off() {
+export default function Get50Off({ onClaim, isDiscounted }) {
   useFadeIn();
 
   return (
@@ -14,7 +14,7 @@ export default function Get50Off() {
           <div className="fade-up relative z-30 mx-auto w-full sm:w-[60%] sm:mt-[-300px]">
             <div className="rounded-[20px] bg-white shadow-[0_25px_60px_rgba(0,0,0,0.15)] p-5 sm:p-4">
               
-              <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-10 md:gap-6 px-2 sm:px-2 py-4 sm:py-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-4 md:gap-6 px-2 sm:px-2 pt-4 sm:py-6">
                 {/* LEFT */}
                 <div className="relative flex justify-center md:justify-start">
                   <div className="relative w-fit">
@@ -52,21 +52,22 @@ export default function Get50Off() {
                     AccuraCore plan for your first six months.
                   </p>
 
-                  <Button
-                    className="mt-7 rounded-full text-sm inline-flex items-center"
-                    style={{
-                      backgroundColor: "#0061A4",
-                      color: "white",
-                      padding: "25px 22px",
-                    }}
-                  >
-                    Claim 50% Off
-                    <img
-                      src="/Icons/right-arrow-white.svg"
-                      alt="Arrow Icon"
-                      className="ml-2 h-3 w-2"
-                    />
-                  </Button>
+                 <Button
+  className="mt-7 rounded-full text-sm inline-flex items-center"
+  style={{
+    backgroundColor: "#0061A4",
+    color: "white",
+    padding: "25px 22px",
+  }}
+  onClick={onClaim}
+>
+  {isDiscounted ? "Remove 50% Off" : "Claim 50% Off"}
+  <img
+    src="/Icons/right-arrow-white.svg"
+    alt="Arrow Icon"
+    className="ml-2 h-3 w-2"
+  />
+</Button>
                 </div>
               </div>
             </div>
