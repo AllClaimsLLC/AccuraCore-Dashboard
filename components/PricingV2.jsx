@@ -67,7 +67,7 @@ export default function PricingV2({ setIsOpen }) {
   useFadeIn();
 
   return (
-    <section className="relative bg-[#fce6d9] pt-16 pb-20 sm:pt-20 sm:pb-20">
+    <section className="relative bg-[#faefe9] pb-20 pt-8 sm:pb-20">
       <div className="fade-up mx-auto max-w-7xl px-5">
         {/* HEADING */}
         <div className="sm:text-center mb-12 sm:mb-16">

@@ -2,38 +2,29 @@
 import { useState } from "react";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import WhatMakesAccurascoreDifferent from "@/components/WhatMakesAccurascoreDifferent";
-import { Camera, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import ModeToggle from "@/components/mode-toggle";
 import Link from "next/link";
 
 import GetStartedModal from "@/components/GetStartedModal";
-import { PricingAndPlans } from "@/components/PricingAndPlans";
-import Pricing from "@/components/Pricing";
-import CompareThePlans from "@/components/CompareThePlans";
 import PricingFaqs from "@/components/PricingFaqs";
 import FlashSaleRibbon from "@/components/FlashSalesRibbon";
+import PricingV2 from "@/components/PricingV2";
+import Get50Off from "@/components/Get50Off";
+import CompareThePlans from "@/components/CompareThePlans";
+import { AccuraCoreSuite } from "@/components/AccuraCoreSuite";
 
 export default function PricingPage() {
-  const [addonEnabled, setAddonEnabled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const [featuresOpen, setFeaturesOpen] = useState(false);
 
-  const handleScroll = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-      setMenuOpen(false);
-    }
-  };
-
   return (
     <>
       <div
-        className="relative z-10 bg-cover bg-center bg-no-repeat min-h-[55vh] sm:min-h-[100vh] flex flex-col sm:pb-[220px]"
+        className="relative z-10 bg-cover bg-center bg-no-repeat min-h-[55vh] sm:min-h-[115vh] flex flex-col sm:pb-[220px]"
         style={{ backgroundImage: "url('/Images/Hero-bg.png')" }}
       >
         <FlashSaleRibbon />
@@ -205,10 +196,10 @@ export default function PricingPage() {
               >
                 Book Demo
                 <img
-                src="/Icons/right-arrow-white.svg"
-                alt="Arrow Icon"
-                className="w-2 h-3 ml-2"
-              />
+                  src="/Icons/right-arrow-white.svg"
+                  alt="Arrow Icon"
+                  className="w-2 h-3 ml-2"
+                />
               </Button>
             </div>
 
@@ -340,28 +331,66 @@ export default function PricingPage() {
         {/* Hero Section */}
         <main className="px-6 pt-16 pb-0">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-8 lg:mb-16">
+            <div className="text-center mb-8 lg:mb-5">
               <div className="overflow-hidden">
-                <h1 className="text-4xl md:text-4xl text-white leading-tight flex flex-wrap justify-center">
-                  {["Pricing", "That", "Scales", "With", "You"].map(
-                    (word, i) => (
+                <h1 className="hidden text-4xl md:text-4xl text-white leading-tight sm:flex flex-wrap justify-center">
+                  {["Choose", "the", "plan", "that"].map((word, i) => (
+                    <span
+                      key={i}
+                      className="inline-block overflow-hidden align-bottom pr-[0.18em]"
+                    >
                       <span
-                        key={i}
-                        className="inline-block overflow-hidden align-bottom pr-[0.18em]"
+                        className="inline-block animate-wordUp"
+                        style={{
+                          transform: "translateY(110%)",
+                          animationDelay: `${0.15 + i * 0.06}s`,
+                          animationFillMode: "forwards",
+                        }}
                       >
-                        <span
-                          className="inline-block animate-wordUp"
-                          style={{
-                            transform: "translateY(110%)",
-                            animationDelay: `${0.15 + i * 0.06}s`,
-                            animationFillMode: "forwards",
-                          }}
-                        >
-                          {word}
-                        </span>
+                        {word}
                       </span>
-                    ),
-                  )}
+                    </span>
+                  ))}
+                </h1>
+                <h1 className="hidden text-4xl md:text-4xl text-white leading-tight sm:flex flex-wrap justify-center">
+                  {["is", "right", "for", "your", "business"].map((word, i) => (
+                    <span
+                      key={i}
+                      className="inline-block overflow-hidden align-bottom pr-[0.18em]"
+                    >
+                      <span
+                        className="inline-block animate-wordUp"
+                        style={{
+                          transform: "translateY(110%)",
+                          animationDelay: `${0.15 + i * 0.06}s`,
+                          animationFillMode: "forwards",
+                        }}
+                      >
+                        {word}
+                      </span>
+                    </span>
+                  ))}
+                </h1>
+
+                {/* Mobile heading */}
+                <h1 className="text-4xl md:text-4xl text-white leading-tight sm:hidden flex flex-wrap justify-center">
+                  {["Choose", "the", "plan", "that", "is", "right", "for", "your", "business"].map((word, i) => (
+                    <span
+                      key={i}
+                      className="inline-block overflow-hidden align-bottom pr-[0.18em]"
+                    >
+                      <span
+                        className="inline-block animate-wordUp"
+                        style={{
+                          transform: "translateY(110%)",
+                          animationDelay: `${0.15 + i * 0.06}s`,
+                          animationFillMode: "forwards",
+                        }}
+                      >
+                        {word}
+                      </span>
+                    </span>
+                  ))}
                 </h1>
 
                 <p
@@ -372,55 +401,10 @@ export default function PricingPage() {
                     animationFillMode: "forwards",
                   }}
                 >
-                  Pick the plan that fits your crew today. Upgrade anytime as
-                  you grow.
+                  Every plan comes with the full AccuraCore suite. Pick the size{" "}
+                  <br className="hidden sm:block" />
+                  that fits your crew today and upgrade anytime as you grow.
                 </p>
-
-                {/* ================= ADD-ON TOGGLE ================= */}
-                <p
-                  className="text-md text-[#FA8C3D] mb-2 max-w-3xl mx-auto leading-relaxed mt-4 animate-fadeUp"
-                  style={{
-                    opacity: 0,
-                    animationDelay: "0.35s",
-                    animationFillMode: "forwards",
-                  }}
-                >
-                  OPTIONAL ADD ON
-                </p>
-                <div className="flex justify-center">
-                  <button
-                    onClick={() => setAddonEnabled(!addonEnabled)}
-                    className="flex items-center gap-4 rounded-[15px] border border-gray-400 bg-[#32456d] px-2 py-2 sm:px-5 sm:py-5"
-                  >
-                    {/* ICON */}
-                    <span className="grid h-9 w-9 place-items-center rounded-[8px] bg-white">
-                      <Camera className="h-5 w-5 text-black" />
-                    </span>
-
-                    {/* TEXT */}
-                    <span className="text-left w-[70%]">
-                      <span className="block text-md font-[500] text-white">
-                        Add My AccuraCore
-                      </span>
-                      <span className="block text-sm text-gray-400">
-                        Where Your Customers and Crew Stay Connected
-                      </span>
-                    </span>
-
-                    {/* SWITCH */}
-                    <span
-                      className={`relative h-6 w-11 rounded-full transition ${
-                        addonEnabled ? "bg-[#0061A4]" : "bg-gray-500"
-                      }`}
-                    >
-                      <span
-                        className={`absolute top-[2px] left-[2px] h-5 w-5 rounded-full bg-white transition ${
-                          addonEnabled ? "translate-x-5" : ""
-                        }`}
-                      />
-                    </span>
-                  </button>
-                </div>
               </div>
             </div>
           </div>
@@ -456,8 +440,10 @@ export default function PricingPage() {
           }
         `}</style>
       </div>
-      <Pricing addonEnabled={addonEnabled} setIsOpen={setIsOpen} />
-      <CompareThePlans />
+      <Get50Off />
+      <PricingV2 />
+      <AccuraCoreSuite />
+       <CompareThePlans />
       <PricingFaqs setIsOpen={setIsOpen} />
 
       {/* <PricingAndPlans setIsOpen={setIsOpen} /> */}

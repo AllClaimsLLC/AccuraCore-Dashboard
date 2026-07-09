@@ -62,7 +62,7 @@ export default function CompareThePlans() {
 
       <div className="fade-up mx-auto max-w-[95%] px-3 md:px-4">
         {/* HEADING */}
-        <div className="mb-8 text-center md:mb-12">
+        <div className="mb-8 text-left sm:text-center md:mb-12">
           <h3
             className="
             text-white
