@@ -36,7 +36,7 @@ export default function Get50Off() {
                 </div>
 
                 {/* RIGHT: Promo content */}
-                <div className="sm:text-center text-left">
+                <div className="text-left">
                   <h2 className="text-[#FA8C3D] font-[600] tracking-tight leading-tight text-[32px] sm:text-[42px]">
                     Get 50% Off
                   </h2>
