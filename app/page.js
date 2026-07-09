@@ -20,19 +20,11 @@ export default function HomePage() {
   const [aboutOpen, setAboutOpen] = useState(false);
   const [featuresOpen, setFeaturesOpen] = useState(false);
 
-  const handleScroll = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-      setMenuOpen(false);
-    }
-  };
-
   return (
     <>
       {/* Header + Hero Section */}
       <div
-        className="bg-cover bg-center bg-no-repeat h-[55rem] sm:h-[50rem]"
+        className="bg-cover bg-center bg-no-repeat flex flex-col"
         style={{
           backgroundImage: "url('/Images/Hero-bg.png')",
         }}
@@ -206,10 +198,10 @@ export default function HomePage() {
               >
                 Book Demo
                 <img
-                src="/Icons/right-arrow-white.svg"
-                alt="Arrow Icon"
-                className="w-2 h-3 ml-2"
-              />
+                  src="/Icons/right-arrow-white.svg"
+                  alt="Arrow Icon"
+                  className="w-2 h-3 ml-2"
+                />
               </Button>
             </div>
 
@@ -339,9 +331,10 @@ export default function HomePage() {
         </header>
 
         {/* Hero Section */}
-        <main className="px-6 py-16">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-8 lg:mb-16">
+        <main className="relative flex-1 flex items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] lg:items-center w-full gap-6 lg:gap-8 overflow-hidden">
+            {/* LEFT COLUMN - Content */}
+            <div className="px-6 lg:pl-24 lg:pr-6 pt-16 lg:py-0 max-w-2xl mx-auto lg:mx-0 w-full text-center lg:text-left order-1">
               <div className="overflow-hidden">
                 <h1
                   onClick={() => {
@@ -352,31 +345,31 @@ export default function HomePage() {
                         block: "start",
                       });
                   }}
-                 className="text-3xl md:text-4xl text-white mb-6 leading-tight flex flex-wrap justify-center cursor-pointer relative z-10"
+                  className="text-3xl sm:text-[40px] text-white mb-6 leading-tight flex flex-wrap justify-center lg:justify-start cursor-pointer relative z-10"
                 >
                   {"Built by a Contractor, for Contractors"
                     .split(" ")
                     .map((word, i) => (
                       <span
-  key={i}
-  className="inline-block overflow-hidden align-bottom pr-[0.18em] pointer-events-none"
->
-  <span
-    className="inline-block animate-wordUp pointer-events-none"
-    style={{
-      transform: "translateY(110%)",
-      animationDelay: `${0.15 + i * 0.06}s`,
-      animationFillMode: "forwards",
-    }}
-  >
-    {word}
-  </span>
-</span>
+                        key={i}
+                        className="inline-block overflow-hidden align-bottom pr-[0.18em] pointer-events-none"
+                      >
+                        <span
+                          className="inline-block animate-wordUp pointer-events-none"
+                          style={{
+                            transform: "translateY(110%)",
+                            animationDelay: `${0.15 + i * 0.06}s`,
+                            animationFillMode: "forwards",
+                          }}
+                        >
+                          {word}
+                        </span>
+                      </span>
                     ))}
                 </h1>
 
                 <p
-                  className="text-md text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeUp"
+                  className="text-md text-blue-100 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed animate-fadeUp"
                   style={{
                     opacity: 0,
                     animationDelay: "0.35s",
@@ -391,13 +384,10 @@ export default function HomePage() {
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  href="/calculator"
-                  className="w-full sm:w-auto md:w-auto lg:w-auto "
-                >
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                <Link href="/calculator" className="w-full sm:w-auto">
                   <Button
-                    className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center justify-center"
+                    className="w-full sm:w-auto rounded-full text-sm flex items-center justify-center"
                     style={{
                       backgroundColor: "#ffffff",
                       color: "#0061A4",
@@ -412,8 +402,9 @@ export default function HomePage() {
                     />
                   </Button>
                 </Link>
+
                 <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto text-white rounded-full text-sm flex items-center"
+                  className="w-full sm:w-auto text-white rounded-full text-sm flex items-center"
                   style={{
                     backgroundColor: "#0061A4",
                     border: "2px solid #4485b2",
@@ -430,7 +421,7 @@ export default function HomePage() {
                 </Button>
 
                 <Button
-                  className="w-full sm:w-auto md:w-auto lg:w-auto rounded-full text-sm flex items-center"
+                  className="w-full sm:w-auto rounded-full text-sm flex items-center"
                   style={{
                     backgroundColor: "#ffffff",
                     color: "#0061A4",
@@ -440,7 +431,7 @@ export default function HomePage() {
                   onClick={() => setIsOpen(true)}
                 >
                   Get Started
-                 <img
+                  <img
                     src="/Icons/right-arrow-blue.svg"
                     alt="Arrow Icon"
                     className="w-2 h-3 ml-2"
@@ -449,22 +440,18 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Dashboard Preview */}
-            <div className="relative max-w-3xl mx-auto">
-              <div
-                className="bg-white/10 backdrop-blur-sm rounded-3xl p-2 lg:p-4 shadow-2xl"
-                style={{ border: "2px solid white" }}
-              >
-                <img
-                  src="/Images/Hero-image2.png"
-                  alt="Hero"
-                  className="h-auto rounded-3xl"
-                  style={{ maxHeight: "500px" }}
-                />
-              </div>
+            {/* RIGHT COLUMN - Image */}
+            <div className="order-2 flex justify-center lg:justify-end items-end w-full">
+              <img
+                src="/Images/Hero-right.svg"
+                alt="AccuraCore Dashboard Preview"
+                className="w-full h-auto max-w-[500px] lg:max-w-none lg:w-full object-contain lg:object-right-bottom"
+              />
             </div>
           </div>
         </main>
+
+        {/* Text Animation */}
         <style jsx>{`
           @keyframes wordUp {
             from {

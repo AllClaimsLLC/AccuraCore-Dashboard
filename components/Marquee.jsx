@@ -16,7 +16,7 @@ const items = [
 
 export default function Marquee() {
   return (
-    <div className="relative overflow-hidden border-y border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.015] py-[18px] mt-35 md:mt-64">
+    <div className="relative overflow-hidden border-y border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.015] py-[18px] mt-10">
       
       <motion.div
         className="flex w-max gap-[60px]"

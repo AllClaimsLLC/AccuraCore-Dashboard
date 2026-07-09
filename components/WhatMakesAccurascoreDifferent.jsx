@@ -178,43 +178,43 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
                 },
               ].map((item, i) => (
                 <div
-  key={i}
-  className="bg-white dark:bg-slate-900 rounded-2xl transition-all duration-300 hover:scale-105 shadow-lg overflow-hidden"
->
-  {/* Content */}
-  <div className="p-6 space-y-4">
-    <div className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-[#0061A4] rounded-[8px] md:rounded-[10px] shrink-0">
-      <Image
-        src={item.icon}
-        alt={item.title}
-        width={20}
-        height={20}
-        className="object-contain md:w-5 md:h-5"
-      />
-    </div>
+                  key={i}
+                  className="bg-white dark:bg-slate-900 rounded-2xl transition-all duration-300 hover:scale-105 shadow-lg overflow-hidden"
+                >
+                  {/* Content */}
+                  <div className="p-6 space-y-4">
+                    <div className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-[#0061A4] rounded-[8px] md:rounded-[10px] shrink-0">
+                      <Image
+                        src={item.icon}
+                        alt={item.title}
+                        width={20}
+                        height={20}
+                        className="object-contain md:w-5 md:h-5"
+                      />
+                    </div>
 
-    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-      {item.title}
-    </h3>
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                      {item.title}
+                    </h3>
 
-    <p className="text-[14px] text-gray-600 dark:text-gray-400 min-h-[50px]">
-      {item.desc}
-    </p>
-  </div>
+                    <p className="text-[14px] text-gray-600 dark:text-gray-400 min-h-[50px]">
+                      {item.desc}
+                    </p>
+                  </div>
 
-  {/* Image Section */}
-<div className="p-2 pt-0">
-  <div className="w-full aspect-[16/12] relative overflow-hidden rounded-[15px]">
-    <Image
-      src={item.image}
-      alt={item.title}
-      fill
-      className="object-contain"
-      quality={100}
-    />
-  </div>
-</div>
-</div>
+                  {/* Image Section */}
+                  <div className="p-2 pt-0">
+                    <div className="w-full aspect-[16/12] relative overflow-hidden rounded-[15px]">
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        className="object-contain"
+                        quality={100}
+                      />
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
