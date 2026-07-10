@@ -48,7 +48,7 @@ export default function TheTosolsSection() {
             >
               <div className="relative w-full max-w-md">
                 <img
-                  src="/Images/OCET.png"
+                  src="/Images/OCET.svg"
                   alt="Organize Your Company & Empower Your Team"
                   width={400}
                   height={400}
