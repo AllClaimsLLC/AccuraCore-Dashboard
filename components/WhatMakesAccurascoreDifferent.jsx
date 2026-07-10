@@ -319,7 +319,7 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
   ];
 
   return (
-    <section className="lg:px-6 py-16 bg-[#f4f0ed] dark:bg-slate-950">
+    <section className="lg:px-6 pb-16 bg-[#f4f0ed] dark:bg-slate-950">
       <Marquee />
 
       {/* Built by a Contractor, for Contractors */}
@@ -344,31 +344,38 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
 
                 return (
                   <CardWrapper
-  key={idx}
-  {...wrapperProps}
-  className="group relative overflow-hidden rounded-[12px] md:rounded-[15px] p-4 md:p-6 flex flex-col h-full sm:min-h-[400px] gap-4 cursor-pointer bg-white dark:bg-slate-900 shadow-lg transition-transform duration-500 ease-out hover:scale-[1.03]"
->
+                    key={idx}
+                    {...wrapperProps}
+                    className="group relative overflow-hidden rounded-[12px] md:rounded-[15px] p-4 md:p-6 flex flex-col h-full sm:min-h-[400px] gap-4 cursor-pointer bg-white dark:bg-slate-900 shadow-lg transition-transform duration-500 ease-out hover:scale-[1.03]"
+                  >
                     {/* Background image */}
                     <div
-                      className="absolute inset-0 bg-cover bg-center opacity-0 scale-110 group-hover:opacity-100 group-hover:scale-100 transition-all duration-700 ease-out"
+                      className="absolute inset-0 bg-cover bg-center scale-110 group-hover:scale-100 transition-all duration-700 ease-out"
                       style={{ backgroundImage: `url(${step.bgImage})` }}
                     />
 
                     {/* Gradient overlay */}
                     <div
+                      className="absolute inset-0 transition-opacity duration-700 ease-out group-hover:opacity-0"
+                      style={{
+                        background: `linear-gradient(0deg, rgba(255,255,255,.10), rgba(255,255,255,.10)), linear-gradient(180deg, rgba(0,97,164,0) -175.22%, #0061A4 100%)`,
+                      }}
+                    />
+
+                    <div
                       className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out"
                       style={{
                         background:
-                          "linear-gradient(180deg, rgba(0, 97, 164, 0) 18.43%, #0061A4 85.49%)",
+                          "linear-gradient(180deg, rgba(0, 97, 164, 0) 18.43%, #0061A4 90.49%)",
                       }}
                     />
 
                     {/* Content  */}
                     <div className="relative z-10 flex flex-col h-full justify-between gap-20">
                       {/* Icon Box */}
-                      <div className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-[#0061A4] group-hover:bg-white rounded-[8px] md:rounded-[10px] shrink-0 transition-colors duration-500 ease-out">
+                      <div className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-white rounded-[8px] md:rounded-[10px] shrink-0">
                         <div
-                          className="w-4 h-4 md:w-5 md:h-5 bg-white group-hover:bg-[#0061A4] transition-colors duration-500 ease-out"
+                          className="w-4 h-4 md:w-5 md:h-5 bg-[#0061A4]"
                           style={{
                             WebkitMaskImage: `url(${step.icon})`,
                             maskImage: `url(${step.icon})`,
@@ -384,10 +391,10 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
 
                       {/* Heading + Content */}
                       <div className="flex flex-col gap-2">
-                        <h3 className="text-[13px] md:text-lg font-semibold text-gray-900 dark:text-white group-hover:text-white transition-colors duration-500 ease-out">
+                        <h3 className="text-[13px] md:text-lg font-semibold text-white transition-colors duration-500 ease-out">
                           {step.title}
                         </h3>
-                        <p className="text-[12px] md:text-sm text-gray-600 dark:text-gray-400 group-hover:text-white/90 leading-snug transition-colors duration-500 ease-out">
+                        <p className="text-[12px] md:text-sm text-white/90 leading-snug transition-colors duration-500 ease-out">
                           {step.desc}
                         </p>
                       </div>

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useRouter } from "next/navigation";
+import { Button } from "./ui/button";
 
 export const BookDemoFormV2 = () => {
   const router = useRouter();
@@ -66,7 +67,7 @@ export const BookDemoFormV2 = () => {
     const phoneRegex = /^\(\d{3}\)-\d{3}-\d{4}$/;
 
     if (name === "phone" && value.length > 0 && !phoneRegex.test(value)) {
-      msg = "Phone number must be in the format (945)-123-4567";
+      msg = "Phone number must be in the format (123)-456-7890";
     }
 
     return msg;
@@ -284,15 +285,15 @@ export const BookDemoFormV2 = () => {
                       Phone Number *
                     </label>
                     <input
-  name="phone"
-  value={formData.phone}
-  onChange={handleChange}
-  type="tel"
-  required
-  maxLength={14}
-  placeholder="(945)-546-7239"
-  className="inputClass"
-/>
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      type="tel"
+                      required
+                      maxLength={14}
+                      placeholder="(123)-456-7890"
+                      className="inputClass"
+                    />
                     {errors.phone && (
                       <p className="text-red-500 text-xs mt-1">
                         {errors.phone}
@@ -301,13 +302,21 @@ export const BookDemoFormV2 = () => {
                   </div>
                 </div>
                 <div className="flex justify-end mt-6">
-                  <button
+                  <Button
                     type="submit"
-                    className="flex items-center justify-center gap-1 text-white px-6 py-2 rounded-[5px]"
-                    style={{ backgroundColor: "#136AF3" }}
+                    className="text-white rounded-full text-sm flex items-center"
+                    style={{
+                      backgroundColor: "#0061A4",
+                      padding: "25px 15px",
+                    }}
                   >
-                    Submit <MdKeyboardArrowRight size={25} />
-                  </button>
+                    Submit
+                    <img
+                      src="/Icons/right-arrow-white.svg"
+                      alt="Arrow Icon"
+                      className="w-2 h-3 ml-2"
+                    />
+                  </Button>
                 </div>
               </div>
 
