@@ -393,7 +393,7 @@ export default function IWasPaying() {
             {/* RIGHT IMAGE */}
             <div className="w-full flex justify-center lg:justify-end bg-white rounded-[20px] p-2">
               <Image
-                src="/Images/five-systems.png"
+                src="/Images/five-systems.svg"
                 alt="Five Systems"
                 width={2744}
                 height={2176}
