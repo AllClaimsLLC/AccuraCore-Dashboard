@@ -37,7 +37,7 @@ export const BookDemoFormV2 = () => {
 
     if (
       formData.phone.trim().length > 0 &&
-      /^\+?[0-9]{8,15}$/.test(formData.phone)
+      /^\(\d{3}\)-\d{3}-\d{4}$/.test(formData.phone)
     )
       count++;
 
@@ -63,10 +63,10 @@ export const BookDemoFormV2 = () => {
       msg = "Enter a valid email with @ and .com";
     }
 
-    const phoneRegex = /^\+?[0-9]{8,15}$/;
+    const phoneRegex = /^\(\d{3}\)-\d{3}-\d{4}$/;
 
     if (name === "phone" && value.length > 0 && !phoneRegex.test(value)) {
-      msg = "Enter valid international phone";
+      msg = "Phone number must be in the format (945)-123-4567";
     }
 
     return msg;
@@ -75,14 +75,32 @@ export const BookDemoFormV2 = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
+    let newValue = value;
+
+    if (name === "phone") {
+      // Keep only digits
+      const digits = value.replace(/\D/g, "").slice(0, 10);
+
+      if (digits.length <= 3) {
+        newValue = digits.length ? `(${digits}` : "";
+      } else if (digits.length <= 6) {
+        newValue = `(${digits.slice(0, 3)})-${digits.slice(3)}`;
+      } else {
+        newValue = `(${digits.slice(0, 3)})-${digits.slice(
+          3,
+          6,
+        )}-${digits.slice(6)}`;
+      }
+    }
+
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: newValue,
     }));
 
     setErrors((prev) => ({
       ...prev,
-      [name]: validate(name, value),
+      [name]: validate(name, newValue),
     }));
   };
 
@@ -92,7 +110,7 @@ export const BookDemoFormV2 = () => {
       formData.companyName.trim().length >= 2 &&
       formData.role.trim().length > 0 &&
       /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) &&
-      /^\+?[0-9]{8,15}$/.test(formData.phone)
+      /^\(\d{3}\)-\d{3}-\d{4}$/.test(formData.phone)
     );
   };
 
@@ -266,14 +284,15 @@ export const BookDemoFormV2 = () => {
                       Phone Number *
                     </label>
                     <input
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      type="tel"
-                      required
-                      placeholder="Phone Number"
-                      className="inputClass"
-                    />
+  name="phone"
+  value={formData.phone}
+  onChange={handleChange}
+  type="tel"
+  required
+  maxLength={14}
+  placeholder="(945)-546-7239"
+  className="inputClass"
+/>
                     {errors.phone && (
                       <p className="text-red-500 text-xs mt-1">
                         {errors.phone}

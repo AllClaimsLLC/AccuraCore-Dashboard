@@ -184,16 +184,17 @@ export default function PricingPageV2() {
               </div>
 
               <Button
-                className="bg-white hover:bg-gray-100 px-4 py-2 rounded-full text-sm flex items-center"
-                style={{ color: "#0061A4", padding: "25px 15px" }}
-              >
-                <img
-                  src="/Icons/Vector.svg"
-                  alt="Login Icon"
-                  className="w-4 h-4 mr-2"
-                />
-                Login
-              </Button>
+  onClick={() => (window.location.href = "https://app.accuracore.com")}
+  className="bg-white hover:bg-gray-100 px-4 py-2 rounded-full text-sm flex items-center"
+  style={{ color: "#0061A4", padding: "25px 15px" }}
+>
+  <img
+    src="/Icons/Vector.svg"
+    alt="Login Icon"
+    className="w-4 h-4 mr-2"
+  />
+  Login
+</Button>
 
               <Button
                 className="text-white rounded-full text-sm flex items-center"
