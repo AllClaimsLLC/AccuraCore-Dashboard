@@ -178,17 +178,19 @@ export default function HomePage() {
               </div>
 
               <Button
-  onClick={() => (window.location.href = "https://app.accuracore.com")}
-  className="bg-white hover:bg-gray-100 px-4 py-2 rounded-full text-sm flex items-center"
-  style={{ color: "#0061A4", padding: "25px 15px" }}
->
-  <img
-    src="/Icons/Vector.svg"
-    alt="Login Icon"
-    className="w-4 h-4 mr-2"
-  />
-  Login
-</Button>
+                onClick={() =>
+                  (window.location.href = "https://app.accuracore.com")
+                }
+                className="bg-white hover:bg-gray-100 px-4 py-2 rounded-full text-sm flex items-center"
+                style={{ color: "#0061A4", padding: "25px 15px" }}
+              >
+                <img
+                  src="/Icons/Vector.svg"
+                  alt="Login Icon"
+                  className="w-4 h-4 mr-2"
+                />
+                Login
+              </Button>
 
               <Button
                 className="text-white rounded-full text-sm flex items-center"
@@ -444,14 +446,14 @@ export default function HomePage() {
 
             {/* RIGHT COLUMN - Image */}
             <div className="order-2 flex justify-center lg:justify-end items-end w-full">
-<Image
-  src="/Images/Hero-right.svg"
-  alt="AccuraCore Dashboard Preview"
-  width={900}
-  height={750}
-  priority
-  className="w-full h-auto max-w-[500px] lg:max-w-none lg:w-full object-contain lg:object-right-bottom"
-/>
+              <Image
+                src="/Images/Hero-right.svg"
+                alt="AccuraCore Dashboard Preview"
+                width={900}
+                height={675}
+                priority
+                className="w-full h-auto max-w-[500px] lg:max-w-none lg:w-full object-contain lg:object-right-bottom"
+              />
             </div>
           </div>
         </main>
@@ -505,4 +507,3 @@ export default function HomePage() {
     </>
   );
 }
-
