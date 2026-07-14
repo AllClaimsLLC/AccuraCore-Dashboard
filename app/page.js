@@ -13,6 +13,7 @@ import Link from "next/link";
 
 import GetStartedModal from "@/components/GetStartedModal";
 import FlashSaleRibbon from "@/components/FlashSalesRibbon";
+import Image from "next/image";
 
 export default function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -443,11 +444,14 @@ export default function HomePage() {
 
             {/* RIGHT COLUMN - Image */}
             <div className="order-2 flex justify-center lg:justify-end items-end w-full">
-              <img
-                src="/Images/Hero-right.svg"
-                alt="AccuraCore Dashboard Preview"
-                className="w-full h-auto max-w-[500px] lg:max-w-none lg:w-full object-contain lg:object-right-bottom"
-              />
+<Image
+  src="/Images/Hero-right.svg"
+  alt="AccuraCore Dashboard Preview"
+  width={900}
+  height={750}
+  priority
+  className="w-full h-auto max-w-[500px] lg:max-w-none lg:w-full object-contain lg:object-right-bottom"
+/>
             </div>
           </div>
         </main>
