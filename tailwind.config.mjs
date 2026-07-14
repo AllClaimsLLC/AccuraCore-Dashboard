@@ -1,5 +1,5 @@
 export default {
-  darkMode: ["class"], // 🔥 SHADCN DARK MODE
+  darkMode: ["class"],
   content: [
     "./app/**/*.{js,jsx}",
     "./components/**/*.{js,jsx}",

@@ -338,7 +338,7 @@ export default function HomePage() {
         <main className="relative flex-1 flex items-center">
           <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] lg:items-center w-full gap-6 lg:gap-8 overflow-hidden">
             {/* LEFT COLUMN - Content */}
-            <div className="px-6 lg:pl-24 lg:pr-6 pt-16 lg:py-0 max-w-2xl mx-auto lg:mx-0 w-full text-center lg:text-left order-1">
+            <div className="px-6 lg:pl-24 lg:pr-6 pt-16 lg:py-0 mx-auto lg:mx-0 w-full text-center lg:text-left order-1">
               <div className="overflow-hidden">
                 <h1
                   onClick={() => {
