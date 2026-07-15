@@ -12,6 +12,7 @@ export default function GetStartedModal({ isOpen, setIsOpen }) {
     email: "",
     phone: "",
     company: "",
+    help: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -33,10 +34,10 @@ export default function GetStartedModal({ isOpen, setIsOpen }) {
     if (name === "email" && value.length > 0 && !emailRegex.test(value)) {
       msg = "Enter a valid email";
     }
-    const phoneRegex = /^\+?[0-9]{8,15}$/;
+    const phoneRegex = /^\(\d{3}\)-\d{3}-\d{4}$/;
 
     if (name === "phone" && value.length > 0 && !phoneRegex.test(value)) {
-      msg = "Enter valid international phone";
+      msg = "Phone number must be in the format (123)-456-7890";
     }
 
     return msg;
@@ -45,18 +46,32 @@ export default function GetStartedModal({ isOpen, setIsOpen }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
+    let newValue = value;
+
+    if (name === "phone") {
+      const digits = value.replace(/\D/g, "").slice(0, 10);
+
+      if (digits.length <= 3) {
+        newValue = digits.length ? `(${digits}` : "";
+      } else if (digits.length <= 6) {
+        newValue = `(${digits.slice(0, 3)})-${digits.slice(3)}`;
+      } else {
+        newValue = `(${digits.slice(0, 3)})-${digits.slice(3, 6)}-${digits.slice(6)}`;
+      }
+    }
+
     setForm((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: newValue,
     }));
 
     setErrors((prev) => ({
       ...prev,
-      [name]: validate(name, value),
+      [name]: validate(name, newValue),
     }));
   };
 
-const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     let newErrors = {};
@@ -64,11 +79,13 @@ const handleSubmit = async (e) => {
     if (form.name.trim().length < 2)
       newErrors.name = "Name must be at least 2 characters";
 
-    if (!form.email)
-      newErrors.email = "Email is required";
+    if (!form.email) newErrors.email = "Email is required";
 
-    if (!form.phone)
-      newErrors.phone = "Phone is required";
+    if (!form.phone) {
+  newErrors.phone = "Phone is required";
+} else if (!/^\(\d{3}\)-\d{3}-\d{4}$/.test(form.phone)) {
+  newErrors.phone = "Phone number must be in the format (123)-456-7890";
+}
 
     if (form.company.trim().length < 2)
       newErrors.company = "Company must be at least 2 characters";
@@ -101,6 +118,7 @@ const handleSubmit = async (e) => {
           email: "",
           phone: "",
           company: "",
+          help: "",
         });
 
         setErrors({});
@@ -142,7 +160,13 @@ const handleSubmit = async (e) => {
               onClick={() => {
                 setIsOpen(false);
                 setSuccess(false);
-                setForm({ name: "", email: "", phone: "", company: "" });
+                setForm({
+                  name: "",
+                  email: "",
+                  phone: "",
+                  company: "",
+                  help: "",
+                });
               }}
             >
               Close
@@ -191,12 +215,14 @@ const handleSubmit = async (e) => {
               {/* PHONE */}
               <div>
                 <input
-                  name="phone"
-                  placeholder="Phone"
-                  value={form.phone}
-                  onChange={handleChange}
-                  className="w-full border p-3 rounded-lg"
-                />
+  name="phone"
+  type="tel"
+  maxLength={14}
+  placeholder="(123)-456-7890"
+  value={form.phone}
+  onChange={handleChange}
+  className="w-full border p-3 rounded-lg"
+/>
                 {errors.phone && (
                   <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
                 )}
@@ -214,6 +240,18 @@ const handleSubmit = async (e) => {
                 {errors.company && (
                   <p className="text-red-500 text-xs mt-1">{errors.company}</p>
                 )}
+              </div>
+
+              {/* WHAT CAN WE HELP YOU WITH */}
+              <div>
+                <textarea
+                  name="help"
+                  placeholder="What can we help you with?"
+                  value={form.help}
+                  onChange={handleChange}
+                  rows={5}
+                  className="w-full border p-3 rounded-lg resize-none"
+                />
               </div>
 
               {/* SUBMIT */}
