@@ -1,21 +1,10 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-/* -------------------------------------------------------------------------
-   StatsSection  —  "Loved by contractors / Trusted By Teams Who Value..."
-   Scroll-jacked horizontal card track: the section is 330vh tall, its
-   content pins with `position: sticky`, and as the user scrolls through
-   that extra height, the card row translates horizontally in lockstep
-   (same mechanism as the source's `reviewSecRef/reviewTrackRef` scroll
-   handler) with a progress bar filling from 6% -> 100%.
-
-   Place directly below <VideoSection />:
-
-     <VideoSection />
-     <StatsSection />
-     <GlobalTokens />
-------------------------------------------------------------------------- */
+gsap.registerPlugin(ScrollTrigger);
 
 const CARDS = [
   {
@@ -137,52 +126,65 @@ export default function StatsSection() {
   const barRef = useRef(null);
 
   useEffect(() => {
-    const onScroll = () => {
-      const rsec = sectionRef.current;
-      const track = trackRef.current;
-      const bar = barRef.current;
-      if (!rsec || !track) return;
-      const vh = window.innerHeight;
-      const rect = rsec.getBoundingClientRect();
-      const dist = Math.max(1, rsec.offsetHeight - vh);
-      const p = Math.min(1, Math.max(0, -rect.top / dist));
-      const maxX = Math.max(0, track.scrollWidth - track.clientWidth);
-      track.style.transform = `translateX(${(-p * maxX).toFixed(1)}px)`;
-      if (bar) bar.style.width = `${(6 + p * 94).toFixed(1)}%`;
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll, { passive: true });
-    onScroll();
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onScroll);
-    };
+    const section = sectionRef.current;
+    const track = trackRef.current;
+    const bar = barRef.current;
+    if (!section || !track) return;
+
+    const getMaxX = () => Math.max(0, track.scrollWidth - track.clientWidth);
+
+    const ctx = gsap.context(() => {
+      gsap.set(track, { x: 0 });
+      if (bar) bar.style.width = '6%';
+
+      gsap.to(track, {
+        x: () => -getMaxX(),
+        ease: 'none',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top top',
+          end: () => `+=${getMaxX()}`,
+          scrub: 1,
+          pin: true,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+          onUpdate: (self) => {
+            if (bar) bar.style.width = `${(6 + self.progress * 94).toFixed(1)}%`;
+          },
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, []);
 
   return (
-    <section id="stats" ref={sectionRef} className="ac-statssec" style={{ position: 'relative', height: '330vh', background: 'var(--ac-blue-900)' }}>
-      <div style={{ position: 'sticky', top: 0, height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', overflow: 'hidden' }}>
-        <div className="ac-statshead" style={{ maxWidth: 'var(--container-max, 1240px)', margin: '0 auto', width: '100%', padding: '0 40px 34px', boxSizing: 'border-box' }}>
-          <span style={{ fontFamily: 'var(--font-ui)', fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--ac-orange-400)' }}>
-            Loved by contractors
-          </span>
-          <h2 className="font-bold" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(26px,4.6vw,40px)', marginTop: 12, color: '#fff', maxWidth: 660, lineHeight: 1.06 }}>
-            Trusted By Teams Who Value <span className="ac-text-gradient">Clarity, Control &amp; Results</span>
-          </h2>
-        </div>
+    <section
+      id="stats"
+      ref={sectionRef}
+      className="ac-statssec"
+      style={{ position: 'relative', height: '100vh', background: 'var(--ac-blue-900)', display: 'flex', flexDirection: 'column', justifyContent: 'center', overflow: 'hidden' }}
+    >
+      <div className="ac-statshead" style={{ maxWidth: 'var(--container-max, 1240px)', margin: '0 auto', width: '100%', padding: '0 40px 34px', boxSizing: 'border-box' }}>
+        <span style={{ fontFamily: 'var(--font-ui)', fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--ac-orange-400)' }}>
+          Loved by contractors
+        </span>
+        <h2 className="font-bold" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(26px,4.6vw,40px)', marginTop: 12, color: '#fff', maxWidth: 660, lineHeight: 1.06 }}>
+          Trusted By Teams Who Value <span className="ac-text-gradient">Clarity, Control &amp; Results</span>
+        </h2>
+      </div>
 
-        <div ref={trackRef} className="ac-statstrack" style={{ display: 'flex', gap: 26, padding: '0 40px', willChange: 'transform', transform: 'translateX(0px)' }}>
-          {CARDS.map((c) => (
-            <InfoCard key={c.num} c={c} />
-          ))}
-          <TestimonialCard />
-          <div style={{ flex: '0 0 auto', width: 20 }} />
-        </div>
+      <div ref={trackRef} className="ac-statstrack" style={{ display: 'flex', gap: 26, padding: '0 40px', willChange: 'transform', transform: 'translateX(0px)' }}>
+        {CARDS.map((c) => (
+          <InfoCard key={c.num} c={c} />
+        ))}
+        <TestimonialCard />
+        <div style={{ flex: '0 0 auto', width: 20 }} />
+      </div>
 
-        <div className="ac-statshead" style={{ maxWidth: 'var(--container-max, 1240px)', margin: '30px auto 0', width: '100%', padding: '0 40px', boxSizing: 'border-box' }}>
-          <div style={{ height: 4, borderRadius: 3, background: 'rgba(255,255,255,0.12)', overflow: 'hidden' }}>
-            <div ref={barRef} style={{ height: '100%', width: '6%', background: 'linear-gradient(90deg,var(--color-primary),var(--ac-orange-500))', borderRadius: 3 }} />
-          </div>
+      <div className="ac-statshead" style={{ maxWidth: 'var(--container-max, 1240px)', margin: '30px auto 0', width: '100%', padding: '0 40px', boxSizing: 'border-box' }}>
+        <div style={{ height: 4, borderRadius: 3, background: 'rgba(255,255,255,0.12)', overflow: 'hidden' }}>
+          <div ref={barRef} style={{ height: '100%', width: '6%', background: 'linear-gradient(90deg,var(--color-primary),var(--ac-orange-500))', borderRadius: 3 }} />
         </div>
       </div>
 
@@ -202,13 +204,6 @@ export default function StatsSection() {
           .ac-statstrack {
             padding-left: 22px !important;
             padding-right: 22px !important;
-          }
-        }
-
-        /* ---- Ultra-wide / bigger-than-desktop screens ---- */
-        @media (min-width: 1600px) {
-          .ac-statssec {
-            height: 300vh;
           }
         }
       `}</style>
