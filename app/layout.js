@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
 
           <ScrollProgress />
-          <CustomCursor />
+          {/* <CustomCursor /> */}
 
           <div className={sora.className}>{children}</div>
 
