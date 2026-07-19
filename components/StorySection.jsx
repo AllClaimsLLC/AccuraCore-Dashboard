@@ -313,7 +313,7 @@ export default function StorySection() {
         padding: "96px 40px",
       }}
     >
-      <Reveal style={{ textAlign: "center", marginBottom: 48 }}>
+      <Reveal className="text-left md:text-center mb-[48px]">
         <span className="ac-eyebrow">Everything in one place</span>
         <h2
         className="font-bold"

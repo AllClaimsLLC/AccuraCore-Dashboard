@@ -44,7 +44,7 @@ function InfoCard({ c }) {
       style={{
         flex: '0 0 auto',
         width: 'min(80vw, 540px)',
-        height: 'clamp(380px, 62vh, 540px)',
+        height: 'clamp(380px, 62vh, 450px)',
         background: 'linear-gradient(158deg, #132540, #0a1524)',
         border: '1px solid rgba(255,255,255,0.08)',
         borderRadius: 28,
@@ -85,7 +85,7 @@ function TestimonialCard() {
       style={{
         flex: '0 0 auto',
         width: 'min(80vw, 540px)',
-        height: 'clamp(380px, 62vh, 540px)',
+        height: 'clamp(380px, 62vh, 450px)',
         background: 'var(--ac-gradient-blue)',
         border: '1px solid rgba(255,255,255,0.12)',
         borderRadius: 28,

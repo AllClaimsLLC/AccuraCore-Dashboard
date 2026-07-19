@@ -32,7 +32,7 @@ import VideoSection from "@/components/VideoSection";
 import StatsSection from "@/components/StatsSection";
 import CTASection from "@/components/CTASection";
 import FaqSection from "@/components/Faqsection";
-import LiveDemoSection from "@/components/LivedemoSection";
+import LiveDemoSection from "@/components/LiveDemoSection";
 import NewFooter from "@/components/NewFooter";
 import Image from "next/image";
 import Link from "next/link";
@@ -119,6 +119,7 @@ function TopBarAndHeader() {
   const [cueIndex, setCueIndex] = useState(0);
   const [scrolled, setScrolled] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
 
   useEffect(() => {
     const id = setInterval(
@@ -136,39 +137,42 @@ function TopBarAndHeader() {
 
   return (
     <div className="relative z-20" style={{ background: "var(--ac-blue-50)" }}>
-      {/* ---------------------------------------------------------------- */}
-      {/* TOP ANNOUNCEMENT BAR                                             */}
-      {/* ---------------------------------------------------------------- */}
+      {/* Top Bar */}
       <div
-        className="relative flex items-center justify-center gap-2 overflow-hidden px-4 py-2.5 text-center"
+        className="relative flex flex-col items-center justify-center overflow-hidden px-4 py-2.5 text-center md:flex-row md:gap-2"
         style={{
           background:
             "linear-gradient(90deg, rgba(9,42,74,0.82), rgba(17,97,165,0.66) 55%, rgba(9,42,74,0.82))",
           backdropFilter: "blur(18px) saturate(150%)",
           borderBottom: "1px solid rgba(255,255,255,0.14)",
           color: "#fff",
-          fontSize: "13.5px",
         }}
       >
         <span className="ac-barsheen pointer-events-none absolute bottom-0 left-0 top-0 w-[30%]" />
+
+        {/* Desktop Indicator */}
         <span
-          className="ac-barpulse h-[6px] w-[6px] shrink-0 rounded-full"
+          className="ac-barpulse hidden h-[6px] w-[6px] shrink-0 rounded-full"
           style={{ background: "var(--ac-orange-500)" }}
         />
-        <span className="font-semibold text-white">
+
+        {/* Heading */}
+        <span className="text-[13.5px] font-semibold text-white">
           First 90 Days <span className="font-extrabold">FREE</span>
         </span>
-        <span className="opacity-40">·</span>
-        <span className="relative inline-flex items-center justify-center text-center font-medium">
+
+        {/* Divider (Desktop only) */}
+        <span className="hidden opacity-40 md:block">·</span>
+
+        {/* Animated Text */}
+        <span className="relative mt-0.5 inline-flex items-center justify-center text-center text-[13.5px] font-medium md:mt-0">
           <span key={cueIndex} className="ac-cueflip inline-block">
             {CUE_MESSAGES[cueIndex]}
           </span>
         </span>
       </div>
 
-      {/* ---------------------------------------------------------------- */}
-      {/* FIXED FLOATING (COMPACT) HEADER — slides in once scrolled        */}
-      {/* ---------------------------------------------------------------- */}
+      {/* HEADER */}
       <div
         className="fixed left-0 right-0 top-4 z-[60] hidden justify-center px-6 md:flex"
         style={{
@@ -207,28 +211,26 @@ function TopBarAndHeader() {
               </a>
             ))}
           </nav>
-<Link
-  href="/book-a-demo"
-  className="ac-cta ml-auto inline-flex items-center gap-[7px] rounded-[12px] px-[18px] py-[10px] text-[14px] font-semibold text-white"
-  style={{
-    background: "var(--color-primary)",
-    boxShadow: "var(--shadow-brand)",
-  }}
->
-    Book Demo
-      <ArrowRight
-    size={16}
-    className="transition-transform duration-200 group-hover:translate-x-1"
-  />
-    </Link>
+          <Link
+            href="/book-a-demo"
+            className="ac-cta ml-auto inline-flex items-center gap-[7px] rounded-[12px] px-[18px] py-[10px] text-[14px] font-semibold text-white"
+            style={{
+              background: "var(--color-primary)",
+              boxShadow: "var(--shadow-brand)",
+            }}
+          >
+            Book Demo
+            <ArrowRight
+              size={16}
+              className="transition-transform duration-200 group-hover:translate-x-1"
+            />
+          </Link>
         </div>
       </div>
 
-      {/* ---------------------------------------------------------------- */}
-      {/* IN-FLOW GLASS HEADER                                             */}
-      {/* ---------------------------------------------------------------- */}
+      {/* IN-FLOW GLASS HEADER */}
       <header
-        className="sticky top-0 z-30 mx-3 flex h-[64px] items-center gap-5 rounded-[18px] px-4 sm:mx-6 sm:gap-7 md:relative md:mx-6 md:mt-3.5 md:h-[76px] md:gap-9 md:px-8 lg:mx-6"
+        className="mt-4 sticky top-0 z-30 mx-3 flex h-[64px] items-center gap-5 rounded-[18px] px-4 sm:mx-6 sm:gap-7 md:relative md:mx-6 md:mt-3.5 md:h-[76px] md:gap-9 md:px-8 lg:mx-6"
         style={{
           background: "rgba(255,255,255,0.62)",
           backdropFilter: "blur(20px) saturate(160%)",
@@ -270,20 +272,20 @@ function TopBarAndHeader() {
             <User size={18} style={{ color: "var(--color-primary)" }} />
             Login
           </a>
-<Link
-  href="/book-a-demo"
-  className="ac-cta inline-flex items-center gap-2 rounded-[12px] px-5 py-[11px] text-[15px] font-semibold text-white"
-  style={{
-    background: "var(--color-primary)",
-    boxShadow: "var(--shadow-brand)",
-  }}
->
-    Book Demo
-      <ArrowRight
-    size={16}
-    className="transition-transform duration-200 group-hover:translate-x-1"
-  />
-    </Link>
+          <Link
+            href="/book-a-demo"
+            className="ac-cta inline-flex items-center gap-2 rounded-[12px] px-5 py-[11px] text-[15px] font-semibold text-white"
+            style={{
+              background: "var(--color-primary)",
+              boxShadow: "var(--shadow-brand)",
+            }}
+          >
+            Book Demo
+            <ArrowRight
+              size={16}
+              className="transition-transform duration-200 group-hover:translate-x-1"
+            />
+          </Link>
         </div>
 
         <button
@@ -302,13 +304,70 @@ function TopBarAndHeader() {
             background: "var(--surface-card)",
             borderColor: "var(--border-subtle)",
             boxShadow: "0 20px 40px rgba(15,23,41,0.14)",
-            maxHeight: mobileNavOpen ? "28rem" : 0,
+            maxHeight: mobileNavOpen ? (mobileSolutionsOpen ? "50rem" : "28rem") : 0,
             opacity: mobileNavOpen ? 1 : 0,
             pointerEvents: mobileNavOpen ? "auto" : "none",
           }}
         >
           <div className="flex flex-col gap-1 p-3">
-            {["Solutions", "Our Story", "Pricing", "Contact Us"].map((l) => (
+            {/* Solutions — collapsible, same icon/bg treatment as desktop mega menu */}
+            <div>
+              <button
+                onClick={() => setMobileSolutionsOpen((v) => !v)}
+                className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-[15px] font-medium transition-colors"
+                style={{
+                  color: mobileSolutionsOpen
+                    ? "var(--color-primary)"
+                    : "var(--text-body)",
+                }}
+              >
+                Solutions
+                <ChevronDown
+                  size={16}
+                  style={{
+                    transition: "transform 0.2s ease",
+                    transform: mobileSolutionsOpen
+                      ? "rotate(180deg)"
+                      : "rotate(0deg)",
+                  }}
+                />
+              </button>
+
+              <div
+                className="overflow-hidden transition-all duration-300 ease-in-out"
+                style={{
+                  maxHeight: mobileSolutionsOpen ? "600px" : "0px",
+                  opacity: mobileSolutionsOpen ? 1 : 0,
+                }}
+              >
+                <div
+                  className="mt-1 flex flex-col gap-0.5 rounded-xl p-2"
+                  style={{ background: "var(--ac-gray-50)" }}
+                >
+                  {SOLUTIONS.map(({ title, desc, icon: Icon, tone }) => (
+                    <a key={title} href="#" className="ac-megaitem">
+                      <span
+                        className="ac-megaicon"
+                        style={{
+                          background:
+                            tone === "orange"
+                              ? "var(--ac-orange-500)"
+                              : "var(--color-primary)",
+                        }}
+                      >
+                        <Icon size={18} color="#fff" />
+                      </span>
+                      <span className="ac-megatxt">
+                        <b>{title}</b>
+                        <small>{desc}</small>
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {["Our Story", "Pricing", "Contact Us"].map((l) => (
               <a
                 key={l}
                 href="#"
@@ -325,17 +384,17 @@ function TopBarAndHeader() {
             >
               <User size={17} /> Login
             </a>
-           <Link
-  href="/book-a-demo"
-  className="ac-cta mt-1 flex items-center justify-center gap-2 rounded-[12px] px-5 py-3 text-[15px] font-semibold text-white"
-  style={{ background: "var(--color-primary)" }}
->
-    Book Demo
-      <ArrowRight
-    size={16}
-    className="transition-transform duration-200 group-hover:translate-x-1"
-  />
-    </Link>
+            <Link
+              href="/book-a-demo"
+              className="ac-cta mt-1 flex items-center justify-center gap-2 rounded-[12px] px-5 py-3 text-[15px] font-semibold text-white"
+              style={{ background: "var(--color-primary)" }}
+            >
+              Book Demo
+              <ArrowRight
+                size={16}
+                className="transition-transform duration-200 group-hover:translate-x-1"
+              />
+            </Link>
           </div>
         </div>
       </header>
@@ -386,11 +445,11 @@ function SolutionsMenu({ fontSize = "15px" }) {
 
       <div
         className="ac-solmenu"
-style={{
-  opacity: open ? 1 : 0,
-  pointerEvents: open ? "auto" : "none",
-  transform: `translateY(${open ? 0 : -8}px)`,
-}}
+        style={{
+          opacity: open ? 1 : 0,
+          pointerEvents: open ? "auto" : "none",
+          transform: `translateY(${open ? 0 : -8}px)`,
+        }}
       >
         <span className="ac-solhead">Solutions</span>
         <div className="ac-solgrid">
@@ -425,8 +484,7 @@ style={{
   );
 }
 
-/*
-   HERO */
+/* HERO */
 function Hero() {
   return (
     <section
@@ -435,8 +493,9 @@ function Hero() {
     >
       <div className="pointer-events-none absolute left-0 top-0 h-72 w-72 -translate-x-1/3 -translate-y-1/3 rounded-full bg-blue-200/30 blur-3xl" />
       <div className="pointer-events-none absolute bottom-0 right-0 h-96 w-96 translate-x-1/4 translate-y-1/4 rounded-full bg-orange-200/30 blur-3xl" />
-
+ 
       <div className="relative mx-auto max-w-[1200px] pt-10 sm:pt-14 lg:pt-16">
+        {/* ---------- DESKTOP floating cards (unchanged) ---------- */}
         <div className="animate-float-slow absolute left-0 top-0 hidden w-48 rounded-2xl border border-slate-100 bg-white p-3.5 shadow-lg shadow-slate-900/5 transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl md:block">
           <div className="flex items-center gap-2.5">
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-100">
@@ -450,7 +509,7 @@ function Hero() {
             </div>
           </div>
         </div>
-
+ 
         <div className="animate-float-slower absolute right-0 top-0 hidden w-52 rounded-2xl border border-slate-100 bg-white p-3.5 shadow-lg shadow-slate-900/5 transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl md:block">
           <div className="flex items-center gap-2.5">
             <CircularProgress value={91} />
@@ -462,7 +521,7 @@ function Hero() {
             </div>
           </div>
         </div>
-
+ 
         <div className="animate-float pointer-events-auto absolute left-[8%] top-[62%] hidden w-52 items-center gap-3 rounded-2xl border border-slate-100 bg-white px-4 py-2.5 shadow-lg shadow-slate-900/5 transition-transform duration-300 hover:-translate-y-1 md:flex">
           <div className="flex -space-x-2">
             <span className="h-6 w-6 rounded-full border-2 border-white bg-blue-500" />
@@ -477,7 +536,7 @@ function Hero() {
             </p>
           </div>
         </div>
-
+ 
         <div className="animate-float-slow pointer-events-auto absolute right-[8%] top-[62%] hidden w-56 items-center gap-3 rounded-2xl border border-slate-100 bg-white px-4 py-2.5 shadow-lg shadow-slate-900/5 transition-transform duration-300 hover:-translate-y-1 md:flex">
           <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-orange-100">
             <CheckSquare size={16} className="text-orange-500" />
@@ -491,106 +550,107 @@ function Hero() {
             </p>
           </div>
         </div>
-
-        <div className="mx-auto max-w-3xl text-center">
+ 
+        {/* ---------- Heading wrapper: relative + mobile-only floating cards ---------- */}
+        <div className="relative mx-auto max-w-3xl pb-16 pt-16 text-center sm:pb-0 sm:pt-0 md:pb-0 md:pt-0">
+          {/* MOBILE-ONLY floating cards — anchored to this wrapper's own edges,
+              so they always sit just above/below the heading text and never
+              depend on the full section height (no off-screen risk). */}
+          <div className="ac-anim-float2 pointer-events-none absolute -top-2 left-0 flex w-[124px] items-center gap-2 rounded-xl border border-slate-100 bg-white p-2 shadow-lg shadow-slate-900/5 md:hidden">
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-100">
+              <TrendingUp size={13} className="text-emerald-600" />
+            </span>
+            <div className="min-w-0 text-left">
+              <p className="truncate text-[9px] font-medium text-slate-400">
+                Active Jobs
+              </p>
+              <p className="text-[12px] font-bold text-slate-800">1,284</p>
+            </div>
+          </div>
+ 
+          <div className="ac-anim-float3 pointer-events-none absolute -top-2 right-0 flex w-[124px] items-center gap-2 rounded-xl border border-slate-100 bg-white p-2 shadow-lg shadow-slate-900/5 md:hidden">
+            <CircularProgress value={91} small />
+            <div className="min-w-0 text-left">
+              <p className="truncate text-[9px] font-medium text-slate-400">
+                Invoices Paid
+              </p>
+              <p className="text-[12px] font-bold text-slate-800">$48.2M</p>
+            </div>
+          </div>
+ 
+          <div className="ac-anim-float pointer-events-none absolute -bottom-2 left-0 flex w-[124px] items-center gap-2 rounded-xl border border-slate-100 bg-white p-2 shadow-lg shadow-slate-900/5 md:hidden">
+            <div className="flex shrink-0 -space-x-1.5">
+              <span className="h-5 w-5 rounded-full border-2 border-white bg-blue-500" />
+              <span className="h-5 w-5 rounded-full border-2 border-white bg-orange-400" />
+              <span className="h-5 w-5 rounded-full border-2 border-white bg-emerald-500" />
+            </div>
+            <div className="min-w-0 text-left">
+              <p className="truncate text-[9px] font-semibold text-slate-700">
+                Crew online
+              </p>
+              <p className="flex items-center gap-1 text-[9px] font-medium text-emerald-500">
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
+                8 active
+              </p>
+            </div>
+          </div>
+ 
+          <div className="ac-anim-float2-delay pointer-events-none absolute -bottom-2 right-0 flex w-[124px] items-center gap-2 rounded-xl border border-slate-100 bg-white p-2 shadow-lg shadow-slate-900/5 md:hidden">
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-orange-100">
+              <CheckSquare size={13} className="text-orange-500" />
+            </span>
+            <div className="min-w-0 text-left">
+              <p className="truncate text-[9px] font-semibold text-slate-700">
+                Estimate OK
+              </p>
+              <p className="truncate text-[9px] font-medium text-slate-400">
+                Naperville
+              </p>
+            </div>
+          </div>
+ 
           <h1 className="text-[2.5rem] font-extrabold leading-[1.08] tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-[4rem]">
             Built by a Contractor,
             <br />
-            for{" "}
-<span className="ac-gradanim">
-  Contractors
-</span>
+            for <span className="ac-gradanim">Contractors</span>
           </h1>
-
+ 
           <p className="mx-auto mt-6 max-w-xl text-[15px] leading-relaxed text-slate-500 sm:text-base md:text-lg">
             AccuraCore brings everything you need into one dashboard - manage
             your crew, track jobs, handle estimates and invoices, and stay in
             control of every project.
           </p>
-
+        </div>
+ 
+        <div className="mx-auto max-w-3xl">
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-           <Link
-  href="/calculator"
-  className="ac-cta group flex w-full items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-6 py-3.5 text-[15px] font-semibold text-slate-800 shadow-sm hover:border-slate-300 hover:shadow-md sm:w-auto"
->
-  Check My Tech-Mess Cost
-  <ArrowRight
-    size={16}
-    className="transition-transform duration-200 group-hover:translate-x-1"
-  />
-</Link>
-<Link
-  href="/book-a-demo"
-  className="ac-cta group flex w-full items-center justify-center gap-2 rounded-lg px-7 py-3.5 text-[15px] font-semibold text-white shadow-md sm:w-auto"
-  style={{
-    background: "var(--color-primary)",
-    boxShadow: "var(--shadow-brand)",
-  }}
->
-  Book Demo
-  <ArrowRight
-    size={16}
-    className="transition-transform duration-200 group-hover:translate-x-1"
-  />
-</Link>
+            <Link
+              href="/calculator"
+              className="ac-cta group flex w-full items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-6 py-3.5 text-[15px] font-semibold text-slate-800 shadow-sm hover:border-slate-300 hover:shadow-md sm:w-auto"
+            >
+              Check My Tech-Mess Cost
+              <ArrowRight
+                size={16}
+                className="transition-transform duration-200 group-hover:translate-x-1"
+              />
+            </Link>
+            <Link
+              href="/book-a-demo"
+              className="ac-cta group flex w-full items-center justify-center gap-2 rounded-lg px-7 py-3.5 text-[15px] font-semibold text-white shadow-md sm:w-auto"
+              style={{
+                background: "var(--color-primary)",
+                boxShadow: "var(--shadow-brand)",
+              }}
+            >
+              Book Demo
+              <ArrowRight
+                size={16}
+                className="transition-transform duration-200 group-hover:translate-x-1"
+              />
+            </Link>
           </div>
         </div>
-
-        {/* Mobile-only stacked notification row */}
-        <div className="mt-8 flex flex-col items-center gap-3 md:hidden">
-          <div className="flex w-full max-w-xs items-center justify-between rounded-2xl border border-slate-100 bg-white px-4 py-2.5 shadow-lg shadow-slate-900/5">
-            <div className="flex items-center gap-2.5">
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-100">
-                <TrendingUp size={15} className="text-emerald-600" />
-              </span>
-              <div>
-                <p className="text-[10px] font-medium text-slate-400">
-                  Active Jobs
-                </p>
-                <p className="text-sm font-bold text-slate-800">1,284</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-2.5">
-              <CircularProgress value={91} small />
-              <div>
-                <p className="text-[10px] font-medium text-slate-400">
-                  Invoices Paid
-                </p>
-                <p className="text-sm font-bold text-slate-800">$48.2M</p>
-              </div>
-            </div>
-          </div>
-          <div className="flex w-full max-w-xs items-center gap-3 rounded-2xl border border-slate-100 bg-white px-4 py-2.5 shadow-lg shadow-slate-900/5">
-            <div className="flex -space-x-2">
-              <span className="h-6 w-6 rounded-full border-2 border-white bg-blue-500" />
-              <span className="h-6 w-6 rounded-full border-2 border-white bg-orange-400" />
-              <span className="h-6 w-6 rounded-full border-2 border-white bg-emerald-500" />
-            </div>
-            <div>
-              <p className="text-xs font-semibold text-slate-700">
-                Crew online
-              </p>
-              <p className="flex items-center gap-1 text-[11px] font-medium text-emerald-500">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />8
-                active now
-              </p>
-            </div>
-          </div>
-          <div className="flex w-full max-w-xs items-center gap-3 rounded-2xl border border-slate-100 bg-white px-4 py-2.5 shadow-lg shadow-slate-900/5">
-            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-orange-100">
-              <CheckSquare size={16} className="text-orange-500" />
-            </span>
-            <div>
-              <p className="text-xs font-semibold text-slate-700">
-                Estimate approved
-              </p>
-              <p className="text-[11px] font-medium text-slate-400">
-                Naperville · Robert K.
-              </p>
-            </div>
-          </div>
-        </div>
-
+ 
         <div className="mt-14 flex flex-col items-center gap-2 text-slate-400">
           <span className="text-[11px] font-semibold tracking-[0.2em]">
             SCROLL TO EXPLORE
@@ -601,14 +661,14 @@ function Hero() {
     </section>
   );
 }
-
+ 
 function CircularProgress({ value = 0, small = false }) {
   const size = small ? 30 : 36;
   const radius = small ? 12 : 15;
   const circumference = 2 * Math.PI * radius;
   const offset = circumference - (value / 100) * circumference;
   const center = size / 2;
-
+ 
   return (
     <span
       className="relative flex shrink-0 items-center justify-center"
@@ -650,8 +710,7 @@ function CircularProgress({ value = 0, small = false }) {
   );
 }
 
-/*
-   MARQUEE */
+/* MARQUEE */
 function Marquee() {
   return (
     <div
@@ -665,9 +724,7 @@ function Marquee() {
         padding: "15px 0",
       }}
     >
-      <div
-        className="ac-marquee inline-flex"
-      >
+      <div className="ac-marquee inline-flex">
         {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, i) => (
           <span
             key={i}
@@ -698,12 +755,13 @@ function Marquee() {
   );
 }
 
+// Section 2 Devices Showcase
 function DeviceShowcase() {
   return (
-<section
-  className="relative overflow-hidden"
-//   style={{ background: "var(--surface-page)" }}
->
+    <section
+      className="relative overflow-hidden"
+      //   style={{ background: "var(--surface-page)" }}
+    >
       <div
         className="ac-sec relative z-[2] mx-auto max-w-[1180px]"
         style={{ perspective: "1900px" }}
@@ -834,7 +892,7 @@ function DeviceShowcase() {
                 }}
               >
                 <div
-                  className="ac-devframe relative w-[700px] max-w-[78vw] overflow-hidden rounded-[6px]"
+                  className="ac-devframe relative w-[700px] max-w-[72vw] overflow-hidden rounded-[6px] md:max-w-[78vw]"
                   style={{
                     aspectRatio: "1800 / 1157",
                     background: "rgb(11,18,32)",
@@ -849,28 +907,28 @@ function DeviceShowcase() {
                     }}
                   />
 
-                 {/* Default Dashboard */}
-<div className="absolute inset-0">
-  <Image
-    src="/Images/inside-laptop-dashboard1.png"
-    alt="Dashboard"
-    fill
-    priority
-    className="object-cover select-none"
-    draggable={false}
-  />
-</div>
+                  {/* Default Dashboard */}
+                  <div className="absolute inset-0">
+                    <Image
+                      src="/Images/inside-laptop-dashboard1.png"
+                      alt="Dashboard"
+                      fill
+                      priority
+                      className="object-cover select-none"
+                      draggable={false}
+                    />
+                  </div>
 
-{/* Hover Dashboard */}
-<div className="ac-devshot absolute inset-0">
-  <Image
-    src="/Images/inside-laptop-dashboard2.png"
-    alt="Dashboard Preview"
-    fill
-    className="object-cover select-none"
-    draggable={false}
-  />
-</div>
+                  {/* Hover Dashboard */}
+                  <div className="ac-devshot absolute inset-0">
+                    <Image
+                      src="/Images/inside-laptop-dashboard2.png"
+                      alt="Dashboard Preview"
+                      fill
+                      className="object-cover select-none"
+                      draggable={false}
+                    />
+                  </div>
 
                   <span
                     className="ac-hovhint absolute bottom-3 right-3 z-[6] rounded-full px-3 py-[5px] text-[11px] font-bold text-white"
@@ -888,9 +946,8 @@ function DeviceShowcase() {
 
               {/* laptop base / hinge */}
               <div
-                className="relative left-1/2 h-[14px] -translate-x-1/2 rounded-[1px_1px_12px_12px]"
+                className="ac-lap-hinge relative left-1/2 h-[14px] -translate-x-1/2 rounded-[1px_1px_12px_12px]"
                 style={{
-                  width: "calc(100% + 40px)",
                   background:
                     "linear-gradient(rgb(215,219,225) 0%, rgb(174,180,189) 45%, rgb(127,134,143) 100%)",
                   borderRadius: "1px 1px 12px 12px",
@@ -907,9 +964,10 @@ function DeviceShowcase() {
               </div>
             </div>
 
-            {/* phone mockup — kept for markup parity, hidden via .ac-herophone (display:none) */}
+            {/* phone mockup — hidden on mobile (overlaps the laptop in
+                narrow viewports); unchanged from md breakpoint upward */}
             <div
-              className="ac-herophone ac-anim-phone-rotate absolute -left-[118px] bottom-[-56px] z-[4] h-[370px] w-[176px] rounded-[34px] p-[7px]"
+              className="ac-herophone ac-anim-phone-rotate absolute -left-[118px] bottom-[-56px] z-[4] hidden h-[370px] w-[176px] rounded-[34px] p-[7px] md:block"
               style={{
                 background: "linear-gradient(rgb(22,31,48), rgb(13,21,34))",
                 boxShadow: "rgba(13,21,34,0.5) 0 40px 74px",
@@ -920,17 +978,16 @@ function DeviceShowcase() {
                 className="ac-devframe relative flex h-full w-full flex-col overflow-hidden rounded-[28px]"
                 style={{ background: "#fff" }}
               >
-
                 {/* Hover Image */}
-<div className="ac-devshot absolute inset-0 z-[5]">
-  <Image
-    src="/Images/inside-phone1.png"
-    alt="Phone Preview"
-    fill
-    className="object-cover"
-    draggable={false}
-  />
-</div>
+                <div className="ac-devshot absolute inset-0 z-[5]">
+                  <Image
+                    src="/Images/inside-phone1.png"
+                    alt="Phone Preview"
+                    fill
+                    className="object-cover"
+                    draggable={false}
+                  />
+                </div>
                 <div
                   className="absolute left-1/2 top-[9px] z-[6] h-[15px] w-[52px] -translate-x-1/2 rounded-full"
                   style={{ background: "rgb(13,21,34)" }}
@@ -1119,6 +1176,7 @@ function LaptopTilt({ children }) {
   );
 }
 
+// GLOBAL STYLES
 function GlobalTokens() {
   return (
     <style jsx global>{`
@@ -1325,23 +1383,23 @@ function GlobalTokens() {
       }
 
       /* -------------------- mega menu -------------------- */
-.ac-solmenu {
-  position: absolute;
-  top: calc(100% + 16px);
+      .ac-solmenu {
+        position: absolute;
+        top: calc(100% + 16px);
 
-  left: 0;
-  transform: translateY(-8px);
+        left: 0;
+        transform: translateY(-8px);
 
-  width: 640px;
-  max-width: min(640px, calc(100vw - 48px));
+        width: 640px;
+        max-width: min(640px, calc(100vw - 48px));
 
-  background: var(--surface-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: 18px;
-  box-shadow: rgba(15, 23, 41, 0.16) 0 24px 48px;
-  padding: 22px 24px;
-  z-index: 999;
-}
+        background: var(--surface-card);
+        border: 1px solid var(--border-subtle);
+        border-radius: 18px;
+        box-shadow: rgba(15, 23, 41, 0.16) 0 24px 48px;
+        padding: 22px 24px;
+        z-index: 999;
+      }
       .ac-solhead {
         display: block;
         font-size: 11px;
@@ -1418,26 +1476,26 @@ function GlobalTokens() {
       }
 
       /* -------------------- buttons -------------------- */
-.ac-cta {
-  text-decoration: none;
-  transition:
-    transform 0.16s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.22s,
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s,
-    filter 0.2s;
-  will-change: transform;
-}
+      .ac-cta {
+        text-decoration: none;
+        transition:
+          transform 0.16s cubic-bezier(0.4, 0, 0.2, 1),
+          box-shadow 0.22s,
+          background 0.2s,
+          color 0.2s,
+          border-color 0.2s,
+          filter 0.2s;
+        will-change: transform;
+      }
 
-.ac-cta:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.04);
-}
+      .ac-cta:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.04);
+      }
 
-.ac-cta:active {
-  transform: translateY(0);
-}
+      .ac-cta:active {
+        transform: translateY(0);
+      }
       .ac-loginlink {
         text-decoration: none;
         transition: color 0.2s ease;
@@ -1474,7 +1532,7 @@ function GlobalTokens() {
           transform: translateY(-6px);
         }
       }
-      
+
       .animate-float {
         animation: float 4s ease-in-out infinite;
       }
@@ -1485,54 +1543,95 @@ function GlobalTokens() {
         animation: float-slower 6.5s ease-in-out infinite;
       }
       @keyframes ac-marquee {
-  from {
-    transform: translateX(0);
-  }
+        from {
+          transform: translateX(0);
+        }
 
-  to {
-    transform: translateX(-50%);
-  }
-}
+        to {
+          transform: translateX(-50%);
+        }
+      }
 
-.ac-marquee {
-  animation: ac-marquee 30s linear infinite;
-}
+      .ac-marquee {
+        animation: ac-marquee 30s linear infinite;
+      }
 
-.ac-marquee-wrap:hover .ac-marquee {
-  animation-play-state: paused;
-}
+      .ac-marquee-wrap:hover .ac-marquee {
+        animation-play-state: paused;
+      }
 
-    .ac-gradanim {
-  display: inline-block;
+      .ac-gradanim {
+        display: inline-block;
 
-  background-image: linear-gradient(
-    90deg,
-    var(--ac-orange-500) 0%,
-    var(--color-primary) 50%,
-    var(--ac-orange-500) 100%
-  );
+        background-image: linear-gradient(
+          90deg,
+          var(--ac-orange-500) 0%,
+          var(--color-primary) 50%,
+          var(--ac-orange-500) 100%
+        );
 
-  background-size: 200% 100%;
-  background-position: 0% 50%;
+        background-size: 200% 100%;
+        background-position: 0% 50%;
 
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
 
-  animation: ac-gradmove 4.5s linear infinite;
-}
+        animation: ac-gradmove 4.5s linear infinite;
+      }
 
-@keyframes ac-gradmove {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 200% 50%;
-  }
-}
+      @keyframes ac-gradmove {
+        0% {
+          background-position: 0% 50%;
+        }
+        100% {
+          background-position: 200% 50%;
+        }
+      }
 
-      /* -------------------- device showcase -------------------- */
+      /* -------------------- mobile floating card motion -------------------- */
+      @keyframes ac-float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+      @keyframes ac-float2 {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-6px);
+        }
+      }
+      @keyframes ac-float3 {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-7px);
+        }
+      }
+      .ac-anim-float {
+        animation: ac-float 5.5s ease-in-out infinite;
+      }
+      .ac-anim-float2 {
+        animation: ac-float2 4.8s ease-in-out infinite;
+      }
+      .ac-anim-float3 {
+        animation: ac-float3 5s ease-in-out 0.3s infinite;
+      }
+      .ac-anim-float2-delay {
+        animation: ac-float2 5.2s ease-in-out 0.6s infinite;
+      }
+
+     /* -------------------- device showcase -------------------- */
       .ac-hfloat {
         position: absolute;
         z-index: 3;
@@ -1589,6 +1688,19 @@ function GlobalTokens() {
         }
         100% {
           background-position: 120% -20%;
+        }
+      }
+
+      /* Laptop base/hinge overhangs the screen by 40px (20px each side) on
+         desktop by design. On narrow mobile viewports that overhang can push
+         past the section's clipped edges, so it's reduced below 768px —
+         desktop value is untouched. */
+      .ac-lap-hinge {
+        width: calc(100% + 40px);
+      }
+      @media (max-width: 768px) {
+        .ac-lap-hinge {
+          width: calc(100% + 16px);
         }
       }
 

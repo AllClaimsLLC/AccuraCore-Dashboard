@@ -198,7 +198,7 @@ export default function HowItWorksSection() {
           position: "relative",
         }}
       >
-        <div style={{ textAlign: "center", marginBottom: 56 }}>
+        <div className="text-left md:text-center mb-[56px]">
           <span
             style={{
               fontFamily: "var(--font-ui)",

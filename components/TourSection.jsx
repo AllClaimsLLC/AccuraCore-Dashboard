@@ -3,20 +3,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { LayoutGrid, Kanban, Camera, Check, ArrowRight } from 'lucide-react';
 
-/* -------------------------------------------------------------------------
-   TourSection  —  "Take it for a spin"
-   Three-tab interactive product tour (Dashboard / Boards / AccuraCam),
-   ported 1:1 (markup, state machine, and motion) from the supplied
-   template into a plain client component using the same design tokens
-   already defined in NewAccuraCorePage's <GlobalTokens />.
-
-   Drop this in right after <DeviceShowcase /> in NewAccuraCorePage:
-
-     <DeviceShowcase />
-     <TourSection />
-     <GlobalTokens />
-------------------------------------------------------------------------- */
-
 const INITIAL_CONTACTS = [
   { name: 'Emily Johnson', flow: 'Claim Intake', status: 'In Progress', addr: '123 Main St, Chicago, IL' },
   { name: 'Michael Brown', flow: 'Assessment', status: 'Pending', addr: '455 Oak Ave, Aurora, IL' },
@@ -210,10 +196,10 @@ export default function TourSection() {
 
   return (
     <section
-      className="ac-sec"
-      style={{ maxWidth: 'var(--container-max, 1200px)', margin: '0 auto', padding: '100px 40px 40px' }}
+      className="ac-tour-sec"
+      style={{ maxWidth: 'var(--container-max, 1200px)', margin: '0 auto' }}
     >
-      <Reveal style={{ textAlign: 'center', marginBottom: 38 }}>
+      <Reveal className="text-left md:text-center mb-[34px]">
         <span className="ac-eyebrow" style={{ fontFamily: 'var(--font-ui)', fontWeight: 700, fontSize: 12.5, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--color-primary)' }}>
           Take it for a spin
         </span>
@@ -239,7 +225,7 @@ export default function TourSection() {
     In Action
   </span>
 </h2>
-        <p style={{ fontFamily: 'var(--font-body, inherit)', fontSize: 18, color: 'var(--text-body)', maxWidth: 600, margin: '16px auto 0' }}>
+        <p className="ac-tour-lead" style={{ fontFamily: 'var(--font-body, inherit)', fontSize: 18, color: 'var(--text-body)', maxWidth: 600, margin: '16px auto 0' }}>
           Click through the real product - every screen you run your business on, live.
         </p>
       </Reveal>
@@ -262,20 +248,18 @@ export default function TourSection() {
       </Reveal>
 
       <Reveal
-        className="rv-s"
+        className="rv-s ac-tour-panel p-[15px] sm:p-6"
         style={{
           position: 'relative',
           background: 'var(--ac-gray-50)',
           border: '1px solid var(--border-subtle)',
           borderRadius: 'var(--radius-2xl, 24px)',
           boxShadow: 'var(--shadow-lg, 0 20px 50px rgba(15,23,41,.14))',
-          padding: 22,
-          minHeight: 560,
         }}
       >
         {/* ---------------------------- DASHBOARD ---------------------------- */}
         <div style={panelStyle('dashboard')}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
+          <div className="ac-dash-head" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
             <div>
               <div style={{ fontFamily: 'var(--font-display, inherit)', fontWeight: 700, fontSize: 22, color: 'var(--text-strong)' }}>Dashboard Overview</div>
               <div style={{ fontFamily: 'var(--font-body, inherit)', fontSize: 13.5, color: 'var(--ac-gray-500)', marginTop: 2 }}>
@@ -306,7 +290,7 @@ export default function TourSection() {
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 14, marginBottom: 14 }}>
+          <div className="ac-stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 14, marginBottom: 14 }}>
             <div className="ac-lift" style={{ background: 'var(--ac-gradient-blue)', borderRadius: 'var(--radius-lg)', padding: 18, color: '#fff', boxShadow: 'var(--shadow-sm)' }}>
               <div style={{ fontFamily: 'var(--font-ui)', fontSize: 13, opacity: 0.85 }}>New Jobs This Week</div>
               <CountUp to={294} style={{ fontFamily: 'var(--font-display, inherit)', fontWeight: 800, fontSize: 38, marginTop: 6, display: 'block' }} />
@@ -344,6 +328,7 @@ export default function TourSection() {
               <span style={{ fontFamily: 'var(--font-ui)', fontSize: 12.5, color: 'var(--ac-gray-500)' }}>Page 2 of 12</span>
             </div>
             <div
+              className="ac-contact-head"
               style={{
                 display: 'grid',
                 gridTemplateColumns: '1.4fr 1.2fr 0.9fr 1.6fr',
@@ -365,6 +350,7 @@ export default function TourSection() {
               return (
                 <div
                   key={c.name}
+                  className="ac-contact-row"
                   style={{
                     display: 'grid',
                     gridTemplateColumns: '1.4fr 1.2fr 0.9fr 1.6fr',
@@ -490,7 +476,7 @@ export default function TourSection() {
         <div style={panelStyle('accuracam')}>
           <div className="ac-camgrid" style={{ display: 'grid', gridTemplateColumns: '0.85fr 1fr', gap: 28, alignItems: 'center' }}>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <div style={{ width: 270, height: 544, background: 'var(--ac-blue-900)', borderRadius: 38, padding: 10, boxShadow: 'var(--shadow-xl, 0 30px 70px rgba(15,23,41,.28))', position: 'relative' }}>
+              <div className="ac-cam-phone" style={{ background: 'var(--ac-blue-900)', borderRadius: 38, padding: 10, boxShadow: 'var(--shadow-xl, 0 30px 70px rgba(15,23,41,.28))', position: 'relative' }}>
                 <div style={{ position: 'absolute', top: 20, left: '50%', transform: 'translateX(-50%)', width: 96, height: 24, background: 'var(--ac-blue-900)', borderRadius: '0 0 16px 16px', zIndex: 5 }} />
                 <div style={{ width: '100%', height: '100%', borderRadius: 30, overflow: 'hidden', position: 'relative', background: 'linear-gradient(160deg,#2b3f57,#0f1729)' }}>
                   <div
@@ -564,7 +550,7 @@ export default function TourSection() {
               >
                 AccuraCam
               </span>
-              <h3 style={{ fontFamily: 'var(--font-display, inherit)', fontSize: 30, color: 'var(--text-strong)', margin: '16px 0 10px' }}>
+              <h3 className="ac-cam-title" style={{ fontFamily: 'var(--font-display, inherit)', fontSize: 30, color: 'var(--text-strong)', margin: '16px 0 10px' }}>
                 Snap. Speak. Upload. Done.
               </h3>
               <p style={{ fontFamily: 'var(--font-body, inherit)', fontSize: 16, lineHeight: 1.6, color: 'var(--text-body)', maxWidth: 420, marginBottom: 22 }}>
@@ -666,6 +652,20 @@ export default function TourSection() {
         .ac-drop {
           animation: ac-drop-in 0.35s cubic-bezier(0.16, 0.8, 0.3, 1);
         }
+
+        /* -------- outer section / panel spacing (desktop values unchanged) -------- */
+        .ac-tour-sec {
+          padding: 100px 40px 40px;
+        }
+        .ac-tour-panel {
+          padding: 22px;
+          min-height: 560px;
+        }
+        .ac-cam-phone {
+          width: 270px;
+          height: 544px;
+        }
+
         @media (max-width: 1024px) {
           .ac-g4 {
             grid-template-columns: repeat(2, 1fr) !important;
@@ -674,8 +674,66 @@ export default function TourSection() {
             grid-template-columns: 1fr !important;
           }
         }
+
+        /* ================= MOBILE ONLY (<=640px) ================= */
+        @media (max-width: 640px) {
+          .ac-tour-sec {
+            padding: 56px 20px 32px;
+          }
+          .ac-tour-panel {
+            padding: 14px;
+            min-height: 0;
+          }
+          .ac-tour-lead {
+            font-size: 15px !important;
+          }
+
+          /* Dashboard header: let title + button wrap instead of overflowing */
+          .ac-dash-head {
+            flex-wrap: wrap !important;
+            row-gap: 12px !important;
+          }
+          .ac-dash-head > div:first-child {
+            flex: 1 1 100% !important;
+          }
+          .ac-dash-head > div:first-child > div:first-child {
+            font-size: 18px !important;
+          }
+
+          /* Stat cards: stack instead of 3 cramped columns */
+          .ac-stats-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .ac-stats-grid .ac-lift > span {
+            font-size: 28px !important;
+          }
+
+          /* Contacts table: hide the column header row, stack each field */
+          .ac-contact-head {
+            display: none !important;
+          }
+          .ac-contact-row {
+            grid-template-columns: 1fr !important;
+            row-gap: 6px !important;
+            padding: 14px 16px !important;
+          }
+
+          /* Boards: single column on narrow phones (2-col from the 1024px
+             rule above is still too tight under ~640px) */
+          .ac-g4 {
+            grid-template-columns: 1fr !important;
+          }
+
+          /* AccuraCam phone mockup: scale down so it fits the panel width */
+          .ac-cam-phone {
+            width: 230px;
+            height: 464px;
+          }
+          .ac-cam-title {
+            font-size: 24px !important;
+          }
+        }
       `}</style>
     </section>
   );
 }
-

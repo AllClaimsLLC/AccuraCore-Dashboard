@@ -28,7 +28,7 @@ const scale = useTransform(scrollYProgress, [0, 0.5], [0.75, 1]);
 
   return (
     <section className="ac-sec ac-vidsec" style={{ maxWidth: 'var(--container-max, 1200px)', margin: '0 auto', padding: '96px 40px' }}>
-      <div style={{ textAlign: 'center', marginBottom: 40 }}>
+      <div className="text-left md:text-center mb-[40px]">
         <span className="ac-eyebrow">See it in motion</span>
         <h2 className='font-bold' style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(27px,5vw,42px)', marginTop: 12, color: 'var(--text-strong)' }}>
           Watch AccuraCore <span className="ac-text-gradient">In Action</span>
