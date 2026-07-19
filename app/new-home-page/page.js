@@ -663,12 +663,12 @@ function Hero() {
 }
  
 function CircularProgress({ value = 0, small = false }) {
-  const size = small ? 30 : 36;
-  const radius = small ? 12 : 15;
+  const size = small ? 36 : 44;
+  const radius = small ? 15 : 18;
   const circumference = 2 * Math.PI * radius;
   const offset = circumference - (value / 100) * circumference;
   const center = size / 2;
- 
+
   return (
     <span
       className="relative flex shrink-0 items-center justify-center"
@@ -686,7 +686,7 @@ function CircularProgress({ value = 0, small = false }) {
           r={radius}
           fill="none"
           stroke="#E5EEF5"
-          strokeWidth="3"
+          strokeWidth="5"
         />
         <circle
           cx={center}
@@ -694,14 +694,17 @@ function CircularProgress({ value = 0, small = false }) {
           r={radius}
           fill="none"
           stroke="var(--color-primary)"
-          strokeWidth="3"
+          strokeWidth="5"
           strokeLinecap="round"
           strokeDasharray={circumference}
           strokeDashoffset={offset}
         />
       </svg>
+
       <span
-        className={`absolute font-bold ${small ? "text-[8px]" : "text-[9px]"}`}
+        className={`absolute font-bold ${
+          small ? "text-[10px]" : "text-[12px]"
+        }`}
         style={{ color: "var(--color-primary)" }}
       >
         {value}%
@@ -759,7 +762,7 @@ function Marquee() {
 function DeviceShowcase() {
   return (
     <section
-      className="relative overflow-hidden"
+      className="relative"
       //   style={{ background: "var(--surface-page)" }}
     >
       <div
@@ -964,16 +967,17 @@ function DeviceShowcase() {
               </div>
             </div>
 
-            {/* phone mockup — hidden on mobile (overlaps the laptop in
-                narrow viewports); unchanged from md breakpoint upward */}
-            <div
-              className="ac-herophone ac-anim-phone-rotate absolute -left-[118px] bottom-[-56px] z-[4] hidden h-[370px] w-[176px] rounded-[34px] p-[7px] md:block"
-              style={{
-                background: "linear-gradient(rgb(22,31,48), rgb(13,21,34))",
-                boxShadow: "rgba(13,21,34,0.5) 0 40px 74px",
-                transformStyle: "preserve-3d",
-              }}
-            >
+            {/* phone mockup */}
+<div
+  className="ac-herophone ac-anim-phone-rotate absolute -left-[118px] bottom-[-56px] z-[4] hidden h-[370px] w-[176px] rounded-[34px] p-[7px] md:block"
+  style={{
+    background: "linear-gradient(rgb(22,31,48), rgb(13,21,34))",
+    boxShadow: "rgba(13,21,34,0.5) 0 40px 74px",
+    transformStyle: "preserve-3d",
+    transform: "rotate(-8deg)",
+    transformOrigin: "bottom center",
+  }}
+>
               <div
                 className="ac-devframe relative flex h-full w-full flex-col overflow-hidden rounded-[28px]"
                 style={{ background: "#fff" }}
@@ -1418,7 +1422,7 @@ function GlobalTokens() {
         display: flex;
         align-items: flex-start;
         gap: 12px;
-        padding: 6px;
+        padding: 15px;
         border-radius: 12px;
         text-decoration: none;
         transition: background 0.2s ease;
@@ -1755,15 +1759,15 @@ function GlobalTokens() {
           transform: rotateZ(0.6deg);
         }
       }
-      @keyframes ac-phone-sway {
-        0%,
-        100% {
-          transform: rotateZ(0deg);
-        }
-        50% {
-          transform: rotateZ(-1.2deg);
-        }
-      }
+@keyframes ac-phone-sway {
+  0%,
+  100% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(-9.5deg);
+  }
+}
       .ac-anim-float {
         animation: ac-float 7s ease-in-out infinite;
       }
