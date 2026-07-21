@@ -5,6 +5,8 @@ import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 import ScrollProgress from "@/components/ScrollProgress";
 import CustomCursor from "@/components/CustomCursor";
+import HoverSound from "@/components/HoverSound";
+import Loader from "@/components/Loader";
 
 // Fonts
 const sora = Sora({ subsets: ["latin"], weight: ["300", "400", "500", "700"] });
@@ -22,9 +24,12 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body className={outfit.className}>
         <ThemeProvider>
+          <Loader />
+
+          <HoverSound />
 
           <ScrollProgress />
-          {/* <CustomCursor /> */}
+          <CustomCursor />
 
           <div className={sora.className}>{children}</div>
 
